@@ -1,15 +1,31 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Qhaba
     </ion-title>
   </ion-toolbar>
+</ion-header> -->
+<ion-header>
+    <ion-buttons slot="start" (click)="Retour()" style="margin-top: 2em;">
+      <ion-icon name="arrow-undo" style="color: #fff;" size="large"></ion-icon>
+    </ion-buttons>
+    <ion-title size="large" style="padding-bottom: 0.3em;">Qhaba</ion-title>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <div class="body">
+    <img src="../../assets/images/logo.png" alt=""><br>
+
+    <div class="a">
+      <a href="">Voir la carte</a>
+    </div>
+
+    <div class="image">
+      <a href="">
+        <img src="../../assets/images/map.png" alt="">
+      </a>
+    </div>
+  </div>
 </ion-content>
+

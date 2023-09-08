@@ -1,0 +1,41 @@
+ion-back-button{
+  color: #ffffff;
+}
+ion-title
+{
+  text-align: center;
+  color: #ffffff;
+
+}
+ion-header{
+  background-color: #005B2F;
+  height: 5rem;
+  border-bottom-right-radius: 200px ;
+}
+ion-toolbar{
+  align-items: center;
+}
+.body{
+  // border-top: 1px solid;
+  text-align: center;
+}
+.body img{
+  width: 8em;
+}
+.body a{
+  text-decoration: none;
+  color: #FFF;
+  font-size: x-large;
+}
+.body .a{
+  margin: auto;
+  background-color: #005B2F;
+  width: 50%;
+}
+.image{
+  margin-top: 2em;
+}
+.image a img{
+  width: 95vw;
+  height: 120vw;
+}
