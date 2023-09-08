@@ -1,0 +1,72 @@
+.head {
+    display: flex;
+    padding-top: 25px;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 55px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-bottom: 1px solid #005B2F;
+    padding-bottom: 20px;
+    background-color: #005B2F;
+    border-radius: 0 0 200px 0;
+
+
+}
+.left {
+    width: 25%;
+    margin-top: 10px;
+    margin-left: 12px;
+    
+}
+.right {
+    width: 75%;
+    color: #FFFF;
+}
+
+.logo {
+    width: 90px;
+    margin-left: 38%;
+}
+.mosque {
+    display: flex;
+   padding-left: 35px;
+}
+.info {
+   margin-left: 60px;
+   margin-top: 15px;
+}
+.cloche {
+    margin-left: 10px;
+    margin-top: 15px;
+ }
+
+ .liste{
+    background-color: #D9D9D94D;
+    box-sizing: border-box;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 15px;
+    padding-bottom: 2px;
+    // margin-bottom: 10px;
+
+ }
+ .kilo{
+    margin-top: -25px;
+    border-bottom: 1px solid #0000004D ;
+    font-size: small;
+    padding-left: 35px;
+ }
+ .kilo3 {
+    margin-top: -25px;
+    border-bottom: 1px solid ;
+    font-size: small;
+    padding-left: 35px;
+ }
+ .killo6 {
+    margin-top: -25px;
+   border-bottom: none;
+    font-size: small;
+    padding-left: 35px;
+ }
