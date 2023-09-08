@@ -21,9 +21,10 @@ const routes: Routes = [
       },{
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
-      },{
-        path: 'sourate',
-        loadChildren: () => import('../page/sourate/sourate.module').then(m => m.SouratePageModule)
+      },
+      {
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
       },
       {
         path: '',
