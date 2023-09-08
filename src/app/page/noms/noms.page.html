@@ -22,20 +22,20 @@
 
   <ion-list>
 
-    <ion-item>
+    <ion-item *ngFor="let nom of noms">
   
       <ion-header class="header">
         <!-- <span>num</span> -->
-        <ion-badge slot="start">1</ion-badge>
+        <ion-badge slot="start">{{nom.number}}</ion-badge>
         <ion-label>
-          <h1>Asr Raham</h1>
-          <p>Le tout puissant</p>
+          <h1>{{nom.transliteration}}</h1>
+          <p>{{nom.en.meaning}}</p>
         </ion-label>
       </ion-header>
           
       
       <ion-list>
-        <ion-label>Nom</ion-label>
+        <ion-label>{{nom.name}}</ion-label>
       </ion-list> 
   
   

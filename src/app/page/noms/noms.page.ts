@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NomsService } from 'src/app/service/noms.service';
 
 @Component({
   selector: 'app-noms',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NomsPage implements OnInit {
 
-  constructor() { }
+  noms :any[]= [];
+
+  constructor(private nomS: NomsService) { }
 
   ngOnInit() {
+      this.nomS.getNoms().subscribe(data => {
+        this.noms = data.data;
+      console.log(this.noms);
+    });
   }
 
 }
