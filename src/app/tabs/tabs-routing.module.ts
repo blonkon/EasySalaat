@@ -25,6 +25,16 @@ const routes: Routes = [
       {
         path: 'noms',
         loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+
+      },
+      {
+        path: 'mosque',
+        loadChildren: () => import('../page/liste-mosque/liste-mosque.module').then(m => m.ListeMosquePageModule)
+      },
+      {
+        path: 'mosqueaproximite',
+        loadChildren: () => import('../page/mosque-aproximite/mosque-aproximite.module').then(m => m.MosqueAproximitePageModule)
+
       },
       {
         path: '',
@@ -32,11 +42,6 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 

@@ -1,5 +1,7 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MosqueComponent } from './mosque/mosque.component';
 
 const routes: Routes = [
   {
@@ -9,7 +11,11 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },  {
+  },
+  {
+    path: 'mosque', component:MosqueComponent
+  },
+  {
     path: 'sourate',
     loadChildren: () => import('./page/sourate/sourate.module').then( m => m.SouratePageModule)
   },
@@ -20,9 +26,17 @@ const routes: Routes = [
   {
     path: 'noms',
     loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
-  }
 
-];
+  },
+  {
+    path: 'liste-mosque',
+    loadChildren: () => import('./page/liste-mosque/liste-mosque.module').then( m => m.ListeMosquePageModule)
+  },
+  {
+    path: 'mosque-aproximite',
+    loadChildren: () => import('./page/mosque-aproximite/mosque-aproximite.module').then( m => m.MosqueAproximitePageModule)
+  }
+   ];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
