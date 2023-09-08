@@ -18,9 +18,14 @@ const routes: Routes = [
       {
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-      },{
-        path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },
+      {
+        path: 'mosque',
+        loadChildren: () => import('../page/liste-mosque/liste-mosque.module').then(m => m.ListeMosquePageModule)
+      },
+      {
+        path: 'mosqueaproximite',
+        loadChildren: () => import('../page/mosque-aproximite/mosque-aproximite.module').then(m => m.MosqueAproximitePageModule)
       },
       {
         path: '',
