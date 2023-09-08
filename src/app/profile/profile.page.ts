@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Roles } from '../models/Roles.enum';
+import { Users } from '../models/users';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,5 +14,4 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
   }
-
-}
+  }

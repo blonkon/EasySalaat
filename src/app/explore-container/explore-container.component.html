@@ -3,18 +3,20 @@
     <img src="../../assets/images/logo.png" alt="">
   </div>
  <p> <strong>{{ name }}</strong></p>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  <div class="form-controle">
+ <p> <strong style="text-align: center; color: red; font-size: small; padding: 5px;">{{ invalid }}</strong></p>
+ <form (ngSubmit)="onSubmit(p)" #p="ngForm">
+    <div class="form-controle">
     <div>
-      <label>Email ou nom d'utilisateur</label>
-      <input>  
+      <label>Email</label>
+      <input  type="text" name="email" [(ngModel)]="email" required minlength="3" >  
     </div>
     
     <div>
       <label>Mot de passe</label>
-      <input> 
+      <input name="password" [(ngModel)]="password" > 
     </div>
 
-  <input type="button" value="Se connecter" style="background-color: #005B2F; color: white; font-weight: bold;">
+  <input type="submit" value="Se connecter"  style="background-color: #005B2F; color: white; font-weight: bold;">
   </div>
+</form>
 </div>

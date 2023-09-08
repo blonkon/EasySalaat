@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: "AIzaSyCMZY_R22uCFbRRyUrmvYvalIiT2hLUPdg",
+    authDomain: "mosquapp.firebaseapp.com",
+    projectId: "mosquapp",
+    storageBucket: "mosquapp.appspot.com",
+    messagingSenderId: "1016880202631",
+    appId: "1:1016880202631:web:a542b5ac5453394e9a4922",
+    measurementId: "G-G0BGC2C5EJ"
+  }
 };
 
 /*
