@@ -1,0 +1,31 @@
+#container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    margin-bottom: 10px !important;
+    height: 30vh;
+    margin-top: 14vh;
+}
+.img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.liste{
+    font-weight: bold;
+}
+.label2{
+    text-align: center;
+    margin-left: 16vh;
+}
+.foot{
+    display: flex;
+    margin-top: 140px;
+}
+.profile{
+   margin-left: 235px
+}
+.retour{
+    margin-left: 15px;
+}
