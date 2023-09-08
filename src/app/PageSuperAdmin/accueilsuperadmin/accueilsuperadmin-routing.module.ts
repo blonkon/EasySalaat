@@ -9,6 +9,7 @@ import { ListutilisateurComponent } from '../listutilisateur/listutilisateur.com
 import { HomeSuperAdminComponent } from '../home-super-admin/home-super-admin.component';
 import { DetailutilisateurComponent } from '../detailutilisateur/detailutilisateur.component';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
+import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'listutil', component: ListutilisateurComponent,
+  },
+  {
+    path: 'ajoutmosquee',
+    component: AjoutMosqueeComponent
   },
   {
     path: 'detailutilisateur',
@@ -29,7 +34,7 @@ const routes: Routes = [
     path: 'modifierutilisateur',
     component: ModifierutilisateurComponent,
   },
-  
+
   {
     path: 'mosquee',
     component: MosqueeComponent,

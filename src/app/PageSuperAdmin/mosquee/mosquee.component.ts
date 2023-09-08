@@ -15,7 +15,7 @@ export class MosqueeComponent implements OnInit {
   }
 
   ajouterMosquee() {
-    this.router.navigate(['ajout-mosquee']);
+    this.router.navigate(['ajoutmosquee']);
   }
 
   goToDetail(arg0: any) {

@@ -9,13 +9,50 @@
 </ion-header>
 
 <ion-content>
-  <div style="display: flex; justify-content: space-around; margin-top: 20px;">
-    <ion-item>
+  <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 20px;margin-left: 30px;">
+    <div>
       <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
         <ion-img src="../../assets/images/mosqueeee 1.png"></ion-img>
       </ion-thumbnail>
-      <ion-label>Imam</ion-label>
-      <ion-input type="file" accept="image/*" ></ion-input>
-    </ion-item>
+      <ion-label>Image de l'Imam</ion-label>
+      <ion-input type="file" accept="image/*" (change)="onImageChange($event)"></ion-input>
+    </div>
+
+    <div>
+      <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
+        <ion-img src="../../assets/images/mosqueeee 1.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>Image de l'Imam</ion-label>
+      <ion-input type="file" accept="image/*" (change)="onImageChange($event)"></ion-input>
+    </div>
   </div>
+  <ion-item class="input-item">
+    <ion-label class="label">Nom de la mosquée</ion-label>
+    <ion-input class="input" type="text" [(ngModel)]="mosqueName"></ion-input>
+  </ion-item>
+  <ion-item class="input-item">
+    <ion-label class="label">Prenom_Imam</ion-label>
+    <ion-input class="input" type="text" [(ngModel)]="mosqueName"></ion-input>
+  </ion-item>
+  <ion-item class="input-item">
+    <ion-label class="label">Nom_Imam</ion-label>
+    <ion-input class="input" type="text" [(ngModel)]="mosqueName"></ion-input>
+  </ion-item>
+
+  <ion-item class="input-item">
+    <ion-label class="label">Porte</ion-label>
+    <ion-input class="input" type="text" [(ngModel)]="porte"></ion-input>
+  </ion-item>
+
+  <ion-item class="input-item">
+    <ion-label class="label">Rue</ion-label>
+    <ion-input class="input" type="text" [(ngModel)]="rue"></ion-input>
+  </ion-item>
+
+  <ion-item class="input-item">
+    <ion-label class="label">Numéro de téléphone</ion-label>
+    <ion-input class="input" type="tel" [(ngModel)]="phoneNumber"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="submitForm()">Soumettre</ion-button>
 </ion-content>
