@@ -21,6 +21,9 @@ const routes: Routes = [
       },{
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },{
+        path: 'sourate',
+        loadChildren: () => import('../page/sourate/sourate.module').then(m => m.SouratePageModule)
       },
       {
         path: '',

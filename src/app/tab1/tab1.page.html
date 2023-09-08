@@ -71,9 +71,15 @@
         <p>Temps de priere à Bamako</p>
       </div>
       <ion-list>
-        <ion-item>
-          Fajr
+
+        <ion-item *ngFor="let p of priere">     
+          <ion-list-header>{{p.nom}}</ion-list-header>
+          <ion-list style="display: flex; align-items: center; gap: 1rem;">
+            <ion-label>{{p.heure}}</ion-label>
+            <ion-icon name="volume-low"></ion-icon>
+          </ion-list>
         </ion-item>
+      
       </ion-list>
     </div>
   </div>
