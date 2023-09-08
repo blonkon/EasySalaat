@@ -6,11 +6,14 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageutiletadminComponent } from './pageutiletadmin/pageutiletadmin.component';
-import { HomeSuperAdminComponent } from './home-super-admin/home-super-admin.component';
+import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component'; 
+import { ListutilisateurComponent } from './PageSuperAdmin/listutilisateur/listutilisateur.component';
+import { PageutiletadminComponent } from './PageSuperAdmin/pageutiletadmin/pageutiletadmin.component';
+import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
+import { ModifierutilisateurComponent } from './PageSuperAdmin/modifierutilisateur/modifierutilisateur.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeSuperAdminComponent, PageutiletadminComponent],
+  declarations: [AppComponent, DetailutilisateurComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ModifierutilisateurComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

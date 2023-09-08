@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { HomeSuperAdminComponent } from './home-super-admin/home-super-admin.component';
+import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
 
 const routes: Routes = [
@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   
   {
-    path: '',
+    path: 'pageutilisateur',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -18,7 +18,20 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
+  },
+  {
+    path: 'accueilsuperadmin',
+    loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)
+  },
+  {
+    path: 'profilesuperadmin',
+    loadChildren: () => import('./PageSuperAdmin/profilesuperadmin/profilesuperadmin.module').then( m => m.ProfilesuperadminPageModule)
   }
+
 ];
 @NgModule({
   imports: [

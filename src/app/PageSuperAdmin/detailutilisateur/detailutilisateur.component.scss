@@ -2,8 +2,24 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    margin: 30px auto;
-    margin-bottom: 10px !important;
+    // margin: 0px auto;
+    // margin-bottom: 10px !important;
+    // background-color: #005B2F;
+    
+}
+.head{
+    background-color: #005B2F;
+    border-radius: 0px  0px 200px 0px;
+}
+.iconitem{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+}
+.iconitem {
+    font-size: 20px !important;
+    margin-left: 20px;
+    
 }
 .card{
     display: grid;
@@ -21,8 +37,14 @@
 .img{
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
+    text-align: center;
 }
+.img img{  
+    display: grid !important;
+    align-items: center;
+    // margin-left: 40px;
+ }
 .logoimg{
     display: grid;
     justify-content: center;
