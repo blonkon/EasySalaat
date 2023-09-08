@@ -4,11 +4,12 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
+import { ExploreContainerComponent } from './explore-container/explore-container.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeSuperAdminComponent,
+    path: ''
+   ,
     children: [
       
   {
