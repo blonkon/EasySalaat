@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SourateService } from 'src/app/service/sourate.service';
 
 @Component({
   selector: 'app-sourate',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sourate.component.scss'],
 })
 export class SourateComponent  implements OnInit {
+  surahData:any[]= [];
+ 
+  constructor(private quranService: SourateService) { }
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  ngOnInit(): void {
+    this.quranService.getSurahData().subscribe(data => {
+      this.surahData = data.data;
+      console.log(this.surahData);
+    });
+  }
 }
