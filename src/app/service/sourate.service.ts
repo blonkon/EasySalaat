@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SourateService {
 
+  // private apiUrl = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
   private apiUrl = 'http://api.alquran.cloud/v1/surah';
 
   constructor(private http: HttpClient) { }
