@@ -22,24 +22,25 @@
 
   <ion-list>
 
-    <ion-item>
+    <ion-item  *ngFor="let preacher of preachers">
 
       <ion-header class="header">
         <!-- <span>num</span> -->
         <ion-badge slot="start">1</ion-badge>
         <ion-label>
-          <h1>M.Fadiga</h1>
-          <p>Le tout puissant</p>
+          <ion-label>
+            <h1>{{ preacher.name }}</h1>
+            <p>{{ preacher.description }}</p>
+          </ion-label>
         </ion-label>
       </ion-header>
 
 
       <ion-list>
-        <ion-label (click)="playPause()">
-          <ion-icon [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
+        <ion-label  (click)="playPause(preacher.audioUrl)">
+          <ion-icon   [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
         </ion-label>
       </ion-list>
-
 
     </ion-item>
 
