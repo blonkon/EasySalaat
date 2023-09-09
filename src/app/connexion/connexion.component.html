@@ -1,51 +1,37 @@
-<!-- <div id="container">
-  <form action="">
-    <div class="img">
-      <img src="../../assets/images/logo.png" alt="">
-    </div>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> 
-    <div class="form-controle">
-      <div>
-        <label>Email ou nom d'utilisateur</label>
-        <input type="email" placeholder="votremail@gmail.com">
-      </div>
+  <div class="img">
+    <img src="../../assets/images/logo.png" alt="" width="150px">
+    <h2 style="color: #005B2F;">Inscription</h2>
+  </div>
+
+<ion-content>
   
-      <div>
-        <label>Mot de passe</label>
-        <input type="password" placeholder="************">
-      </div>
-  
-    <input type="button" value="Se connecter" style="background-color: #005B2F; color: white; font-weight: bold;">
-    <h4>Pas de compte? <a>Créer un compte</a></h4>
-    </div>
-  </form>
-</div> -->
 <form action="">
   <div id="container">
-    <div class="img">
-      <img src="../../assets/images/logo.png" alt="">
-    </div>
+    
    
     <div class="form-controle">
+      
       <div>
         <label>Email ou nom d'utilisateur</label>
         <input  type="email" placeholder="votremail@gmail.com" >  
-      </div>
-      
+      </div>      
       <div>
         <label>Mot de passe</label>
-        <input> 
+        <input type="password" placeholder="******************"> 
       </div>
-      <a id="a" routerLink="">
+      <a id="a" routerLink="" style="color: #fff !important;">
         Se connecter
       </a>
+      
+      
+        <a class="gtext" >
+          <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
+        </a>
+      
 
-      <h4>Pas de compte? <a>Créer un compte</a></h4>
-  
-      
-      
-     
-    
+      <h5 style="text-align: center;">Pas de compte? <a routerLinkActive="" style="color: #005B2F !important; font-weight: bold;">Créer un compte</a></h5>
     </div>
   </div>
 </form>
+
+</ion-content>

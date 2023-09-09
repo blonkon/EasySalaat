@@ -8,12 +8,15 @@ import { ExploreContainerComponent } from './explore-container/explore-container
 
 const routes: Routes = [
   {
-    path: ''
+    path: '', component: InscriptionComponent
    ,
     children: [
       
   {
     path: 'inscription', component: InscriptionComponent
+  },
+  {
+    path: 'login', component: ConnexionComponent
   },
   
   {

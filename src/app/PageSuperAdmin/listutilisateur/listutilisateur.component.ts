@@ -1,33 +1,74 @@
 import { Component, OnInit } from '@angular/core';
-import swal from 'sweetalert2';
+import { AlertController } from '@ionic/angular';
+import { UtilisateurService } from '../utilisateur.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 @Component({
   selector: 'app-listutilisateur',
   templateUrl: './listutilisateur.component.html',
   styleUrls: ['./listutilisateur.component.scss'],
 })
 export class ListutilisateurComponent  implements OnInit {
+public data: any[]=[];
+  
+public nombre_utilisateur!: number;
+  constructor( private _dialog: MatDialog, private alertController: AlertController, private _service : UtilisateurService) {
+   }
 
-  constructor() { }
-
-  ngOnInit() {}
-  delete(){
-    swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      }
-    })
+  ngOnInit() {
+    this.nombre_utilisateur = this.data.length;
+    this._service.getUtilisateurList().forEach((element) => {
+      this.data.push(element);});
+      this.nombre_utilisateur = this.data.length;
+      
   }
+
+public alertButtons = [
+  {
+    text: 'Cancel',
+    role: 'cancel',
+    handler: () => {
+      
+      console.log('Alert canceled');
+    },
+  },
+  {
+    text: 'OK',
+    role: 'confirm',
+    handler: (i: number) => {
+      this.data.splice(i, 1);
+      this.nombre_utilisateur = this.data.length-1;
+      console.log('Alert confirmed');
+    },
+  },
+];
+async presentAlert() {
+  const alert = await this.alertController.create({
+    header: 'Alert!',
+    buttons: this.alertButtons,
+  });
+
+  await alert.present();
+}
+
+setResult(ev:any) {
+  console.log(`Dismissed with role: ${ev.detail.role}`);
+}
+
+openEditForm(data: any) {
+  const dialogRef = this._dialog.open(ModifierutilisateurComponent, {
+    data,
+  });
+
+  dialogRef.afterClosed().subscribe({
+    next: (val) => {
+      if (val) {
+        this._service.getUtilisateurList().forEach((element) => {
+          this.data.push(element);});
+          this.nombre_utilisateur = this.data.length;
+      }
+    },
+  });
+}
 
 }

@@ -1,47 +1,43 @@
-<ion-header class="head animate__animated animate__fadeInDown">
-  <ion-icon name="arrow-undo" style=" font-size: 50px; margin: 10px; color: #fff;" [routerLink]="['../listutil']"></ion-icon>
-  <div id="container1" style="display: grid;">
-    <div class="img">
-      <img src="../../assets/images/logo.png" alt="logo"  width="200px" style="border-radius: 50%;">
-     <h2 style="font-size: 20px; text-align: center; font-weight: bold; color: #fff;">Modifier utilisateur</h2>
-    </div>
-  </div>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ionic Angular Reactive Form Example</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div id="container" class=" animate__animated animate__fadeInUp " style="margin-top: 30px; margin-bottom: 30px;">
-    <div class="img">
-      <img src="../../assets/images/User1.png" alt="" style="border-radius: 50%; width: 150px; height: 150px;">
-      <h2 style="text-align: center; color: #005B2F;"> Ibrahim Sy</h2>
-    </div>
-   
-          <div class="form-controle" style="margin-top: 15px;">
-          <label for="">
-            Email: ibram10sy@gmail.com
-          </label> 
-          <label for="">
-            Téléphone: 90 89 00 56
-          </label>     
- <div>
-        <label>Role</label>
-        <input type="text">
-        </div>
-      
-      <div>
-        <label>Mosque</label>
-        <input> 
-      </div>
-      <a [routerLink]="['../listutil']">
-        Modifier
-      </a>
-  
-      
-      
-     
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input
+        formControlName="name"
+        type="text"
+        aria-label="Name"
+      ></ion-input>
+    </ion-item>
     
-    </div>
-  </div>
-       
-
-  
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        aria-label="Email"
+        type="email"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input
+        maxlength="10"
+        formControlName="mobile"
+        type="text"
+        aria-label="Mobile"
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block"
+          >Submit</ion-button
+        >
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
-  
