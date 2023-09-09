@@ -4,10 +4,10 @@ import { Roles } from "./Roles.enum";
     providedIn: 'root'
   })
 export class Users {
-        nom? : String
-        prenom? : String
+        nom? : string
+        prenom? : string
         numero? : number
-        email? : String
-        motdepasse? : String
+        email? : string
+        motdepasse? : string
         role? : Roles
 }

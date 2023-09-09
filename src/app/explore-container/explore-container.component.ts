@@ -39,6 +39,7 @@ export class ExploreContainerComponent {
           if (user) {
             this.router.navigateByUrl('/profile', { replaceUrl: true });
           } else {
+            console.log(user)
             this.invalid='Login failed Please try again!';
           }
 
