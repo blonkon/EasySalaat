@@ -10,6 +10,8 @@ import { HomeSuperAdminComponent } from '../home-super-admin/home-super-admin.co
 import { DetailutilisateurComponent } from '../detailutilisateur/detailutilisateur.component';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
+import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
+import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'ajoutmosquee',
     component: AjoutMosqueeComponent
+  },
+  {
+    path: 'detailmosquee',
+    component: DetailMosqueeComponent
+  },
+  {
+    path: 'modificationmosquee',
+    component: ModificationMosqueeComponent
   },
   {
     path: 'detailutilisateur',
