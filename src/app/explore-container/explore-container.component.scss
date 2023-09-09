@@ -33,20 +33,18 @@
   margin: 0 30px 0 30px;
   
 }
-.form-controle input {
+.form-controle input,a {
   padding: 12px 0 12px 0;
   border-radius: 15px;
 }
+.form-controle a{
+  background-color: #005B2F; color: white; font-weight: bold;
+  padding: 12px 0 12px 0;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none !important;
+}
 
 .form-controle div{
- 
- 
- 
- 
- 
- 
- 
- 
- 
   display: grid;
 }
