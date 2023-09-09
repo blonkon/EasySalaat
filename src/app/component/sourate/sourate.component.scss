@@ -1,0 +1,24 @@
+
+ion-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+span{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: #005B2F;
+    color: #fff;
+}
+ion-badge{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    background: #005B2F;
+    color: #fff;
+}
+h1 , p{
+    font-family: 'Poppins';
+}

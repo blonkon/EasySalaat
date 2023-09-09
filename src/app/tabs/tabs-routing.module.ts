@@ -23,6 +23,14 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+      },
+      {
+        path: 'preche',
+        loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

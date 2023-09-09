@@ -1,7 +1,10 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+
+
 
 const routes: Routes = [
   {
@@ -15,7 +18,16 @@ const routes: Routes = [
   {
     path:'connexion',component:ConnexionComponent
   },
-  {path: 'inscription',component:InscriptionComponent}
+  {path: 'inscription',component:InscriptionComponent},
+  {
+  path: 'noms',
+  loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
+},
+  {
+    path: 'preche',
+    loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
+  }
+
 ];
 @NgModule({
   imports: [
@@ -24,3 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
