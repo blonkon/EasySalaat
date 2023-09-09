@@ -10,7 +10,7 @@
        Membre depuis 24 Avr 2022
       </h6>
     </div>
-    <div class="modifier">
+    <div class="modifier" [routerLink]="['../profile-update']" >
       <h3>
         Modifier le profil
       </h3>
@@ -28,9 +28,17 @@
       <h3>Faire un don </h3>
     </div>
     <div class="boutton">
-      <button class="deconnexion">Déconnexion</button>
+      <button  class="deconnexion">Déconnexion</button>
     </div>
     
+  </div>
+  <div class="footer">
+    <div class="img1" style="margin-left: 3vh;">
+      <img routerLink="/page-accueil-admin-mosque" src="../../assets/accueil (2).png" alt="accueil">
+    </div>
+    <div style="margin-left: 25vh;">
+      <img style="float: right;" src="../../assets/images/profile.png" alt="profile">
+    </div>
   </div>
 
 </ion-content>

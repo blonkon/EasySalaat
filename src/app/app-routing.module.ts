@@ -27,48 +27,15 @@ const routes: Routes = [
   {
   path: 'admin-simple-connexion', component: AdminSimpleConnexionComponent
   },
-  {
-    path: 'accueil-admin-simple', component: AccueilAdminSimpleComponent
-  },
-  {
-    path: 'horaire', component: HoraireComponent
-  },
-  {
-    path: 'horaire-modifier', component: HoraireModifierComponent
-  },
-  {
-    path: 'annonce', component: AnnonceComponent
-  },
-  {
-    path: 'annonce-update', component: AnnonceUpdateComponent
-  },
-  {
-    path: 'annonce-liste', component: AnnonceListeComponent
-  },
-  {
-    path: 'programme-liste', component: ProgrammeListeComponent
-  },
-  {
-    path:'programme-ajouter', component: ProgrammeAjouterComponent
-  },
-  {
-    path: 'programme-update', component: ProgrammeUpdateComponent
-  },
-  {
-    path: 'document-liste', component: DocumentListeComponent
-  },
-  {
-    path: 'document-ajouter', component: DocumentAjouterComponent
-  },
-  {
-    path: 'document-update', component: DocumentUpdateComponent
-  },
-  {
-     path:'profile-update', component: ProfileUpdateComponent
-  },
+ 
+
   {
     path: 'profile-admin-mosque',
     loadChildren: () => import('./Admin-Mosque/profile-admin-mosque/profile-admin-mosque.module').then( m => m.ProfileAdminMosquePageModule)
+  },
+  {
+    path: 'page-accueil-admin-mosque',
+    loadChildren: () => import('./Admin-Mosque/page-accueil-admin-mosque/page-accueil-admin-mosque.module').then( m => m.PageAccueilAdminMosquePageModule)
   }
 ];
 @NgModule({

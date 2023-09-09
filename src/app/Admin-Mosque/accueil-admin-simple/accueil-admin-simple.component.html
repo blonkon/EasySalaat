@@ -11,6 +11,7 @@
   
   
   <div class="card">
+    <!-- <ion-icon  name="eye" [routerLink]="['./horaire']"></ion-icon> -->
     <!-- <ion-card color="light">
       <ion-card-header>
         <ion-card-title>Card Title</ion-card-title>
@@ -18,16 +19,16 @@
       </ion-card-header>
     
       <ion-card-content> Card Content </ion-card-content>
-    </ion-card> -->
-    <ion-card style="border-radius: 25px;">
-      <div class="logoimg"><img alt="Silhouette of mountains" src="../../assets/images/horaire.png" /></div>
+    </ion-card>  [routerLink]="['../horaire']"   -->
+    <ion-card style="border-radius: 25px;" >
+      <div class="logoimg"><img alt="Silhouette of mountains"  [routerLink]="['./horaire']"  src="../../assets/images/horaire.png" /></div>
       <ion-card-header>
         <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Horaire</ion-card-title>
       </ion-card-header>
     </ion-card>
     <!---->
     <ion-card style="border-radius: 25px;">
-      <div class="logoimg" style="background-color: #fff;"><img alt="Silhouette of mountains" src="../../assets/annonce.png" /></div>
+      <div class="logoimg" style="background-color: #fff;"><img [routerLink]="['./annonce-liste']" alt="Silhouette of mountains" src="../../assets/annonce.png" /></div>
       <ion-card-header>
         <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F; ">Annonce</ion-card-title>
       </ion-card-header>
@@ -35,7 +36,7 @@
     <!---->
     <!---->
     <ion-card style="border-radius: 25px;">
-      <div class="logoimg" style="background-color: #fff;"><img style="margin-top: 0;" alt="Silhouette of mountains" src="../../assets/images/programme.png" /></div>
+      <div class="logoimg" style="background-color: #fff;"><img style="margin-top: 0;" [routerLink]="['./programme-liste']" alt="Silhouette of mountains" src="../../assets/images/programme.png" /></div>
       <ion-card-header>
         <ion-card-title style="font-size: 20px; text-align: center ; font-weight: bold; color: #005B2F;">Programme</ion-card-title>
       </ion-card-header>
@@ -43,7 +44,7 @@
     <!---->
     <!---->
     <ion-card style="border-radius: 25px;" id="card">
-      <div class="logoimg" style="background-color:#D9D9D9; height: 155%;"><img style="margin-top: 1rem;" alt="Silhouette of mountains" src="../../assets/images/document.png" /></div>
+      <div class="logoimg" style="background-color:#D9D9D9; height: 155%;"><img style="margin-top: 1rem;" [routerLink]="['./document-liste']" alt="Silhouette of mountains" src="../../assets/images/document.png" /></div>
       <ion-card-header style="margin-top: auto;">
         <ion-card-title ><p style="font-size: 20px; text-align: center ; font-weight: bold; color: #005B2F; margin-bottom: auto;">Document</p></ion-card-title>
       </ion-card-header>
@@ -54,10 +55,10 @@
   <!---->
   <div class="footer">
     <div class="img1" style="margin-left: 3vh;">
-      <img src="../../assets/accueil (2).png" alt="accueil">
+      <img src="../../assets/accueil (2).png"  alt="accueil">
     </div>
     <div style="margin-left: 25vh;">
-      <img style="float: right;" src="../../assets/images/profile.png" alt="profile">
+      <img style="float: right;"  routerLink="/profile-admin-mosque" src="../../assets/images/profile.png" alt="profile">
     </div>
   </div>
   

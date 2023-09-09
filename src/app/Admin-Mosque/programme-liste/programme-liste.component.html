@@ -8,24 +8,38 @@
     </div>
     </div>
     <div>
-      <ion-button shape="round" class="bbb" style=" --background: var(--ion-color, #005B2F); height: 10px; margin-left: 15px;">Ajouter</ion-button>
+      <ion-button [routerLink]="['../programme-ajouter']" shape="round" class="bbb" style=" --background: var(--ion-color, #005B2F); height: 10px; margin-left: 15px;">Ajouter</ion-button>
     </div>
     <ion-list>
       <ion-item class="liste">
-        <ion-label class="ion-label">Batême de Maouloud</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px"><img src="../../../assets/images/Vector.png"  alt="icon"> </ion-label>  <ion-label  id="open-modal"><img src="../../../assets/images/delete1.png" style="float: right;" alt="icon"></ion-label>
+        <ion-label class="ion-label">BatêmeMaouloud</ion-label>   
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
       </ion-item>
      
       <ion-item class="liste">
         <ion-label class="ion-label">Doua</ion-label>   
-         <ion-label style=" margin-left: 83px;  margin-right: -393px"><img src="../../../assets/images/Vector.png"  alt="icon"> </ion-label>  <ion-label><img src="../../../assets/images/delete1.png" style="float: right;" alt="icon"></ion-label>
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
+       
       </ion-item>
       <ion-item class="liste">
         <ion-label class="ion-label">Fajr</ion-label>   
-          <ion-label style=" margin-left: 83px;  margin-right: -393px"><img src="../../../assets/images/Vector.png"  alt="icon"> </ion-label>  <ion-label id="open-modal"> <img src="../../../assets/images/delete1.png" style="float: right; cursor: pointer;" alt="icon"></ion-label>
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
+        
       </ion-item>
       
     </ion-list>
+
+    <ion-footer>
+      <div class="foot">
+        <div class="retour">
+          <img src="../../assets/images/Group 5.png"  [routerLink]="['/page-accueil-admin-mosque']" alt="retour">
+        </div>
+        <div class="profile">
+          <img src="../../assets/images/profile.png" style="float: right;" alt="p">
+        </div>
+      </div>
+    </ion-footer>
+
     <ion-modal
     trigger="open-modal"
     [initialBreakpoint]="0.25"
