@@ -1,11 +1,12 @@
   <div class="img">
     <img src="../../assets/images/logo.png" alt="" width="150px">
-    <h2 style="color: #005B2F;">Inscription</h2>
+    <h2 style="color: #005B2F;">Connexion</h2>
   </div>
 
 <ion-content>
-  
-<form action="">
+ 
+<form (ngSubmit)="onSubmit(p)" #p="ngForm" >
+  <p style="text-align: center; "> <strong style="text-align: center; color: red; font-size: small; padding: 5px;">{{ invalid }}</strong></p>
   <div id="container">
     
    
@@ -13,19 +14,17 @@
       
       <div>
         <label>Email ou nom d'utilisateur</label>
-        <input  type="email" placeholder="votremail@gmail.com" >  
+        <input  type="email" placeholder="votremail@gmail.com" name="email" [(ngModel)]="email" required minlength="3">  
       </div>      
       <div>
         <label>Mot de passe</label>
-        <input type="password" placeholder="******************"> 
+        <input type="password" placeholder="******************" name="password" [(ngModel)]="password"> 
       </div>
-      <a id="a" routerLink="" style="color: #fff !important;">
-        Se connecter
-      </a>
+        <input id="a" type="submit" style="color: #fff !important;" value="Se connecter" >
       
       
-        <a class="gtext" >
-          <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
+        <a class="gtext" style="text-align: center;" >
+         <img src="../../assets/images/google.png" alt="" width="18px"  style="padding-right: 5px;"> <span>Continuer avec google</span>
         </a>
       
 
