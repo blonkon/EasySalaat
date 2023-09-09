@@ -12,9 +12,10 @@ import { SourateComponent } from './component/sourate/sourate.component';
 import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
 
 import { MosqueComponent } from './mosque/mosque.component';
+import { DetailsComponent } from './component/details/details.component';
 
 @NgModule({
-  declarations: [AppComponent,MosqueComponent,SourateComponent, ListeLectureComponent],
+  declarations: [AppComponent,MosqueComponent,SourateComponent, ListeLectureComponent,DetailsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

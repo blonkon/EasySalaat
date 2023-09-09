@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MosqueComponent } from './mosque/mosque.component';
+import { DetailsComponent } from './component/details/details.component';
+import { SourateComponent } from './component/sourate/sourate.component';
 
 const routes: Routes = [
   {
@@ -35,7 +37,14 @@ const routes: Routes = [
   {
     path: 'mosque-aproximite',
     loadChildren: () => import('./page/mosque-aproximite/mosque-aproximite.module').then( m => m.MosqueAproximitePageModule)
-  }
+  },
+  // {
+  //   path: 'detail-sourate/:number',
+  //   loadChildren: () => import('./page/detail-sourate/detail-sourate.module').then( m => m.DetailSouratePageModule)
+  // },
+{ path: 'details/:id', component: DetailsComponent},
+{ path: 'sourate', component: SourateComponent },
+  
    ];
 @NgModule({
   imports: [

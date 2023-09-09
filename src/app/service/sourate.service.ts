@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class SourateService {
 
-  // private apiUrl = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
-  private apiUrl = 'http://api.alquran.cloud/v1/surah';
+  private apiUrl = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
+  // private apiUrl = 'http://api.alquran.cloud/v1/surah';
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +17,21 @@ export class SourateService {
     return this.http.get(this.apiUrl);
   }
 
-  // getSurah(id: number): Observable<any> {
+  // getSurahById(id: number): Observable<any> {
+  //   const surahUrl = `${this.apiUrl}/${id}`;
+  //   return this.http.get(surahUrl);
+  // }
+ getSurahById(id: number): Observable<any> {
+    const surahUrl = `${this.apiUrl}/${id}`;
+    return this.http.get(surahUrl);
+  }
+  // getSurahById(id: number): Observable<any> {
   //   return this.http.get(this.apiUrl + '/' + id);
   // }
+  // getSurahById(id: number): Observable<any> {
+  //   return this.http.get(this.apiUrl + '/' + id);
+  // }
+
+ 
 
 }

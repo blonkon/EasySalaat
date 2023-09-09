@@ -13,8 +13,14 @@ export class SourateComponent  implements OnInit {
 
   ngOnInit(): void {
     this.quranService.getSurahData().subscribe(data => {
-      this.surahData = data.data;
+      this.surahData = data.data.surahs;
       console.log(this.surahData);
     });
   }
+  // ngOnInit(): void {
+  //   this.quranService.getSurahData().subscribe(data => {
+  //     this.surahData = data.data;
+  //     console.log(this.surahData);
+  //   });
+  // }
 }
