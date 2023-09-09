@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
 
 const routes: Routes = [
-  {
-    path: '', component: InscriptionComponent
+  {path: '', component: ConnexionComponent 
    ,
     children: [
       
