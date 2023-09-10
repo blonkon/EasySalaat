@@ -1,4 +1,4 @@
-<h1>Liste de lecture</h1>
+<!-- <h1>Liste de lecture</h1>
 
 <div class="container">
 
@@ -8,4 +8,15 @@
 <div class="contenu">
   <button (click)="openDialog()"> <ion-icon name="add-circle"></ion-icon> Créer une liste de lecture</button>
 </div>
+</div> -->
+
+<div *ngFor="let data of surahData">
+<p>{{data.latitude}}</p>
+<p>{{data.longitude}}</p>
+<p>{{data.direction}}</p>
+
+</div> 
+
+<div *ngIf="qiblaDirection !== undefined">
+  <p>La direction de la Qibla est {{ qiblaDirection }} degrés.</p>
 </div>

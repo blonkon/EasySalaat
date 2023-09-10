@@ -12,13 +12,13 @@ import { AppComponent } from './app.component';
 import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
 import { SourateComponent } from './component/sourate/sourate.component';
 import { AddListeComponent } from './component/add-liste/add-liste.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { DetailSourateComponent } from './component/detail-sourate/detail-sourate.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [AppComponent,SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,MatDialogModule,FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,MatDialogModule,FormsModule,NgxPaginationModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddListeComponent } from '../add-liste/add-liste.component';
+import { ListeLectureService } from 'src/app/service/liste-lecture.service';
 
 @Component({
   selector: 'app-liste-lecture',
@@ -9,9 +10,17 @@ import { AddListeComponent } from '../add-liste/add-liste.component';
 })
 export class ListeLectureComponent  implements OnInit {
 
-  constructor(private dialog : MatDialog) { }
+  surahData:any[]= [];
+  qiblaDirection: number=1;
+  constructor(private dialog : MatDialog, private listeService:ListeLectureService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.listeService.getQiblaDirection(25.4106386,-54.189238 ).subscribe(response => {
+      this.qiblaDirection = response.data.direction;
+    })
+
+  }
 
   openDialog(){
     const dialogRef = this.dialog.open(AddListeComponent, {

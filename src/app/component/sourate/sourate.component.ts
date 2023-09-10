@@ -27,9 +27,6 @@ export class SourateComponent  implements OnInit {
 
   openDetail(sourate: any) {
     const dialogRef = this.dialog.open(DetailSourateComponent, {
-      width: '510px',
-     
-
       data: sourate 
     });
   
