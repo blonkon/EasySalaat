@@ -1,0 +1,63 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+  margin-top: 2rem;
+}
+
+.box {
+  color: #fff;
+  padding: 2rem;
+  background: #005B2F;
+  border-radius: 0 0 200px 0;
+}
+
+ion-icon {
+  font-size: 40px;
+  text-decoration: none;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  padding: 20px;
+}
+
+ul li a {
+  color: #333;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: bold;
+}
+
+li a :hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.logo {
+  text-align: center;
+  margin: auto;
+}
+
+.search {
+  margin: 0.5rem;
+}

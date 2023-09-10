@@ -9,7 +9,20 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'noms',
+    loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
+  },
+  {
+    path: 'mosque',
+    loadChildren: () => import('./page/liste-mosque/liste-mosque.module').then( m => m.ListeMosquePageModule)
+  },
+  {
+    path: 'mosque-aproximite',
+    loadChildren: () => import('./page/mosque-aproximite/mosque-aproximite.module').then( m => m.MosqueAproximitePageModule)
   }
+
 ];
 @NgModule({
   imports: [

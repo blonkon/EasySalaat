@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { SourateComponent } from '../component/sourate/sourate.component';
+import { ListeLectureComponent } from '../component/liste-lecture/liste-lecture.component';
+
 
 @Component({
   selector: 'app-tab2',
@@ -6,6 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
+  show:boolean = true;
+
+  sourate= SourateComponent;
+  liste= ListeLectureComponent;
 
   constructor() {}
 

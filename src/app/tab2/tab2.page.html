@@ -1,17 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>
+      <a tab="tab1" href="/tabs/tab1">
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <h1>Coran</h1>
+    </header>
+  </div>
+
+  <nav>
+    <ul>
+      <li>
+        <a (click)="show = true">Sourates</a>
+      </li>
+      <li>
+        <a (click)="show = false">Liste des lectures</a>
+      </li>
+    </ul>
+  </nav>
+ 
+
+  <div class="search">
+    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+  </div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
+  <div class="container">
   
+    <div class="sourate" *ngIf="show">
+      <ng-container *ngComponentOutlet="sourate"></ng-container>
+    </div>
+    <div class="lecture" *ngIf="!show">
+      <ng-container *ngComponentOutlet="liste"></ng-container>
+    </div>
+    
+   
+  </div>
 </ion-content>

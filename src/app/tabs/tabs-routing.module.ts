@@ -21,6 +21,19 @@ const routes: Routes = [
       },{
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },{
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+
+      },
+      {
+        path: 'mosque',
+        loadChildren: () => import('../page/liste-mosque/liste-mosque.module').then(m => m.ListeMosquePageModule)
+      },
+      {
+        path: 'mosqueaproximite',
+        loadChildren: () => import('../page/mosque-aproximite/mosque-aproximite.module').then(m => m.MosqueAproximitePageModule)
+
       },
       {
         path: '',
