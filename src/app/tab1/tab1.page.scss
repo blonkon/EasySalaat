@@ -34,10 +34,10 @@
   #card3{
     background: #4C6DF6;
   }
-  h6{
+  h5{
     font-weight: 900;
     margin-top: 2px;
-    text-align: justify;
+    text-align: center;
     font-family: 'Poppins';
   }
   ion-card i{
@@ -52,8 +52,8 @@
     justify-content: center;
     gap: 3rem;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
+    margin: 2.5rem;
+    // margin-bottom: 2rem;
   }
 
 .container-priere{
@@ -83,6 +83,13 @@
     font-family: 'Poppins';
 }
 
+
+@media screen and (max-width: 420px) {
+  h5{
+   font-size: 17px;
+   font-weight: bold;
+  }
+}
 
 
  

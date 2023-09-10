@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SourateService } from 'src/app/service/sourate.service';
+import { Tab2PageModule } from 'src/app/tab2/tab2.module';
+import { MatDialog } from '@angular/material/dialog'
+import { DetailSourateComponent } from '../detail-sourate/detail-sourate.component';
+
 
 @Component({
   selector: 'app-sourate',
@@ -12,7 +16,7 @@ export class SourateComponent  implements OnInit {
   data:any;
   
 
-  constructor(private quranService: SourateService) { }
+  constructor(private quranService: SourateService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.quranService.getSurahData().subscribe(data => {
@@ -21,16 +25,17 @@ export class SourateComponent  implements OnInit {
     });
   }
 
-  // openDetail(sourate: any) {
-  //   const dialogRef = this.dialog.open(DetailsComponent, {
-  //     width: '500px',
-  //     height: '500px',
-  //     data: sourate 
-  //   });
+  openDetail(sourate: any) {
+    const dialogRef = this.dialog.open(DetailSourateComponent, {
+      width: '510px',
+     
+
+      data: sourate 
+    });
   
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('Fermeture du dialogue');
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Fermeture du dialogue');
+    });
+  }
 
 }

@@ -21,7 +21,11 @@ const routes: Routes = [
   {
     path: 'mosque-aproximite',
     loadChildren: () => import('./page/mosque-aproximite/mosque-aproximite.module').then( m => m.MosqueAproximitePageModule)
+  },  {
+    path: 'calendar',
+    loadChildren: () => import('./page/calendar/calendar.module').then( m => m.CalendarPageModule)
   }
+
 
 ];
 @NgModule({

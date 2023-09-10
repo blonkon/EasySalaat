@@ -9,13 +9,14 @@
 
     <ion-badge slot="start">{{sourate.number}}</ion-badge>
     <div >
-      <h1>{{sourate.englishName}}</h1>
+      <a (click)="openDetail(sourate)"><h1>{{sourate.englishName}}</h1>
       <p>{{sourate.englishNameTranslation}}</p>
+    </a>
     </div>
   </div>
 
   <div class="name">
-    <p>{{sourate.name}}</p>
+    <a (click)="openDetail(sourate)"> <p>{{sourate.name}}</p></a>
   </div>
 
 </div>

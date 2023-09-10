@@ -1,0 +1,20 @@
+<ion-header>
+  <div class="box">
+    <header>
+      <ion-icon matDialogClose name="close-circle"></ion-icon>
+      <h2>{{detailSourate.englishName}}</h2>
+    </header>
+  </div>
+</ion-header>
+<br>
+<ion-content mat-dialog-content class="dialog-container">
+
+
+  <h3>Ayahs : <span>{{detailSourate.name}}</span></h3>
+  <div *ngFor="let ayah of detailSourate.ayahs">
+    <ion-badge slot="start">{{ayah.number}}</ion-badge>
+    <p class="ayah-text">{{ ayah.text }}</p>
+  </div>
+
+</ion-content>
+

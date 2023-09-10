@@ -26,6 +26,7 @@ border: none;
     justify-content: space-between; 
     margin: 15px; 
     border-bottom: 0.5px solid rgb(222, 221, 221);
+    overflow-x : hidden; 
 }
 .contenu{
     display: flex;  
@@ -43,4 +44,8 @@ ion-badge{
 }
 h1 , p{
     font-family: 'Poppins';
+}
+a{
+    color: #333;
+    cursor: pointer;
 }

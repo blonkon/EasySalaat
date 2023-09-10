@@ -10,6 +10,7 @@ import { ListeLectureComponent } from '../component/liste-lecture/liste-lecture.
 })
 export class Tab2Page {
 
+  SearchText: any;
   show:boolean = true;
 
   sourate= SourateComponent;
