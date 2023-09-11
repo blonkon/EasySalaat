@@ -1,20 +1,21 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-modifierutilisateur',
-  templateUrl: './modifierutilisateur.component.html',
-  styleUrls: ['./modifierutilisateur.component.scss'],
+  selector: 'app-modifieradmin-mosque',
+  templateUrl: './modifieradmin-mosque.component.html',
+  styleUrls: ['./modifieradmin-mosque.component.scss'],
 })
-export class ModifierutilisateurComponent  implements OnInit {
+export class ModifieradminMosqueComponent  implements OnInit {
+
+
   data: any;
   userForm: FormGroup;
   role: string[] = [
     'utilisateur',
+    'admin',
     'admin-mosque',
-    
   ];
   mosque: string[] = [
     'alfirdaous',
@@ -60,5 +61,5 @@ export class ModifierutilisateurComponent  implements OnInit {
               }
           }
         }
-    }
-      //ESSATIONS
+
+}

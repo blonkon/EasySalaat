@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { UtilisateurService } from '../utilisateur.service';
-import { MatDialog } from '@angular/material/dialog';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 @Component({
   selector: 'app-listutilisateur',
@@ -12,7 +11,7 @@ export class ListutilisateurComponent  implements OnInit {
 public data: any[]=[];
   
 public nombre_utilisateur!: number;
-  constructor( private _dialog: MatDialog, private alertController: AlertController, private _service : UtilisateurService) {
+  constructor( private alertController: AlertController, private _service : UtilisateurService) {
    }
 
   ngOnInit() {
@@ -44,7 +43,7 @@ public alertButtons = [
 ];
 async presentAlert() {
   const alert = await this.alertController.create({
-    header: 'Alert!',
+    header: 'Voulez vous supprimer ?',
     buttons: this.alertButtons,
   });
 
@@ -55,20 +54,5 @@ setResult(ev:any) {
   console.log(`Dismissed with role: ${ev.detail.role}`);
 }
 
-openEditForm(data: any) {
-  const dialogRef = this._dialog.open(ModifierutilisateurComponent, {
-    data,
-  });
-
-  dialogRef.afterClosed().subscribe({
-    next: (val) => {
-      if (val) {
-        this._service.getUtilisateurList().forEach((element) => {
-          this.data.push(element);});
-          this.nombre_utilisateur = this.data.length;
-      }
-    },
-  });
-}
 
 }

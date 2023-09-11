@@ -8,7 +8,7 @@ import { ExploreContainerComponent } from './explore-container/explore-container
 
 const routes: Routes = [
   {
-    path: '', component: InscriptionComponent
+    path: ''
    ,
     children: [
       
@@ -23,6 +23,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
   },
+  
   {
     path: 'accueilsuperadmin',
     loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)

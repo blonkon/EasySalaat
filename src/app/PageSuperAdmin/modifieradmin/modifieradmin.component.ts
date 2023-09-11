@@ -1,28 +1,24 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-modifierutilisateur',
-  templateUrl: './modifierutilisateur.component.html',
-  styleUrls: ['./modifierutilisateur.component.scss'],
+  selector: 'app-modifieradmin',
+  templateUrl: './modifieradmin.component.html',
+  styleUrls: ['./modifieradmin.component.scss'],
 })
-export class ModifierutilisateurComponent  implements OnInit {
+export class ModifieradminComponent  implements OnInit {
+
   data: any;
   userForm: FormGroup;
   role: string[] = [
     'utilisateur',
+    'admin',
     'admin-mosque',
-    
+    'super-admin',
   ];
-  mosque: string[] = [
-    'alfirdaous',
-    'masdjid-kabir',
-    'missiriba',
-    'mosque de djene',
-  ];
-  constructor(
+  constructor(private router: Router,
     private formBuilder: FormBuilder, private _service: UtilisateurService,
   ) {
   
@@ -60,5 +56,8 @@ export class ModifierutilisateurComponent  implements OnInit {
               }
           }
         }
-    }
-      //ESSATIONS
+
+        backtolist(){
+          this.router.navigate(['../listadmin']);
+        }
+}

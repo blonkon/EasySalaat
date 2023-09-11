@@ -11,6 +11,6 @@ export class InscriptionComponent  implements OnInit {
 
   ngOnInit() {}
   navigate(){
-    this.router.navigate(['../login'])}
+    this.router.navigateByUrl('../../profilesuperadmin')}
 
 }

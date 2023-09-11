@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UtilisateurService {
+export class AdminService {
 
   private updateEvent = new Subject<void>();
 
@@ -14,9 +14,8 @@ export class UtilisateurService {
   triggerUpdate() {
     this.updateEvent.next();
   }
-  list_utilisateur: any =[
-    {name: 'Drissa Keita', img: "../../assets/images/User1.png"},
-    {name: 'Oumar Keita', img: "../../assets/images/User1.png"},
+  list_admin: any =[
+    {name: 'Amidou traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
@@ -42,33 +41,26 @@ export class UtilisateurService {
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    
   ];
 
   constructor() { }
 
-  getUtilisateurList(): Observable<any> {
-    return this.list_utilisateur;
+  getAdminList(): Observable<any> {
+    return this.list_admin;
   }
 
-  deleteUtilisateur(id: number): Observable<any> {
+  deleteAdmin(id: number): Observable<any> {
     // return this._http.delete(`http://localhost:3000/employees/${id}`);
-    return this.list_utilisateur.splice(id);
+    return this.list_admin.splice(id);
   }
   
   // Méthode pour mettre à jour une mesure existante
-  modifyUtilisateur(id: number, data:any): void {
+  modifyAdmin(id: number, data:any): void {
       // return this._http.put(`http://localhost:3000/employees/${id}`, data);
-    const index = this.list_utilisateur.findIndex((meas:any) => meas.id === id);
+    const index = this.list_admin.findIndex((meas:any) => meas.id === id);
     // Si l'indice est trouvé, mettez à jour la mesure
       if (index !== -1) { 
-      this.list_utilisateur[index] = data;
+      this.list_admin[index] = data;
     }
   }
-
 }
