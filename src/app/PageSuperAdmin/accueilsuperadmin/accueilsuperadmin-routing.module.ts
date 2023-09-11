@@ -12,11 +12,15 @@ import { ModifierutilisateurComponent } from '../modifierutilisateur/modifieruti
 import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeSuperAdminComponent
+  },
+  {
+    path:'calendar', component: CalendarComponent
   },
   {
     path: 'listutil', component: ListutilisateurComponent,
