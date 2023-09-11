@@ -22,7 +22,8 @@ import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-
 @NgModule({
   declarations: [AppComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
 
-  imports: [BrowserModule,FormsModule ,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, provideFirebaseApp(() => initializeApp(environment.firebase)),
+  imports: [BrowserModule,FormsModule ,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, 
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),
 		provideStorage(() => getStorage())],

@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>accueilsuperadmin</ion-title>
   </ion-toolbar>
@@ -10,4 +10,19 @@
       <ion-title size="large">accueilsuperadmin</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+</ion-content> -->
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+  <ion-tab-button tab="accueilsuperadmin" href="/superadmin/accueilsuperadmin" >
+  <ion-icon name="home"></ion-icon>
+  Accueil
+  </ion-tab-button>
+  
+  <ion-tab-button tab="profilesuperadmin" href="/superadmin/profilesuperadmin">
+  <ion-icon name="person-circle-outline"></ion-icon>
+  profile
+  </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

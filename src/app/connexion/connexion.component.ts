@@ -34,9 +34,9 @@ export class ConnexionComponent  implements OnInit {
           await loading.dismiss();
       
           if (user) {
+            
             this.router.navigateByUrl('/accueilsuperadmin', { replaceUrl: true });
           } else {
-            console.log(user)
             this.invalid='Login failed Please try again!';
           }
 
