@@ -1,12 +1,15 @@
-<ion-header>
+
+<ion-header style="background-color: #fff;">
   <div class="box">
     <header>
       <ion-icon matDialogClose name="close-circle"></ion-icon>
-      <h2>{{detailSourate.englishName}}</h2>
+      <div class="title">
+        <h1>{{detailSourate.englishName}}</h1>
+        <span>{{detailSourate.name}}</span>
+      </div>
+     
     </header>
   </div>
-</ion-header>
-<br>
 <ion-content [fullscreen]="true">
 
 

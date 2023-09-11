@@ -4,27 +4,27 @@ div{
    justify-content: space-between;
     padding: 1rem;
 }
-ion-header{
-  width: 100%;
-}
-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
 
-  }
+header{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
   
-  .box {
-    color: #fff;
-    padding: 2rem;
-    background: #005B2F;
-    border-radius: 0 0 200px 0;
-  }
-  ion-icon{
-    font-size: 30px;
-    cursor: pointer;
-  }
+}
+.box{
+color: #fff;
+padding: 1.5rem;
+background: #005B2F;
+border-radius: 0 0 150px 0;
+border: none;
+}
+ion-icon{
+  font-size: 40px;
+  color: red;
+}
+  
+ 
   .box p{
     text-align: center;
   }
