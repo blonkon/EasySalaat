@@ -40,6 +40,14 @@ const routes: Routes = [
         loadChildren: () => import('../page/calendar/calendar.module').then( m => m.CalendarPageModule)
       },
       {
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+      },
+      {
+        path: 'preche',
+        loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

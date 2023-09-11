@@ -1,0 +1,49 @@
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>
+      <a tab="tab1" href="/tabs/tab1">
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <div class="title">
+        <h1>PRECHES</h1>
+        <span>Precheurs locaux</span>
+      </div>
+
+    </header>
+  </div>
+
+  <div class="search">
+    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+  </div>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+
+  <ion-list>
+
+    <ion-item  *ngFor="let preacher of preachers">
+
+      <ion-header class="header">
+        <!-- <span>num</span> -->
+        <ion-badge slot="start">{{currentNumber}}</ion-badge>
+        <ion-label>
+          <ion-label>
+            <h1>{{ preacher.name }}</h1>
+            <p>{{ preacher.description }}</p>
+          </ion-label>
+        </ion-label>
+      </ion-header>
+
+
+      <ion-list>
+        <ion-label  (click)="playPause(preacher.audioUrl)">
+          <ion-icon   [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
+        </ion-label>
+      </ion-list>
+
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>

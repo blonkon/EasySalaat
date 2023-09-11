@@ -34,10 +34,12 @@
   #card3{
     background: #4C6DF6;
   }
+
   h5{
     font-weight: 900;
     margin-top: 2px;
     text-align: center;
+
     font-family: 'Poppins';
   }
   ion-card i{
@@ -83,14 +85,12 @@
     font-family: 'Poppins';
 }
 
-
 @media screen and (max-width: 420px) {
   h5{
    font-size: 17px;
    font-weight: bold;
   }
 }
-
 
  
 

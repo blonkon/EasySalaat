@@ -1,5 +1,8 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 const routes: Routes = [
   {
@@ -21,10 +24,19 @@ const routes: Routes = [
   {
     path: 'mosque-aproximite',
     loadChildren: () => import('./page/mosque-aproximite/mosque-aproximite.module').then( m => m.MosqueAproximitePageModule)
-  },  {
+  },
+  {
     path: 'calendar',
     loadChildren: () => import('./page/calendar/calendar.module').then( m => m.CalendarPageModule)
-  }
+  },
+  {
+    path: 'preche',
+    loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
+  },
+  {
+    path:'connexion',component:ConnexionComponent
+  },
+  {path: 'inscription',component:InscriptionComponent},
 
 
 ];

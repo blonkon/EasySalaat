@@ -39,7 +39,6 @@ export class Tab1Page {
       heure : '19:48'
     },
   ]
-  
-  constructor() {}
+    constructor() {}
 
 }

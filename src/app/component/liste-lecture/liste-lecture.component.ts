@@ -10,6 +10,7 @@ import { ListeLectureService } from 'src/app/service/liste-lecture.service';
 })
 export class ListeLectureComponent  implements OnInit {
 
+
   surahData:any[]= [];
   qiblaDirection: number=1;
   constructor(private dialog : MatDialog, private listeService:ListeLectureService) { }

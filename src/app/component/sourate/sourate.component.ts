@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SourateService } from 'src/app/service/sourate.service';
-import { Tab2PageModule } from 'src/app/tab2/tab2.module';
 import { MatDialog } from '@angular/material/dialog'
 import { DetailSourateComponent } from '../detail-sourate/detail-sourate.component';
-
 
 @Component({
   selector: 'app-sourate',
@@ -11,6 +9,7 @@ import { DetailSourateComponent } from '../detail-sourate/detail-sourate.compone
   styleUrls: ['./sourate.component.scss'],
 })
 export class SourateComponent  implements OnInit {
+
 
   surahData:any[]= [];
   data:any;

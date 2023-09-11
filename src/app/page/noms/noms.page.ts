@@ -8,6 +8,7 @@ import { NomsService } from 'src/app/service/noms.service';
 })
 export class NomsPage implements OnInit {
 
+
   noms :any[]= [];
 
   constructor(private nomService: NomsService) { }
@@ -20,5 +21,6 @@ export class NomsPage implements OnInit {
   }
 
   
+
 
 }
