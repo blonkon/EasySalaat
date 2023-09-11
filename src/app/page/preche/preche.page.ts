@@ -11,13 +11,15 @@ export class PrechePage {
   playIcon = 'pause';
   audioFile!: MediaObject;// Déclarez la variable pour gérer la lecture audio
   preachers = [
-    { name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    { name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audio/preche1.mp3' },
-    { name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    { name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    { name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
     // Ajoutez d'autres prêcheurs ici
   ];
+  currentNumber = 1;
 
 
   constructor(private media: Media) {
@@ -43,7 +45,18 @@ export class PrechePage {
     }
   }
 
+  addPreacher() {
+    // Ajoutez un prêcheur à la liste
+    const newPreacher = {
+      name: '',
+      description: '',
+      audioUrl: '',
+    };
+    this.preachers.push(newPreacher);
+
+    // Incrémentez le numéro actuel
+    this.currentNumber++;
+  }
+
 
 }
-
-//===========================nouvelle methode============================
