@@ -5,20 +5,18 @@ import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
+import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
 
 const routes: Routes = [
   {
-    path: ''
+    path: '', component: InscriptionComponent
    ,
     children: [
       
   {
     path: 'inscription', component: InscriptionComponent
   },
-  {
-    path: 'login', component: ConnexionComponent
-  },
-  
+
   {
     path: '',
     loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
