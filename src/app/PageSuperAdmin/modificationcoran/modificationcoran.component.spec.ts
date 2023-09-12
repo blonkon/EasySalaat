@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AjouterModifierCoranComponent } from './ajouter-modifier-coran.component';
+import { ModificationcoranComponent } from './modificationcoran.component';
 
-describe('AjouterModifierCoranComponent', () => {
-  let component: AjouterModifierCoranComponent;
-  let fixture: ComponentFixture<AjouterModifierCoranComponent>;
+describe('ModificationcoranComponent', () => {
+  let component: ModificationcoranComponent;
+  let fixture: ComponentFixture<ModificationcoranComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjouterModifierCoranComponent ],
+      declarations: [ ModificationcoranComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AjouterModifierCoranComponent);
+    fixture = TestBed.createComponent(ModificationcoranComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
