@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ConnexionComponent } from './connexion/connexion.component'; 
+import { ConnexionComponent } from './connexion/connexion.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
+import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
 
 const routes: Routes = [
   {
-    path: '', component: InscriptionComponent
+    path: '', component: SuperadminPage
    ,
     children: [
-      
+
   {
     path: 'inscription', component: InscriptionComponent
   },
@@ -20,7 +21,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
   },
-  
+
   {
     path: 'accueilsuperadmin',
     loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)

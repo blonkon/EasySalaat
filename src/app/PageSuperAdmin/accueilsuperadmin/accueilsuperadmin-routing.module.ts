@@ -24,7 +24,11 @@ import { ModificationMosqueeComponent } from '../modification-mosquee/modificati
 import { AjoutcoranComponent } from '../ajoutcoran/ajoutcoran.component';
 import { DetailcoranComponent } from '../detailcoran/detailcoran.component';
 import { ModificationcoranComponent } from '../modificationcoran/modificationcoran.component';
+import { CalendrierComponent } from '../calendrier/calendrier.component';
+import { NgxAngularMaterialHijriAdapterModule } from 'ngx-angular-material-hijri-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
+import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
 
 const routes: Routes = [
   {
@@ -37,6 +41,9 @@ const routes: Routes = [
   {
     path: 'ajoutmosquee',
     component: AjoutMosqueeComponent
+  },
+  {
+    path: 'calendrier', component: CalendrierComponent
   },
   {
     path: 'detailmosquee',
@@ -129,7 +136,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), NgxAngularMaterialHijriAdapterModule],
   exports: [RouterModule],
+  providers: [
+    {
+      provide: DateAdapter,
+      useClass: NgxAngularMaterialHijriAdapterService,
+    },
+    // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
+    { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
+    // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
+    { provide: MAT_DATE_LOCALE, useValue: "fr"},
+]
 })
 export class AccueilsuperadminPageRoutingModule {}
