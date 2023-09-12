@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -9,6 +9,9 @@ import { Observable } from 'rxjs';
 export class SourateService {
 
    sourateUrl: any;
+
+   private sourateSubject = new Subject<any>();
+   sourateData$ = this.sourateSubject.asObservable();
    
   private apiUrl = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
  
@@ -20,5 +23,7 @@ export class SourateService {
 
   setSourateUrl(sourate: any) {
     this.sourateUrl = sourate; 
+    console.log(sourate)
+    this.sourateSubject.next(sourate);
   }
 }

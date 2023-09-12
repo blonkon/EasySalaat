@@ -1,13 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>calendar</ion-title>
-  </ion-toolbar>
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>      
+      <a routerLink="/tabs/tab1">
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <h1>Calendrier</h1>
+    </header>
+  </div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calendar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+ <div class="canlender" style="width: 90%; margin: 1rem;">
+  <ion-datetime size="cover"></ion-datetime>
+ </div>
+
+ <div class="name">
+ <div class="container"  *ngFor="let jour of jours">
+ 
+  <div class="contenu">
+      <h1>{{jour.nom}}</h1>
+      <p>{{jour.desc}}</p>
+  </div>
+
+    <span>{{jour.date}}</span>
+  </div>
+
+</div>
 </ion-content>

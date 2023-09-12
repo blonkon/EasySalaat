@@ -16,11 +16,7 @@ export class SourateComponent  implements OnInit {
   surahData:any[]= [];
   // data:any;
 
-  name="";
-  transtale:any;
-  ayahs: [] = [];
-  translateAyah: [] = [];
-  pageNum:number=1
+
 
   constructor(private http : HttpClient,private route: ActivatedRoute,
     private sourateService: SourateService,private dialog: MatDialog,private router:Router) { }
@@ -35,7 +31,7 @@ export class SourateComponent  implements OnInit {
   openDetail(sourate: any) {
     // Mettez à jour la propriété sourateUrl du service
     this.sourateService.setSourateUrl(sourate);
-    console.log(sourate);
+   // console.log(sourate);
     this.router.navigate(['/tabs/sourate']);
   }
   // openDetail(sourate: any) {
