@@ -15,6 +15,7 @@ import { ModifierFrequenceRadioComponent } from './PageSuperAdmin/modifier-frequ
 import { ListeFrequenceRadioComponent } from './PageSuperAdmin/liste-frequence-radio/liste-frequence-radio.component';
 import { ModifierutilisateurComponent } from './PageSuperAdmin/modifierutilisateur/modifierutilisateur.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { DetailadminMosqueComponent } from './PageSuperAdmin/detailadmin-mosque/detailadmin-mosque.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component'; 
 import { ListutilisateurComponent } from './PageSuperAdmin/listutilisateur/listutilisateur.component';
@@ -26,7 +27,7 @@ import { ModifieradminComponent } from './PageSuperAdmin/modifieradmin/modifiera
 import { ModifieradminMosqueComponent } from './PageSuperAdmin/modifieradmin-mosque/modifieradmin-mosque.component';
 import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.component';
 @NgModule({
-  declarations: [AppComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
+  declarations: [AppComponent,DetailadminMosqueComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
   imports: [BrowserModule,FormsModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -9,7 +9,7 @@ import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosq
 
 const routes: Routes = [
   {
-    path: '', component: InscriptionComponent
+    path: ''
    ,
     children: [
       
