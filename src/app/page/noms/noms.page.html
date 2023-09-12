@@ -23,6 +23,49 @@
 <ion-content [fullscreen]="true" >
 
 
+  <div class="container" *ngFor="let nom of data">
+
+ 
+  <div class="contenu">
+
+    <ion-badge slot="start">{{nom.number}}</ion-badge>
+    <div >
+      <h1>{{nom.transliteration}}</h1>
+      <p>{{nom.fr.meaning}}</p>
+    </div>
+  </div>
+
+  <div class="name">
+    <p>{{nom.name}}</p>
+  </div>
+
+</div>
+</ion-content>
+<!-- <ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>
+
+      <a routerLink="/tabs/tab1">
+
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <div class="title">
+        <h1>Asma Al-Husna</h1>
+        <span>Les 99 noms d'Allah</span>
+      </div>
+     
+    </header>
+  </div> 
+  
+  <div class="search">
+    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+  </div>
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+
+
   <div class="container" *ngFor="let nom of noms">
 
  
@@ -40,4 +83,4 @@
   </div>
 
 </div>
-</ion-content>
+</ion-content> -->

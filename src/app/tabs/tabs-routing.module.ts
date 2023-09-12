@@ -48,6 +48,10 @@ const routes: Routes = [
         loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
       },
       {
+        path: 'sourate',
+        loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

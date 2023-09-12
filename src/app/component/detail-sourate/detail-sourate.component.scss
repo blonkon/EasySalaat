@@ -30,7 +30,7 @@ ion-icon{
   }
 
   ion-content {
-    width: 100%;
+    width: 400px;
     height: 500px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -51,4 +51,8 @@ ion-icon{
 
   pagination-controls{
    text-align: center;
+  }
+  h3{
+    text-align: center;
+    margin: 1rem;
   }
