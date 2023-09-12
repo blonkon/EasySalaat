@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Capacitor } from '@capacitor/core';
-
-
-import { Media, MediaObject } from '@ionic-native/media/ngx'; // Importez le plugin Media
+import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { Platform } from '@ionic/angular';
 
 
@@ -15,7 +13,7 @@ import { Platform } from '@ionic/angular';
 })
 export class PrechePage {
   playIcon = 'pause';
-  audioFile!: MediaObject;// Déclarez la variable pour gérer la lecture audio
+  audioFile!: MediaObject;
   preachers = [
     {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' ,isPlaying: false },
     {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3',isPlaying: false  },
