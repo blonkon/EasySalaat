@@ -15,6 +15,8 @@ export class UtilisateurService {
     this.updateEvent.next();
   }
   list_utilisateur: any =[
+    {name: 'Drissa Keita', img: "../../assets/images/User1.png"},
+    {name: 'Oumar Keita', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
@@ -41,6 +43,11 @@ export class UtilisateurService {
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
     {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    
   ];
 
   constructor() { }

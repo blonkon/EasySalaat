@@ -28,7 +28,6 @@ export class InscriptionComponent  implements OnInit {
      const regex = new RegExp(regexEmail);
      const regex1 = new RegExp(regexNom);
      const regex2 = new RegExp(regexPassorwd);
-
      if (regex.test(this.email)) {
       if (regex1.test(this.nom)) {
         if (regex2.test(this.mdp)) {

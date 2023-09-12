@@ -1,3 +1,37 @@
-<p>
-  mosquee works!
-</p>
+<ion-header class="head">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <ion-icon name="arrow-undo" style="font-size: 30px; margin: 20px; color: #fff;" [routerLink]="['']"></ion-icon>
+    <strong style="font-size: 20px; color: #fff; margin: 20px;">23 <i style="font-size: 20px;" class="fa-solid fa-mosque"></i></strong>
+  </div>
+    <div class="img">
+      <img src="../../assets/images/mosqueeee 1.png" alt="">
+    </div>
+</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['../ajoutmosquee']" >
+          <ion-icon style="font-weight: bold; color: #005B2F; font-size: 40px;" name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-searchbar slot="end" (ionChange)="rechercher($event)"></ion-searchbar>
+    </ion-toolbar>
+
+<ion-content>
+
+<div class="listuser">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="../../assets/images/mosqueeee 1.png" style="border-radius: 50%;"  />
+          </ion-thumbnail>
+          <ion-label>Abdoulaye Konté</ion-label>
+          <div class="iconitem">
+            <ion-icon  name="eye" [routerLink]="['../detailmosquee']"></ion-icon>
+          <ion-icon name="create-outline" style="color: #005B2F;" [routerLink]="['../modificationmosquee']" ></ion-icon>
+          <ion-icon name="trash" style="color: red;"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+</div>
+
+</ion-content>

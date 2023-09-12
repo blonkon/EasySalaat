@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { UtilisateurService } from '../utilisateur.service';
-
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 @Component({
   selector: 'app-listutilisateur',
@@ -44,7 +43,7 @@ public alertButtons = [
 ];
 async presentAlert() {
   const alert = await this.alertController.create({
-    header: 'Alert!',
+    header: 'Voulez vous supprimer ?',
     buttons: this.alertButtons,
   });
 
@@ -54,7 +53,5 @@ async presentAlert() {
 setResult(ev:any) {
   console.log(`Dismissed with role: ${ev.detail.role}`);
 }
-
-
 
 }

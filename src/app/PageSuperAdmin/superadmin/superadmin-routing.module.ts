@@ -16,12 +16,6 @@ const routes: Routes =
         loadChildren: () => import('../accueilsuperadmin/accueilsuperadmin.module').then(m => m.AccueilsuperadminPageModule)
       },
       {
-        path: 'login',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-
-      },
-      {
         path: 'profilesuperadmin',
       loadChildren: () => import('../profilesuperadmin/profilesuperadmin.module').then(m => m.ProfilesuperadminPageModule)
       },

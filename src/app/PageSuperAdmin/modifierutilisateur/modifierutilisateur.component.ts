@@ -9,13 +9,12 @@ import { UtilisateurService } from '../utilisateur.service';
   styleUrls: ['./modifierutilisateur.component.scss'],
 })
 export class ModifierutilisateurComponent  implements OnInit {
-  userForm: FormGroup;
   data: any;
+  userForm: FormGroup;
   role: string[] = [
     'utilisateur',
-    'admin',
     'admin-mosque',
-    'super-admin',
+    
   ];
   mosque: string[] = [
     'alfirdaous',
@@ -45,6 +44,21 @@ export class ModifierutilisateurComponent  implements OnInit {
   }
   ////////////////////////////////
    ///LAFIN
-   onSubmit(){}
+  
+      onSubmit() {
+        if (this.userForm.valid) {
+          const mesure = this.userForm.value; 
+          if (this.data) {         
+            this._service
+            .modifyUtilisateur(this.data.id, this.userForm.value);
+            this.userForm.reset();
+            // Émettez un événement pour indiquer que les données ont été ajoutées
+            this._service.triggerUpdate();
+                     
+          } else {
+              this.userForm.reset(); 
+              }
+          }
+        }
     }
       //ESSATIONS
