@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'login', component: ConnexionComponent
   },
   {
-    path: 'User',
+    path: 'tabs',
     component: TabsPage,
     children: [
       {
