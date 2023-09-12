@@ -1,22 +1,27 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, CanActivateFn } from '@angular/router';
 import { Observable } from 'rxjs';
+import { DataService } from './service/data.service';
 
 @Injectable({
   providedIn: 'root',
 })
 class RoleGuards {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private dataservice : DataService) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree {
-    const userRole = 3; 
+    let userRole = this.dataservice.user.role;
+    
 
-    // Vérifiez si le rôle de l'utilisateur est supérieur à 2.
-    if (userRole > 2) {
-      return true; // L'utilisateur est autorisé à accéder à la route.
+    if (userRole > 1) {
+      // Vérifiez si la route commence par 'accueiladmin'
+      if (state.url.startsWith('/accueilsuperadmin')) {
+        return true; // L'utilisateur est autorisé à accéder à la route.
+      }
+      return this.router.parseUrl('/accueilsuperadmin'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
     } else {
-      // Redirigez l'utilisateur vers une autre page s'il n'a pas les autorisations nécessaires.
-      return this.router.parseUrl('/autre-page'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
+      // L'utilisateur n'a pas les autorisations nécessaires, redirigez-le vers une autre page.
+      return this.router.parseUrl('/login'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
     }
   }
 }

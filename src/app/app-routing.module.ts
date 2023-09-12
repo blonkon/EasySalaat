@@ -5,6 +5,7 @@ import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
+import { RoleGuard } from './role.guards';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'accueilsuperadmin',
-    loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)
+    loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule),
+    canActivate: [RoleGuard]
    }
   // {
   //   path: '',

@@ -39,38 +39,37 @@
 
 <ion-content>
 
-<form action="">
+<form (ngSubmit)="onSubmit(a)" #a="ngForm">
+  <p style="text-align: center; "> <strong style="text-align: center; color: red; font-size: small; padding: 5px;">{{ invalid }}</strong></p>
 <div id="container">
   
  
   <div class="form-controle">
     <div>
       <label>Nom Complet</label>
-      <input  type="email" placeholder="Ex. Lanciné keita " >  
+      <input  type="text" placeholder="Ex. Lanciné keita " name="nom" [(ngModel)]="nom">  
     </div>  
     <div>
       <label>Email ou nom d'utilisateur</label>
-      <input  type="email" placeholder="Exemple. votremail@gmail.com" >  
+      <input  type="email" placeholder="Exemple. votremail@gmail.com" name="email" [(ngModel)]="email">  
     </div>      
     <div>
       <label>Mot de passe</label>
-      <input type="password" placeholder="******************"> 
+      <input type="password" placeholder="******************" name="mdp" [(ngModel)]="mdp"> 
     </div>
     <div>
       <label>Répeter Mot de passe</label>
-      <input type="password" placeholder="******************"> 
+      <input type="password" placeholder="******************" name="rmdp" [(ngModel)]="rmdp"> 
     </div>
-    <a id="a" (click)="navigate()" style="color: #fff !important;">
-      Se connecter
-    </a>
-    
+    <input type="submit" id="a" style="color: #fff !important;" value=" Se connecter ">
+     
     
       <a class="gtext" >
         <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
       </a>
     
 
-    <h5 style="text-align: center;">J'ai déjà un compte, <a routerLinkActive="" style="color: #005B2F !important; font-weight: bold;">Se connecter</a></h5>
+    <h5 style="text-align: center;">J'ai déjà un compte, <a routerLink="" style="color: #005B2F !important; font-weight: bold;">Se connecter</a></h5>
   </div>
 </div>
 </form>

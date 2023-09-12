@@ -5,8 +5,6 @@ import { Roles } from "./Roles.enum";
   })
 export class Users {
         nom? : string
-        prenom? : string
-        numero? : number
         email? : string
         motdepasse? : string
         role? : Roles
