@@ -16,10 +16,9 @@ import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosq
 import { FormsModule } from '@angular/forms';
 import { DetailMosqueeComponent } from './PageSuperAdmin/detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from './PageSuperAdmin/modification-mosquee/modification-mosquee.component';
-import { CalendarComponent } from './PageSuperAdmin/calendar/calendar.component';
 
 @NgModule({
-  declarations: [AppComponent, DetailutilisateurComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ModifierutilisateurComponent,MosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, ModificationMosqueeComponent, CalendarComponent],
+  declarations: [AppComponent, DetailutilisateurComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ModifierutilisateurComponent,MosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, ModificationMosqueeComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

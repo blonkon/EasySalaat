@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
-import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
-import { CalendarComponent } from './PageSuperAdmin/calendar/calendar.component';
 
 const routes: Routes = [
   {
