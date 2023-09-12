@@ -1,0 +1,96 @@
+*{
+    margin: 0; padding: 0;
+}
+.container {
+    background-image: url('../../assets/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 94vh; 
+    opacity: 0.8;
+    // background-position: center;
+  }
+  .container .title{
+    padding-top: 1.5rem;
+     
+  }
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+  .title{
+    text-align: center; 
+  }
+  .card {
+    width: 67px;
+    height: 62px; 
+  }
+  #card1{
+    background: #91672C;
+    opacity: 1;
+  }
+  #card2{
+    background: #9B26B6;
+    opacity: 1;
+  }
+  #card3{
+    background: #4C6DF6;
+  }
+
+  h5{
+    font-weight: bold !important;
+    margin-top: 2px;
+    text-align: center;
+
+    font-family: 'Poppins';
+  }
+  ion-card i{
+    color: white !important;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .logo{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 2.5rem;
+    // margin-bottom: 2rem;
+  }
+
+.container-priere{
+    margin: auto;
+    width: 377px;
+    height: 400px;
+    background: #fff;
+    border-radius: 15px;
+}
+.clock{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.card-circle{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.card-circle i {
+    margin-top: 1rem;
+}
+.clock p{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+@media screen and (max-width: 420px) {
+  h5{
+   font-size: 17px;
+   font-weight: bold;
+  }
+}
+
+ 
+

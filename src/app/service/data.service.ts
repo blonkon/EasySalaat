@@ -16,7 +16,6 @@ export class DataService {
   test : boolean = false; 
   
   constructor(private firestore: Firestore,private auth: Auth) { 
-    
    }
 
   //fonction pour ajouter un user 

@@ -28,7 +28,7 @@ export class ConnexionComponent  implements OnInit {
       
           if (user) {
             this.invalid="";
-            this.router.navigateByUrl('/accueilsuperadmin', { replaceUrl: true });
+            this.router.navigateByUrl('/Admin/accueilsuperadmin', { replaceUrl: true });
           } else {
             this.invalid='Login failed Please try again!';
           }

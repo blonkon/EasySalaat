@@ -15,13 +15,16 @@ class RoleGuards {
 
     if (userRole > 1) {
       // Vérifiez si la route commence par 'accueiladmin'
-      if (state.url.startsWith('/accueilsuperadmin')) {
+      if (state.url.startsWith('/Admin')) {
         return true; // L'utilisateur est autorisé à accéder à la route.
       }
-      return this.router.parseUrl('/accueilsuperadmin'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
+      return this.router.parseUrl('/Admin/accueilsuperadmin'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
     } else {
+      if (state.url.startsWith('/Admin')) {
+        return this.router.parseUrl('/User/tab1'); 
+      }
       // L'utilisateur n'a pas les autorisations nécessaires, redirigez-le vers une autre page.
-      return this.router.parseUrl('/login'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
+      return this.router.parseUrl('/User/tab1'); // Remplacez '/autre-page' par le chemin de redirection souhaité.
     }
   }
 }

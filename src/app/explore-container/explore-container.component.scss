@@ -1,3 +1,4 @@
+
 #container {
   // text-align: center;
 
@@ -48,3 +49,12 @@
 .form-controle div{
   display: grid;
 }
+// .bg-image{
+//   background-image: url('../../assets/bg.png');
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: center;
+//  }
+ .no-scroll .scroll-content{
+   overflow: hidden;
+ }
