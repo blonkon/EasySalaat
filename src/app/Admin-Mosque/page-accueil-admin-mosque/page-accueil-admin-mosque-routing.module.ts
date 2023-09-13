@@ -14,14 +14,16 @@ import { ProfileUpdateComponent } from '../profile-update/profile-update.compone
 import { ProgrammeAjouterComponent } from '../programme-ajouter/programme-ajouter.component';
 import { ProgrammeListeComponent } from '../programme-liste/programme-liste.component';
 import { ProgrammeUpdateComponent } from '../programme-update/programme-update.component';
+import { DetailsAnnonceComponent } from '../details-annonce/details-annonce.component';
+import { DetailsProgrammeComponent } from '../details-programme/details-programme.component';
+import { DetailsDocumentComponent } from '../details-document/details-document.component';
+import { DetailsDocVideoComponent } from '../details-doc-video/details-doc-video.component';
+import { DetailsDocRecitationComponent } from '../details-doc-recitation/details-doc-recitation.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AccueilAdminSimpleComponent,
-  },
-  {
-    path: 'accueil-admin-simple', component: AccueilAdminSimpleComponent
   },
   {
     path: 'horaire', component: HoraireComponent
@@ -39,6 +41,9 @@ const routes: Routes = [
     path: 'annonce-liste', component: AnnonceListeComponent
   },
   {
+    path: 'details-annonce', component: DetailsAnnonceComponent
+  },
+  {
     path: 'programme-liste', component: ProgrammeListeComponent
   },
   {
@@ -46,6 +51,9 @@ const routes: Routes = [
   },
   {
     path: 'programme-update', component: ProgrammeUpdateComponent
+  },
+  {
+    path: 'details-programme', component: DetailsProgrammeComponent
   },
   {
     path: 'document-liste', component: DocumentListeComponent
@@ -56,6 +64,15 @@ const routes: Routes = [
   {
     path: 'document-update', component: DocumentUpdateComponent
   },
+  {
+    path: 'details-document', component: DetailsDocumentComponent
+  },
+  {
+    path:'details-doc-video', component: DetailsDocVideoComponent
+  },
+  {
+    path: 'details-doc-recitation', component: DetailsDocRecitationComponent
+  }
   
 
 ];

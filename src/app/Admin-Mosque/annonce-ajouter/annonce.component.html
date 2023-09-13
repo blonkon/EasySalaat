@@ -1,27 +1,30 @@
 <ion-content>
-<div id="container" style="display: grid;">
   <div class="retour">
     <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
-    <img src="../../../assets/images/bak.png"  [routerLink]="['../annonce-liste']" style="margin-left: -95px;" alt="">
+    <img src="../../../assets/images/bak.png"  [routerLink]="['../annonce-liste']" style="margin-top:20px;" alt="">
   </div>
+<div id="container" style="display: grid;">
+ 
 <div class="img">
   <img src="../../../assets/images/Rectangle 17.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
 </div>
-<div style="margin-top: -13vh;">
-  <h2 style="color: #005B2F; text-align: center; margin-top: 146px;">Annonce</h2>
+<div style="margin-top: -21vh;">
+  <h2 style="color: #005B2F; text-align: center; margin-top: 164px;">Annonce</h2>
 </div>
 </div>
 <div class="form-controle">
+  <form action="annonce-liste.component.html" (submit)="saveAnnonce()" method="post" #ann="ngForm">
   <div>
-   <label for="">Titre D'annonce</label>
-    <input name="fajr" type="text">  
+   <label >Titre D'annonce</label>
+    <input  [(ngModel)]="annonce.titre" name="titre" type="text">  
   </div>
   <div>
-    <label for="">Description</label>
-    <input name="chorouq" type="text" > 
+    <label >Description</label>
+    <input [(ngModel)]="annonce.description" name="description" type="text" > 
   </div>
-  <input type="button" value="Enregistrer" style="background-color: #005B2F; color: white; font-weight: bold;">
-  
+  <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button" (click)="saveAnnonce()">Enregistrer</button>
+  <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> -->
+</form>
 </div>
 
 </ion-content>

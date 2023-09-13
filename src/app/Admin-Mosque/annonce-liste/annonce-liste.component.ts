@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AnnonceServiceService } from '../annonce-service.service';
 
 @Component({
   selector: 'app-annonce-liste',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./annonce-liste.component.scss'],
 })
 export class AnnonceListeComponent  implements OnInit {
-
-  constructor() { }
+   annonceTab: any[]= [];
+  
+  constructor(private annonceService: AnnonceServiceService) { 
+   this.annonceTab= this.annonceService.getAnnonce();
+  }
 
   ngOnInit() {}
 

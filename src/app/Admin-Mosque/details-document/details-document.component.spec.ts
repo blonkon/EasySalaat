@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AdminSimpleConnexionComponent } from './admin-simple-connexion.component';
+import { DetailsDocumentComponent } from './details-document.component';
 
-describe('AdminSimpleConnexionComponent', () => {
-  let component: AdminSimpleConnexionComponent;
-  let fixture: ComponentFixture<AdminSimpleConnexionComponent>;
+describe('DetailsDocumentComponent', () => {
+  let component: DetailsDocumentComponent;
+  let fixture: ComponentFixture<DetailsDocumentComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminSimpleConnexionComponent ],
+      declarations: [ DetailsDocumentComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AdminSimpleConnexionComponent);
+    fixture = TestBed.createComponent(DetailsDocumentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

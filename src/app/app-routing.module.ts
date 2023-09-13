@@ -1,19 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AdminSimpleConnexionComponent } from './Admin-Mosque/admin-simple-connexion/admin-simple-connexion.component';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
-import { HoraireComponent } from './Admin-Mosque/horaire-liste/horaire.component';
-import { HoraireModifierComponent } from './Admin-Mosque/horaire-modifier/horaire-modifier.component';
-import { AnnonceComponent } from './Admin-Mosque/annonce-ajouter/annonce.component';
-import { AnnonceUpdateComponent } from './Admin-Mosque/annonce-update/annonce-update.component';
-import { AnnonceListeComponent } from './Admin-Mosque/annonce-liste/annonce-liste.component';
-import { ProgrammeListeComponent } from './Admin-Mosque/programme-liste/programme-liste.component';
-import { ProgrammeAjouterComponent } from './Admin-Mosque/programme-ajouter/programme-ajouter.component';
-import { ProgrammeUpdateComponent } from './Admin-Mosque/programme-update/programme-update.component';
-import { DocumentListeComponent } from './Admin-Mosque/document-liste/document-liste.component';
-import { DocumentAjouterComponent } from './Admin-Mosque/document-ajouter/document-ajouter.component';
-import { DocumentUpdateComponent } from './Admin-Mosque/document-update/document-update.component';
-import { ProfileUpdateComponent } from './Admin-Mosque/profile-update/profile-update.component';
+
 
 const routes: Routes = [
   {
@@ -25,17 +13,16 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-  path: 'admin-simple-connexion', component: AdminSimpleConnexionComponent
-  },
- 
-
-  {
     path: 'profile-admin-mosque',
     loadChildren: () => import('./Admin-Mosque/profile-admin-mosque/profile-admin-mosque.module').then( m => m.ProfileAdminMosquePageModule)
   },
+  // {
+  //   path: 'page-accueil-admin-mosque',
+  //   loadChildren: () => import('./Admin-Mosque/page-accueil-admin-mosque/page-accueil-admin-mosque.module').then( m => m.PageAccueilAdminMosquePageModule)
+  // },
   {
-    path: 'page-accueil-admin-mosque',
-    loadChildren: () => import('./Admin-Mosque/page-accueil-admin-mosque/page-accueil-admin-mosque.module').then( m => m.PageAccueilAdminMosquePageModule)
+    path: 'admosque',
+    loadChildren: () => import('./Admin-Mosque/admosque/admosque.module').then( m => m.AdmosquePageModule)
   }
 ];
 @NgModule({

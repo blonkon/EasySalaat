@@ -5,7 +5,7 @@
     margin: 30px auto;
     margin-bottom: 10px !important;
     height: 30vh;
-    margin-top: 14vh;
+    margin-top: auto;
 }
 .img{
     display: grid;
@@ -28,4 +28,15 @@
 }
 .retour{
     margin-left: 15px;
+}
+ion-modal.stack-modal {
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  }
+  .wrapper {
+    position: relative;
+    contain: layout style;
+    height: 50%;
+    max-height: 50%;
+    margin-top: 50%;
 }
