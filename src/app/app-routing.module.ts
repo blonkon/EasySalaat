@@ -9,6 +9,7 @@ import { ExploreContainerComponent } from './explore-container/explore-container
 import { RoleGuard } from './role.guards';
 import { TabsPage } from './tabs/tabs.page';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
+import { RoleGuard1 } from './role1.guards';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+    canActivate: [RoleGuard1],
     children: [
       {
         path: 'tab1',
@@ -68,12 +70,12 @@ const routes: Routes = [
       {
         path: 'sourate',
         loadChildren: () => import('./page/sourate/sourate.module').then( m => m.SouratePageModule)
-      },],
-      canActivate: [RoleGuard]
+      },]
     },
     {
-        path: 'Admin',
+        path: 'admin',
         component: SuperadminPage,
+        canActivate: [RoleGuard],
         children: [
           {
             path: 'accueilsuperadmin',
@@ -83,8 +85,7 @@ const routes: Routes = [
             path: 'profilesuperadmin',
           loadChildren: () => import('./PageSuperAdmin/profilesuperadmin/profilesuperadmin.module').then(m => m.ProfilesuperadminPageModule)
           }
-        ],
-        canActivate: [RoleGuard]
+        ]
    },
   // {
   //   path: 'accueilsuperadmin',

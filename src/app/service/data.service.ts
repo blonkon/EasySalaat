@@ -3,7 +3,7 @@ import { Firestore, addDoc, collection,doc, setDoc,getFirestore, getDoc } from '
 import { Users } from '../models/users';
 import { Auth,signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
-	signOut } from '@angular/fire/auth';
+	signOut,onAuthStateChanged } from '@angular/fire/auth';
 import { Roles } from '../models/Roles.enum';
 import { initializeApp } from '@angular/fire/app';
 
@@ -71,4 +71,5 @@ export class DataService {
     getUserById(id : string){
 
     }
+
 }
