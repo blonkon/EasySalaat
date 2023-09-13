@@ -1,0 +1,82 @@
+<ion-content style="height: auto;">
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png"  [routerLink]="['/admosque']" style="margin-top: 20px;" alt="">
+  </div>
+<div id="container" style="display: grid;">
+  
+  <div class="img">
+    <img src="../../../assets/images/Rectangle 17.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
+  </div>
+  <div style="margin-top: -13vh;">
+    <h2 style="color: #005B2F; text-align: center; margin-top: 120px;">Annonce</h2>
+  </div>
+  </div>
+  <div>
+    <ion-button shape="round" [routerLink]="['../annonce']" class="bbb" style=" --background: var(--ion-color, #005B2F);margin-left: 15px; height: 10px;">Ajouter</ion-button>
+  </div>
+  <div class="liste">
+  <!-- <ion-list>
+    <ion-item class="liste" *ngFor="let data" of AnnonceTab>
+    <div class="mondiv">
+      <ion-label style="max-width: 100%;" [routerLink]="['../details-annonce']" class="ion-label">{{data.titre}} </ion-label>   
+      <label for=""> {{data.dateTime}}</label>
+    </div>
+      <ion-label > <img style="margin-left: 10vh;" src="../../../assets/images/Vector.png" [routerLink]="['../annonce-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal2" style="float: right;" alt="icon"> </ion-label>
+      </ion-item>
+   
+    
+  </ion-list> -->
+  <ion-list>
+    <ion-item class="Liste" *ngFor="let element of data">
+      <div class="mondiv">
+        <ion-label style="max-width: 100%; margin-bottom: 5px;" [routerLink]="['../details-annonce']" class="ion-label">{{element.titre}} </ion-label>   
+        <label for=""> {{element.dateTime}}</label>
+      </div>
+     
+      <div class="iconitem">
+        <ion-icon name="create-outline" style="color: #005B2F;width: 25px; height: 20px;" [routerLink]="['../annonce-update']" ></ion-icon>
+      <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+      </div>
+
+        <ion-alert
+        header="Alert!"
+        [buttons]="alertButtons"
+        (ionAlertDidDismiss)="setResult($event)"
+        id="myAlert"
+        ></ion-alert>
+    </ion-item>
+
+
+  </ion-list>
+  
+</div>
+
+  <!-- <ion-footer style="bottom: 0;">
+    <div class="foot">
+      <img src="../../../assets/images/vv.png"  alt="2"> 
+      <div class="retour">
+        <img src="../../assets/images/Group 5.png"  [routerLink]="['/page-accueil-admin-mosque']" alt="retour">
+      </div>
+      <div class="profile">
+        <img src="../../assets/images/profile.png"  routerLink="/profile-admin-mosque" style="float: right;" alt="p">
+      </div>
+    </div>
+  </ion-footer> -->
+  <ion-modal
+  trigger="open-modal2"
+  [initialBreakpoint]="0.25"
+  [breakpoints]="[0, 0.25, 0.5, 0.75]"
+  handleBehavior="cycle">
+  <ng-template>
+    <ion-content class="ion-padding">
+      <div class="ion-margin-top">
+        <ion-label style="font-size: x-large;">Voulez-vous supprimer ?</ion-label>
+      </div>
+      <div class="modalB">
+        <ion-button class="non" size="small">NON</ion-button>  <ion-button class="oui" size="small">OUI</ion-button>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+</ion-content>

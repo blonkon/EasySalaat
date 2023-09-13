@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png"  [routerLink]="['../annonce-liste']" style="margin-top:20px;" alt="">
+  </div>
+<div id="container" style="display: grid;">
+ 
+<div class="img">
+  <img src="../../../assets/images/Rectangle 17.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
+</div>
+<div style="margin-top: -21vh;">
+  <h2 style="color: #005B2F; text-align: center; margin-top: 164px;">Annonce</h2>
+</div>
+</div>
+<div class="form-controle">
+  <form action="annonce-liste.component.html"  method="post" #ann="ngForm">
+    <!-- (submit)="saveAnnonce()"  -->
+  <div>
+   <label >Titre D'annonce</label>
+    <input  [(ngModel)]="annonce.titre" name="titre" type="text">  
+  </div>
+  <div>
+    <label >Description</label>
+    <input [(ngModel)]="annonce.description" name="description" type="text" > 
+  </div>
+  <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button">Enregistrer</button>
+  <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> (click)="saveAnnonce()"  -->
+</form>
+</div>
+
+</ion-content>

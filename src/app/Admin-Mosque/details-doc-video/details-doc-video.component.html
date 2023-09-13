@@ -1,0 +1,43 @@
+
+<div class="head animate__animated animate__fadeInDown " id="container" style="display: grid; margin-bottom: 15px;">
+  <ion-icon name="arrow-undo" style=" font-size: 25px; padding: 20px 0 0 20px; color: #fff;" [routerLink]="['../document-liste']"></ion-icon>
+  <div class="img">
+    <img src="../../../assets/images/logo.png" alt="logo"  width="100px" height="100px" style="border-radius: 50%;margin-left: 20px;">
+   <p style="font-size: 15px; text-align: center; color: #fff;">Mes Vidéos</p>
+  </div>
+</div>
+
+<ion-content class=" animate__animated animate__fadeInUp ">
+
+<ion-card style="border-radius: 25px;">
+  <div class="logoimg" style="height: 150px;"><img alt="Silhouette of mountains" src="../../../assets/images/document.png" width="100px"/></div>
+  <ion-card-header>
+    <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Liste des Vidéos</ion-card-title>
+  </ion-card-header>
+<ion-card-content style="text-align: left; justify-content: center; ">
+<ion-label style="font-size: 20px; font-weight: bold;"><strong>Vidéo prière Vendredi</strong>  <img src="../../../assets/images/delete1.png" id="open-modal6" style="float: right; margin-top: 5px;" alt="icon"> </ion-label> <br>
+<ion-label style="font-size: 20px; font-weight: bold;"><strong>Cérémonie du Maouloud</strong>   <img src="../../../assets/images/delete1.png" id="open-modal6" style="float: right; margin-top: 5px;" alt="icon"></ion-label> <br>
+
+</ion-card-content>
+</ion-card>
+
+<ion-modal
+    trigger="open-modal6"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle">
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div class="ion-margin-top">
+          <ion-label style="font-size: x-large;">Voulez-vous supprimer ?</ion-label>
+        </div>
+        <div class="modalB">
+          <ion-button class="non" size="small">NON</ion-button>  <ion-button class="oui" size="small">OUI</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+
+

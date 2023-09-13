@@ -6,6 +6,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
+import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,18 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'profile-admin-mosque',
+    loadChildren: () => import('./Admin-Mosque/profile-admin-mosque/profile-admin-mosque.module').then( m => m.ProfileAdminMosquePageModule)
+  },
+  // {
+  //   path: 'page-accueil-admin-mosque',
+  //   loadChildren: () => import('./Admin-Mosque/page-accueil-admin-mosque/page-accueil-admin-mosque.module').then( m => m.PageAccueilAdminMosquePageModule)
+  // },
+  {
+    path: 'admosque',
+    loadChildren: () => import('./Admin-Mosque/admosque/admosque.module').then( m => m.AdmosquePageModule)
   }
 ]
   }]

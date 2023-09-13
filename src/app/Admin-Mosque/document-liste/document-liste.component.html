@@ -1,0 +1,64 @@
+<ion-content>
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png"  [routerLink]="['/admosque']" style="margin-top: 20px;" alt="">
+  </div>
+  <div id="container" style="display: grid;">
+   
+    <div class="img">
+      <img src="../../../assets/images/document.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
+    </div>
+    <div style="margin-top: -9vh;">
+      <h2 style="color: #005B2F; text-align: center; margin-top: 78px;">Document</h2>
+    </div>
+    </div>
+    <div>
+      <ion-button [routerLink]="['../document-ajouter']" shape="round" class="bbb" style=" --background: var(--ion-color, #005B2F); height: 10px;margin-left: 15px;">Ajouter</ion-button>
+    </div>
+    <ion-list>
+      <ion-item class="liste">
+        <ion-label  [routerLink]="['../details-document']"  class="ion-label">Audio Prêche</ion-label>   
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png" [routerLink]="['../details-document']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
+      </ion-item>
+      <ion-item class="liste">
+        <ion-label  [routerLink]="['../details-doc-video']"  class="ion-label">Vidéo Prière</ion-label>   
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png"  alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
+      </ion-item>
+     
+      <ion-item class="liste">
+        <ion-label  [routerLink]="['../details-doc-recitation']"  class="ion-label">Récitation</ion-label>   
+        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png" [routerLink]="['../details-doc-recitation']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
+      
+      </ion-item>
+      
+    </ion-list>
+
+    <!-- <ion-footer>
+      <div class="foot">
+        <div class="retour">
+          <img src="../../assets/images/Group 5.png"  [routerLink]="['/page-accueil-admin-mosque']" alt="retour">
+        </div>
+        <div class="profile">
+          <img src="../../assets/images/profile.png" routerLink="/profile-admin-mosque" style="float: right;" alt="p">
+        </div>
+      </div>
+    </ion-footer> -->
+    
+    <ion-modal
+    trigger="open-modal3"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle">
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div class="ion-margin-top">
+          <ion-label style="font-size: x-large;">Voulez-vous supprimer ?</ion-label>
+        </div>
+        <div class="modalB">
+          <ion-button class="non" size="small">NON</ion-button>  <ion-button class="oui" size="small">OUI</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  </ion-content>
+  
