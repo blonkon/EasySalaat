@@ -22,6 +22,11 @@ const routes: Routes = [
 
   {
     path: '',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+
+  {
+    path: 'superadmin',
     loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
   },
 
@@ -55,13 +60,12 @@ const routes: Routes = [
   }
 
 ]
-}]
+  }]
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

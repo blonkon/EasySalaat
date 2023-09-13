@@ -37,8 +37,10 @@
 
 
       <ion-list>
-        <ion-label (click)="playPause(preacher.audioUrl)">
-          <ion-icon [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
+        <ion-label>
+          <ion-icon [name]="preacher.isPlaying ? 'pause' : 'play'" size="large" color="black" style="cursor: pointer;" (click)="playPause(preacher)"></ion-icon>
+          <ion-icon name="arrow-down-circle-outline" size="large" color="black" style="cursor: pointer;" (click)="downloadFile()"></ion-icon>
+
         </ion-label>
       </ion-list>
 

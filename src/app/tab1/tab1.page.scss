@@ -65,26 +65,26 @@
     margin: 0; padding: 0;
 }
 .container {
-    background-image: url('../../assets/bg.png');
+    background-image: url('../../assets/images/bg.png');
     background-repeat: no-repeat;
-    background-size: cover; 
-    height: 94vh; 
+    background-size: cover;
+    height: 94vh;
     opacity: 0.8;
     // background-position: center;
   }
   .container .title{
     padding-top: 1.5rem;
-     
+
   }
   .no-scroll .scroll-content {
     overflow: hidden;
   }
   .title{
-    text-align: center; 
+    text-align: center;
   }
   .card {
     width: 67px;
-    height: 62px; 
+    height: 62px;
   }
   #card1{
     background: #91672C;
@@ -148,5 +148,5 @@
 
 
 
- 
+
 
