@@ -16,20 +16,42 @@
     <ion-button shape="round" [routerLink]="['../annonce']" class="bbb" style=" --background: var(--ion-color, #005B2F);margin-left: 15px; height: 10px;">Ajouter</ion-button>
   </div>
   <div class="liste">
+  <!-- <ion-list>
+    <ion-item class="liste" *ngFor="let data" of AnnonceTab>
+    <div class="mondiv">
+      <ion-label style="max-width: 100%;" [routerLink]="['../details-annonce']" class="ion-label">{{data.titre}} </ion-label>   
+      <label for=""> {{data.dateTime}}</label>
+    </div>
+      <ion-label > <img style="margin-left: 10vh;" src="../../../assets/images/Vector.png" [routerLink]="['../annonce-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal2" style="float: right;" alt="icon"> </ion-label>
+      </ion-item>
+   
+    
+  </ion-list> -->
   <ion-list>
-    <ion-item class="liste">
-      <ion-label  [routerLink]="['../details-annonce']" class="ion-label">Prêche réligieuse</ion-label>   
-      <ion-label style=" margin-left: 3px;  margin-right: -393px"> </ion-label> <ion-label > <img style="margin-left: 20vh;" src="../../../assets/images/Vector.png" [routerLink]="['../annonce-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal2" style="float: right;" alt="icon"> </ion-label>
-      <!-- <p>Le 13/10/2023 14h00</p> -->
+    <ion-item class="Liste" *ngFor="let element of data">
+      <div class="mondiv">
+        <ion-label style="max-width: 100%; margin-bottom: 5px;" [routerLink]="['../details-annonce']" class="ion-label">{{element.titre}} </ion-label>   
+        <label for=""> {{element.dateTime}}</label>
+      </div>
+     
+      <div class="iconitem">
+        <ion-icon name="create-outline" style="color: #005B2F;width: 25px; height: 20px;" [routerLink]="['../annonce-update']" ></ion-icon>
+      <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+      </div>
+
+        <ion-alert
+        header="Alert!"
+        [buttons]="alertButtons"
+        (ionAlertDidDismiss)="setResult($event)"
+        id="myAlert"
+        ></ion-alert>
     </ion-item>
+
+
   </ion-list>
-  <ion-list>
-    <ion-item class="liste" *ngFor="let annonce" of AnnonceTab>
-      <ion-label class="ion-label">{{annonce.titre}}</ion-label>   
-      <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../annonce-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal2" style="float: right;" alt="icon" ></ion-label>
-    </ion-item>
-  </ion-list>
+  
 </div>
+
   <!-- <ion-footer style="bottom: 0;">
     <div class="foot">
       <img src="../../../assets/images/vv.png"  alt="2"> 

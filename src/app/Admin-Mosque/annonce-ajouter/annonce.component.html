@@ -13,7 +13,8 @@
 </div>
 </div>
 <div class="form-controle">
-  <form action="annonce-liste.component.html" (submit)="saveAnnonce()" method="post" #ann="ngForm">
+  <form action="annonce-liste.component.html"  method="post" #ann="ngForm">
+    <!-- (submit)="saveAnnonce()"  -->
   <div>
    <label >Titre D'annonce</label>
     <input  [(ngModel)]="annonce.titre" name="titre" type="text">  
@@ -22,8 +23,8 @@
     <label >Description</label>
     <input [(ngModel)]="annonce.description" name="description" type="text" > 
   </div>
-  <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button" (click)="saveAnnonce()">Enregistrer</button>
-  <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> -->
+  <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button">Enregistrer</button>
+  <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> (click)="saveAnnonce()"  -->
 </form>
 </div>
 

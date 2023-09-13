@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoraireComponent  implements OnInit {
 
-  constructor() { }
+  public alertButtons = ['OK'];
+  public alertInputs = [
+    
+    {
+      type: 'time',
+      placeholder: '',
+    }
+  ];
+
+  constructor() {}  
 
   ngOnInit() {}
 
