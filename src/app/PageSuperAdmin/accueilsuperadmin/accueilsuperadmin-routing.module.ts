@@ -29,6 +29,7 @@ import { NgxAngularMaterialHijriAdapterModule } from 'ngx-angular-material-hijri
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
+import { LecteurComponent } from '../lecteur/lecteur.component';
 
 const routes: Routes = [
   {
@@ -132,6 +133,10 @@ const routes: Routes = [
   {
     path: '',
     component: AccueilsuperadminPage,
+  },
+  {
+    path: 'lecteur',
+    component: LecteurComponent,
   }
 ];
 

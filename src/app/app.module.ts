@@ -36,9 +36,10 @@ import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CalendrierComponent } from './PageSuperAdmin/calendrier/calendrier.component';
+import { LecteurComponent } from './PageSuperAdmin/lecteur/lecteur.component';
 
 @NgModule({
-  declarations: [AppComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent, CoranComponent, AjoutcoranComponent, DetailcoranComponent, ModificationcoranComponent,CalendrierComponent],
+  declarations: [AppComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent, CoranComponent, AjoutcoranComponent, DetailcoranComponent, ModificationcoranComponent,CalendrierComponent, LecteurComponent],
   imports: [BrowserModule,FormsModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule,  MatDatepickerModule,NgxAngularMaterialHijriAdapterModule, MatFormFieldModule,MatInputModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
    { provide: DateAdapter,
