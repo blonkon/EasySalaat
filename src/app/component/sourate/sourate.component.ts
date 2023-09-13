@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SourateComponent  implements OnInit {
 
-
+ 
   surahData:any[]= [];
   // data:any;
 

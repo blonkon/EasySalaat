@@ -10,18 +10,18 @@ import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosq
 
 const routes: Routes = [
   {
-    path: ''
-   ,
-    children: [
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
       
   {
     path: 'inscription', component: InscriptionComponent
   },
 
-  {
-    path: '',
-    loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
-  },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
+  // },
   
   {
     path: 'accueilsuperadmin',
@@ -47,7 +47,7 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
-]}
+
 
 ]
 

@@ -11,14 +11,23 @@ export class PrechePage {
   playIcon = 'pause';
   audioFile!: MediaObject;
   preachers = [
-    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Fadiga', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Fadiga', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Blonko', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Mohamed Diarra', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Lacine Keïta', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
+    {name: 'Imam Ibrahim Sy', description: 'Prêcheur malien', audioUrl: '../../assets/audio/preche1.mp3' },
    
   ];
+  // preachers = [
+  //   {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+  //   {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+  //   {name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audio/preche1.mp3' },
+  //   {name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+  //   {name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+  //   {name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
+   
+  // ];
   currentNumber = 1;
 
 

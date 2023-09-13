@@ -63,3 +63,13 @@ h1 {
 .search {
   margin: 0.5rem;
 }
+
+@media screen and (max-width: 320px){
+  header{
+      margin-top: 1rem;
+      
+  }
+  .box{
+  padding: 1rem;
+  }
+}
