@@ -57,7 +57,5 @@ export class ModifieradminComponent  implements OnInit {
           }
         }
 
-        backtolist(){
-          this.router.navigate(['../listadmin']);
-        }
+       
 }

@@ -36,14 +36,15 @@ export class InscriptionComponent  implements OnInit {
               nom : this.nom,
               email : this.email,
               motdepasse : this.mdp,
-              role : Roles.ADMIN_M
+              role : Roles.USER
             }
            await  this.data.addUser(user)
             // console.log(this.data.test)
             if (this.data.test) {
              this.invalid="";
              this.data.user=user;
-            this.router.navigate(['']);
+             this.data.login(this.email,this.mdp)
+            this.router.navigate(['/tabs/tab1']);
             }else{
               this.invalid="Email is present";
             }

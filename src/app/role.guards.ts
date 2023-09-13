@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { DataService } from './service/data.service';
 import { Auth, User, onAuthStateChanged } from '@angular/fire/auth';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
+import { PageutiletadminComponent } from './PageSuperAdmin/pageutiletadmin/pageutiletadmin.component';
 
 @Injectable({
   providedIn: 'root',
 })
 class RoleGuards {
   user: any;
-  constructor(private router: Router,private dataservice : DataService, private auth: Auth,private firestore: Firestore) {}
+  constructor(private router: Router,private dataservice : DataService, private auth: Auth,private firestore: Firestore,private data : DataService) {}
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise <boolean | UrlTree> {
 
@@ -26,6 +27,9 @@ class RoleGuards {
       const firebaseUser = await getDoc(documentRef);
       if (firebaseUser.exists()) {
         this.user = firebaseUser.data();
+        if (this.user.role===3) {
+          this.data.superUser=true
+        }
       }
       const userRole = this.user.role;
       if (userRole > 1) {

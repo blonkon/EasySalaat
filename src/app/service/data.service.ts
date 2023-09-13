@@ -15,6 +15,8 @@ export class DataService {
   user: any;
   // Invalidadd : string = "";
   test : boolean = false; 
+  superUser : boolean = false;
+
   
   constructor(private firestore: Firestore,private auth: Auth,private router : Router) { 
    }

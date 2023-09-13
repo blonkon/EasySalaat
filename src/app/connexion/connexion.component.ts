@@ -13,6 +13,7 @@ export class ConnexionComponent  implements OnInit {
   email : string ="";
   password : string="";
   invalid: string="";
+  
 
   constructor(private data : DataService, private router : Router, private loadingController: LoadingController,
 		private alertController: AlertController,){
