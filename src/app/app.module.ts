@@ -17,19 +17,22 @@ import { ModifierutilisateurComponent } from './PageSuperAdmin/modifierutilisate
 import { InscriptionComponent } from './inscription/inscription.component';
 import { DetailadminMosqueComponent } from './PageSuperAdmin/detailadmin-mosque/detailadmin-mosque.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component'; 
+import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component';
 import { ListutilisateurComponent } from './PageSuperAdmin/listutilisateur/listutilisateur.component';
 import { PageutiletadminComponent } from './PageSuperAdmin/pageutiletadmin/pageutiletadmin.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { ListeadminMosqueComponent } from './PageSuperAdmin/listeadmin-mosque/listeadmin-mosque.component';
 import { ListeadminComponent } from './PageSuperAdmin/listeadmin/listeadmin.component';
+import { ModificationcoranComponent } from './PageSuperAdmin/modificationcoran/modificationcoran.component';
+import { CoranComponent } from './PageSuperAdmin/coran/coran.component';
+import { AjoutcoranComponent } from './PageSuperAdmin/ajoutcoran/ajoutcoran.component';
+import { DetailcoranComponent } from './PageSuperAdmin/detailcoran/detailcoran.component';
 import { ModifieradminComponent } from './PageSuperAdmin/modifieradmin/modifieradmin.component';
 import { ModifieradminMosqueComponent } from './PageSuperAdmin/modifieradmin-mosque/modifieradmin-mosque.component';
 import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.component';
 @NgModule({
-  declarations: [AppComponent,DetailadminMosqueComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
+  declarations: [AppComponent,AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
   imports: [BrowserModule,FormsModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule],
-
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

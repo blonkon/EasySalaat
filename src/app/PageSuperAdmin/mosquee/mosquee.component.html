@@ -1,37 +1,61 @@
-<ion-header class="head">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <ion-icon name="arrow-undo" style="font-size: 30px; margin: 20px; color: #fff;" [routerLink]="['']"></ion-icon>
-    <strong style="font-size: 20px; color: #fff; margin: 20px;">23 <i style="font-size: 20px;" class="fa-solid fa-mosque"></i></strong>
+<!-- <ion-header>
+  <ion-toolbar id="container" style="display: grid; " class="head animate__animated animate__fadeInDown " >
+    <ion-icon name="arrow-undo" style="display: block; font-size: 25px; padding: 15px  15px 0  15px; color: #fff;" [routerLink]="['../pageutiletadmin']"></ion-icon>
+  <div class="img" style="box-sizing: border-box;">
+    <img src="../../assets/images/userwhite.png" alt="" width="40px" height="40px">
+    <p style="margin-right: 20px; color: #fff;"> <strong>Liste utilisateurs </strong></p>
   </div>
-    <div class="img">
-      <img src="../../assets/images/mosqueeee 1.png" alt="">
-    </div>
-</ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button [routerLink]="['../ajoutmosquee']" >
-          <ion-icon style="font-weight: bold; color: #005B2F; font-size: 40px;" name="add"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-searchbar slot="end" (ionChange)="rechercher($event)"></ion-searchbar>
-    </ion-toolbar>
+   <strong  style="font-size: 15px; color: #fff; margin: 0 15px 0 15px;">{{nombre_utilisateur}} <ion-icon name="people-outline" style="color: #fff;"></ion-icon></strong>
+  </ion-toolbar>
+</ion-header> -->
 
+
+<div id="container" style="display: grid; " class="head animate__animated animate__fadeInDown ">
+  <ion-icon name="arrow-undo" style="display: block; font-size: 25px; padding: 15px  15px 0  15px; color: #fff;" [routerLink]="['']"></ion-icon>
+  <div class="img" style="box-sizing: border-box;">
+    <img src="../../assets/images/mosqueeee 1.png" alt="" width="80px" height="60px">
+    <p style="margin-right: 20px; color: #fff;"> <strong>Liste mosquées </strong></p>
+  </div>
+   <strong  style="font-size: 15px; color: #fff; margin: 0 15px 0 15px;">{{nombre_mosquee}} <ion-icon name="people-outline" style="color: #fff;"></ion-icon></strong>
+</div>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button [routerLink]="['../ajoutmosquee']" >
+      <ion-icon style="font-weight: bold; color: #005B2F; font-size: 40px;" name="add"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-searchbar slot="end" (ionChange)="rechercher($event)"></ion-searchbar>
+</ion-toolbar>
 <ion-content>
 
-<div class="listuser">
+
+<div class="listuser animate__animated animate__fadeInUp ">
+  <ion-card>
+    <ion-card-content>
       <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let element of data">
           <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="../../assets/images/mosqueeee 1.png" style="border-radius: 50%;"  />
+            <img alt="Silhouette of mountains" src="{{element.img}}" style="border-radius: 50%;"  />
           </ion-thumbnail>
-          <ion-label>Abdoulaye Konté</ion-label>
+          <ion-label>{{element.name}}</ion-label>
           <div class="iconitem">
             <ion-icon  name="eye" [routerLink]="['../detailmosquee']"></ion-icon>
-          <ion-icon name="create-outline" style="color: #005B2F;" [routerLink]="['../modificationmosquee']" ></ion-icon>
-          <ion-icon name="trash" style="color: red;"></ion-icon>
+            <ion-icon name="create-outline" style="color: #005B2F;" [routerLink]="['../modificationmosquee']" ></ion-icon>
+          <ion-icon name="trash" style="color: red;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
           </div>
+
+            <ion-alert
+            header="Alert!"
+            [buttons]="alertButtons"
+            (ionAlertDidDismiss)="setResult($event)"
+            id="myAlert"
+            ></ion-alert>
         </ion-item>
+
+
       </ion-list>
+    </ion-card-content>
+  </ion-card>
 </div>
 
 </ion-content>

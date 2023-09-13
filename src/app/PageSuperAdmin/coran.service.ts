@@ -8,45 +8,38 @@ export class CoranService {
   private updateEvent = new Subject<void>();
 
   update$ = this.updateEvent.asObservable();
-  
+
 
   triggerUpdate() {
     this.updateEvent.next();
   }
   list_coran: any =[
-    {name: 'Drissa Keita', img: "../../assets/images/User1.png"},
-    {name: 'Oumar Keita', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+    {name: 'AL‑FATIHA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑BAQARA', img: "../../assets/images/coran.png"},
+    {name: 'AL‑IMRAN', img: "../../assets/images/coran.png"},
+
+
   ];
 
   constructor() { }
@@ -59,13 +52,13 @@ export class CoranService {
     // return this._http.delete(`http://localhost:3000/employees/${id}`);
     return this.list_coran.splice(id);
   }
-  
+
   // Méthode pour mettre à jour une mesure existante
   modifyUtilisateur(id: number, data:any): void {
       // return this._http.put(`http://localhost:3000/employees/${id}`, data);
     const index = this.list_coran.findIndex((meas:any) => meas.id === id);
     // Si l'indice est trouvé, mettez à jour la mesure
-      if (index !== -1) { 
+      if (index !== -1) {
       this.list_coran[index] = data;
     }
   }

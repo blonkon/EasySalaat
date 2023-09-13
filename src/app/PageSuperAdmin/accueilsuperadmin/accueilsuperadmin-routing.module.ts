@@ -21,6 +21,9 @@ import { ModifierFrequenceRadioComponent } from '../modifier-frequence-radio/mod
 import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
+import { AjoutcoranComponent } from '../ajoutcoran/ajoutcoran.component';
+import { DetailcoranComponent } from '../detailcoran/detailcoran.component';
+import { ModificationcoranComponent } from '../modificationcoran/modificationcoran.component';
 
 
 const routes: Routes = [
@@ -38,6 +41,18 @@ const routes: Routes = [
   {
     path: 'detailmosquee',
     component: DetailMosqueeComponent
+  },
+  {
+    path: 'detailcoran',
+    component: DetailcoranComponent
+  },
+  {
+    path: 'modificationcoran',
+    component: ModificationcoranComponent
+  },
+  {
+    path: 'ajoutcoran',
+    component: AjoutcoranComponent
   },
   {
     path: 'modificationmosquee',
@@ -67,14 +82,14 @@ const routes: Routes = [
     path: 'listadminmos',component: ListeadminMosqueComponent,
 
   },
-  
-  
+
+
   {
     path: 'detailadminmos',component: DetailadminMosqueComponent,
 
   },
-  
-  
+
+
   {
     path: 'modifieradminmos',component: ModifieradminMosqueComponent,
 
@@ -83,11 +98,11 @@ const routes: Routes = [
     path: 'listradio',component: ListeFrequenceRadioComponent,
 
   },
-  
-  
-  
-  
-  
+
+
+
+
+
   {
     path: 'modifierradio',component: ModifierFrequenceRadioComponent,
 
@@ -95,8 +110,8 @@ const routes: Routes = [
   {
     path: 'coran', component: CoranComponent,
   },
-  
-  
+
+
 
   {
     path: 'mosquee',

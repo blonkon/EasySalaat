@@ -1,17 +1,14 @@
- <ion-header>
-  <div class="img">
-    <img src="../../assets/images/logo.png" alt="" width="150px">
-    <h2 style="color: #005B2F;">Connexion</h2>
-  </div>
- </ion-header>
 
-<ion-content >
-  
-<form action="">
-  <div id="container">
+<div class="img">
+    <img src="../../assets/images/logo.png" alt="" width="150px" style="border-radius: 50%;">
+    <h2 style="color: #005B2F; margin-left: 20px;">Connexion</h2>
+</div>
+<ion-content>
+  <form action="">
+  <!-- <div id="container"> -->
     
    
-    <div class="form-controle">
+    <div class="form">
       
       <div>
         <label>Email ou nom d'utilisateur</label>
@@ -21,7 +18,7 @@
         <label>Mot de passe</label>
         <input type="password" placeholder="******************"> 
       </div>
-      <a id="a" routerLink="../ " style="color: #fff !important;">
+      <a id="a" routerLink="" style="color: #fff !important;">
         Se connecter
       </a>
       
@@ -31,9 +28,9 @@
         </a>
       
 
-      <h5 style="text-align: center;">Pas de compte? <a routerLinkActive="" style="color: #005B2F !important; font-weight: bold;">Créer un compte</a></h5>
+      <h5 style="text-align: center;">Pas de compte? <a routerLinkActive="../../inscription" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-left: 10px; border-radius: 5px;">Créer un compte</a></h5>
     </div>
-  </div>
-</form>
+  <!-- </div> -->
+  </form>
 
 </ion-content>
