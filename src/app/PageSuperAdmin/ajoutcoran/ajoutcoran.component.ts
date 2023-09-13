@@ -7,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjoutcoranComponent  implements OnInit {
 
-  mosqueName: any;
-  porte: any;
-  rue: any;
-  phoneNumber: any;
+  
+  surah: string[]=[
+    'Al-Fatiha',
+    'Al-Baqra',
+    'Al-Maida',
+    'Al-Imourane',
+    'Al-Yusuf',
+    'Al-Iklass',
+    'Al-YUNUS',
+    'Al-IBRAHIM',
+    'Al-MARIAM',
+    'Al-KAFIROUNA',
+    'Al-TAWBA',
+  ];
+  nom_complet_imame: any;
+  nationalite: any;
+  audio: any;
   submitForm() {
   throw new Error('Method not implemented.');
   }

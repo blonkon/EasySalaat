@@ -58,11 +58,25 @@
 
 .input {
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 5px;
-  box-shadow: 0 0 0.5rem black;
+  border: none !important;
+  border-radius: 15px !important;
+ padding: 10px !important;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 5px 5px 5px 0px rgba(69, 68, 68, 0.5),
+   10px 10px 30px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+input::placeholder{
+  padding-left: 20px ;
+}
+input:focus{
+  color: #005B2F;
+  font-weight: bold;
+  padding-right: 30px ;
 }
 
 .input-item {
@@ -170,12 +184,17 @@ padding: 0 20px 0 20px;
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
   }
+
+  .main{
+    margin: 20px;
+  }
   
   /* 5 */
   .frame {
-    width: 90%;
+    width: 100%;
     margin: 40px auto;
     text-align: center;
+    
   }
   .btn-5 {
     width: 100% !important;
@@ -221,3 +240,22 @@ padding: 0 20px 0 20px;
   
   
 /*--------------------------------------------------------------->*/
+.input-item{
+  display: grid;
+
+}
+
+.btn-upload{
+  text-decoration: none;
+  color: black !important;
+  font-weight: bold ;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 5px 5px 5px 1px rgba(255,255,255,.5),
+  7px 7px 100px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
