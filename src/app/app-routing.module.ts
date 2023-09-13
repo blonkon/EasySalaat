@@ -10,18 +10,21 @@ import { RoleGuard } from './role.guards';
 import { TabsPage } from './tabs/tabs.page';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
 import { RoleGuard1 } from './role1.guards';
+import { RoleGuard2 } from './role2.guards';
+
 
 const routes: Routes = [
   {
-    path: '', component: ConnexionComponent
+    path: '', component: ConnexionComponent,
+    // canActivate: [RoleGuard2]
   },
   {
     path: 'inscription', component: InscriptionComponent
   },
 
-  {
-    path: 'login', component: ConnexionComponent
-  },
+  // {
+  //   path: 'login', component: ConnexionComponent
+  // },
   {
     path: 'tabs',
     component: TabsPage,
@@ -87,27 +90,11 @@ const routes: Routes = [
           }
         ]
    },
-  // {
-  //   path: 'accueilsuperadmin',
-  //   loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule),
-    
-  //  }
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
-  // },
-  // {
-  //   path: 'profilesuperadmin',
-  //   loadChildren: () => import('./PageSuperAdmin/profilesuperadmin/profilesuperadmin.module').then( m => m.ProfilesuperadminPageModule)
-  // },
-  // {
-  //   path: 'pageutilisateur',
-  //   loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  // // },
-  // {
-  //   path: 'profile',
-  //   loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  // }
+   {
+		path: '**',
+		redirectTo: '',
+		pathMatch: 'full'
+	}
 ]
 @NgModule({
   imports: [

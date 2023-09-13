@@ -44,7 +44,7 @@ class RoleGuards {
       }
     } else {
       // Le User est deconnecter
-      return this.router.parseUrl('/login'); 
+      return this.router.parseUrl(''); 
     }
 
    

@@ -71,5 +71,7 @@ export class DataService {
     getUserById(id : string){
 
     }
-
+    logout() {
+      return signOut(this.auth);
+    }
 }

@@ -28,17 +28,10 @@ class RoleGuards {
         this.user = firebaseUser.data();
       }
       const userRole = this.user.role;
-      if (userRole < 2) {
-        //si ca commence par admin c'est bon 
-        if (state.url.startsWith('/tabs')) {
-          return true; 
-        }
-        return this.router.parseUrl('/tabs/tab1');
+      if (userRole > 1) {
+        return this.router.parseUrl('/admin/accueilsuperadmin');
       } else {
-        if (state.url.startsWith('/tabs')) {
-          return this.router.parseUrl('/admin/accueilsuperadmin'); 
-        }
-        return this.router.parseUrl('/admin/accueilsuperadmin'); 
+        return this.router.parseUrl('/tabs/tab1'); 
       }
     } else {
       // Le User est deconnecter
@@ -48,6 +41,6 @@ class RoleGuards {
    
   }
 }
-export const RoleGuard1 : CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise <boolean | UrlTree> =>{
+export const RoleGuard2 : CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise <boolean | UrlTree> =>{
     return inject(RoleGuards).canActivate(route,state);
 }
