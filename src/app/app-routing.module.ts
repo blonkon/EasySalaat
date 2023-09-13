@@ -12,6 +12,7 @@ import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
 import { RoleGuard1 } from './role1.guards';
 import { RoleGuard2 } from './role2.guards';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
+import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
 
 
 const routes: Routes = [
@@ -22,10 +23,19 @@ const routes: Routes = [
   {
     path: 'inscription', component: InscriptionComponent
   },
-
   {
     path: 'admosque',
-    loadChildren: () => import('./Admin-Mosque/admosque/admosque.module').then( m => m.AdmosquePageModule)
+    component: AdmosquePage,
+    canActivate: [RoleGuard2],
+    children: [
+      {
+        path: 'page-accueil-admin-mosque',
+        loadChildren: () => import('./Admin-Mosque/page-accueil-admin-mosque/page-accueil-admin-mosque.module').then(m => m.PageAccueilAdminMosquePageModule)
+      },
+      {
+        path: 'profile-admin-mosque',
+        loadChildren: () => import('./Admin-Mosque/profile-admin-mosque/profile-admin-mosque.module').then(m => m.ProfileAdminMosquePageModule)
+      },]
   },
   // {
   //   path: 'login', component: ConnexionComponent

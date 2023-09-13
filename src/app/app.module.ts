@@ -64,8 +64,9 @@ import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.c
 import { DetailadminMosqueComponent } from './PageSuperAdmin/detailadmin-mosque/detailadmin-mosque.component';
 import { TabsPage } from './tabs/tabs.page';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
+import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
 @NgModule({
-  declarations: [AppComponent,AppComponent, AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
+  declarations: [AppComponent,AppComponent, AdmosquePage,AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
     HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
     DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
    DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent,TabsPage,SuperadminPage,SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,DetailadminMosqueComponent,DetailadminComponent,ModifieradminMosqueComponent,ModifieradminComponent,ListeadminComponent,ListeadminMosqueComponent,ListeFrequenceRadioComponent,DetailMosqueeComponent,ModifierFrequenceRadioComponent,MosqueeComponent,AjoutMosqueeComponent,ModifierutilisateurComponent, ModificationMosqueeComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],

@@ -43,7 +43,7 @@ export class InscriptionComponent  implements OnInit {
             if (this.data.test) {
              this.invalid="";
              this.data.user=user;
-            this.router.navigate(['/admin/accueilsuperadmin']);
+            this.router.navigate(['']);
             }else{
               this.invalid="Email is present";
             }

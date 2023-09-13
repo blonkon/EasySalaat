@@ -30,17 +30,25 @@ class RoleGuards {
       const userRole = this.user.role;
       if (userRole > 1) {
         //si ca commence par admin c'est bon 
+        if (state.url === '/admin') {
+          return this.router.parseUrl('/admin/accueilsuperadmin'); 
+        }
         if (state.url.startsWith('/admin')) {
           return true; 
-        }else if (state.url.startsWith('/tabs')) {
+        }else if (state.url.startsWith('/tabs') || state.url.startsWith('/admosque')) {
           return this.router.parseUrl('/admin/accueilsuperadmin'); 
         }
         return this.router.parseUrl('/admin/accueilsuperadmin'); 
-      } else {
-        if (state.url.startsWith('/admin')) {
+      } else if (userRole===0) {
+        if (state.url.startsWith('/admin')|| state.url.startsWith('/admosque')) {
           return this.router.parseUrl('/tabs/tab1'); 
         }
         return this.router.parseUrl('/tabs/tab1'); 
+      }else{
+        if (state.url.startsWith('/admin') || state.url.startsWith('/tabs')) {
+          return this.router.parseUrl('/admosque/page-accueil-admin-mosque'); 
+        }
+        return this.router.parseUrl('/admosque/page-accueil-admin-mosque'); 
       }
     } else {
       // Le User est deconnecter

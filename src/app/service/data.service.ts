@@ -6,6 +6,7 @@ import { Auth,signInWithEmailAndPassword,
 	signOut,onAuthStateChanged } from '@angular/fire/auth';
 import { Roles } from '../models/Roles.enum';
 import { initializeApp } from '@angular/fire/app';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DataService {
   // Invalidadd : string = "";
   test : boolean = false; 
   
-  constructor(private firestore: Firestore,private auth: Auth) { 
+  constructor(private firestore: Firestore,private auth: Auth,private router : Router) { 
    }
 
   //fonction pour ajouter un user 
@@ -72,6 +73,8 @@ export class DataService {
 
     }
     logout() {
-      return signOut(this.auth);
+       signOut(this.auth);
+       return  this.router.navigate(['']);
+      
     }
 }

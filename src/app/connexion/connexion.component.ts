@@ -31,7 +31,7 @@ export class ConnexionComponent  implements OnInit {
             if ( this.data.user.role===0) {
               this.router.navigate(['/tabs/tab1']);
              }else if (this.data.user===1) {
-              this.router.navigate(['/tabs/tab1']);
+              this.router.navigate(['/admosque/page-accueil-admin-mosque']);
              }else{
               this.router.navigate(['/admin/accueilsuperadmin']);
               } 

@@ -28,10 +28,25 @@ class RoleGuards {
         this.user = firebaseUser.data();
       }
       const userRole = this.user.role;
-      if (userRole > 1) {
-        return this.router.parseUrl('/admin/accueilsuperadmin');
+      if (userRole < 2) {
+        
+        if (userRole===1) {
+            if (state.url === '/admosque') {
+                return this.router.parseUrl('/admosque/page-accueil-admin-mosque'); 
+              }
+            if (state.url.startsWith('/admosque')) {
+                return true; 
+              }
+              return this.router.parseUrl('/admosque/page-accueil-admin-mosque');
+        } else {
+              return this.router.parseUrl('/tabs/tab1');
+        }
+       
       } else {
-        return this.router.parseUrl('/tabs/tab1'); 
+        if (state.url.startsWith('/tabs') || state.url.startsWith('/admin')) {
+          return this.router.parseUrl('/admin/accueilsuperadmin'); 
+        }
+        return this.router.parseUrl('/admin/accueilsuperadmin'); 
       }
     } else {
       // Le User est deconnecter
