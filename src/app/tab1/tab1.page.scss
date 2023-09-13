@@ -84,13 +84,88 @@
     font-weight: bold;
     font-family: 'Poppins';
 }
+@media screen and (min-width: 600px) {
+  span{
+   font-size: 25px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+  .card{
+    width: 100px;
+    height: 100px;
+}
+div h5{
+    font-size: 25px;
+}
+  .container-priere{
+    margin: auto;
+    width: 340px;
+    height: 340px;
+}
+i{
+  font-size: 300px;
+  margin-top: 12px;
+}
+.logo{
+  gap: 3rem;
+}
+img{
+  font-size: 10px;
+}
+.container .title{
+  padding-top: 1rem;
+   
+}
+.clock{
+  padding: 10px;
+  gap: 1rem;
+}
+.card-circle{
+  width: 85px;
+  height: 85px;
+}
+.clock p{
+  font-size: 25px;
+}
+.clock i{
+  font-size: 45px;
+}
+ion-list {
+  font-size: 25px;
+}
+ion-list-header{
+  font-size: 28px;
+}
 
-@media screen and (max-width: 420px) {
+.container-priere{
+  margin: auto;
+  width: 450px;
+  height: 400px;
+}
+h2{
+ font-size: 50px;
+}
+.container {
+  height: 100vh; 
+}
+}
+@media screen and (min-width: 414px) {
   h5{
    font-size: 19px;
-   font-weight: bold;
+  //  font-weight: bold;
   }
+  
 }
+// @media screen and (max-width: 420px) {
+//   h5{
+//    font-size: 19px;
+//    font-weight: bold;
+//   }
+//   .container {
+//     height: 80vh; 
+//   }
+// }
 @media screen and (max-width: 380px) {
   h5{
    font-size: 16px;
@@ -140,6 +215,47 @@ ion-img{
   height: 100vh; 
 }
 }
+@media screen and (max-width: 360px) {
+  .container {
+    height: 115vh; 
+  }
+}
+// @media screen and (min-width: 360px)  {
+
+// .container {
+//   height: 115vh; 
+// }
+// ion-card {
+//   width: 70px;
+//   height: 70px;
+// }
+// h5{
+//  font-size: 15px;
+// }
+// ion-list-header{
+//   font-size: 10px;
+// }
+// .clock{
+//   padding: 7px;
+//   gap: 1rem;
+// }
+// .card-circle{
+//   width: 50px;
+//   height: 50px;
+// }
+// .clock p{
+//   font-size: 18px;
+// }
+// .clock i{
+//   font-size: 18px;
+// }
+// ion-list {
+//   font-size: 15px;
+// }
+// ion-list-header{
+//   font-size: 18px;
+// }
+// }
 @media screen and (max-width: 320px){
   .container-priere{
     margin: auto;
@@ -158,8 +274,6 @@ ion-img{
   }
   h5{
     font-size: 17px;
-    font-weight: bold;
-    // color: #fff;
   }
 }
  
