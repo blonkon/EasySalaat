@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>mosque-aproximite</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <div class="head">
+    <div class="left" (click)="goBack()">
+        <img src="assets/icons8.png" alt="" width="50px">
+  </div>
+  <div class="right">
+     mosquées à proximité
+  </div>
+  </div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mosque-aproximite</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="mapId" style="height:100%; width:100%;"></div>
+  <!-- <section class="liste">
+    <div *ngFor="let mosquee of mosqueeLocations" class="mosque">
+      <div>
+        <p>{{ mosquee.name }}</p>
+      </div>
+      <div class="kilo">
+        <p>{{ distanceToMosque }} Km</p>
+      </div>
+    </div>
+  </section> -->
+  
 </ion-content>

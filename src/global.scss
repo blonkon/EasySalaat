@@ -26,3 +26,5 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+// Importation du fichier CSS de Leaflet depuis le CDN
+@import 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
