@@ -11,6 +11,7 @@ import { TabsPage } from './tabs/tabs.page';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
 import { RoleGuard1 } from './role1.guards';
 import { RoleGuard2 } from './role2.guards';
+import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'inscription', component: InscriptionComponent
   },
 
+  {
+    path: 'admosque',
+    loadChildren: () => import('./Admin-Mosque/admosque/admosque.module').then( m => m.AdmosquePageModule)
+  },
   // {
   //   path: 'login', component: ConnexionComponent
   // },

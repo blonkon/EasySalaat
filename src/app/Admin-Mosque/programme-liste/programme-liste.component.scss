@@ -1,0 +1,43 @@
+#container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    margin-bottom: 10px !important;
+    height: 30vh;
+    margin-top: auto;
+}
+
+.img{
+    border: none;
+    max-width: 90%;
+    max-height: 90%;
+    margin-left: 2vh;
+}
+.ion-label{
+    font-size: x-large;
+}
+.modalB{
+    margin-top: 30px;
+    margin-left: 50%;
+}
+.oui{
+    --background: var(--ion-color, #CE720D);
+}
+.non{
+    margin-right: 20px;
+    --background: var(--ion-color, #005B2F);
+}
+.input-wrapper {
+    background-color: #D9D9D9;
+}
+.foot{
+    display: flex;
+    margin-top: 100%;
+}
+.profile{
+   margin-left: 235px
+}
+.retour{
+    margin-left: 15px;
+}

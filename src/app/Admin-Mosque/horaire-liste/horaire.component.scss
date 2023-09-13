@@ -1,0 +1,42 @@
+#container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    margin-bottom: 10px !important;
+    height: 30vh;
+    margin-top: auto;
+}
+.img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.liste{
+    font-weight: bold;
+}
+.label2{
+    text-align: center;
+    margin-left: 16vh;
+}
+.foot{
+    display: flex;
+    margin-top: 140px;
+}
+.profile{
+   margin-left: 235px
+}
+.retour{
+    margin-left: 15px;
+}
+ion-modal.stack-modal {
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
+  }
+  .wrapper {
+    position: relative;
+    contain: layout style;
+    height: 50%;
+    max-height: 50%;
+    margin-top: 50%;
+}
