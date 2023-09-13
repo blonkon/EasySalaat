@@ -21,6 +21,7 @@ import { ModifierFrequenceRadioComponent } from '../modifier-frequence-radio/mod
 import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
+import { RoleGuard2 } from 'src/app/role2.guards';
 
 
 const routes: Routes = [
@@ -53,14 +54,16 @@ const routes: Routes = [
   },
   {
     path: 'listadmin',component: ListeadminComponent,
-
+    // canActivate : [RoleGuard3]
   },
   {
     path: 'detailadmin',component: DetailadminComponent,
+        // canActivate : [RoleGuard3]
 
   },
   {
     path: 'modifieradmin',component: ModifieradminComponent,
+        // canActivate : [RoleGuard3]
 
   },
   {
