@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/preche" text="Retour"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Nom du precheur
+      {{nom}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,9 +14,9 @@
     <img src="../../../assets/images/logowhite.png">
   </div>
   <div id="container">
-    <h2>Titre de la prêche</h2>
-    <ion-range min="0" max="100" value="40" mode="md" color="warning"></ion-range>
-    <p>Temps restant: 13m 12s</p>
+    <h2>{{titre}}</h2>
+    <ion-range min="0" max="100" [value]="progressPercentage" mode="md" color="warning"></ion-range>
+    <p>Temps restant: {{ calculateRemainingTime() }}</p>
   </div>
 
   <div class="flex_box">

@@ -49,6 +49,15 @@ export class PrechePage {
     //   preacher.audio.pause();
     //   this.enLecture = null;
     // }
+    if (!preacher.isPlaying) {
+      // Si le precheur n'est pas en train de jouer, naviguez vers la page JouerAudioComponent
+      this.router.navigate(['/jouerAudio', {
+        audioUrl: preacher.audioUrl,
+        nom: preacher.name,
+        titre: preacher.description
+        // Ajoutez d'autres informations ici si nécessaire
+      }]);
+    }
 
     preacher.isPlaying = !preacher.isPlaying;
   }
