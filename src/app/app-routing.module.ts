@@ -12,12 +12,13 @@ import { RoleGuard1 } from './role1.guards';
 import { RoleGuard2 } from './role2.guards';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
+import { RoleGuard3 } from './role3.guards';
 
 
 const routes: Routes = [
   {
     path: '', component: ConnexionComponent,
-    // canActivate: [RoleGuard2]
+    canActivate: [RoleGuard3]
   },
   {path: 'inscription',component:InscriptionComponent},
   {
@@ -93,7 +94,7 @@ const routes: Routes = [
     {
         path: 'admin',
         component: SuperadminPage,
-        canActivate: [RoleGuard],
+         canActivate: [RoleGuard],
         children: [
           {
             path: 'accueilsuperadmin',

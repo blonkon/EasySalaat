@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
+import { Firestore, addDoc, collection,doc, setDoc,getFirestore, getDoc, where, query, getDocs } from '@angular/fire/firestore';
+import { Users } from '../models/users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilisateurService {
 
+  userdetails:string="";
+  usernom : string="";
   private updateEvent = new Subject<void>();
 
   update$ = this.updateEvent.asObservable();
@@ -14,51 +18,34 @@ export class UtilisateurService {
   triggerUpdate() {
     this.updateEvent.next();
   }
-  list_utilisateur: any =[
-    {name: 'Drissa Keita', img: "../../assets/images/User1.png"},
-    {name: 'Oumar Keita', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    
+
+  list_utilisateur: Users[] =[ 
   ];
 
-  constructor() { }
+  constructor( private firestore : Firestore) { }
 
-  getUtilisateurList(): Observable<any> {
-    return this.list_utilisateur;
+  async getUtilisateurList(): Promise<Observable<Users[]>> {
+    this.list_utilisateur=[];
+    const q = query(collection(this.firestore, "Users"), where("role", "==", 0));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+      let user : Users = {
+        nom : doc.data()['nom'],
+        email : doc.data()['email'],
+        motdepasse : "",
+        role : doc.data()['role']};
+      this.list_utilisateur.push(user)
+    });
+    return of(this.list_utilisateur);
+    
   }
 
   deleteUtilisateur(id: number): Observable<any> {
     // return this._http.delete(`http://localhost:3000/employees/${id}`);
-    return this.list_utilisateur.splice(id);
+    // return this.list_utilisateur.splice(id);
+    return of(this.list_utilisateur);
   }
   
   // Méthode pour mettre à jour une mesure existante

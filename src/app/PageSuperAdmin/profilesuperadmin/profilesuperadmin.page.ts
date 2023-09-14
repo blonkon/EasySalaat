@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-profilesuperadmin',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilesuperadminPage implements OnInit {
 nom_admin: string = 'Alhadji Mohamed Keita';
-  constructor() { }
+  constructor(private data : DataService) { }
+
+  deconnexion(){
+    this.data.logout();
+  }
 
   ngOnInit() {
   }

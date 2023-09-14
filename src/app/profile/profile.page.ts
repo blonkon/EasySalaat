@@ -9,9 +9,11 @@ import { DataService } from '../service/data.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  constructor(private data : DataService) { }
 
-  constructor() { }
-
+  deconnexion(){
+    this.data.logout();
+  }
   ngOnInit() {
   }
   }

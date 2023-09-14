@@ -77,7 +77,6 @@ const routes: Routes = [
   },
   {
     path: 'listadmin',component: ListeadminComponent,
-    // canActivate : [RoleGuard3]
   },
   {
     path: 'detailadmin',component: DetailadminComponent,

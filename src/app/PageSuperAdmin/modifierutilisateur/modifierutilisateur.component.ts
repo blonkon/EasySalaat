@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder , FormGroup} from '@angular/forms';
+import { FormBuilder , FormGroup, NgForm} from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,16 +17,18 @@ export class ModifierutilisateurComponent  implements OnInit {
     'admin-mosque',
     
   ];
+  rolem?:string;
   mosque: string[] = [
     'alfirdaous',
     'masdjid-kabir',
     'missiriba',
     'mosque de djene',
   ];
+  mail? : string;
+  nom? : string;
   constructor(
-    private formBuilder: FormBuilder, private _service: UtilisateurService,
-  ) {
-  
+    private formBuilder: FormBuilder, private _service: UtilisateurService,  ) {
+    
     this.userForm = this.formBuilder.group({
       id:'',
       nom: '',
@@ -37,7 +40,9 @@ export class ModifierutilisateurComponent  implements OnInit {
 
   
   ngOnInit(): void {
-    
+    this.mail=this._service.userdetails;
+    this.nom =this._service.usernom;
+    console.log(this._service.userdetails)
     this.userForm.patchValue(this.data);
 
 
@@ -45,20 +50,22 @@ export class ModifierutilisateurComponent  implements OnInit {
   ////////////////////////////////
    ///LAFIN
   
-      onSubmit() {
-        if (this.userForm.valid) {
-          const mesure = this.userForm.value; 
-          if (this.data) {         
-            this._service
-            .modifyUtilisateur(this.data.id, this.userForm.value);
-            this.userForm.reset();
-            // Émettez un événement pour indiquer que les données ont été ajoutées
-            this._service.triggerUpdate();
+      onSubmit(forms : NgForm) {
+        // if (this.userForm.valid) {
+        //   const mesure = this.userForm.value; 
+        //   if (this.data) {      
+        //     console.log(this.data)   
+        //     this._service
+        //     .modifyUtilisateur(this.data.id, this.userForm.value);
+        //     this.userForm.reset();
+        //     // Émettez un événement pour indiquer que les données ont été ajoutées
+        //     this._service.triggerUpdate();
                      
-          } else {
-              this.userForm.reset(); 
-              }
-          }
+        //   } else {
+        //       this.userForm.reset(); 
+        //       }
+        //   }
+        console.log(this.rolem)
         }
     }
       //ESSATIONS

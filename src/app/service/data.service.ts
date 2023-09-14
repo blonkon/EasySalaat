@@ -18,7 +18,7 @@ export class DataService {
   superUser : boolean = false;
 
   
-  constructor(private firestore: Firestore,private auth: Auth,private router : Router) { 
+  constructor(private firestore: Firestore,private auth: Auth,private router : Router,) { 
    }
 
   //fonction pour ajouter un user 
@@ -74,8 +74,9 @@ export class DataService {
     getUserById(id : string){
 
     }
-    logout() {
-       signOut(this.auth);
+    async logout() {
+       await signOut(this.auth);
+       this.superUser=false;
        return  this.router.navigate(['']);
       
     }
