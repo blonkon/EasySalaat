@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JouerAudioComponent implements OnInit {
   audioUrl: string = '';
-  nom: string = ''; // Déclarez la propriété 'nom'
+  nom: string = '';
   titre: string = '';
-  audio!: HTMLAudioElement; // Define an audio element
+  audio!: HTMLAudioElement;
   isPlaying = false;
 
   //temps
@@ -44,8 +44,8 @@ export class JouerAudioComponent implements OnInit {
       this.audio.pause(); // Pause the current audio if it exists
       clearInterval(this.timer);
     }
-    this.audio = new Audio(audioUrl); // Create a new audio element
-    this.audio.play(); // Play the audio
+    this.audio = new Audio(audioUrl);
+    this.audio.play(); // jouer audio
     this.isPlaying = true;
 
     // Obtenir la durée totale de l'audio
@@ -103,4 +103,23 @@ export class JouerAudioComponent implements OnInit {
       this.audio.currentTime -= 15; // Filer vers l'arriere
     }
   }
+
+  barrFile(event: MouseEvent) {
+    if (this.audio) {
+      const progressBar = event.currentTarget as HTMLElement;
+      const rect = progressBar.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left;
+      const progressBarWidth = rect.width;
+
+      // Calcul de la nouvelle position en pourcentage en fonction du clic
+      const newProgressPercentage = (offsetX / progressBarWidth) * 100;
+
+      // Calcul de la nouvelle position en secondes en fonction du pourcentage
+      const newPositionInSeconds = (newProgressPercentage / 100) * this.duration;
+
+      // Mettre à jour la position de lecture de l'audio
+      this.audio.currentTime = newPositionInSeconds;
+    }
+  }
+
 }
