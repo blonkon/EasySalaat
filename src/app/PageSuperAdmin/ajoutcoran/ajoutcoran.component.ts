@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajoutcoran',
@@ -24,12 +25,6 @@ export class AjoutcoranComponent  implements OnInit {
   nom_complet_imame: any;
   nationalite: any;
   audio: any;
-  submitForm() {
-  throw new Error('Method not implemented.');
-  }
-  onImageChange($event: Event) {
-  throw new Error('Method not implemented.');
-  }
   imamName: any;
   rechercher($event: Event) {
   throw new Error('Method not implemented.');
@@ -38,7 +33,10 @@ export class AjoutcoranComponent  implements OnInit {
   throw new Error('Method not implemented.');
   }
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() {}
+    // tolecteur(){
+    //   this.router.navigateByUrl('../../lecteur')
+    // }
   }

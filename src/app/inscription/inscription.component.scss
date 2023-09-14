@@ -57,12 +57,16 @@ label {
   text-decoration: none !important;
 }
 .gtext{
-  display: inline-block;
-  justify-content: center;
+  display: grid;
+  justify-content: center !important;
   align-items: center;
+  // padding-left: 20% !important;
+  // padding-right: 20% !important;
   padding: 12px 0 12px 0;
   border-radius: 15px;
   border: #005B2F 1px solid;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 .form-controle div{
   display: grid;

@@ -106,11 +106,6 @@ const routes: Routes = [
     path: 'listradio',component: ListeFrequenceRadioComponent,
 
   },
-
-
-
-
-
   {
     path: 'modifierradio',component: ModifierFrequenceRadioComponent,
 
@@ -118,9 +113,6 @@ const routes: Routes = [
   {
     path: 'coran', component: CoranComponent,
   },
-
-
-
   {
     path: 'mosquee',
     component: MosqueeComponent,
@@ -128,11 +120,6 @@ const routes: Routes = [
   {
     path: 'pageutiletadmin',
     component: PageutiletadminComponent,
-  }
-,
-  {
-    path: '',
-    component: AccueilsuperadminPage,
   },
   {
     path: 'lecteur',

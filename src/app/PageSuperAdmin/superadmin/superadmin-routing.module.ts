@@ -12,6 +12,11 @@ const routes: Routes =
     component: SuperadminPage,
     children: [
       {
+        path: '',
+        redirectTo: '/superadmin/accueilsuperadmin',
+        pathMatch: 'full'
+      },
+      {
         path: 'accueilsuperadmin',
         loadChildren: () => import('../accueilsuperadmin/accueilsuperadmin.module').then(m => m.AccueilsuperadminPageModule)
       },
@@ -19,18 +24,14 @@ const routes: Routes =
         path: 'profilesuperadmin',
       loadChildren: () => import('../profilesuperadmin/profilesuperadmin.module').then(m => m.ProfilesuperadminPageModule)
       },
+      
       {
-        path: '',
+        path: 'retourtoaccueil',
         redirectTo: '/superadmin/accueilsuperadmin',
         pathMatch: 'full'
       }
     ]
   },
-  {
-    path: '',
-    redirectTo: '/superadmin/accueilsuperadmin',
-    pathMatch: 'full'
-  }
 ];
 
 

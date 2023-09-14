@@ -1,5 +1,4 @@
 
-
 <div class="img">
   <img src="../../assets/images/logo.png" alt="" width="100px">
   <h2 style="color: #005B2F;">Inscription</h2>
@@ -28,17 +27,16 @@
       <label>Répeter Mot de passe</label>
       <input type="password" placeholder="******************"> 
     </div>
-    <a id="a" (click)="navigate()" style="color: #fff !important;">
+    <a id="a" style="color: #fff !important;">
       S' inscrire
     </a>
     
-    
-      <a class="gtext" >
-        <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
-      </a>
+    <a class="gtext" style="margin-bottom: 20px;" (click)="navigateToSuperAdmin()" >
+        <i>  <img src="../../assets/images/google.png" alt="" width="15px" > Continuer avec google </i>
+    </a>
     
 
-    <h5 style="text-align: center;">J'ai déjà un compte, <a routerLinkActive="" style="color: #005B2F !important; font-weight: bold;  padding: 0 10px; margin-left: 10px; border-radius: 5px; ">Se connecter</a></h5>
+    <h5 style="text-align: center;">J'ai déjà un compte, <a (click)="navigateToconnexion()" routerLinkActive="../../../connexion" style="color: #005B2F !important; font-weight: bold;  padding: 0 10px; margin-left: 10px; border-radius: 5px; ">Se connecter</a></h5>
   </div>
 </div>
 </form>

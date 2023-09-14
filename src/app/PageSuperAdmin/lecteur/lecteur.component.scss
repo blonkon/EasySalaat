@@ -13,6 +13,10 @@
   margin-left: 20px;
 
 }
+.toolbar{
+  display: grid;
+  grid-template-columns: repeat(2, 1frac);
+}
 .card{
   display: grid;
   grid-template-columns: repeat(2, 1fr);

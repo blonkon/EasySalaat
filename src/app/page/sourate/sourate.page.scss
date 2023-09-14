@@ -1,0 +1,64 @@
+
+ion-content {
+  background-color: #fff;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 7rem;
+  margin-top: 2rem;
+}
+
+.box {
+  color: #fff;
+  padding: 2rem;
+  background: #005B2F;
+  border-radius: 0 0 200px 0;
+}
+
+h1 {
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.ayah-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+ion-badge {
+  font-size: 18px;
+  background-color:#005B2F;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.ayah-text {
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: right;
+  color: #000;
+  flex-grow: 1;
+}
+ion-icon{
+  color: #fff;
+  font-size: 35px;
+}
+h1{
+  color: #fff;
+}
+div{
+  padding: 25px;
+}

@@ -10,7 +10,9 @@ export class InscriptionComponent  implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit() {}
-  navigate(){
-    this.router.navigateByUrl('../../profilesuperadmin')}
+  navigateToconnexion(){
+    this.router.navigateByUrl('/connexion')}
+    navigateToSuperAdmin(){
+      this.router.navigateByUrl('/superadmin')}
+    }
 
-}

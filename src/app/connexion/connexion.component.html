@@ -18,17 +18,15 @@
         <label>Mot de passe</label>
         <input type="password" placeholder="******************"> 
       </div>
-      <a id="a" routerLink="" style="color: #fff !important;">
+      <a id="a" (click)="navigateToAdminmosque()" style="color: #fff !important;">
         Se connecter
       </a>
-      
-      
-        <a class="gtext" >
-          <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
-        </a>
-      
 
-      <h5 style="text-align: center;">Pas de compte? <a routerLinkActive="../../inscription" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-left: 10px; border-radius: 5px;">Créer un compte</a></h5>
+        <a class="gtext" style="margin-bottom: 20px;" (click)="navigateToSuperAdmin()" >
+            <i>  <img src="../../assets/images/google.png" alt="" width="15px" > Continuer avec google </i>
+        </a>
+
+      <h5 style="text-align: center;">Pas de compte? <a (click)="navigateToInscription()" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-left: 10px; border-radius: 5px;">Créer un compte</a></h5>
     </div>
   <!-- </div> -->
   </form>

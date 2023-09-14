@@ -1,19 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+
+import { HttpClientModule } from '@angular/common/http';
+import { Media } from '@ionic-native/media/ngx';
+
+import { SourateComponent } from './component/sourate/sourate.component';
+import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule} from '@angular/material/button';
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
 import { ModificationMosqueeComponent } from './PageSuperAdmin/modification-mosquee/modification-mosquee.component';
 import { AppComponent } from './app.component';
+
+
+import { AddListeComponent } from './component/add-liste/add-liste.component';
+import { DetailSourateComponent } from './component/detail-sourate/detail-sourate.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { DetailMosqueeComponent } from './PageSuperAdmin/detail-mosquee/detail-mosquee.component';
 import { MosqueeComponent } from './PageSuperAdmin/mosquee/mosquee.component';
 import { ModifierFrequenceRadioComponent } from './PageSuperAdmin/modifier-frequence-radio/modifier-frequence-radio.component';
 import { ListeFrequenceRadioComponent } from './PageSuperAdmin/liste-frequence-radio/liste-frequence-radio.component';
 import { ModifierutilisateurComponent } from './PageSuperAdmin/modifierutilisateur/modifierutilisateur.component';
+
 import { InscriptionComponent } from './inscription/inscription.component';
 import { DetailadminMosqueComponent } from './PageSuperAdmin/detailadmin-mosque/detailadmin-mosque.component';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -57,6 +72,7 @@ import { DetailsProgrammeComponent } from './Admin-Mosque/details-programme/deta
 import { DetailsDocumentComponent } from './Admin-Mosque/details-document/details-document.component';
 import { DetailsDocVideoComponent } from './Admin-Mosque/details-doc-video/details-doc-video.component';
 import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recitation/details-doc-recitation.component';
+import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modifier-profile.component';
 @NgModule({
   declarations: [AppComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
     AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
@@ -64,11 +80,18 @@ import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recita
     ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent,
      ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
      DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, 
-     ListutilisateurComponent, ConnexionComponent, AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
+     ListutilisateurComponent, ConnexionComponent, AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent,
+      DetailsAnnonceComponent,DetailsDocumentComponent,
      HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
      DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
+     SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,
+     DetailadminMosqueComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent,
+      MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,
+      ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
+      DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent,
+       ConnexionComponent, ModifierProfileComponent,
     DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ],
-  imports: [BrowserModule,FormsModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, MatDatepickerModule,NgxAngularMaterialHijriAdapterModule, MatFormFieldModule,MatInputModule],
+  imports: [BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule,NgxAngularMaterialHijriAdapterModule, MatFormFieldModule,MatInputModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
    { provide: DateAdapter,
@@ -77,10 +100,8 @@ import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recita
   // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
   { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
   // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
-  { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },
+  { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },Media
 ],
-
-
   bootstrap: [AppComponent],
 })
 export class AppModule {}
