@@ -7,6 +7,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
 import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 
 
 
@@ -57,7 +58,12 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  //?????????????????????????????????????????
+  {
+    path: 'jouerAudio/:audioUrl',component :JouerAudioComponent
   }
+
 
 ]
   }]

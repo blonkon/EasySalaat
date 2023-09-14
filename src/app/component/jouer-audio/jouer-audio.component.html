@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/preche" text="Retour"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Nom du precheur
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="img_box">
+    <img src="../../../assets/images/logowhite.png">
+  </div>
+  <div id="container">
+    <h2>Titre de la prêche</h2>
+    <ion-range min="0" max="100" value="40" mode="md" color="warning"></ion-range>
+    <p>Temps restant: 13m 12s</p>
+  </div>
+
+  <div class="flex_box">
+    <ion-button fill="clear" color="light" (click)="recule()">
+      <ion-icon slot="icon-only" name="play-back"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" color="light" (click)="playPause()">
+      <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" color="light" (click)="avance()">
+      <ion-icon slot="icon-only" name="play-forward"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

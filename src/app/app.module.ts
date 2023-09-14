@@ -30,6 +30,7 @@ import { ListeadminComponent } from './PageSuperAdmin/listeadmin/listeadmin.comp
 import { ModifieradminComponent } from './PageSuperAdmin/modifieradmin/modifieradmin.component';
 import { ModifieradminMosqueComponent } from './PageSuperAdmin/modifieradmin-mosque/modifieradmin-mosque.component';
 import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.component';
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.c
     HomeSuperAdminComponent,
     PageutiletadminComponent,
     ListutilisateurComponent,
+    JouerAudioComponent,
     ConnexionComponent],
   imports: [BrowserModule,
     FormsModule,
