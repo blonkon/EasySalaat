@@ -52,6 +52,10 @@ const routes: Routes = [
         loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
       },
       {
+        path: 'radio',
+        loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

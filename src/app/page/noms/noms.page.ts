@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailSourateComponent } from 'src/app/component/detail-sourate/detail-sourate.component';
 import { NomsService } from 'src/app/service/noms.service';
 
 @Component({
@@ -1401,7 +1403,7 @@ export class NomsPage implements OnInit {
 
   noms :any[]= [];
 
-  constructor(private nomService: NomsService) { }
+  constructor(private nomService: NomsService,private dialog : MatDialog) { }
 
   ngOnInit() {
    this.nomService.getNoms().subscribe(nom =>{
@@ -1411,7 +1413,13 @@ export class NomsPage implements OnInit {
   }
 
   
-
+  openDetail(nom:any){
+    console.log('Donnée recuperer est :' + nom)
+   const dialogRef =  this.dialog.open(DetailSourateComponent,{
+      width:'250px',
+      data: nom
+    })
+  }
 
 }
 

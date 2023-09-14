@@ -73,8 +73,8 @@
 
     <ion-badge slot="start">{{nom.number}}</ion-badge>
     <div >
-      <h1>{{nom.transliteration}}</h1>
-      <p>{{data[i].fr.meaning}}</p>
+      <a (click)="openDetail(nom && data[i])"><h1>{{nom.transliteration}}</h1>
+      <p>{{data[i].fr.meaning}}</p></a>
     </div>
   </div>
 

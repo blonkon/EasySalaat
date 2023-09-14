@@ -9,15 +9,15 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class DetailSourateComponent  implements OnInit {
 
-  detailSourate:any;
+  detail:any;
   p : number=1;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any){
   
   }
 
   ngOnInit(): void {
-    this.detailSourate = this.data;
-    console.log(this.detailSourate);
+    this.detail = this.data;
+    console.log(this.detail);
   }
   closeDialog(){
     console.log("closeDialog")
