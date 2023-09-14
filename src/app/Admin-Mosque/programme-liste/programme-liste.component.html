@@ -15,22 +15,41 @@
     <div>
       <ion-button [routerLink]="['../programme-ajouter']" shape="round" class="bbb" style=" --background: var(--ion-color, #005B2F); height: 10px; margin-left: 15px;">Ajouter</ion-button>
     </div>
+
     <ion-list>
-      <ion-item class="liste">
-        <ion-label [routerLink]="['../details-programme']" class="ion-label">BatêmeMaouloud</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
-      </ion-item>
-     
-      <ion-item class="liste">
-        <ion-label [routerLink]="['../details-programme']" class="ion-label">Doua</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
+      <ion-item  *ngFor="let element of data">
+        <div>
+        <ion-label style="color: black;">{{element.titre}}</ion-label> 
+        <label>{{element.dateTime}}</label>
+      </div>
+        <ion-icon name="create-outline"  style="color: #005B2F;"  [routerLink]="['../programme-update']" ></ion-icon>
+        <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
        
+        <ion-alert
+        header="Alert!"
+        [buttons]="alertButtons"
+        (ionAlertDidDismiss)="setResult($event)"
+        id="myAlert"
+        ></ion-alert>
       </ion-item>
-      <ion-item class="liste">
-        <ion-label [routerLink]="['../details-programme']" class="ion-label">Fajr</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/Vector.png" [routerLink]="['../programme-update']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal" style="float: right;" alt="icon" ></ion-label>
-        
-      </ion-item>
+
+      <!-- <ion-item class="Liste" *ngFor="let element of data">
+        <div class="mondiv">
+          <ion-label style="max-width: 100%; margin-bottom: 5px;" [routerLink]="['../details-annonce']" class="ion-label">{{element.titre}} </ion-label>   
+          <label for=""> {{element.dateTime}}</label>
+        </div>
+       
+        <div class="iconitem">
+          <ion-icon name="create-outline" style="color: #005B2F;width: 25px; height: 20px;" [routerLink]="['../annonce-update']" ></ion-icon>
+        <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+        </div>
+          <ion-alert
+          header="Alert!"
+          [buttons]="alertButtons"
+          (ionAlertDidDismiss)="setResult($event)"
+          id="myAlert"
+          ></ion-alert>
+      </ion-item> -->
       
     </ion-list>
 

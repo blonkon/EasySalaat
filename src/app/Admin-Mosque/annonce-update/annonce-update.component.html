@@ -13,16 +13,22 @@
   </div>
   </div>
   <div class="form-controle">
-    <form action="annonce-liste" method="post" >
-      <div>
-        <label for="">Titre D'annonce</label>
-        <input name="titre" value="" type="text">  
-      </div>
-       <div>
-         <label for="">Description</label>
-         <input name="description" value="" type="text" > 
-       </div>
-       <input type="submit" value="Modifier" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;">
+    <form action="annonce-liste.component.html"  method="post" #ann="ngForm">
+      <!-- (submit)="saveAnnonce()"  -->
+    <div>
+     <label >Titre D'annonce</label>
+      <input  [(ngModel)]="annonce.titre" name="titre" type="text">  
+    </div>
+    <div>
+      <label >Description</label>
+      <input [(ngModel)]="annonce.description" name="description" type="text" > 
+    </div>
+    <div>
+      <label >Date Heure</label>
+      <input [(ngModel)]="annonce.dateTime" name="dateTime" type="datetime-local" > 
+    </div>
+    <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button">Enregistrer</button>
+    <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> (click)="saveAnnonce()"  -->
   </form>
   </div>
   

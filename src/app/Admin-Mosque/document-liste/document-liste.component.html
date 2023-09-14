@@ -16,21 +16,15 @@
       <ion-button [routerLink]="['../document-ajouter']" shape="round" class="bbb" style=" --background: var(--ion-color, #005B2F); height: 10px;margin-left: 15px;">Ajouter</ion-button>
     </div>
     <ion-list>
-      <ion-item class="liste">
-        <ion-label  [routerLink]="['../details-document']"  class="ion-label">Audio Prêche</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png" [routerLink]="['../details-document']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
+      <ion-item class="liste"  *ngFor="let element of data">
+       
+        <ion-label style="max-width: 100%; margin-bottom: 5px;" [routerLink]="['../details-document']" class="ion-label">{{element.nom}} </ion-label>   
+        <div class="iconitem">
+          <ion-icon name="eye-outline"></ion-icon>
+          <!-- <ion-icon name="create-outline" style="color: #005B2F;width: 25px; height: 20px;" [routerLink]="['../annonce-update']" ></ion-icon> -->
+        <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+        </div>
       </ion-item>
-      <ion-item class="liste">
-        <ion-label  [routerLink]="['../details-doc-video']"  class="ion-label">Vidéo Prière</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png"  alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
-      </ion-item>
-     
-      <ion-item class="liste">
-        <ion-label  [routerLink]="['../details-doc-recitation']"  class="ion-label">Récitation</ion-label>   
-        <ion-label style=" margin-left: 83px;  margin-right: -393px">  </ion-label> <ion-label > <img style="margin-left: 19vh;" src="../../../assets/images/vv.png" [routerLink]="['../details-doc-recitation']" alt="icon"> <img src="../../../assets/images/delete1.png" id="open-modal3" style="float: right;" alt="icon" ></ion-label>
-      
-      </ion-item>
-      
     </ion-list>
 
     <!-- <ion-footer>
