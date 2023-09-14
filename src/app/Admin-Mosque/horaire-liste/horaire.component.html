@@ -12,33 +12,20 @@
       <h2 style="color: #005B2F;margin-top: 83px; text-align: center;">Horaire</h2>
     </div>
   </div>
-  <ion-list>
-    <ion-item class="liste">
-      <ion-label>Fajr</ion-label>   <ion-label class="label2">05H20mn</ion-label> <ion-label><img id="present-alert" src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>
-    <ion-item class="liste">
-      <ion-label>Chorouq</ion-label>  <ion-label class="label2">10H00mn</ion-label>  <ion-label><img  id="present-alert" src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>
-    <ion-item class="liste">
-      <ion-label>Dohr</ion-label>   <ion-label class="label2">13H30mn</ion-label>   <ion-label><img  id="present-alert"  src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>
-    <ion-item class="liste">
-      <ion-label>Asr</ion-label>   <ion-label class="label2">16H00mn</ion-label>  <ion-label><img  id="present-alert"  src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>
-    <ion-item class="liste">
-      <ion-label>Maghreb</ion-label>   <ion-label class="label2">18H50mn</ion-label>  <ion-label><img  id="present-alert"  src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>
-    <ion-item class="liste">
-      <ion-label>Icha</ion-label>    <ion-label class="label2">20H00mn</ion-label>    <ion-label><img  id="present-alert"  src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>  
-    <ion-item class="liste">
-      <ion-label>Djumah</ion-label>    <ion-label class="label2">13H00mn</ion-label>    <ion-label><img  id="present-alert"  src="../../assets/images/Vector.png" style="float: right;" alt="icon"></ion-label>
-    </ion-item>  
-  </ion-list>
   
-  
+  <ion-item  *ngFor="let element of data">
+   
+    <ion-label>{{element.nom}}</ion-label> <ion-label> {{element.time}}</ion-label>
+    <ion-icon name="create-outline"  style="color: #005B2F;" ></ion-icon>
+    
+  </ion-item>
+  <ion-alert
+    header="Alert!"
+    [buttons]="alertButtons"
+    (ionAlertDidDismiss)="setResult($event)"
+    id="myAlert"
+    ></ion-alert>
 </ion-content>
-
 
 <!-- Modal -->
 <form action="horaire-liste" method="post">

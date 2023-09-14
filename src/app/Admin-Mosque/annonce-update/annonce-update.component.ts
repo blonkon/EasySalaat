@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnonceUpdateComponent  implements OnInit {
 
+  annonce : any={}
+  isEditMode: boolean = false;
+  id: number | undefined;
   constructor() { }
 
   ngOnInit() {}
