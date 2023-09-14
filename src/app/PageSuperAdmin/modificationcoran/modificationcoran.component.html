@@ -1,0 +1,40 @@
+<ion-header class="head">
+
+  <ion-icon name="arrow-undo" style="font-size: 30px; margin: 20px; color: #fff;" [routerLink]="['../coran']"></ion-icon>
+  <div class="header">
+  <div class="img" style="margin-left: -10%;">
+    <img src="../../assets/images/coran.png" alt="" width="50%">
+    <p style="color: #fff; margin-left: -15%;"><strong>Modifier une Lecture</strong></p>
+  </div>
+</div>
+</ion-header>
+<ion-content>
+
+    <div style="display: flex; justify-content: space-around; align-items: center;margin-top: 15px;">
+      <div>
+        <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px; margin-left: 35%; ">
+          <ion-img src="../../assets/images/coran.png"></ion-img>
+        </ion-thumbnail>
+        <ion-label style="margin-left: 30%; ">Choisir une photo</ion-label>
+        <ion-input type="file" accept="image/*" (change)="onImageChange($event)"></ion-input>
+      </div>
+    </div>
+    <ion-item class="input-item">
+      <ion-label class="label">Surah</ion-label>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label class="label">Nom d'Imam</ion-label>
+      <ion-input class="input" type="text" [(ngModel)]="mosqueName"></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label class="label">Nationalité</ion-label>
+      <ion-input class="input" type="text" [(ngModel)]="mosqueName"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-label class="label">Audio</ion-label>
+      <ion-input class="input" type="file" [(ngModel)]="porte"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="submitForm()" style="margin: 15px;">Enregistrer</ion-button>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-content>
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png" style="margin-top: 20px;" alt=""  [routerLink]="['../admin-profile']">
+  </div>
+<div id="container" style="display: grid;">
+ 
+  <div class="img">
+    <img src="../../assets/images/eclopse.png" alt="horaire" style="border-radius: 50%; width: 100PX; height: 100px;">
+  </div>
+  <div >
+    <h2 style="color:black; text-align: center;">{{getnom}}</h2>
+  </div>
+</div>
+<div class="form-controle">
+  <form action="Profile-admin-mosque" method="post">
+  <div>
+   <label for="">Nom d'Utilisateur</label>
+    <input name="nom" type="text">  
+  </div>
+  <div>
+    <label for="">Email</label>
+    <input name="email" type="email" > 
+  </div>
+  <div>
+  <label for="">Nouveau Mot de Passe</label>
+    <input name="motdepass" type="password"> 
+  </div>
+  <div>
+  <label for="">Confirmer Mot de Passe</label>
+    <input name="Confirmer" type="password" > 
+  </div>
+  
+<input type="submit" value="Modifier" style="background-color: #005B2F;width: 100%; color: white; font-weight: bold; margin-top: 15px;" class="btn1" >
+</form>  
+</div>
+</ion-content>

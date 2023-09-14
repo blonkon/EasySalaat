@@ -42,5 +42,11 @@ export class ConnexionComponent  implements OnInit {
   }
 
   ngOnInit() {}
+  navigateToInscription(){
+    this.router.navigateByUrl('/inscription')}
 
+    navigateToAdminmosque(){
+      this.router.navigateByUrl('/admosque')}
+      navigateToSuperAdmin(){
+        this.router.navigateByUrl('/superadmin')}
 }

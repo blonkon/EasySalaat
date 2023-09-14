@@ -5,7 +5,6 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
-import { ExploreContainerComponent } from './explore-container/explore-container.component';
 import { RoleGuard } from './role.guards';
 import { TabsPage } from './tabs/tabs.page';
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
@@ -20,6 +19,7 @@ const routes: Routes = [
     path: '', component: ConnexionComponent,
     // canActivate: [RoleGuard2]
   },
+  {path: 'inscription',component:InscriptionComponent},
   {
     path: 'inscription', component: InscriptionComponent
   },
@@ -81,10 +81,10 @@ const routes: Routes = [
         path: 'noms',
         loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
       },
-      {
-        path: 'preche',
-        loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
-      },
+      // {
+      //   path: 'preche',
+      //   loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
+      // },
       {
         path: 'sourate',
         loadChildren: () => import('./page/sourate/sourate.module').then( m => m.SouratePageModule)

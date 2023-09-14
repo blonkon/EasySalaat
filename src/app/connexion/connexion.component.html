@@ -1,18 +1,15 @@
- <ion-header>
-  <div class="img">
-    <img src="../../assets/images/logo.png" alt="" width="150px">
-    <h2 style="color: #005B2F;">Connexion</h2>
-  </div>
- </ion-header>
-
-<ion-content>
+<div class="img animate__animated animate__fadeInDown">
+  <img src="../../assets/images/logo.png" alt="" width="150px" style="border-radius: 50%;">
+  <h2 style="color: #005B2F; margin-left: 20px;">Connexion</h2>
+</div>
+<ion-content class="animate__animated animate__fadeInUp">
  
 <form (ngSubmit)="onSubmit(p)" #p="ngForm" >
   <p style="text-align: center; "> <strong style="text-align: center; color: red; font-size: small; padding: 5px;">{{ invalid }}</strong></p>
   <div id="container">
     
    
-    <div class="form-controle">
+    <div class="form">
       
       <div>
         <label>Email ou nom d'utilisateur</label>
@@ -24,14 +21,17 @@
       </div>
         <input id="a" type="submit" style="color: #fff !important;" value="Se connecter" >
       
-        <a class="gtext" style="text-align: center;">
+        <!-- <a class="gtext" style="text-align: center;">
          <img src="../../assets/images/google.png" alt="" width="18px"  style="padding-right: 5px;" > <span>Continuer avec google</span>
-        </a>
-      
+        </a> -->
+        <a class="gtext" style="margin-bottom: 20px;">
+          <i>  <img src="../../assets/images/google.png" alt="" width="18px"  style="padding-right: 5px;" >Continuer avec google</i>
+         </a>
 
-      <h5 style="text-align: center;">Pas de compte? <a routerLink="inscription" style="color: #005B2F !important; font-weight: bold;">Créer un compte</a></h5>
+
+      <h5 style="text-align: center;">Pas de compte? <a routerLink="inscription" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-left: 10px; border-radius: 5px;">Créer un compte</a></h5>
     </div>
   </div>
-</form>
+  </form>
 
 </ion-content>

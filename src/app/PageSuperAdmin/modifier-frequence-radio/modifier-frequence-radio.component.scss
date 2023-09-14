@@ -67,11 +67,104 @@
   }
   input::placeholder{
     padding-left: 20px ;
+    
   }
+  
   
   a{
     text-decoration: none;
     color: black !important;
-    font-weight: bold ;
-    
+    font-weight: bold ; 
   }
+/*--------------------------------------------------------------->*/ 
+.custom-btn {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  border-radius: 15px;
+  // padding: 10px 25px;
+  padding: 12px 0 12px 0;
+  font-weight: bold;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+/* 5 */
+.frame {
+  width: 100%;
+  // margin: 20% auto;
+  text-align: center;
+}
+.btn-5 {
+  width: 100% !important;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #005B2F;
+background: linear-gradient(0deg, #005B2F 0%, #005B2F 100%);
+}
+.btn-5:hover {
+  color: #005B2F;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #005B2F;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/*--------------------------------------------------------------->*/
+input{
+  font-size: 16px;
+  border: none !important;
+  border-radius: 15px !important;
+ padding: 10px !important;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 5px 5px 5px 0px rgba(69, 68, 68, 0.5),
+   10px 10px 30px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+input::placeholder{
+  padding-left: 20px ;
+}
+input:focus{
+  color: #005B2F;
+  font-weight: bold;
+  padding-right: 30px ;
+}

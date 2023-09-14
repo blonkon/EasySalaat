@@ -22,7 +22,15 @@ import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component'
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
 import { RoleGuard2 } from 'src/app/role2.guards';
+import { AjoutcoranComponent } from '../ajoutcoran/ajoutcoran.component';
+import { DetailcoranComponent } from '../detailcoran/detailcoran.component';
+import { ModificationcoranComponent } from '../modificationcoran/modificationcoran.component';
+import { CalendrierComponent } from '../calendrier/calendrier.component';
+// import { NgxAngularMaterialHijriAdapterModule } from 'ngx-angular-material-hijri-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
+// import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
+import { LecteurComponent } from '../lecteur/lecteur.component';
 
 const routes: Routes = [
   {
@@ -37,8 +45,23 @@ const routes: Routes = [
     component: AjoutMosqueeComponent
   },
   {
+    path: 'calendrier', component: CalendrierComponent
+  },
+  {
     path: 'detailmosquee',
     component: DetailMosqueeComponent
+  },
+  {
+    path: 'detailcoran',
+    component: DetailcoranComponent
+  },
+  {
+    path: 'modificationcoran',
+    component: ModificationcoranComponent
+  },
+  {
+    path: 'ajoutcoran',
+    component: AjoutcoranComponent
   },
   {
     path: 'modificationmosquee',
@@ -70,14 +93,14 @@ const routes: Routes = [
     path: 'listadminmos',component: ListeadminMosqueComponent,
 
   },
-  
-  
+
+
   {
     path: 'detailadminmos',component: DetailadminMosqueComponent,
 
   },
-  
-  
+
+
   {
     path: 'modifieradminmos',component: ModifieradminMosqueComponent,
 
@@ -86,11 +109,6 @@ const routes: Routes = [
     path: 'listradio',component: ListeFrequenceRadioComponent,
 
   },
-  
-  
-  
-  
-  
   {
     path: 'modifierradio',component: ModifierFrequenceRadioComponent,
 
@@ -98,9 +116,6 @@ const routes: Routes = [
   {
     path: 'coran', component: CoranComponent,
   },
-  
-  
-
   {
     path: 'mosquee',
     component: MosqueeComponent,
@@ -108,16 +123,27 @@ const routes: Routes = [
   {
     path: 'pageutiletadmin',
     component: PageutiletadminComponent,
-  }
-,
+  },
   {
-    path: '',
-    component: AccueilsuperadminPage,
+    path: 'lecteur',
+    component: LecteurComponent,
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+    //  NgxAngularMaterialHijriAdapterModule
+    ],
   exports: [RouterModule],
+  providers: [
+    // {
+    //   provide: DateAdapter,
+    //   useClass: NgxAngularMaterialHijriAdapterService,
+    // },
+    // // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
+    // { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
+    // // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
+    // { provide: MAT_DATE_LOCALE, useValue: "fr"},
+]
 })
 export class AccueilsuperadminPageRoutingModule {}

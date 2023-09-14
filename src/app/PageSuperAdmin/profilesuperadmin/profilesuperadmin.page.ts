@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profilesuperadmin.page.scss'],
 })
 export class ProfilesuperadminPage implements OnInit {
-
+nom_admin: string = 'Alhadji Mohamed Keita';
   constructor() { }
 
   ngOnInit() {

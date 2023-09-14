@@ -22,23 +22,23 @@ export class AnnonceComponent  implements OnInit {
     private router : Router,
     private annonceService : AnnonceServiceService
   ) {
-    this.route.queryParams.subscribe((params) => {
-      if(params['id']){
-        this.id = Number(params['id']);
-        this.annonce= Object.assign({}, this.annonceService.getAnnonce()[this.id]);
-        this.isEditMode = true;
-      }
-    });
+    // this.route.queryParams.subscribe((params) => {
+    //   if(params['id']){
+    //     this.id = Number(params['id']);
+    //     this.annonce= Object.assign({}, this.annonceService.getAnnonce()[this.id]);
+    //     this.isEditMode = true;
+    //   }
+    // });
    }
 
-   saveAnnonce(){
-      if(this.isEditMode && this.id !== undefined){
-        this.annonceService.editAnnonce(this.id, this.annonce);
-      } else {
-        this.annonceService.addAnnonce(this.annonce);
-      }
-      this.router.navigate(['/annonce']);
-   }
+  //  saveAnnonce(){
+  //     if(this.isEditMode && this.id !== undefined){
+  //       this.annonceService.getAnnonce(this.id, this.annonce);
+  //     } else {
+  //       this.annonceService.addAnnonce(this.annonce);
+  //     }
+  //     this.router.navigate(['/annonce']);
+  //  }
 
   ngOnInit() {}
 

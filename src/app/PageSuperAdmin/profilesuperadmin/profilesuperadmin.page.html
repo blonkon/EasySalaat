@@ -1,13 +1,33 @@
-<ion-header [translucent]="true" class=" animate__animated animate__fadeInDown ">
-  <ion-toolbar>
-    <ion-title>profilesuperadmin</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profilesuperadmin</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="header">
+
+  </div>
+  <div class="contenue">
+    <img src="../../assets/images/profil.png" alt="">
+    <h1>{{ nom_admin}}</h1>
+    <div class="membre">
+      <h6 style="margin-top: 10px;">
+       Membre depuis 24 Avr 2022
+      </h6>
+    </div>
+    <div class="modifier" [routerLink]="['../modifier-profileadmin']" >
+      <h3 style="margin-top: 10px;">
+        Modifier le profil
+      </h3>
+    </div>
+    <div class="comment">
+      <img src="../../assets/icon/comment.png" alt="img">
+      <h3> Laissez nous un commentaire </h3>
+    </div>
+    <div class="comment">
+      <img src="../../assets/icon/partage.png" alt="img">
+      <h3> Partagez l'application </h3>
+    </div>
+    <div class="comment">
+      <img src="../../assets/icon/don.png" alt="img">
+      <h3>Faire un don </h3>
+    </div>
+      <button class="deconnexion">Déconnexion</button>
+  </div>
+
 </ion-content>
