@@ -14,193 +14,21 @@
   </div>
 </ion-header>
 <ion-content>
-  
- 
-  <ion-content>
     <section class="liste">
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
+        <div  *ngFor="let mosque of mosques">
+            <div class="mosque">
+                <div class="nom">
+                  <p>{{ mosque.nom }}</p>
+                </div>
+                <div class="info">
+                  <a (click)="openDetail(mosque)"><img src="assets/info.png" alt="Image 1"></a>
+                </div>
+                <div class="cloche">
+                  <img src="assets/cloche.png" alt="Image 2">
+                </div>
+              </div>
+              <p class="dist">3Km</p>
         </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo3">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>   
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div> 
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div>
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="kilo">
-          <p>3.5 Km</p>
-        </div> 
-        <div class="mosque">
-          <div>
-              <p>mosque Ar Rahmane</p>
-          </div>
-          <div class="info">
-              <img src="assets/info.png" alt="Image 1">
-          </div>
-          <div class="cloche">
-              <img src="assets/cloche.png" alt="Image 2">
-          </div>
-      </div>
-      <div class="kilo">
-        <p>3.5 Km</p>
-      </div> 
-      <div class="mosque">
-        <div>
-            <p>mosque Ar Rahmane</p>
-        </div>
-        <div class="info">
-            <img src="assets/info.png" alt="Image 1">
-        </div>
-        <div class="cloche">
-            <img src="assets/cloche.png" alt="Image 2">
-        </div>
-    </div>
-    <div class="kilo">
-      <p>3.5 Km</p>
-    </div>  
-        <div class="mosque">
-            <div>
-                <p>mosque Ar Rahmane</p>
-            </div>
-            <div class="info">
-                <img src="assets/info.png" alt="Image 1">
-            </div>
-            <div class="cloche">
-                <img src="assets/cloche.png" alt="Image 2">
-            </div>
-        </div>
-        <div class="killo6">
-          <p>3.5 Km</p>
-        </div> 
-</section>
-
+      </section>
   </ion-content>
   

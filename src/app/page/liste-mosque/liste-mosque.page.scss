@@ -31,15 +31,16 @@
 }
 .mosque {
     display: flex;
-   padding-left: 35px;
+   padding-left: 10px;
+   padding-top: 10px;
 }
 .info {
-   margin-left: 40%;
-   margin-top: 15px;
+   margin-left: 50px;
+   margin-top: 10px;
 }
 .cloche {
     margin-left: 10px;
-    margin-top: 15px;
+    margin-top: 10px;
  }
 
  .liste{
@@ -52,21 +53,11 @@
     // margin-bottom: 10px;
 
  }
- .kilo{
-    margin-top: -25px;
-    border-bottom: 1px solid #0000004D ;
-    font-size: small;
-    padding-left: 35px;
- }
- .kilo3 {
-    margin-top: -25px;
-    border-bottom: 1px solid ;
-    font-size: small;
-    padding-left: 35px;
- }
- .killo6 {
-    margin-top: -25px;
-   border-bottom: none;
-    font-size: small;
-    padding-left: 35px;
+.nom {
+   width: 68%;
+}
+ .dist {
+   padding-left: 10px;
+   margin-top: -18px;
+   font-size: x-small;
  }

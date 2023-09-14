@@ -20,10 +20,17 @@ import { FormsModule } from '@angular/forms';
 import { DetailSourateComponent } from './component/detail-sourate/detail-sourate.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { InscriptionComponent } from './inscription/inscription.component';
-
 @NgModule({
   declarations: [AppComponent,SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,MatDialogModule,FormsModule,NgxPaginationModule],
+  imports: [
+     BrowserModule, 
+     IonicModule.forRoot(),
+     AppRoutingModule,
+     HttpClientModule,
+     MatDialogModule,
+     FormsModule,
+     NgxPaginationModule,
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Media],
   bootstrap: [AppComponent],
 })

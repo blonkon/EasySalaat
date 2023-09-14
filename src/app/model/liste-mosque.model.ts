@@ -1,14 +1,16 @@
-// mosque.model.ts
+// liste-mosque.model.ts
 
 export class Mosque {
-    id: number;
     nom: string;
-    geoPoint: [number, number];
+    geoPoint:[number, number];
+    annonce: { titre: string, description: string }[];
+    programme: { titre: string, description: string }[];
   
-    constructor(id: number, nom: string, geoPoint: [number, number]) {
-      this.id = id;
+    constructor( nom: string, geoPoint: [number, number],annonce:{ titre: string, description: string }[],programme:{ titre: string, description: string }[]) {
       this.nom = nom;
       this.geoPoint = geoPoint;
+      this.annonce = annonce;
+      this.programme = programme;
     }
   }
   

@@ -48,6 +48,10 @@ const routes: Routes = [
         loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
       },
       {
+        path: 'info-page',
+        loadChildren: () => import('../page/info-page/info-page.module').then( m => m.InfoPagePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

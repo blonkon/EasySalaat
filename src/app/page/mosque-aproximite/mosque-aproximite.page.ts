@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
-
+import { MosqueService } from '../../service/liste-mosque.service';
+import { Mosque } from 'src/app/model/liste-mosque.model';
 @Component({
   selector: 'app-mosque-aproximite',
   templateUrl: './mosque-aproximite.page.html',
@@ -11,17 +12,19 @@ import 'leaflet-routing-machine';
 export class MosqueAproximitePage implements OnInit {
   map!: L.Map;
   distanceToMosque : any;
+  mosqueeLocations: Mosque[]=[];
   utilisateurPosition: [number, number] = [0, 0]; // Position de l'utilisateur réelle
   currentRouteControl: L.Routing.Control | null = null;
-  mosqueeLocations: { name: string; location: [number, number] }[] = [
-    { name: 'Mosque Mille et une merveille', location: [12.63074, -8.0295731] },
-    { name: 'Mosquée', location: [12.6374469, -8.0264756] },
-  ];
+  // mosqueeLocations: { name: string; location: [number, number] }[] = [
+  //   { name: 'Mosque Mille et une merveille', location: [12.63074, -8.0295731] },
+  //   { name: 'Mosquée', location: [12.6374469, -8.0264756] },
+  // ];
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private mosqueService: MosqueService) {}
 
   ngOnInit() {
     this.getUserLocation();
+    this.mosqueeLocations = this.mosqueService.getMosques();
   }
 
   ionViewDidEnter() {
@@ -31,8 +34,8 @@ export class MosqueAproximitePage implements OnInit {
 
     // Marqueurs des mosquées
     this.mosqueeLocations.forEach((location) => {
-      const markerMosquee = L.marker(location.location).addTo(this.map);
-      markerMosquee.bindPopup(location.name);
+      const markerMosquee = L.marker(location.geoPoint).addTo(this.map);
+      markerMosquee.bindPopup(location.nom);
 
       // Ajoutez un gestionnaire de clic pour le marqueur de mosquée
       markerMosquee.on('click', () => {
@@ -45,7 +48,7 @@ export class MosqueAproximitePage implements OnInit {
         const routingControl = L.Routing.control({
           waypoints: [
             L.latLng(this.utilisateurPosition[0], this.utilisateurPosition[1]),
-            L.latLng(location.location[0], location.location[1]),
+            L.latLng(location.geoPoint[0], location.geoPoint[1]),
           ],
         }).addTo(this.map);
         // Mettez à jour la variable de l'itinéraire actuel
@@ -53,15 +56,15 @@ export class MosqueAproximitePage implements OnInit {
         // Vous pouvez personnaliser l'itinéraire ici, par exemple, en ajoutant un nom.
         routingControl.setWaypoints([
           L.latLng(this.utilisateurPosition[0], this.utilisateurPosition[1]),
-          L.latLng(location.location[0], location.location[1]),
+          L.latLng(location.geoPoint[0], location.geoPoint[1]),
         ]);
 
             // Calcul de la distance entre la position de l'utilisateur et la mosquée
         const distance = this.calculateDistance(
           this.utilisateurPosition[0],
           this.utilisateurPosition[1],
-          location.location[0],
-          location.location[1]
+          location.geoPoint[0],
+          location.geoPoint[1]
         );
         this.distanceToMosque = distance;
       });

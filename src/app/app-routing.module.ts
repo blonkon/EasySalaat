@@ -37,6 +37,8 @@ const routes: Routes = [
     path:'connexion',component:ConnexionComponent
   },
   {path: 'inscription',component:InscriptionComponent},
+  
+
 
 
 ];
