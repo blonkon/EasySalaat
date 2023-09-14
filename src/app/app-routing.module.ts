@@ -13,7 +13,7 @@ import { SuperadminPageRoutingModule } from './PageSuperAdmin/superadmin/superad
 
 const routes: Routes = [
   {
-    path: '', component: ConnexionComponent
+    path: ''
    ,
     children: [
   {
