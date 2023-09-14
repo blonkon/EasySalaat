@@ -40,7 +40,9 @@ ul li a {
   font-weight: bold;
   cursor: pointer;
 }
-
+.active:hover{
+  background: #005B2F;
+}
 li a :hover {
   text-decoration: underline;
 }
@@ -64,3 +66,18 @@ h1 {
   margin: 0.5rem;
 }
 
+
+@media screen and (max-width: 712px) and (min-width: 712px) {
+  ion-icon{
+      font-size: 50px;
+  }
+p{
+  font-size: 22px;
+ }
+ h1{
+  font-size: 28px;
+ }
+ ul li a {
+  font-size: 28px;
+}
+}

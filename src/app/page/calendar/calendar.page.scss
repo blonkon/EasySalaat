@@ -39,3 +39,33 @@ span{
     color: #005B2F;
     font-size: 18px;
 }
+@media screen and (max-width: 712px) and (min-width: 712px) {
+  ion-icon{
+      font-size: 50px;
+  }
+p{
+  font-size: 22px;
+ }
+ h1{
+  font-size: 28px;
+ }
+ ul li a {
+  font-size: 28px;
+}
+span{
+  font-size: 20px;
+}
+
+.name{
+ 
+  width: 95%;
+  margin: 1rem;
+
+}
+.canlender{
+  width: 95%;
+}
+ion-datetime {
+  font-size: 20px;
+}
+}

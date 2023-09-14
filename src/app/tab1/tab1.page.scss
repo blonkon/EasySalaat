@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover; 
     height: 94vh; 
-    // opacity: 0.8;
+    opacity: 0.9;
     // background-position: center;
   }
   .container .title{
@@ -141,7 +141,11 @@ ion-list-header{
   height: 100vh; 
 }
 }
-// @media screen and (max-width: 414px) {
+ @media screen and (max-width: 414px) {
+  div h5{
+    font-size: 18px;
+  }
+ }
 //   div h5{
 //    font-size: 19px;
 //   //  font-weight: bold;
@@ -198,63 +202,12 @@ ion-list-header{
   }
 }
 
-// @media screen and (max-width: 380px) {
-//   h5{
-//    font-size: 16px;
-//    font-weight: bold;
-//   }
-//   .card[_ngcontent-ng-c2236167759] {
-//     width: 50px;
-//     height: 50px;
-// }
-//   .container-priere{
-//     margin: auto;
-//     width: 340px;
-//     height: 340px;
-//     background: #fff;
-//     border-radius: 15px;
-// }
-// i{
-//   font-size: 20px;
-//   margin-top: 10px;
-// }
-// .logo{
-//   gap: 2rem;
-//   flex-wrap: wrap;
-//   margin: 1.5rem;
-// }
-// ion-img{
-//   font-size: 16px;
-// }
-// .container .title{
-//   padding-top: 1rem;
-   
-// }
-// .clock{
-//   padding: 4px;
-//   gap: 1rem;
-// }
-// .clock i{
-//   font-size: 25px;
-// }
-// .container-priere{
-//   margin: auto;
-//   width: 340px;
-//   height: 380px;
-// }
-
-// .container {
-//   height: 100vh; 
-// }
-// }
-// @media screen and (max-width: 360px) {
-//   .container {
-//     height: 120vh; 
-//   }
-// }
 @media screen and (max-width: 375px) and (min-width: 375px){
   .container {
     height: 120vh; 
+  }
+  div h5{
+    font-size: 18px;
   }
   .logo{
     margin: 1rem;
@@ -277,6 +230,9 @@ ion-list-header{
     width: 340px;
     height: 385px;
   }
+  div h5 {
+    font-size: 17px;
+  }
 }
 @media screen and (max-width: 320px) and (min-width: 320px){
   .container-priere{
@@ -285,7 +241,7 @@ ion-list-header{
     height: 380px;
   }
   div h5{
-    font-size: 13px;
+    font-size: 15px;
   }
   .card {
     width: 50px;
