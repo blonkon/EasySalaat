@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
+import { Users } from '../models/users';
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -14,40 +16,28 @@ export class AdminMosqueService {
   triggerUpdate() {
     this.updateEvent.next();
   }
-  list_admin_mosque: any =[
-    {name: 'Amidou traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    {name: 'Adama traore', img: "../../assets/images/User1.png"},
-  ];
+  list_admin_mosque: any =[];
 
-  constructor() { }
+  constructor(private firestore : Firestore) { }
 
-  getAdmin_mosque_List(): Observable<any> {
-    return this.list_admin_mosque;
+  async getAdmin_mosque_List(): Promise<Observable<Users[]>> {
+    this.list_admin_mosque=[];
+    const q = query(collection(this.firestore, "Users"), where("role", "==", 1));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+      let user : Users = {
+        nom : doc.data()['nom'],
+        email : doc.data()['email'],
+        motdepasse : "",
+        role : doc.data()['role']};
+      this.list_admin_mosque.push(user)
+    });
+    return of(this.list_admin_mosque);
+    
   }
+
 
   deleteAdmin_mosque_(id: number): Observable<any> {
     // return this._http.delete(`http://localhost:3000/employees/${id}`);

@@ -23,8 +23,8 @@
     
     <div>
       <label>Role</label>
-      <ion-select [(ngModel)]="rolem"  >
-        <ion-select-option [(ngModel)]="rolem" *ngFor="let val of role" [value]="val" >{{val}}
+      <ion-select [(ngModel)]="rolem"  name="role">
+        <ion-select-option  *ngFor="let val of role" [value]="val" >{{val}}
           
         </ion-select-option>
 

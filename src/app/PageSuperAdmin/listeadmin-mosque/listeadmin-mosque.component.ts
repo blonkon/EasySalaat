@@ -15,11 +15,13 @@ export class ListeadminMosqueComponent  implements OnInit {
     constructor( private alertController: AlertController, private _service : AdminMosqueService) {
      }
   
-    ngOnInit() {
+    async ngOnInit() {
+      this.data=[]
       this.nombre_admin_mosque = this.data.length;
-      this._service.getAdmin_mosque_List().forEach((element) => {
-        this.data.push(element);});
-        this.nombre_admin_mosque = this.data.length;
+      (await this._service.getAdmin_mosque_List()).forEach((element) => {
+        this.data.push(element);
+      });
+        this.nombre_admin_mosque = this.data[0].length;
         
     }
   

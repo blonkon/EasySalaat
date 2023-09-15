@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder , FormGroup, NgForm} from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
 import { ActivatedRoute } from '@angular/router';
+import { Firestore, collection, doc, getDocs, query, updateDoc, where } from '@angular/fire/firestore';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class ModifierutilisateurComponent  implements OnInit {
   mail? : string;
   nom? : string;
   constructor(
-    private formBuilder: FormBuilder, private _service: UtilisateurService,  ) {
+    private formBuilder: FormBuilder, private _service: UtilisateurService,private firestore : Firestore  ) {
     
     this.userForm = this.formBuilder.group({
       id:'',
@@ -50,7 +51,7 @@ export class ModifierutilisateurComponent  implements OnInit {
   ////////////////////////////////
    ///LAFIN
   
-      onSubmit(forms : NgForm) {
+      async onSubmit(forms : NgForm) {
         // if (this.userForm.valid) {
         //   const mesure = this.userForm.value; 
         //   if (this.data) {      
@@ -65,6 +66,23 @@ export class ModifierutilisateurComponent  implements OnInit {
         //       this.userForm.reset(); 
         //       }
         //   }
+       
+    const q = query(collection(this.firestore, "Users"), where("email", "==", this.mail));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach(async (docr) => {
+      console.log(docr.id, " => ", docr.data()); 
+      const washingtonRef = doc(this.firestore, "Users", docr.id);
+      if (this.rolem==="admin-mosque") {
+        await updateDoc(washingtonRef, {
+          role: 1
+          });
+      } else {
+        await updateDoc(washingtonRef, {
+          role: 0
+          });
+      }
+     
+    });
         console.log(this.rolem)
         }
     }
