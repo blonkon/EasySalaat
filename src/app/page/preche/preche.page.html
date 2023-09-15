@@ -1,7 +1,7 @@
 <ion-header style="background-color: #fff;">
   <div class="box">
     <header>
-      <a tab="tab1" href="/tabs/tab1">
+      <a routerLink="/tabs/tab1">
         <ion-icon name="arrow-undo"></ion-icon>
       </a>
       <div class="title">
@@ -20,25 +20,53 @@
 
 <ion-content [fullscreen]="true" >
 
+  <div class="container" *ngFor="let preacher of preachers" >
+
+ 
+  <div class="contenu" [routerLink]="['/jouerAudio', preacher.audioUrl]">
+
+    <ion-badge slot="start">{{preacher.num}}</ion-badge>
+    <div >
+     <h1>{{preacher.name}}</h1>
+      <p>{{preacher.description }}</p>
+    
+    </div>
+  </div>
+
+  <div class="name">
+    <a href="../../assets/audios/preche1.mp3" download="nom-du-fichier-audio.mp3">
+      <ion-icon name="arrow-down-circle-outline"></ion-icon>
+ </a>
+  </div>
+
+</div>
+</ion-content>
+ 
+<!-- 
+<ion-content [fullscreen]="true" >
+
   <ion-list>
 
     <ion-item  *ngFor="let preacher of preachers">
 
-      <ion-header class="header">
-        <!-- <span>num</span> -->
-        <ion-badge slot="start">{{currentNumber}}</ion-badge>
-        <ion-label>
+      <ion-header class="header" [routerLink]="['/jouerAudio', preacher.audioUrl]">
+        
+        <ion-badge slot="start">{{preacher.num}}</ion-badge>
+        <ion-label >
           <ion-label>
             <h1>{{ preacher.name }}</h1>
-            <p>{{ preacher.description }}</p>
+            <p style="font-weight: bolder;">{{ preacher.description }}</p>
           </ion-label>
         </ion-label>
       </ion-header>
 
 
       <ion-list>
-        <ion-label  (click)="playPause(preacher.audioUrl)">
-          <ion-icon   [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
+        <ion-label>
+          <a href="../../assets/audios/preche1.mp3" download="nom-du-fichier-audio.mp3">
+               <ion-icon name="arrow-down-circle-outline" size="large" color="black" style="cursor: pointer;"></ion-icon>
+          </a>
+
         </ion-label>
       </ion-list>
 
@@ -46,4 +74,4 @@
 
 
   </ion-list>
-</ion-content>
+</ion-content> -->

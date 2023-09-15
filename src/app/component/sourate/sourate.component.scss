@@ -1,17 +1,4 @@
-header{
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin-top: 2rem;
-    
-}
-.box{
-color: #fff;
-padding: 1.5rem;
-background: #005B2F;
-border-radius: 0 0 150px 0;
-border: none;
-}
+
  ion-icon{
     font-size: 40px;
     color: #fff;
@@ -26,6 +13,7 @@ border: none;
     margin: 15px; 
     border-bottom: 0.5px solid rgb(222, 221, 221);
     overflow-x : hidden; 
+    overflow-y : hidden; 
 }
 .contenu{
     display: flex;  
@@ -53,3 +41,21 @@ a{
 .container:hover{
     border: 1px solid #005B2F;
 }
+
+@media screen and (max-width: 712px) and (min-width: 712px) {
+    ion-icon{
+        font-size: 50px;
+    }
+  p{
+    font-size: 25px;
+   }
+   h1{
+    font-size: 30px;
+   }
+   ion-badge{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    font-size: 20px;
+}
+  }

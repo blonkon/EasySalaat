@@ -1,34 +1,44 @@
-<div id="container">
-  <div class="img">
-    <img src="../../assets/images/logo.png" alt="">
-  </div>
-  <form action="">
-    <div class="form-controle">
-      <div class="log">
-        <span><img src="../../assets/icon/nom.png" aria-hidden="true"></span>
-        <input type="text" placeholder="votre nom complet ici">
-      </div>
-      <div class="log">
-        <span><img src="../../assets/icon/mail.png" aria-hidden="true"></span>
-        <input type="email" placeholder="votremail@gmail.com">
-      </div>
-
-      <div class="log">
-        <span><img src="../../assets/icon/pass.png" aria-hidden="true"></span>
-        <input type="password" placeholder="************">
-      </div>
-      <div class="log">
-        <span><img src="../../assets/icon/vpass.png" aria-hidden="true"></span>
-        <input type="password" placeholder="************">
-      </div>
-
-    <input type="button" class="inscr" value="S'inscrire" style="background-color: #005B2F; color: white; font-weight: bold;">
-    <h4><a routerlink="connexion">J'ai déjà un compte</a></h4>
-    <h4><a routerlink="inscription">Connectez-vous avec :</a></h4>
-    </div>
-    <div class="icones">
-      <ion-icon name="logo-google"></ion-icon>
-      <ion-icon class="f" name="logo-facebook"></ion-icon>
-    </div>
-  </form>
+<div class="img">
+  <img src="../../assets/images/logo.png" alt="" width="100px">
+  <h2 style="color: #005B2F;">Inscription</h2>
 </div>
+
+<ion-content>
+
+<form action="">
+<div id="container">
+
+
+  <div class="form-controle">
+    <div>
+      <label>Nom Complet</label>
+      <input  type="email" placeholder="Ex. Lanciné keita " >
+    </div>
+    <div>
+      <label>Email ou nom d'utilisateur</label>
+      <input  type="email" placeholder="Exemple. votremail@gmail.com" >
+    </div>
+    <div>
+      <label>Mot de passe</label>
+      <input type="password" placeholder="******************">
+    </div>
+    <div>
+      <label>Répeter Mot de passe</label>
+      <input type="password" placeholder="******************">
+    </div>
+    <a id="a" (click)="navigate()" style="color: #fff !important;">
+      S' inscrire
+    </a>
+
+
+      <a class="gtext" >
+        <i style="padding: 0 10px 0 40px;"><img src="../../assets/images/google.png" alt="" width="15px"  > </i>  <span>Continuer avec google</span>
+      </a>
+
+
+    <h5 style="text-align: center;">J'ai déjà un compte, <a routerLinkActive="" style="color: #005B2F !important; font-weight: bold;">Se connecter</a></h5>
+  </div>
+</div>
+</form>
+
+</ion-content>

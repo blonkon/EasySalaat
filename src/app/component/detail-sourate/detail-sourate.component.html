@@ -1,24 +1,24 @@
 
+
 <ion-header style="background-color: #fff;">
   <div class="box">
     <header>
       <ion-icon matDialogClose name="close-circle"></ion-icon>
       <div class="title">
-        <h1>{{detailSourate.englishName}}</h1>
-        <span>{{detailSourate.name}}</span>
+        <h1>{{detail.transliteration}}</h1>
       </div>
      
     </header>
   </div>
 <ion-content [fullscreen]="true">
+ 
+   <h3>{{detail.transliteration}}</h3>
+   <ion-badge slot="start">{{detail.number}}</ion-badge>
+  <div>
+    
+    <p class="ayah-text" >{{ detail.fr.meaning}}</p>
+    <p class="ayah-text">{{ detail.fr.desc}}</p>
+  </div> 
 
-
-  <h3>Ayahs : <span>{{detailSourate.name}}</span></h3>
-  <div *ngFor="let ayah of detailSourate.ayahs ">
-    <ion-badge slot="start">{{ayah.number}}</ion-badge>
-    <p class="ayah-text">{{ ayah.text }}</p>
-  </div>
-
-  <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
 </ion-content>
 

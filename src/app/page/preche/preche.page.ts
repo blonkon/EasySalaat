@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { Media, MediaObject } from '@ionic-native/media/ngx'; 
+
+
 
 @Component({
   selector: 'app-preche',
@@ -8,55 +10,62 @@ import { Media, MediaObject } from '@ionic-native/media/ngx';
   styleUrls: ['./preche.page.scss'],
 })
 export class PrechePage {
+  enLecture: any = null;
   playIcon = 'pause';
-  audioFile!: MediaObject;
   preachers = [
-    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-    {name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audio/preche1.mp3' },
-   
+    {num : 1 ,name: 'Imam Fadiga', description: 'Le tout puissant', audioUrl: '../../assets/audios/preche1.mp3',isPlaying: false  },
+    {num : 2 ,name: 'Imam Blonko', description: 'La croyance', audioUrl: '../../assets/audios/preche3.m4a',isPlaying: false  },
+    {num : 3 ,name: 'Imam Mohamed Diarra', description: 'Le tout puissant', audioUrl: '../../assets/audios/preche2.m4a', isPlaying: false  },
+    {num : 4 ,name: 'Imam Lacine Keïta', description: 'Le tout puissant', audioUrl: '../../assets/audios/preche4.m4a' ,isPlaying: false },
+    {num : 5 ,name: 'Imam Ibrahim Sy', description: 'Le tout puissant', audioUrl: '../../assets/audios/preche1.mp3' ,isPlaying: false },
+    // Ajoutez d'autres prêcheurs ici
   ];
-  currentNumber = 1;
 
 
-  constructor(private media: Media) {
+
+  constructor(private router: Router) {
+  }
+  async initAudio() {
   }
 
   ngOnInit() {
-    // Créez un objet audio pour votre fichier audio
-    // this.audioFile = this.media.create('../../assets/audio/preche1.mp3');
   }
 
-  playPause(audioUrl: string) {
-    // Créez un objet audio pour le fichier audio correspondant au prêcheur en cours
-    if (!this.audioFile) {
-      this.audioFile = this.media.create(audioUrl);
+  playPause(preacher: any) {
+    // if (this.enLecture && this.enLecture !== preacher) {
+    //   // mettre en pause la lecture actuelle lorsqu'une autre est lancée
+    //   this.enLecture.isPlaying = false;
+    //   this.enLecture.audio.pause();
+    // }
+
+    // if (!preacher.isPlaying) {
+    //   // jouer l'audio du precheur selectionné
+    //   preacher.audio = new Audio(preacher.audioUrl);
+    //   // preacher.audio.play();
+    //   this.enLecture = preacher;
+    //   // this.router.navigate(['../../jouerAudio']);
+    // } else {
+    //   // si l'audio joue dejà ça part en pause
+    //   preacher.audio.pause();
+    //   this.enLecture = null;
+    // }
+    if (!preacher.isPlaying) {
+      // Si le precheur n'est pas en train de jouer, naviguez vers la page JouerAudioComponent
+      this.router.navigate(['/jouerAudio', {
+        audioUrl: preacher.audioUrl,
+        nom: preacher.name,
+        titre: preacher.description
+        // Ajoutez d'autres informations ici si nécessaire
+      }]);
     }
 
-    if (this.playIcon === 'pause') {
-      this.playIcon = 'play';
-      this.audioFile.pause();
-    } else {
-      this.playIcon = 'pause';
-      this.audioFile.play();
-    }
+    preacher.isPlaying = !preacher.isPlaying;
   }
 
-  addPreacher() {
-    // Ajoutez un prêcheur à la liste
-    const newPreacher = {
-    
-      name: '',
-      description: '',
-      audioUrl: '',
-    };
-    this.preachers.push(newPreacher);
 
-    this.currentNumber++;
-  }
+  downloadFile() {
+    console.log('Téléchargement du fichier en cours...');
+   }
 
 
 }

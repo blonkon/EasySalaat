@@ -28,6 +28,9 @@ border: none;
     margin: 15px; 
     border-bottom: 0.5px solid rgb(222, 221, 221);
 }
+.container:hover{
+    border: 1px solid #005B2F;
+}
 .contenu{
     display: flex;  
     align-items: center; 
@@ -46,3 +49,34 @@ ion-badge{
 h1 , p{
     font-family: 'Poppins';
 }
+a{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  
+@media screen and (max-width: 712px) and (min-width: 712px) {
+    ion-icon{
+        font-size: 50px;
+    }
+  p{
+    font-size: 22px;
+   }
+   h1{
+    font-size: 28px;
+   }
+   ul li a {
+    font-size: 28px;
+  }
+  span{
+    font-size: 20px;
+  }
+   ion-badge{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    font-size: 20px;
+}
+  
+  }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SourateService } from 'src/app/service/sourate.service';
 import { MatDialog } from '@angular/material/dialog'
 import { DetailSourateComponent } from '../detail-sourate/detail-sourate.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sourate',
@@ -10,28 +12,33 @@ import { DetailSourateComponent } from '../detail-sourate/detail-sourate.compone
 })
 export class SourateComponent  implements OnInit {
 
-
+ 
   surahData:any[]= [];
-  data:any;
-  
+  // data:any;
 
-  constructor(private quranService: SourateService,private dialog: MatDialog) { }
+
+
+  constructor(private http : HttpClient,private route: ActivatedRoute,
+    private sourateService: SourateService,private dialog: MatDialog,private router:Router) { }
 
   ngOnInit(): void {
-    this.quranService.getSurahData().subscribe(data => {
+    this.sourateService.getSurahData().subscribe(data => {
       this.surahData = data.data.surahs;
       console.log(this.surahData);
     });
-  }
-
-  openDetail(sourate: any) {
-    const dialogRef = this.dialog.open(DetailSourateComponent, {
-      data: sourate 
-    });
   
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Fermeture du dialogue');
-    });
   }
+  openDetail(sourate: any) {
+    // Mettez à jour la propriété sourateUrl du service
+    this.sourateService.setSourateUrl(sourate);
+   // console.log(sourate);
+    this.router.navigate(['/tabs/sourate']);
+  }
+  // openDetail(sourate: any) {
+  //   this.quranService.sourateUrl = sourate;
+  //   console.log(sourate);
+  //   this.router.navigate(['/tabs/sourate']);
 
+  // }
+  
 }

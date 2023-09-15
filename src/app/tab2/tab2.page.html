@@ -7,19 +7,16 @@
       <h1>Coran</h1>
     </header>
   </div>
-
-
   <nav>
     <ul>
       <li>
-        <a (click)="show = true">Sourates</a>
+        <a (click)="show = true" routerLinkActive="active">Sourates</a>
       </li>
       <li>
-        <a (click)="show = false">Liste des lectures</a>
+        <a (click)="show = false" routerLinkActive="active-link">Liste des lectures</a>
       </li>
     </ul>
   </nav>
-
   <div class="search">
     <ion-searchbar placeholder="Recherche" [(ngModel)]="SearchText"></ion-searchbar>
   </div>
