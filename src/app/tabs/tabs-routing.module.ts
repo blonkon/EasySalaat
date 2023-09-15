@@ -39,10 +39,7 @@ const routes: Routes = [
         path: 'calendar',
         loadChildren: () => import('../page/calendar/calendar.module').then( m => m.CalendarPageModule)
       },
-      {
-        path: 'noms',
-        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
-      },
+     
       {
         path: 'preche',
         loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
@@ -64,10 +61,6 @@ const routes: Routes = [
         path: 'info-page',
         loadChildren: () => import('../page/info-page/info-page.module').then( m => m.InfoPagePageModule)
     },
-     {
-        path: 'sourate',
-        loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
-      },
       {
         path: 'radio',
         loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
