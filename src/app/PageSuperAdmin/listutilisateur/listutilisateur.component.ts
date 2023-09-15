@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { UtilisateurService } from '../utilisateur.service';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
+
 @Component({
   selector: 'app-listutilisateur',
   templateUrl: './listutilisateur.component.html',
