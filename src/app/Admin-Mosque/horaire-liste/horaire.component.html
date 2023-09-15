@@ -16,25 +16,19 @@
   <ion-item  *ngFor="let element of data">
    
     <ion-label>{{element.nom}}</ion-label> <ion-label> {{element.time}}</ion-label>
-    <ion-icon name="create-outline"  style="color: #005B2F;" ></ion-icon>
+    <ion-icon name="create-outline"  (click)="presentAlert()"  style="color: #005B2F;" ></ion-icon>
     
   </ion-item>
   <ion-alert
-    header="Alert!"
-    [buttons]="alertButtons"
-    (ionAlertDidDismiss)="setResult($event)"
-    id="myAlert"
-    ></ion-alert>
+  trigger="present-alert"
+  header="Modifier l'heure"
+  [buttons]="['alertButtons']"
+  [inputs]="alertInputs"
+></ion-alert>
 </ion-content>
 
 <!-- Modal -->
-<form action="horaire-liste" method="post">
-<ion-alert
-  trigger="present-alert"
-  header="Modifier l'heure"
-  [buttons]="alertButtons"
-  [inputs]="alertInputs"
-></ion-alert>
-</form>
+
+
 <!-- </ion-content> -->
 

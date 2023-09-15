@@ -58,5 +58,5 @@ async presentAlert() {
 setResult(ev:any) {
   console.log(`Dismissed with role: ${ev.detail.role}`);
 }
-
 }
+

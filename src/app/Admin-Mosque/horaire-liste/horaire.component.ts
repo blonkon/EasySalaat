@@ -8,6 +8,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./horaire.component.scss'],
 })
 export class HoraireComponent  implements OnInit {
+  [x: string]: any;
 
   public data: any[]=[];
   router: any;
@@ -33,36 +34,39 @@ export class HoraireComponent  implements OnInit {
       this.nombre_annonce = this.data.length;
 
   }
-  
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      handler: () => {
-  
-        console.log('Alert canceled');
-      },
-    },
-    {
-      text: 'OK',
-      role: 'confirm',
-      handler: (i: number) => {
-        this.data.splice(i, 1);
-        this.nombre_annonce = this.data.length-1;
-        console.log('Alert confirmed');
-      },
-    },
-  ];
+
+  // Heure
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Voulez vous supprimer ?',
-      buttons: this.alertButtons,
+      header: 'Modifier heure',
+      inputs: [
+        {
+          name: 'heure',
+          type: 'time',
+          placeholder: 'Sélectionnez une heure',
+          value: this['time'], // Liez la valeur à la propriété 'heure'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Alert canceled');
+          },
+        },
+        {
+          text: 'OK',
+          handler: () => {
+            console.log('Heure sélectionnée :', this['time']);
+            // Vous pouvez maintenant utiliser this.heure pour enregistrer l'heure où vous le souhaitez
+          },
+        },
+      ],
     });
   
     await alert.present();
   }
-  
-  setResult(ev:any) {
-    console.log(`Dismissed with role: ${ev.detail.role}`);
+ 
   }
-}
+  
