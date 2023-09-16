@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { JouerAudioComponent } from '../component/jouer-audio/jouer-audio.component';
 
 const routes: Routes = [
   {

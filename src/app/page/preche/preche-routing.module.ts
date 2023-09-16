@@ -7,12 +7,8 @@ import { JouerAudioComponent } from 'src/app/component/jouer-audio/jouer-audio.c
 const routes: Routes = [
   {
     path: '',
-    component: PrechePage
-  },
-  {
-    path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full'
+    component: PrechePage,
   }
-
 ];
 
 @NgModule({

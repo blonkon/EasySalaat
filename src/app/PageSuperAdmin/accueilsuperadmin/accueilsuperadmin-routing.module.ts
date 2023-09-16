@@ -22,6 +22,7 @@ import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component'
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
 import { RoleGuard2 } from 'src/app/role2.guards';
+import { RoleGuard5 } from 'src/app/role5.guards';
 import { AjoutcoranComponent } from '../ajoutcoran/ajoutcoran.component';
 import { DetailcoranComponent } from '../detailcoran/detailcoran.component';
 import { ModificationcoranComponent } from '../modificationcoran/modificationcoran.component';
@@ -77,16 +78,16 @@ const routes: Routes = [
   },
   {
     path: 'listadmin',component: ListeadminComponent,
+    canActivate : [RoleGuard5]
   },
   {
     path: 'detailadmin',component: DetailadminComponent,
-        // canActivate : [RoleGuard3]
+    canActivate : [RoleGuard5]
 
   },
   {
     path: 'modifieradmin',component: ModifieradminComponent,
-        // canActivate : [RoleGuard3]
-
+    canActivate : [RoleGuard5]
   },
   {
     path: 'listadminmos',component: ListeadminMosqueComponent,
