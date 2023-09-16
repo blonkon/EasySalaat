@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { UtilisateurService } from '../utilisateur.service';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 import { Users } from 'src/app/models/users';
 import { Router } from '@angular/router';
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-listutilisateur',
   templateUrl: './listutilisateur.component.html',
@@ -17,12 +20,15 @@ public nombre_utilisateur!: number;
    }
 
   async ngOnInit() {
+      this.liste();
+  }
+  async liste(){
     this.nombre_utilisateur = this.data.length;
     (await this._service.getUtilisateurList()).forEach((element) => {
       this.data.push(element);
     });
+    console.log(this.data[0])
       this.nombre_utilisateur = this.data[0].length;
-      
   }
   detail(id : string,nom : string){
     this._service.userdetails=id;

@@ -17,7 +17,7 @@ export class PageutiletadminComponent  implements OnInit {
   }
   active(): boolean{
     this.superUser=this.data.superUser;
-    console.log(this.superUser)
+    // console.log(this.superUser)
         return this.superUser
         }
   ngOnInit() {}

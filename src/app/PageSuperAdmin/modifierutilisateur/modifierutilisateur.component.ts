@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder , FormGroup, NgForm} from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Firestore, collection, doc, getDocs, query, updateDoc, where } from '@angular/fire/firestore';
+import { ListutilisateurComponent } from '../listutilisateur/listutilisateur.component';
 
 
 @Component({
@@ -28,7 +29,7 @@ export class ModifierutilisateurComponent  implements OnInit {
   mail? : string;
   nom? : string;
   constructor(
-    private formBuilder: FormBuilder, private _service: UtilisateurService,private firestore : Firestore  ) {
+    private formBuilder: FormBuilder, private _service: UtilisateurService,private firestore : Firestore,private router : Router,private listeUtilisateur : ListutilisateurComponent) {
     
     this.userForm = this.formBuilder.group({
       id:'',
@@ -70,7 +71,7 @@ export class ModifierutilisateurComponent  implements OnInit {
     const q = query(collection(this.firestore, "Users"), where("email", "==", this.mail));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach(async (docr) => {
-      console.log(docr.id, " => ", docr.data()); 
+      // console.log(docr.id, " => ", docr.data()); 
       const washingtonRef = doc(this.firestore, "Users", docr.id);
       if (this.rolem==="admin-mosque") {
         await updateDoc(washingtonRef, {
@@ -83,7 +84,12 @@ export class ModifierutilisateurComponent  implements OnInit {
       }
      
     });
-        console.log(this.rolem)
+
+        // console.log(this.rolem)
+        
+        this.listeUtilisateur.data=[];
+        this.listeUtilisateur.liste();
+        this.router.navigate(["/admin/accueilsuperadmin/listutil"])
         }
     }
       //ESSATIONS
