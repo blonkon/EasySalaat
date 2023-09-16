@@ -1,0 +1,72 @@
+<ion-header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="" srcset="">
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <h1>{{detailMosque.nom}}</h1>
+    <div class="inf">
+      <h3>Annonces :</h3>
+    <ul>
+      <li *ngFor="let annonce of detailMosque.annonce">
+        <strong>{{ annonce.titre }}:</strong> {{ annonce.description }}
+      </li>
+    </ul>
+
+      <h3>Programme :</h3>
+    <ul>
+      <li *ngFor="let programme of detailMosque.programme">
+        <strong>{{ programme.titre }}:</strong> {{ programme.description }}
+      </li>
+    </ul>
+
+
+<!-- <ion-header>
+  <div class="logo">
+    <img src="assets/logo.png" alt="" srcset="">
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <h1><strong>Mosque Mille et une Merveille</strong></h1>
+  </ion-header>
+  <div class="allCard">
+    <div class="card">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Horaires</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div class="card">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Anonces</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+  <div class="allCard">
+    <div class="card">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Programmes</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div class="card">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>Autres</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+  
+</ion-content> -->

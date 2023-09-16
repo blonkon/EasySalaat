@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ConnexionComponent } from './connexion/connexion.component'; 
+import { ConnexionComponent } from './connexion/connexion.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { RoleGuard2 } from './role2.guards';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
 import { RoleGuard3 } from './role3.guards';
+import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 
 
 const routes: Routes = [
@@ -82,10 +84,10 @@ const routes: Routes = [
         path: 'noms',
         loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
       },
-      // {
-      //   path: 'preche',
-      //   loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
-      // },
+       {
+         path: 'preche',
+         loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
+       },
       {
         path: 'sourate',
         loadChildren: () => import('./page/sourate/sourate.module').then( m => m.SouratePageModule)
@@ -118,6 +120,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 
 }

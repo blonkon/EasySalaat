@@ -4,7 +4,6 @@ import { RouteReuseStrategy } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { SourateComponent } from './component/sourate/sourate.component';
 import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -27,8 +26,6 @@ import { LecteurComponent } from './PageSuperAdmin/lecteur/lecteur.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CalendrierComponent } from './PageSuperAdmin/calendrier/calendrier.component';
-
-
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component'; 
 import { HoraireComponent } from './Admin-Mosque/horaire-liste/horaire.component';
 import { HoraireModifierComponent } from './Admin-Mosque/horaire-modifier/horaire-modifier.component';
@@ -57,15 +54,14 @@ import { ModifierutilisateurComponent } from './PageSuperAdmin/modifierutilisate
 import { AddListeComponent } from './component/add-liste/add-liste.component';
 import { DetailSourateComponent } from './component/detail-sourate/detail-sourate.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-
-import { InscriptionComponent } from './inscription/inscription.component';
 import { environment } from 'src/environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component'; 
+import { DetailutilisateurComponent } from './PageSuperAdmin/detailutilisateur/detailutilisateur.component';
 import { ListutilisateurComponent } from './PageSuperAdmin/listutilisateur/listutilisateur.component';
 import { PageutiletadminComponent } from './PageSuperAdmin/pageutiletadmin/pageutiletadmin.component';
 import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-super-admin.component';
@@ -82,17 +78,28 @@ import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modi
 import { Tab3Page } from './tab3/tab3.page';
 import { Tab2Page } from './tab2/tab2.page';
 import { Tab1Page } from './tab1/tab1.page';
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 @NgModule({
-  declarations: [AppComponent,CoranComponent,ModificationcoranComponent,CalendrierComponent,LecteurComponent,DetailcoranComponent,AjoutcoranComponent,ModifierProfileComponent, AdmosquePage,AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
+  declarations: [AppComponent, ListeLectureComponent,
+    AddListeComponent, DetailSourateComponent,
+    DetailadminMosqueComponent, ModificationMosqueeComponent,
+    AjoutMosqueeComponent, DetailutilisateurComponent, JouerAudioComponent,CoranComponent,ModificationcoranComponent,CalendrierComponent,LecteurComponent,DetailcoranComponent,
+    AjoutcoranComponent,ModifierProfileComponent,
+     AdmosquePage,AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
     HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
     DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
-   DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent,TabsPage,SuperadminPage,SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,DetailadminMosqueComponent,DetailadminComponent,ModifieradminMosqueComponent,ModifieradminComponent,ListeadminComponent,ListeadminMosqueComponent,ListeFrequenceRadioComponent,DetailMosqueeComponent,ModifierFrequenceRadioComponent,MosqueeComponent,AjoutMosqueeComponent,ModifierutilisateurComponent, ModificationMosqueeComponent, DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
+   DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent,TabsPage,SuperadminPage,SourateComponent,
+   DetailadminComponent,ModifieradminMosqueComponent,
+    ModifieradminComponent,ListeadminComponent,ListeadminMosqueComponent,ListeFrequenceRadioComponent,DetailMosqueeComponent,ModifierFrequenceRadioComponent,MosqueeComponent
+    ,ModifierutilisateurComponent
+   ,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
 
   imports: [BrowserModule,FormsModule, AppRoutingModule,HttpClientModule,MatDialogModule,NgxPaginationModule, ReactiveFormsModule,IonicModule.forRoot(), 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),
-		provideStorage(() => getStorage())],
+		provideStorage(() => getStorage()),
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // { provide: DateAdapter,
     //   useClass: NgxAngularMaterialHijriAdapterModule,
@@ -104,4 +111,4 @@ import { Tab1Page } from './tab1/tab1.page';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

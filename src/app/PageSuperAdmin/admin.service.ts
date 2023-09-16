@@ -37,10 +37,10 @@ export class AdminService {
     // {name: 'Adama traore', img: "../../assets/images/User1.png"},
     // {name: 'Adama traore', img: "../../assets/images/User1.png"},
     // {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    // {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    // {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    // {name: 'Adama traore', img: "../../assets/images/User1.png"},
-    // {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
+    {name: 'Adama traore', img: "../../assets/images/User1.png"},
   ];
 
   constructor() { }
