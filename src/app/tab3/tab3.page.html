@@ -1,11 +1,5 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Qhaba
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-<ion-header>
+
+<!-- <ion-header>
     <ion-buttons slot="start" (click)="Retour()" style="margin-top: 2em;">
       <ion-icon name="arrow-undo" style="color: #fff;" size="large"></ion-icon>
     </ion-buttons>
@@ -25,6 +19,19 @@
       <a href="">
         <img src="../../assets/images/map.png" alt="ojsdf">
       </a>
+    </div>
+  </div>
+</ion-content>
+ -->
+<!-- methode 2 -->
+<ion-content>
+  <div class="center-container">
+    <div class="boussole">
+      <div class="aiguille" [style.transform]="'rotate(' + qiblaDirection + 'deg)'"></div>
+      <button class="btn btn-nord">Nord</button>
+      <button class="btn btn-est">Est</button>
+      <button class="btn btn-sud">Sud</button>
+      <button class="btn btn-ouest">Ouest</button>
     </div>
   </div>
 </ion-content>
