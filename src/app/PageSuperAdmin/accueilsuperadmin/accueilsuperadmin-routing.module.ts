@@ -18,7 +18,7 @@ import { ModifieradminMosqueComponent } from '../modifieradmin-mosque/modifierad
 import { ListeFrequenceRadioComponent } from '../liste-frequence-radio/liste-frequence-radio.component';
 import { ModifierFrequenceRadioComponent } from '../modifier-frequence-radio/modifier-frequence-radio.component';
 
-import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
+// import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
 import { AjoutcoranComponent } from '../ajoutcoran/ajoutcoran.component';
@@ -39,10 +39,10 @@ const routes: Routes = [
   {
     path: 'listutil', component: ListutilisateurComponent,
   },
-  {
-    path: 'ajoutmosquee',
-    component: AjoutMosqueeComponent
-  },
+  // {
+  //   path: 'ajoutmosquee',
+  //   component: AjoutMosqueeComponent
+  // },
   {
     path: 'calendrier', component: CalendrierComponent
   },

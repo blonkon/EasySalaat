@@ -44,7 +44,7 @@ export class ListeadminComponent  implements OnInit {
   ];
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Alert!',
+      header: 'Voulez vous supprimer ?',
       buttons: this.alertButtons,
     });
   

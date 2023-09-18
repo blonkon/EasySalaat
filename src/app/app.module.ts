@@ -14,7 +14,6 @@ import { MatButtonModule} from '@angular/material/button';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
-import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
 import { ModificationMosqueeComponent } from './PageSuperAdmin/modification-mosquee/modification-mosquee.component';
 import { AppComponent } from './app.component';
 
@@ -76,7 +75,7 @@ import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modi
 @NgModule({
   declarations: [AppComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
     AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
-    ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,
+    ModificationMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,
     ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent,
      ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
      DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, 
@@ -85,7 +84,7 @@ import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modi
      HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
      DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
      SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,
-     DetailadminMosqueComponent,ModificationMosqueeComponent, AjoutMosqueeComponent, DetailMosqueeComponent,
+     DetailadminMosqueComponent,ModificationMosqueeComponent, DetailMosqueeComponent,
       MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,
       ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
       DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent,

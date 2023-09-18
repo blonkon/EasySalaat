@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModificationMosqueeComponent  implements OnInit {
   mosqueName: any;
-  geopoint: any;
+  nom_ad_mosque: any;
   phoneNumber: any;
 submitForm() {
 throw new Error('Method not implemented.');
