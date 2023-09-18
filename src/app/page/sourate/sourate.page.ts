@@ -11,6 +11,8 @@ import { SourateService } from 'src/app/service/sourate.service';
 export class SouratePage implements OnInit {
   
   detailSourate:any;
+  translate:any[]= [];
+  textTranslate:any;
 
   constructor(private sourateService: SourateService,private router:Router){
       this.detailSourate = this.sourateService.sourateUrl;
@@ -21,8 +23,10 @@ export class SouratePage implements OnInit {
       this.detailSourate = newSourate;
       console.log(this.detailSourate);
     })
-    //this.detailSourate = this.sourateService.sourateUrl;
-    //this.sourateService.sourateUrl = undefined;
+    this.sourateService.getSurahTrad().subscribe(res => {
+      this.translate = res.data.surahs.ayahs;
+      console.log(this. translate);
+    });
    
   }
   closeDialog(){

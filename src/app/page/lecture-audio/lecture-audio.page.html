@@ -1,0 +1,50 @@
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>
+
+      <a routerLink="/tabs/tab2">
+
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <div class="title">
+        <p>{{nom}}</p>
+        <p>{{titre}}</p>
+      </div>
+     
+    </header>
+  </div> 
+ 
+</ion-header>
+<ion-content>
+  
+  <div class="contenu">
+
+  <div class="img_box">
+    <img src="../../../assets/images/القرآن.jpg">
+  </div>
+
+  <div class="container">
+    <p class="timer">{{timer}} : 00</p>
+    <ion-range class="progress-bar" min="0" max="100" color="warning" [value]="progressPercentage" mode="md"  (click)="barrFile($event)"></ion-range>
+    <p>{{ calculateRemainingTime() }}</p>
+</div>
+
+
+  <div class="flex_box">
+
+    <div fill="clear" color="light"  class="play">
+      <ion-icon slot="icon-only" name="play-back" (click)="recule()" ></ion-icon>
+    </div>
+
+    <div shape="round" color="light" class="play">
+      <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"  (click)="playPause()"></ion-icon>
+    </div>
+
+    <div fill="clear" color="light" class="play">
+      <ion-icon slot="icon-only" name="play-forward" (click)="avance()" ></ion-icon>
+    </div>
+
+  </div>
+  </div>
+
+</ion-content>

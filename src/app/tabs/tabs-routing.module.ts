@@ -66,6 +66,10 @@ const routes: Routes = [
         loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
       },
       {
+        path: 'lecture-audio/:audioUrl',
+        loadChildren: () => import('../page/lecture-audio/lecture-audio.module').then( m => m.LectureAudioPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

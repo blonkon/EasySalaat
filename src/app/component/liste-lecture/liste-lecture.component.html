@@ -1,12 +1,22 @@
 
+<ion-content [fullscreen]="true" >
 
-<div *ngFor="let data of surahData">
-<p>{{data.latitude}}</p>
-<p>{{data.longitude}}</p>
+  <div class="container" *ngFor="let lecture of lectures" >
 
-</div> 
+  <div class="contenu" [routerLink]="['/lecture-audio', lecture.audioUrl, lecture.name]">
 
-<div *ngIf="qiblaDirection !== undefined">
-  <p>La direction de la Qibla est {{ qiblaDirection }} degrés.</p>
+    <ion-badge slot="start">{{lecture.num}}</ion-badge>
+    <div >
+     <h1>{{lecture.name}}</h1>
+    </div>
+  </div>
+
+  <div class="name">
+    <a href="../../assets/audios/preche1.mp3" download="nom-du-fichier-audio.mp3">
+      <ion-icon name="arrow-down-circle-outline"></ion-icon>
+ </a>
+  </div>
 
 </div>
+</ion-content>
+ 

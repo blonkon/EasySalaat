@@ -1,33 +1,47 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/preche" text="Retour"></ion-back-button>
-    </ion-buttons>
-    <ion-title>
-      {{nom}}
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
+
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>
+
+      <a routerLink="/tabs/tab2">
+
+        <ion-icon name="arrow-undo"></ion-icon>
+      </a>
+      <div class="title">
+        <p>{{nom}}</p>
+      </div>
+     
+    </header>
+  </div> 
+ 
+</ion-header>
 <ion-content>
   <div class="img_box">
-    <img src="../../../assets/images/logowhite.png">
-  </div>
-  <div id="container">
-    <h2>{{titre}}</h2>
-    <ion-range min="0" max="100" [value]="progressPercentage" mode="md" color="warning" (click)="barrFile($event)"></ion-range>
-    <p>Temps restant: {{ calculateRemainingTime() }}</p>
+    <img src="../../../assets/images/القرآن.jpg">
   </div>
 
+  <div class="container">
+    <p class="timer">{{timer}}</p>
+    <ion-range class="progress-bar" min="0" max="100" color="warning" [value]="progressPercentage" mode="md"  (click)="barrFile($event)"></ion-range>
+    <p>{{ calculateRemainingTime() }}</p>
+</div>
+
+
   <div class="flex_box">
-    <ion-button fill="clear" color="light" (click)="recule()">
-      <ion-icon slot="icon-only" name="play-back"></ion-icon>
-    </ion-button>
-    <ion-button shape="round" color="light" (click)="playPause()">
-      <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
-    </ion-button>
-    <ion-button fill="clear" color="light" (click)="avance()">
-      <ion-icon slot="icon-only" name="play-forward"></ion-icon>
-    </ion-button>
+
+    <div fill="clear" color="light"  class="play">
+      <ion-icon slot="icon-only" name="play-back" (click)="recule()" ></ion-icon>
+    </div>
+
+    <div shape="round" color="light" class="play">
+      <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"  (click)="playPause()"></ion-icon>
+    </div>
+
+    <div fill="clear" color="light" class="play">
+      <ion-icon slot="icon-only" name="play-forward" (click)="avance()" ></ion-icon>
+    </div>
+
   </div>
+
 </ion-content>

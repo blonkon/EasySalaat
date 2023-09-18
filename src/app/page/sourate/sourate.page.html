@@ -10,9 +10,10 @@
   <ion-content [fullscreen]="true">
   
     <h3>Ayahs : {{detailSourate.name}} </h3>
-    <div *ngFor="let ayah of detailSourate.ayahs ">
+    <div *ngFor="let ayah of detailSourate.ayahs; let i=index ">
       <ion-badge slot="start">{{ayah.number}}</ion-badge>
       <p class="ayah-text">{{ ayah.text }}</p>
+      
     </div>
   
 </ion-content>

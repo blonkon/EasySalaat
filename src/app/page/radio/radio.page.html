@@ -20,20 +20,22 @@
 <ion-content [fullscreen]="true" >
 
 
-  <div class="container" >
+  <div class="container" *ngFor="let radio of radios" >
 
  
   <div class="contenu">
 
-    <ion-badge slot="start">gfdg</ion-badge>
-    <div >
-      <h1>frvr</h1>
-      <p>eeefe</p>
+    <ion-badge slot="start">{{radio.id}}</ion-badge>
+    <div>
+      <a href={{radio.lien}}>
+      <h1>{{radio.nom}}</h1>
+      <p>{{radio.desc}}</p>
+    </a>
     </div>
   </div>
 
   <div class="name">
-    <p>fbjbjf</p>
+    <p>{{radio.fr}}</p>
   </div>
 
 </div>

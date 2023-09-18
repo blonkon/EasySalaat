@@ -10,15 +10,20 @@
      
     </header>
   </div>
+  </ion-header>
 <ion-content [fullscreen]="true">
  
-   <h3>{{detail.transliteration}}</h3>
-   <ion-badge slot="start">{{detail.number}}</ion-badge>
-  <div>
-    
-    <p class="ayah-text" >{{ detail.fr.meaning}}</p>
-    <p class="ayah-text">{{ detail.fr.desc}}</p>
-  </div> 
+  <div class="card-content">
+    <h1>{{detail.name}}</h1>
+    <ion-badge slot="start">{{detail.number}}</ion-badge>
+    <div>
+      <p class="ayah-text">{{ detail.fr.meaning}}</p>
+      <p class="ayah-text">{{ detail.en.meaning}}</p>
+      <p class="ayah-text">{{ detail.fr.desc}}</p>
+      <p class="ayah-text">{{ detail.en.desc}}</p>
+    </div>
+  </div>
+  
 
 </ion-content>
 
