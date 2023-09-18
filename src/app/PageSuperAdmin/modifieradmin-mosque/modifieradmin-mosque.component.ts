@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
+import { Firestore, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { AdminMosqueService } from '../admin-mosque.service';
 
 @Component({
   selector: 'app-modifieradmin-mosque',
@@ -12,10 +15,14 @@ export class ModifieradminMosqueComponent  implements OnInit {
 
   data: any;
   userForm: FormGroup;
+  mail? : string;
+  nom? : string;
+  rolem?:string;
   role: string[] = [
     'utilisateur',
     'admin',
     'admin-mosque',
+    'super-admin',
   ];
   mosque: string[] = [
     'alfirdaous',
@@ -24,7 +31,7 @@ export class ModifieradminMosqueComponent  implements OnInit {
     'mosque de djene',
   ];
   constructor(
-    private formBuilder: FormBuilder, private _service: UtilisateurService,
+    private formBuilder: FormBuilder, private router :Router,private _service: AdminMosqueService,private firestore:Firestore
   ) {
   
     this.userForm = this.formBuilder.group({
@@ -38,28 +45,50 @@ export class ModifieradminMosqueComponent  implements OnInit {
 
   
   ngOnInit(): void {
-    
+    this.mail=this._service.modifMail;
+    this.nom =this._service.modifNom;
     this.userForm.patchValue(this.data);
-
 
   }
   ////////////////////////////////
    ///LAFIN
   
-      onSubmit() {
-        if (this.userForm.valid) {
-          const mesure = this.userForm.value; 
-          if (this.data) {         
-            this._service
-            .modifyUtilisateur(this.data.id, this.userForm.value);
-            this.userForm.reset();
-            // Émettez un événement pour indiquer que les données ont été ajoutées
-            this._service.triggerUpdate();
-                     
-          } else {
-              this.userForm.reset(); 
-              }
+      async onSubmit(forms : NgForm) {
+        console.log(this._service.modifNom)
+        const q = query(collection(this.firestore, "Users"), where("email", "==", this.mail));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach(async (docr) => {
+          // console.log(docr.id, " => ", docr.data()); 
+          const washingtonRef = doc(this.firestore, "Users", docr.id);
+          if (this.rolem==="utilisateur") {
+            await updateDoc(washingtonRef, {
+              role: 0
+              });
+              await deleteDoc(doc(this.firestore,"Mosques",docr.id));
+          } else if (this.rolem="admin") {
+            await updateDoc(washingtonRef, {
+              role: 2
+              });
+              await deleteDoc(doc(this.firestore,"Mosques",docr.id));
+          } else if (this.rolem="super-admin") {
+            await updateDoc(washingtonRef, {
+              role: 3
+              });
+              await deleteDoc(doc(this.firestore,"Mosques",docr.id));
           }
-        }
+          else {
+            await updateDoc(washingtonRef, {
+              role: 1
+              });
+          }
+         
+        });
+    
+            // console.log(this.rolem)
+            
+            // this.listeUtilisateur.data=[];
+            // this.listeUtilisateur.liste();
+            this.router.navigate(["/admin/accueilsuperadmin/listadminmos"])
+            }
 
 }

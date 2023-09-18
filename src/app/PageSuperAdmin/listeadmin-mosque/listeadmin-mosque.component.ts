@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { AdminMosqueService } from '../admin-mosque.service';
+import { Router } from '@angular/router';
+import { Firestore, deleteDoc, doc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-listeadmin-mosque',
@@ -12,7 +14,7 @@ export class ListeadminMosqueComponent  implements OnInit {
   public data: any[]=[];
   
   public nombre_admin_mosque!: number;
-    constructor( private alertController: AlertController, private _service : AdminMosqueService) {
+    constructor( private alertController: AlertController,private router:Router, private _service : AdminMosqueService,private firestore :Firestore) {
      }
   
     async ngOnInit() {
@@ -25,35 +27,65 @@ export class ListeadminMosqueComponent  implements OnInit {
         
     }
   
-  public alertButtons = [
-    {
-      text: 'Cancel',
-      role: 'cancel',
-      handler: () => {
-        
-        console.log('Alert canceled');
+    detail(mail : string,nom : string){
+      this._service.modifMail=mail;
+      this._service.modifNom=nom;
+      this.router.navigate(['admin/accueilsuperadmin/modifieradminmos'])
+    }
+    public alertButtons = [
+      {
+        text: 'Annuler',
+        role: 'cancel',
+        handler: () => {
+          
+          console.log('Alert canceled');
+        },
       },
-    },
-    {
-      text: 'OK',
-      role: 'confirm',
-      handler: (i: number) => {
-        this.data.splice(i, 1);
-        this.nombre_admin_mosque = this.data.length-1;
-        console.log('Alert confirmed');
+      {
+        text: 'oui',
+        role: 'confirm',
+        handler: async (id: string) => {
+          // this.data.splice(id, 1);
+          this.nombre_admin_mosque--;
+          await deleteDoc(doc(this.firestore, "Users", id));
+          await deleteDoc(doc(this.firestore,"Mosques",id));
+          console.log('Alert confirmed this is '+id);
+        },
       },
-    },
-  ];
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Alert!',
-      buttons: this.alertButtons,
-    });
-  
-    await alert.present();
-  }
+    ];
+    async presentAlert(id : string) {
+      const alert = await this.alertController.create({
+        header: 'Voulez vous supprimer ?',
+        buttons:  [
+          {
+            text: 'Non',
+            role: 'cancel',
+            handler: () => {
+              console.log('Alert canceled');
+            },
+          },
+          {
+            text: 'Oui',
+            role: 'confirm',
+            handler: () => {
+              this.alertButtons[1].handler(id)
+              // this.data.splice(id, 1);
+              // this.nombre_utilisateur = this.data.length-1;
+              // console.log('Alert confirmed');
+            },
+          },
+        ]
+      });
+    
+      await alert.present();
+    }    
   
   setResult(ev:any) {
     console.log(`Dismissed with role: ${ev.detail.role}`);
   } 
+  detailuser(nom : string,email:string){
+    this._service.detailsForUser.nom=nom;
+    this._service.detailsForUser.email=email;
+    this.router.navigate(['/admin/accueilsuperadmin/detailadminmos'])
+  }
 }

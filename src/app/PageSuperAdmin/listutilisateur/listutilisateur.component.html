@@ -32,9 +32,9 @@
           </ion-thumbnail>
           <ion-label>{{element.nom}}</ion-label>
           <div class="iconitem">
-            <ion-icon  name="eye" [routerLink]="['../detailutilisateur']"></ion-icon>
+            <ion-icon  name="eye" (click)="detailuser(element.nom,element.email)" ></ion-icon>
           <ion-icon name="create-outline" style="color: #005B2F;" (click)="detail(element.email,element.nom)"></ion-icon>
-          <ion-icon name="trash" style="color: red;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+          <ion-icon name="trash" style="color: red;"   id="present-alert" (click)="presentAlert(element.id)" ></ion-icon>
           </div>
           
         <!-- <ion-alert

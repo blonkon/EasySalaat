@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection,doc, setDoc,getFirestore, getDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection,doc, setDoc,getFirestore, getDoc, getDocs, query, where } from '@angular/fire/firestore';
 import { Users } from '../models/users';
 import { Auth,signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
@@ -7,6 +7,7 @@ import { Auth,signInWithEmailAndPassword,
 import { Roles } from '../models/Roles.enum';
 import { initializeApp } from '@angular/fire/app';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -80,4 +81,7 @@ export class DataService {
        return  this.router.navigate(['']);
       
     }
+    update(){
+    }
+    
 }

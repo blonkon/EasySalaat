@@ -8,6 +8,17 @@ import { Firestore, collection, getDocs, query, where } from '@angular/fire/fire
 })
 export class AdminMosqueService {
 
+  detailsForUser:{
+    nom:string,
+    email:string
+  }={
+    nom:"",
+    email:""
+  }
+
+  modifMail?:string;
+  modifNom?:string;
+
   private updateEvent = new Subject<void>();
 
   update$ = this.updateEvent.asObservable();
@@ -27,7 +38,8 @@ export class AdminMosqueService {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
-      let user : Users = {
+      let user : any = {
+        id:doc.id,
         nom : doc.data()['nom'],
         email : doc.data()['email'],
         motdepasse : "",

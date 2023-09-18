@@ -10,44 +10,45 @@
 
 <ion-content>
 
-<form action="">
-<div id="container">
-  
- 
-  <div class="form-controle">
-    <div class="detail">
-      <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../../assets/images/User1.png" style="border-radius: 50%;"  />
-      </ion-thumbnail>
-      <ion-label style="color: #005B2F;">Ibrahim Sy</ion-label>
-    </div>
-
-    <ion-label>Email: dsdjdfdjffj@gmail.com</ion-label>
+  <form (ngSubmit)="onSubmit(z)" #z="ngForm">
+    <div id="container">
+      
+     
+      <div class="form-controle">
+        <div class="detail">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="../../../assets/images/User1.png" style="border-radius: 50%;"  />
+          </ion-thumbnail>
+          <ion-label style="color: #005B2F;">{{nom}}</ion-label>
+        </div>
     
-    <div>
-      <label>Role</label>
-      <ion-select formControlName="role"  >
-        <ion-select-option *ngFor="let val of role" [value]="val" >{{val}}
-          
-        </ion-select-option>
-
-      </ion-select>
-      
+        <ion-label>{{mail}}</ion-label>
         
-      
-    </div>      
-    <div>
-      <label>Mosque</label>
-      <ion-select formControlName="role"  >
-
-      </ion-select> 
+        <div>
+          <label>Role</label>
+          <ion-select [(ngModel)]="rolem"  name="role">
+            <ion-select-option  *ngFor="let val of role" [value]="val" >{{val}}
+              
+            </ion-select-option>
+    
+          </ion-select>
+          
+            
+          
+        </div>      
+        <!-- <div>
+          <label>Mosque</label>
+          <ion-select formControlName="role"  >
+            <ion-select-option *ngFor="let valeur of mosque" [value]="valeur" >
+              {{valeur}}
+              
+            </ion-select-option>
+    
+          </ion-select> 
+        </div> -->
+        <input id="a" type="submit" style="color: #fff !important;" value=" Modifier" >
+      </div>
     </div>
-    <a id="a"  routerLink="../listadmin" style="color: #fff !important;">
-      Modifier
-
-    </a>
-  </div>
-</div>
-</form>
+    </form>
 
 </ion-content>

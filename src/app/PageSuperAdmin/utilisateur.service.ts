@@ -9,6 +9,14 @@ import { Users } from '../models/users';
 
 export class UtilisateurService {
 
+  detailsForUser:{
+    nom:string,
+    email:string
+  }={
+    nom:"",
+    email:""
+  }
+
   userdetails : string="";
   usernom : string="";
   private updateEvent = new Subject<void>();
@@ -39,7 +47,8 @@ export class UtilisateurService {
     const querySnapshot = await getDocs(q);
      querySnapshot.forEach((doc) => {
     //   console.log(doc.id, " => ", doc.data());
-      let user : Users = {
+      let user : any = {
+        id:doc.id,
         nom : doc.data()['nom'],
         email : doc.data()['email'],
         motdepasse : "",

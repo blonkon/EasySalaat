@@ -2,8 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder , FormGroup, NgForm} from '@angular/forms';
 import { UtilisateurService } from '../utilisateur.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Firestore, collection, doc, getDocs, query, updateDoc, where } from '@angular/fire/firestore';
+import { Firestore, collection, doc, getDocs, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { ListutilisateurComponent } from '../listutilisateur/listutilisateur.component';
+import { Mosques } from 'src/app/models/Moques';
 
 
 @Component({
@@ -16,16 +17,18 @@ export class ModifierutilisateurComponent  implements OnInit {
   userForm: FormGroup;
   role: string[] = [
     'utilisateur',
+    'admin',
     'admin-mosque',
-    
+    'super-admin',
   ];
   rolem?:string;
-  mosque: string[] = [
-    'alfirdaous',
-    'masdjid-kabir',
-    'missiriba',
-    'mosque de djene',
-  ];
+  mosque:Mosques  = {
+      nom:"Ma mosque",
+      iman:"Iman",
+      admin_mail:"",
+      tel:0
+  }
+
   mail? : string;
   nom? : string;
   constructor(
@@ -44,7 +47,7 @@ export class ModifierutilisateurComponent  implements OnInit {
   ngOnInit(): void {
     this.mail=this._service.userdetails;
     this.nom =this._service.usernom;
-    console.log(this._service.userdetails)
+    // console.log(this._service.userdetails)
     this.userForm.patchValue(this.data);
 
 
@@ -73,11 +76,27 @@ export class ModifierutilisateurComponent  implements OnInit {
     querySnapshot.forEach(async (docr) => {
       // console.log(docr.id, " => ", docr.data()); 
       const washingtonRef = doc(this.firestore, "Users", docr.id);
+      
+      
+
+
       if (this.rolem==="admin-mosque") {
         await updateDoc(washingtonRef, {
           role: 1
           });
-      } else {
+          this.mosque.admin_mail=this.mail
+         const userRef = collection(this.firestore,'Mosques');
+          setDoc(doc(userRef,docr.id),this.mosque)
+      }else if (this.rolem="admin") {
+        await updateDoc(washingtonRef, {
+          role: 2
+          });
+      } else if (this.rolem="super-admin") {
+        await updateDoc(washingtonRef, {
+          role: 3
+          });
+      }
+      else {
         await updateDoc(washingtonRef, {
           role: 0
           });
