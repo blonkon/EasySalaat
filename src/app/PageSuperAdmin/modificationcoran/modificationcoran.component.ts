@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modificationcoran.component.scss'],
 })
 export class ModificationcoranComponent  implements OnInit {
+
+  surah: string[]=[
+    'Al-Fatiha',
+    'Al-Baqra',
+    'Al-Maida',
+    'Al-Imourane',
+    'Al-Yusuf',
+    'Al-Iklass',
+    'Al-YUNUS',
+    'Al-IBRAHIM',
+    'Al-MARIAM',
+    'Al-KAFIROUNA',
+    'Al-TAWBA',
+  ];
   mosqueName: any;
   porte: any;
   rue: any;

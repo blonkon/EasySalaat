@@ -16,17 +16,18 @@ const routes: Routes = [
     path: ''
    ,
     children: [
+      {
+        path: '',
+        loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
+      },
   {
     path: 'inscription', component: InscriptionComponent
   }
   ,
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
-  // },
-  // {
-  //   path: 'superadmin', component: SuperadminPage
-  // },
+   
+   {
+     path: 'superadmin', component: SuperadminPage
+   },
   {
     path: 'accueilsuperadmin',
     loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)

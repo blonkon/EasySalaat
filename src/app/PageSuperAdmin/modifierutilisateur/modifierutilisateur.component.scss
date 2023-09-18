@@ -30,16 +30,16 @@
 #container #a {
   text-decoration: none;
 }
-.form-controle{
+.form-controle2{
   display: grid;
   gap: 15px;
   margin: 0 30px 0 30px;
 }
-.form-controle input, #a {
+.form-controle2 input, #a {
   padding: 12px 0 12px 0;
   border-radius: 15px;
 }
-.form-controle #a{
+.form-controle2 #a{
   background-color: #005B2F; color: white; font-weight: bold;
   padding: 12px 0 12px 0;
   border-radius: 15px;
@@ -54,7 +54,7 @@
   border-radius: 15px;
   border: #005B2F 1px solid;
 }
-.form-controle div{
+.form-controle2 div{
   display: grid;
 }
 input::placeholder{
