@@ -9,7 +9,7 @@
       <img src="../../../assets/images/programme.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
     </div>
     <div style="margin-top: -13vh;">
-      <h2 style="color: #005B2F; text-align: center; margin-top: 104px;">Programme</h2>
+      <h2 style="color: #005B2F; text-align: center; margin-top: 104px; font-weight: 900;">Programme</h2>
     </div>
     </div>
     <div>
@@ -19,7 +19,7 @@
     <ion-list>
       <ion-item  *ngFor="let element of data">
         <div style="width: 80%;">
-        <ion-label style="color: black;">{{element.titre}}</ion-label> 
+        <ion-label style="color: black; font-size: x-large;" [routerLink]="['../details-programme']">{{element.titre}}</ion-label> 
         <label>{{element.dateTime}}</label>
       </div>
       <ion-label>

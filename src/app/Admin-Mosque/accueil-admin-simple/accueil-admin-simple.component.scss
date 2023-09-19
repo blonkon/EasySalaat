@@ -18,6 +18,7 @@
     grid-template-columns: repeat(2, 1fr);
     margin-left: 10px !important;
     margin-right: 10px !important;
+    background-color: aqua;
     
 }
 #card{
@@ -30,6 +31,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    margin-bottom: auto;
 }
 .logoimg{
     display: grid;

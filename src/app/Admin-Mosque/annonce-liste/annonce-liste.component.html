@@ -9,7 +9,7 @@
     <img src="../../../assets/images/Rectangle 17.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
   </div>
   <div style="margin-top: -13vh;">
-    <h2 style="color: #005B2F; text-align: center; margin-top: 120px;">Annonce</h2>
+    <h2 style="color: #005B2F; text-align: center; margin-top: 120px; font-weight: 900;">Annonce</h2>
   </div>
   </div>
   <div>
@@ -29,15 +29,19 @@
   </ion-list> -->
   <ion-list>
     <ion-item class="Liste" *ngFor="let element of data">
-      <div class="mondiv">
+      <div class="mondiv" style="width: 80%;">
         <ion-label style="max-width: 100%; margin-bottom: 5px;" [routerLink]="['../details-annonce']" class="ion-label">{{element.titre}} </ion-label>   
         <label for=""> {{element.dateTime}}</label>
       </div>
+      <ion-label style="margin-left: 30%;">
+        <ion-icon name="create-outline"  style="color: #005B2F;width: 20px; height: 20px;"  [routerLink]="['../annonce-update']" ></ion-icon>
+        <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+      </ion-label>
      
-      <div class="iconitem">
+      <!-- <div class="iconitem">
         <ion-icon name="create-outline" style="color: #005B2F;width: 25px; height: 20px;" [routerLink]="['../annonce-update']" ></ion-icon>
       <ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
-      </div>
+      </div> -->
 
         <ion-alert
         header="Alert!"

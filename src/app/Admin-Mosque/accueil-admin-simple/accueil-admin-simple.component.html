@@ -1,11 +1,11 @@
 <ion-content>
-  <div id="container" style="display: grid;">
+  <!-- <div id="container" style="display: grid;"> -->
     <div class="img">
-      <img src="../../assets/images/logo.png" alt="" style="border-radius: 50%; width: 80%; height: 80%;margin-left: 3vh;margin-bottom: auto;">
+      <img src="../../assets/images/logo.png" alt="" style="border-radius: 50%; width: 80%; height: 80%;margin-left: 3vh;">
     </div>
-  </div>
+  <!-- </div> -->
   <div class="h3">
-    <h3 style="text-align: center;" >Mosque Koita</h3>
+    <h3 style="text-align: center;font-weight: 900;" >Mosque Koita</h3>
   </div>
   
   <div class="card">
@@ -32,14 +32,21 @@
       </ion-card-header>
     </ion-card>
     <!---->
-    <!----->
-    <ion-card style="border-radius: 27px;" id="card">
-      <div class="logoimg" style="background-color:#D9D9D9; height: 141%;"><img style="margin-top: 1rem;" [routerLink]="['./document-liste']" alt="Silhouette of mountains" src="../../assets/images/document.png" /></div>
-      <ion-card-header style="margin-top: auto;" [routerLink]="['./document-liste']">
-        <ion-card-title style="font-size: 20px; text-align: center ; font-weight: bold; color: #005B2F; margin-bottom: auto;margin-left: -10px;margin-top: 5px;">Document</ion-card-title>
+    <ion-card style="border-radius: 25px;" >
+      <div class="logoimg"><img alt="Silhouette of mountains"  [routerLink]="['./document-liste']"  src="../../../assets/images/document.png" /></div>
+      <ion-card-header [routerLink]="['./document-liste']" >
+        <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Document</ion-card-title>
       </ion-card-header>
     </ion-card>
 
+  </div>
+  <div style="align-items: center; text-align: center;">
+    <ion-card style="border-radius: 25px; width: 60%; text-align: center; margin-left: 20%;" >
+      <div class="logoimg"><img alt="Silhouette of mountains"  [routerLink]="['./document-liste']"  src="../../../assets/images/document.png" /></div>
+      <ion-card-header [routerLink]="['./document-liste']" >
+        <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Information</ion-card-title>
+      </ion-card-header>
+    </ion-card>
   </div>
   <!---->
   <!-- <div class="footer">
