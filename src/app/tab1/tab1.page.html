@@ -1,20 +1,92 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
 
-  <app-explore-container name="Tab 1 page">
   
-  </app-explore-container>
+  <div class="container">
+
+    <ion-header>
+      <div class="title">
+        <span>
+          <ion-icon name="location"></ion-icon>
+          Bamako
+        </span> <br> <br>
+        <span>
+          <ion-icon name="calendar-number"></ion-icon>
+          <span>22 Sept.2023</span>
+        </span>
+
+      </div>
+    </ion-header>
+
+    <div class="logo">
+
+     
+      <div>
+        <ion-card class="card" routerLink="/tabs/mosque" id="card1">
+          <i class="fa-solid fa-mosque"></i>
+        </ion-card>
+        <h5>Liste des <br> mosques</h5>
+      </div>
+
+      <div>
+        <ion-card routerLink="/tabs/mosqueaproximite" color="tertiary" class="card">
+          <i class="fa-solid fa-mosque"></i>
+        </ion-card>
+        <h5>Mosqué à<br>proximité</h5>
+      </div>
+
+      <div>
+        <ion-card color="primary" class="card" routerLink="/tabs/noms">
+          <i><ion-img src="../../assets/الله.png" style="margin-top: 8px;"></ion-img></i>
+        </ion-card>
+        <h5>99 Noms<br>D'Allah</h5>
+      </div>
+
+      <div>
+        <ion-card id="card2" class="card" routerLink="/tabs/calendar">
+          <i class="fa-solid fa-calendar-days"></i>
+        </ion-card>
+        <h5>Calendrier</h5>
+
+      </div>
+
+      <div>
+        <ion-card id="card3" class="card">
+          <i class="fa-solid fa-radio"></i>
+        </ion-card>
+
+        <h5>Radio</h5>
+      </div>
+
+      <div>
+        <ion-card color="success" class="card" routerLink="/tabs/preche">
+         <i><ion-img src="../../assets/Vector.png"></ion-img></i>
+        </ion-card>
+        <h5>Prêche</h5>
+      </div>
+
+    </div>
+
+    <div class="container-priere">
+      <div class="clock">
+        <ion-card color="danger" class="card-circle">
+          <i class="fa-solid fa-clock"></i>
+        </ion-card>
+        <p>Temps de priere à Bamako</p>
+      </div>
+      <ion-list>
+
+
+        <ion-item *ngFor="let p of priere">
+          <ion-list-header>{{p.nom}}</ion-list-header>
+          <ion-list style="display: flex; align-items: center; gap: 1rem;">
+            <ion-label>{{p.heure}}</ion-label>
+            <ion-icon name="volume-low"></ion-icon>
+          </ion-list>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
 </ion-content>

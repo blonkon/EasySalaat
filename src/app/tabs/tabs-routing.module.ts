@@ -21,6 +21,35 @@ const routes: Routes = [
       },{
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },{
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+
+      },
+      {
+        path: 'mosque',
+        loadChildren: () => import('../page/liste-mosque/liste-mosque.module').then(m => m.ListeMosquePageModule)
+      },
+      {
+        path: 'mosqueaproximite',
+        loadChildren: () => import('../page/mosque-aproximite/mosque-aproximite.module').then(m => m.MosqueAproximitePageModule)
+
+      },
+      {
+        path: 'calendar',
+        loadChildren: () => import('../page/calendar/calendar.module').then( m => m.CalendarPageModule)
+      },
+      {
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+      },
+      {
+        path: 'preche',
+        loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
+      },
+      {
+        path: 'sourate',
+        loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
       },
       {
         path: '',

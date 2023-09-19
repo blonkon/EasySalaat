@@ -1,0 +1,44 @@
+
+<div class="img">
+  <img src="../../assets/images/logo.png" alt="" width="100px">
+  <h2 style="color: #005B2F;">Inscription</h2>
+</div>
+
+<ion-content>
+
+<form action="">
+<div id="container">
+  
+ 
+  <div class="form-controle">
+    <div>
+      <label>Nom Complet</label>
+      <input  type="email" placeholder="Ex. Lanciné keita " >  
+    </div>  
+    <div>
+      <label>Email</label>
+      <input  type="email" placeholder="Exemple. votremail@gmail.com" >  
+    </div>      
+    <div>
+      <label>Mot de passe</label>
+      <input type="password" placeholder="******************"> 
+    </div>
+    <div>
+      <label>Répeter Mot de passe</label>
+      <input type="password" placeholder="******************"> 
+    </div>
+    <a id="a" style="color: #fff !important;">
+      S' inscrire
+    </a>
+    
+    <a class="gtext" style="margin-bottom: 20px;" (click)="navigateToSuperAdmin()" >
+        <i>  <img src="../../assets/images/google.png" alt="" width="15px" > Continuer avec google </i>
+    </a>
+    
+
+    <h5 style="text-align: center;">J'ai déjà un compte, <a (click)="navigateToconnexion()" routerLinkActive="../../../connexion" style="color: #005B2F !important; font-weight: bold;  padding: 0 10px; margin-left: 10px; border-radius: 5px; ">Se connecter</a></h5>
+  </div>
+</div>
+</form>
+
+</ion-content>
