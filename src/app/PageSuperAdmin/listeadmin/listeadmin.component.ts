@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { AdminService } from '../admin.service';
-import { Firestore, deleteDoc, doc } from '@angular/fire/firestore';
+import { Firestore, deleteDoc, doc, getDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-listeadmin',
@@ -21,7 +22,7 @@ export class ListeadminComponent  implements OnInit {
   }
   
   public nombre_admin!: number;
-    constructor( private firestore :Firestore,private alertController: AlertController, private _service : AdminService,private router :Router) {
+    constructor( private firestore :Firestore,private data1 : DataService,private alertController: AlertController, private _service : AdminService,private router :Router) {
      }
   
     ngOnInit() {
@@ -56,6 +57,13 @@ export class ListeadminComponent  implements OnInit {
       handler: async (id: string) => {
         // this.data.splice(id, 1);
         this.nombre_admin--;
+        const documentRef = doc(this.firestore, 'Users', id);
+        const firebaseUser = await getDoc(documentRef);
+        if (firebaseUser.exists()) {
+         let eemail = firebaseUser.data()['email'];
+         let  emdp = firebaseUser.data()['motdepasse'];
+          this.data1.DeleteUser(eemail,emdp);
+        }
         await deleteDoc(doc(this.firestore, "Users", id));
         // await deleteDoc(doc(this.firestore,"Mosques",id));
         console.log('Alert confirmed this is '+id);

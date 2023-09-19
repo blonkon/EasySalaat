@@ -29,7 +29,7 @@ export class DataService {
         if (userCredential) { const userr = userCredential.user;
           this.test=true
           // console.log(userr.uid)
-          user.motdepasse="";
+          // user.motdepasse="";
           const userRef = collection(this.firestore,'Users');
           setDoc(doc(userRef,userr.uid),user)
          
@@ -83,5 +83,37 @@ export class DataService {
     }
     update(){
     }
-    
+    async DeleteUser(email :string,mdp:string) {
+      let eemail="";
+      let emdp="";
+      const user = this.auth.currentUser;
+      if (user?.uid!=null) {
+        const documentRef = doc(this.firestore, 'Users', user.uid);
+        const firebaseUser = await getDoc(documentRef);
+        if (firebaseUser.exists()) {
+          eemail = firebaseUser.data()['email'];
+          emdp = firebaseUser.data()['motdepasse'];
+        }
+      }
+     
+      if (user) {
+        // await signOut(this.auth);
+        const usert = await signInWithEmailAndPassword(this.auth, email, mdp) 
+        if (usert) {
+          const user1 =this.auth.currentUser;
+          if (user1) {
+            user1.delete()
+            .then(async () => {
+                // User deleted.
+                console.log("User Account Deleted Successful");
+                await signInWithEmailAndPassword(this.auth, eemail, emdp) 
+            })
+            // .catch((error) => {
+            //     // An error occurred
+            //     // ...
+            // });
+          }
+        }
+      }
+  }
 }

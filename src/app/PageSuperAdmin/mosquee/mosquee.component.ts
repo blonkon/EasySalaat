@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { MosqueeService } from '../mosquee.service';
+import { Mosques } from 'src/app/models/Moques';
 
 @Component({
   selector: 'app-mosquee',
@@ -11,7 +12,6 @@ import { MosqueeService } from '../mosquee.service';
 export class MosqueeComponent implements OnInit {
 
   public data: any[]=[];
-  router: any;
   rechercher($event: Event) {
     // Ajoutez la logique pour la recherche ici
   }
@@ -21,16 +21,20 @@ export class MosqueeComponent implements OnInit {
   }
 
 public nombre_mosquee!: number;
-  constructor( private alertController: AlertController, private _service : MosqueeService) {
+  constructor( private alertController: AlertController, private router : Router,private _service : MosqueeService) {
    }
 
-  ngOnInit() {
-    this.nombre_mosquee = this.data.length;
-    this._service.getUtilisateurList().forEach((element) => {
-      this.data.push(element);});
-      this.nombre_mosquee = this.data.length;
-
-  }
+   async ngOnInit() {
+    this.liste();
+}
+async liste(){
+  this.nombre_mosquee = this.data.length;
+  (await this._service.getUtilisateurList()).forEach((element) => {
+    this.data.push(element);
+  });
+  console.log(this.data[0])
+  this.nombre_mosquee = this.data[0].length;
+}
 
 public alertButtons = [
   {
@@ -64,5 +68,9 @@ setResult(ev:any) {
   console.log(`Dismissed with role: ${ev.detail.role}`);
 }
 
+detailuser(mosque : Mosques){
+  this._service.detailsMosque=mosque;
+  this.router.navigate(['admin/accueilsuperadmin/detailmosquee'])
+}
 
 }

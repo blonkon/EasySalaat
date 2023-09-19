@@ -4,8 +4,12 @@ import { UtilisateurService } from '../utilisateur.service';
 import { ModifierutilisateurComponent } from '../modifierutilisateur/modifierutilisateur.component';
 import { Users } from 'src/app/models/users';
 import { Router } from '@angular/router';
-import { Firestore, deleteDoc, doc } from '@angular/fire/firestore';
+import { Firestore, deleteDoc, doc, getDoc } from '@angular/fire/firestore';
 import { DetailutilisateurComponent } from '../detailutilisateur/detailutilisateur.component';
+import { Auth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
+import { FirebaseApp } from '@angular/fire/app';
+import { DataService } from 'src/app/service/data.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +29,7 @@ detailsForUser:{
 }
   
 public nombre_utilisateur!: number;
-  constructor( private alertController: AlertController, private _service : UtilisateurService,private router : Router,private firestore:Firestore) {
+  constructor( private alertController: AlertController,private data1 : DataService, private firebase: Auth,private _service : UtilisateurService,private router : Router,private firestore:Firestore) {
    }
 
   async ngOnInit() {
@@ -60,11 +64,18 @@ public alertButtons = [
     handler: async (id: string) => {
       // this.data.splice(id, 1);
       this.nombre_utilisateur = this.nombre_utilisateur-1;
+      const documentRef = doc(this.firestore, 'Users', id);
+        const firebaseUser = await getDoc(documentRef);
+        if (firebaseUser.exists()) {
+         let eemail = firebaseUser.data()['email'];
+         let  emdp = firebaseUser.data()['motdepasse'];
+          this.data1.DeleteUser(eemail,emdp);
+        }
       await deleteDoc(doc(this.firestore, "Users", id));
       await deleteDoc(doc(this.firestore,"Mosques",id));
-      console.log('Alert confirmed this is '+id);
-    },
-  },
+    
+    }
+  }
 ];
 async presentAlert(id : string) {
   const alert = await this.alertController.create({

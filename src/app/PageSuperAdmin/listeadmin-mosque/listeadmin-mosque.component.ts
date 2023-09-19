@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { AdminMosqueService } from '../admin-mosque.service';
 import { Router } from '@angular/router';
-import { Firestore, deleteDoc, doc } from '@angular/fire/firestore';
+import { Firestore, deleteDoc, doc, getDoc } from '@angular/fire/firestore';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-listeadmin-mosque',
@@ -14,7 +15,7 @@ export class ListeadminMosqueComponent  implements OnInit {
   public data: any[]=[];
   
   public nombre_admin_mosque!: number;
-    constructor( private alertController: AlertController,private router:Router, private _service : AdminMosqueService,private firestore :Firestore) {
+    constructor( private alertController: AlertController,private data1 : DataService,private router:Router, private _service : AdminMosqueService,private firestore :Firestore) {
      }
   
     async ngOnInit() {
@@ -47,6 +48,13 @@ export class ListeadminMosqueComponent  implements OnInit {
         handler: async (id: string) => {
           // this.data.splice(id, 1);
           this.nombre_admin_mosque--;
+          const documentRef = doc(this.firestore, 'Users', id);
+        const firebaseUser = await getDoc(documentRef);
+        if (firebaseUser.exists()) {
+         let eemail = firebaseUser.data()['email'];
+         let  emdp = firebaseUser.data()['motdepasse'];
+          this.data1.DeleteUser(eemail,emdp);
+        }
           await deleteDoc(doc(this.firestore, "Users", id));
           await deleteDoc(doc(this.firestore,"Mosques",id));
           console.log('Alert confirmed this is '+id);
