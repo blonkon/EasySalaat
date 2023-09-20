@@ -7,7 +7,7 @@ import { Mosques } from '../models/Moques';
   providedIn: 'root'
 })
 export class MosqueeService {
-
+mosqueidForUpdate?:string;
   detailsMosque : Mosques={
         nom : "",
         iman : "",

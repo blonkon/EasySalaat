@@ -38,26 +38,26 @@ async liste(){
 
 public alertButtons = [
   {
-    text: 'Cancel',
+    text: 'Fermer',
     role: 'cancel',
     handler: () => {
 
       console.log('Alert canceled');
     },
-  },
-  {
-    text: 'OK',
-    role: 'confirm',
-    handler: (i: number) => {
-      this.data.splice(i, 1);
-      this.nombre_mosquee = this.data.length-1;
-      console.log('Alert confirmed');
-    },
-  },
+  // },
+  // {
+  //   text: 'OK',
+  //   role: 'confirm',
+  //   handler: (i: number) => {
+  //     this.data.splice(i, 1);
+  //     this.nombre_mosquee = this.data.length-1;
+  //     console.log('Alert confirmed');
+  //   },
+  }
 ];
 async presentAlert() {
   const alert = await this.alertController.create({
-    header: 'Voulez vous supprimer ?',
+    header: 'Pour supprimer une mosque vous devez juste changer le role de son Administrateur',
     buttons: this.alertButtons,
   });
 
@@ -72,5 +72,8 @@ detailuser(mosque : Mosques){
   this._service.detailsMosque=mosque;
   this.router.navigate(['admin/accueilsuperadmin/detailmosquee'])
 }
-
+modif(id:string){
+  this._service.mosqueidForUpdate=id;
+  this.router.navigate(["admin/accueilsuperadmin/modificationmosquee"])
+}
 }

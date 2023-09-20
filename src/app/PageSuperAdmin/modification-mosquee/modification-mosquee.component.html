@@ -7,7 +7,7 @@
   </div>
 </ion-header>
 <ion-content>
-        <form action=""> 
+        <form (ngSubmit)="onSubmit(a)" #a="ngForm"> 
             <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
               <div class="blokimg">
                 <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
@@ -15,7 +15,7 @@
                 </ion-thumbnail>
                 <div class="parent-div">
                   <div class="btn-upload" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;"  >Choisir une image</div>
-                  <input type="file" name="upfile"accept="image/*" (change)="onImageChange($event)" />
+                  <input type="file" id="imgImam" name="upfile"accept="image/*" (change)="onImageChange($event)" />
                 </div>
               </div>
               <div class="blokimg">
@@ -27,26 +27,26 @@
                   <input type="file" name="upfile" accept="image/*" (change)="onImageChange($event)" />
                 </div>
               </div>
-            
+            <p style="color: red; text-align: center;">{{invalid}}</p>
             </div>
             <div class="main">
             <div class="input-item">
               <ion-label class="label">Nom de la mosquée</ion-label>
-              <input class="input" type="text" [(ngModel)]="mosqueName" />
+              <input class="input" type="text" name="mosque" [(ngModel)]="mosqueName" />
             </div>
             <div  class="input-item">
               <ion-label class="label">Nom Imame</ion-label>
-              <input class="input" type="text" [(ngModel)]="mosqueName"/>
+              <input class="input" type="text" name="imam" [(ngModel)]="imamName"/>
             </div >
 
             <!-- <div  class="input-item">
               <ion-label class="label">Geo Point </ion-label>
-              <input class="input" type="text" [(ngModel)]="geopoint" placeholder=""/>
+              <input class="input" type="text" placeholder=""/>
             </div > -->
           
             <div class="input-item">
               <ion-label class="label">Numéro de téléphone</ion-label>
-              <input class="input" type="tel" [(ngModel)]="phoneNumber"/>
+              <input class="input" type="tel" name="tel" [(ngModel)]="phoneNumber"/>
             </div >
             <div class="frame">
             <button class="custom-btn btn-5" type="submit"><span>Soumettre</span></button>
