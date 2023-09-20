@@ -72,8 +72,9 @@ import { DetailsDocumentComponent } from './Admin-Mosque/details-document/detail
 import { DetailsDocVideoComponent } from './Admin-Mosque/details-doc-video/details-doc-video.component';
 import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recitation/details-doc-recitation.component';
 import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modifier-profile.component';
+import { DateAjoutComponent } from './PageSuperAdmin/date-ajout/date-ajout.component';
 @NgModule({
-  declarations: [AppComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
+  declarations: [AppComponent,DateAjoutComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
     AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
     ModificationMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,
     ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent,

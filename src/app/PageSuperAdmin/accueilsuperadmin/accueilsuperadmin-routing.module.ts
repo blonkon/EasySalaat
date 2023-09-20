@@ -30,6 +30,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 
 import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
 import { LecteurComponent } from '../lecteur/lecteur.component';
+import { DateAjoutComponent } from '../date-ajout/date-ajout.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,9 @@ const routes: Routes = [
   // },
   {
     path: 'calendrier', component: CalendrierComponent
+  },
+  {
+    path: 'updatedate', component: DateAjoutComponent
   },
   {
     path: 'detailmosquee',
