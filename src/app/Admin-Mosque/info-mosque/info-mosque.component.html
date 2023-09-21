@@ -1,3 +1,73 @@
-<p>
-  info-mosque works!
-</p>
+
+<div class="head animate__animated animate__fadeInDown " id="container" style="display: grid; margin-bottom: 15px;">
+  <ion-icon name="arrow-undo" style=" font-size: 25px; padding: 20px 0 0 20px; color: #fff;" [routerLink]="['/admosque']"></ion-icon>
+  <div class="img">
+    <img src="../../../assets/images/logo.png" alt="logo"  width="100px" height="100px" style="border-radius: 50%;margin-left: 20px;">
+   <p style="font-size: 15px; text-align: center; color: #fff;">Info Mosque</p>
+  </div>
+</div>
+
+<ion-content class=" animate__animated animate__fadeInUp ">
+
+<ion-card style="border-radius: 25px;">
+  <div class="logoimg"><img alt="Silhouette of mountains" src="../../../assets/images/mosqueeee 1.png" /></div>
+  <ion-card-header>
+    <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Informations</ion-card-title>
+  </ion-card-header>
+<ion-card-content style="text-align: left; justify-content: center;"   *ngFor="let element of elements">
+  <ion-label style="font-size: 20px; font-weight: bold;"><strong> Mosque:</strong> {{element.nomMosque}}</ion-label> <ion-icon name="create-outline"  (click)="presentAlert()"  style="color: #005B2F;" ></ion-icon>
+  <br>
+  <ion-label style="font-size: 20px; font-weight: bold;"><strong> Imam:</strong> {{element.nomImam}} </ion-label> <br>
+  <ion-label style="font-size: 20px; font-weight: bold;"><strong>Téléphone:</strong> {{element.telephone}}</ion-label> <br>
+</ion-card-content>
+</ion-card>
+<div>
+  <ion-button class="bbb"  [routerLink]="['../update-info']"   shape="round">Modifier</ion-button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--
+
+<ion-content>
+    <div class="retour">
+      <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> --
+      <img src="../../../assets/images/bak.png"  [routerLink]="['/admosque']" style="margin-top: 20px;" alt="">
+    </div>
+    <div id="container" style="display: grid;">
+     
+      <div class="img">
+        <img src="../../../assets/images/mosqueeee 1.png" alt="horaire" style="border-radius: 50%; width: 29vh; height: 100%;">
+      </div>
+      <div style="margin-top: -8vh;">
+        <h2 style="color: #005B2F;margin-top: 83px; text-align: center;font-weight: 900;">Info Mosque</h2>
+      </div>
+    </div>
+    <div>
+      <ion-button class="bbb"  [routerLink]="['../update-info']"   shape="round">Modifier</ion-button>
+    </div>
+    <ion-list>
+        <ion-item *ngFor="let element of elements">
+          <div>
+        <label for="">Nom Mosque: </label> <label  for=""> {{ element.nomMosque }}  </label><br>   
+        <label for="">Nom Imam:  {{element.nomImam}}</label> <br>
+        <label for="">Téléphone:</label>  {{element.telephone}}  </div>
+        
+        </ion-item>
+      </ion-list>
+    
+  </ion-content>
+ 
+
+-->
+  

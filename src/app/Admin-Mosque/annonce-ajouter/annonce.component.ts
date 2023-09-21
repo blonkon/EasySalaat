@@ -22,13 +22,7 @@ export class AnnonceComponent  implements OnInit {
     private router : Router,
     private annonceService : AnnonceServiceService
   ) {
-    // this.route.queryParams.subscribe((params) => {
-    //   if(params['id']){
-    //     this.id = Number(params['id']);
-    //     this.annonce= Object.assign({}, this.annonceService.getAnnonce()[this.id]);
-    //     this.isEditMode = true;
-    //   }
-    // });
+    
    }
 
   //  saveAnnonce(){

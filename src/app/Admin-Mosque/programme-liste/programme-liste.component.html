@@ -20,7 +20,7 @@
       <ion-item  *ngFor="let element of data">
         <div style="width: 80%;">
         <ion-label style="color: black; font-size: x-large;" [routerLink]="['../details-programme']">{{element.titre}}</ion-label> 
-        <label>{{element.dateTime}}</label>
+        <label> {{element.jour}}  {{element.heure}}</label>
       </div>
       <ion-label>
         <ion-icon name="create-outline"  style="color: #005B2F;width: 20px; height: 20px;"  [routerLink]="['../programme-update']" ></ion-icon>

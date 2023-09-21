@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png"  [routerLink]="['../info-mosque']" style="margin-top:20px;" alt="">
+  </div>
+<div id="container" style="display: grid;">
+ 
+<div class="img">
+  <img src="../../../assets/images/mosqueeee 1.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
+</div>
+<div style="margin-top: -21vh;">
+  <h2 style="color: #005B2F; text-align: center; margin-top: 164px;font-weight: 900;">Ma Mosque</h2>
+</div>
+</div>
+<div class="form-controle">
+  <form action="info-mosque.component.html"  method="post" #ann="ngForm">
+    <!-- (submit)="saveAnnonce()"  -->
+  <div>
+   <label >Nom Mosque</label>
+    <input  [(ngModel)]="info.nomMosque" name="nomMosque" type="text">  
+  </div>
+  <div>
+    <label >Imam</label>
+    <input [(ngModel)]="info.imam" name="imam" type="text" > 
+  </div>
+  <div>
+    <label for="">Téléphone</label>
+    <input [(ngModel)]="info.telephone" name="telephone" type="number" > 
+     </div>
+     <div>
+      <img class="ggg" src="../../../assets/images/Group 138.png" alt="loc">
+      <!-- <ion-icon style="width: 90px;" name="location-outline"></ion-icon> -->
+     </div>
+     <div>
+  <button style="background-color: #005B2F; width: 100%; color: white; height: 35px; border-radius:10px ; font-weight: bold;" type="button">Enregistrer</button>
+</div>
+  <!-- <input type="button" (click)="saveAnnonce(ann)" value="Enregistrer" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;"> (click)="saveAnnonce()"  -->
+</form>
+</div>
+
+</ion-content>

@@ -18,12 +18,13 @@
     display: grid;
     gap: 15px;
     margin: 0 30px 0 30px;
-    
+    margin-top: 35px;
   }
   .form-controle input {
-    padding: 12px 10px 12px 10px;
+    padding: 10px 10px 7px;
     border-radius: 15px;
     margin-bottom: 20px;
+    font-size: 15px;
     border: none;
     transition: all 0.3s ease;
     box-shadow: inset 5px 5px 5px 0px rgba(69,68,68,0.5),
@@ -33,7 +34,6 @@
   }
   .form-controle label{
      margin-left: 10px;
-     margin-bottom: 10px;
      font-weight: bold;
      font-size: x-large;
   }
@@ -41,6 +41,8 @@
   .form-controle div{
     display: grid;
   } 
-  .form-controle input ::-ms-value{
-    margin-left: 10px;
+  .ggg{
+    margin-bottom: 3%;
+    border-radius: 100px;
+    width: 25%;
   }

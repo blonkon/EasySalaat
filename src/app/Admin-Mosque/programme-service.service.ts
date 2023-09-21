@@ -13,10 +13,9 @@ export class ProgrammeServiceService {
     this.updateEvent.next();
   }
   private programmeList :any=[
-     {titre : 'Batème Maouloud', dateTime: '21/11/2023' },
-     {titre : 'Prèche Maouloud',dateTime: '21/11/2023'  },
-     {titre : 'Doua',dateTime: '21/11/2023'  },
-     {titre : 'Quiz',dateTime: '21/11/2023'  }
+     {titre : 'Prêche', jour: 'Lundi', heure: '16h-18h' },
+     {titre : 'Tafsir',jour: 'Mardi' ,heure: '10h-12h' },
+     
   ]
   constructor() { }
     getProgramme(): Observable<any>{

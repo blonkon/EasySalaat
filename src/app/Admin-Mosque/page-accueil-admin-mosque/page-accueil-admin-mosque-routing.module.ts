@@ -19,6 +19,8 @@ import { DetailsProgrammeComponent } from '../details-programme/details-programm
 import { DetailsDocumentComponent } from '../details-document/details-document.component';
 import { DetailsDocVideoComponent } from '../details-doc-video/details-doc-video.component';
 import { DetailsDocRecitationComponent } from '../details-doc-recitation/details-doc-recitation.component';
+import { InfoMosqueComponent } from '../info-mosque/info-mosque.component';
+import { UpdateInfoComponent } from '../update-info/update-info.component';
 
 const routes: Routes = [
   {
@@ -72,6 +74,12 @@ const routes: Routes = [
   },
   {
     path: 'details-doc-recitation', component: DetailsDocRecitationComponent
+  },
+  {
+    path: 'info-mosque', component: InfoMosqueComponent
+  },
+  {
+    path:'update-info', component: UpdateInfoComponent
   }
   
 

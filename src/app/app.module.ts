@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { HttpClientModule } from '@angular/common/http';
-import { Media } from '@ionic-native/media/ngx';
+// import { Media } from '@ionic-native/media/ngx';
 
 import { SourateComponent } from './component/sourate/sourate.component';
 import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
@@ -45,9 +45,9 @@ import { AjoutcoranComponent } from './PageSuperAdmin/ajoutcoran/ajoutcoran.comp
 import { DetailcoranComponent } from './PageSuperAdmin/detailcoran/detailcoran.component';
 import { ModificationcoranComponent } from './PageSuperAdmin/modificationcoran/modificationcoran.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { NgxAngularMaterialHijriAdapterModule } from 'ngx-angular-material-hijri-adapter';
+// import { NgxAngularMaterialHijriAdapterModule } from 'ngx-angular-material-hijri-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
+// import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CalendrierComponent } from './PageSuperAdmin/calendrier/calendrier.component';
@@ -72,15 +72,17 @@ import { DetailsDocumentComponent } from './Admin-Mosque/details-document/detail
 import { DetailsDocVideoComponent } from './Admin-Mosque/details-doc-video/details-doc-video.component';
 import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recitation/details-doc-recitation.component';
 import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modifier-profile.component';
+import { InfoMosqueComponent } from './Admin-Mosque/info-mosque/info-mosque.component';
+import { UpdateInfoComponent } from './Admin-Mosque/update-info/update-info.component';
 @NgModule({
-  declarations: [AppComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
+  declarations: [AppComponent,CalendrierComponent, InfoMosqueComponent,AccueilAdminSimpleComponent, LecteurComponent, ModifierutilisateurComponent,
     AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
     ModificationMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,
     ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent,
      ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
      DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, 
-     ListutilisateurComponent, ConnexionComponent, AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent,
-      DetailsAnnonceComponent,DetailsDocumentComponent,
+     ListutilisateurComponent, ConnexionComponent, ProgrammeListeComponent,ProgrammeAjouterComponent,
+      DetailsAnnonceComponent,DetailsDocumentComponent, UpdateInfoComponent,
      HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
      DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
      SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,
@@ -90,16 +92,16 @@ import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modi
       DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent,
        ConnexionComponent, ModifierProfileComponent,
     DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ],
-  imports: [BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule,NgxAngularMaterialHijriAdapterModule, MatFormFieldModule,MatInputModule],
+  imports: [BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule, MatFormFieldModule,MatInputModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
-   { provide: DateAdapter,
-    useClass: NgxAngularMaterialHijriAdapterModule,
-  },
-  // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
-  { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
-  // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
-  { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },Media
+  //  { provide: DateAdapter,
+  //   useClass: NgxAngularMaterialHijriAdapterModule,
+  // },
+  // // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
+  // { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
+  // // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
+  // { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },Media
 ],
   bootstrap: [AppComponent],
 })
