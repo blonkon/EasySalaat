@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { HttpClientModule } from '@angular/common/http';
 // import { Media } from '@ionic-native/media/ngx';
 
@@ -40,6 +39,7 @@ import { ListeadminComponent } from './PageSuperAdmin/listeadmin/listeadmin.comp
 import { ModifieradminComponent } from './PageSuperAdmin/modifieradmin/modifieradmin.component';
 import { ModifieradminMosqueComponent } from './PageSuperAdmin/modifieradmin-mosque/modifieradmin-mosque.component';
 import { DetailadminComponent } from './PageSuperAdmin/detailadmin/detailadmin.component';
+
 import { CoranComponent } from './PageSuperAdmin/coran/coran.component';
 import { AjoutcoranComponent } from './PageSuperAdmin/ajoutcoran/ajoutcoran.component';
 import { DetailcoranComponent } from './PageSuperAdmin/detailcoran/detailcoran.component';
@@ -74,6 +74,7 @@ import { DetailsDocRecitationComponent } from './Admin-Mosque/details-doc-recita
 import { ModifierProfileComponent } from './PageSuperAdmin/modifier-profile/modifier-profile.component';
 import { InfoMosqueComponent } from './Admin-Mosque/info-mosque/info-mosque.component';
 import { UpdateInfoComponent } from './Admin-Mosque/update-info/update-info.component';
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 @NgModule({
   declarations: [AppComponent,CalendrierComponent, InfoMosqueComponent,AccueilAdminSimpleComponent, LecteurComponent, ModifierutilisateurComponent,
     AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
@@ -91,18 +92,33 @@ import { UpdateInfoComponent } from './Admin-Mosque/update-info/update-info.comp
       ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
       DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent,
        ConnexionComponent, ModifierProfileComponent,
+       DetailadminMosqueComponent,
+       SourateComponent,
+       ListeLectureComponent,
+       ModificationMosqueeComponent,
+       DetailMosqueeComponent,
+       MosqueeComponent,
+       ModifierFrequenceRadioComponent,
+       ListeFrequenceRadioComponent,
+       DetailadminComponent,
+       ModifieradminMosqueComponent,
+       ModifieradminComponent,
+       ListeadminComponent,
+       ListeadminMosqueComponent,
+       ModifierutilisateurComponent,
+       DetailutilisateurComponent,
+       InscriptionComponent,
+       HomeSuperAdminComponent,
+       PageutiletadminComponent,
+       ListutilisateurComponent,
+       JouerAudioComponent,
+       ConnexionComponent,
     DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ],
   imports: [BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule, MatFormFieldModule,MatInputModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
-  //  { provide: DateAdapter,
-  //   useClass: NgxAngularMaterialHijriAdapterModule,
-  // },
-  // // Change the format by using `MOMENT_HIJRI_DATE_FORMATS` for Dates and `MOMENT_HIJRI_DATE_TIME_FORMATS` for date/time.
-  // { provide: MAT_DATE_FORMATS, useValue: MOMENT_HIJRI_DATE_FORMATS },
-  // // Change the localization to arabic by using `AR_SA` not `AR` only and `EN_US` not `EN` only.
-  // { provide: MAT_DATE_LOCALE, useValue: DateLocaleKeys.AR_SA },Media
+  
 ],
-  bootstrap: [AppComponent],
+
 })
 export class AppModule {}

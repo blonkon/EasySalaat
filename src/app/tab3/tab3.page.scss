@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 header {
   display: flex;
@@ -23,33 +24,219 @@ ion-title
 {
   text-align: center;
   color: #ffffff;
+=======
+// ion-back-button{
+//   color: #ffffff;
+// }
+// ion-title
+// {
+//   text-align: center;
+//   color: #ffffff;
+>>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
 
+// }
+// ion-header{
+//   background-color: #005B2F;
+//   height: 5rem;
+//   border-bottom-right-radius: 200px ;
+// }
+// ion-toolbar{
+//   align-items: center;
+// }
+// .body{
+//   // border-top: 1px solid;
+//   text-align: center;
+// }
+// .body img{
+//   width: 8em;
+// }
+// .body a{
+//   text-decoration: none;
+//   color: #FFF;
+//   font-size: x-large;
+// }
+// .body .a{
+//   margin: auto;
+//   background-color: #005B2F;
+//   width: 50%;
+// }
+// .image{
+//   margin-top: 2em;
+// }
+// .image a img{
+//   width: 95vw;
+//   height: 120vw;
+// }
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #86fde8, #acb6e5); /* https://uigradients.com/#Windy */
+  margin: 0;
+  padding: 0;
 }
 
+<<<<<<< HEAD
 ion-toolbar{
   align-items: center;
+=======
+.boussole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vmin;
+  height: 50vmin;
+  background: radial-gradient(#02B6EE, #087EDE);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 2vmin #fdfdfd;
 }
-.body{
-  // border-top: 1px solid;
-  text-align: center;
+
+// .aiguille {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+//   width: 8vmin;
+//   height: 100%;
+// }
+
+.aiguille::before,
+.aiguille::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+>>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
 }
-.body img{
-  width: 8em;
+
+.aiguille::before {
+  bottom: 10%;
+  border-left: 1vmin solid transparent;
+  border-right: 2vmin solid transparent;
+  border-bottom: 23vmin solid red;
 }
-.body a{
-  text-decoration: none;
-  color: #FFF;
-  font-size: x-large;
+// .aiguille::after {
+//   top: 50%;
+//   border-left: 4vmin solid transparent;
+//   border-right: 4vmin solid transparent;
+//   border-top: 23vmin solid #fdfdfd;
+// }
+
+.btn {
+  position: absolute;
+  border: none;
+  border-radius: 6px;
+  padding: 2vmin 3vmin;
+  transition: background-color 0.3s
 }
-.body .a{
-  margin: auto;
-  background-color: #005B2F;
-  width: 50%;
+
+.btn:hover { background-color: #e7e7e700; }
+
+.btn-nord {
+  top: 0.5vmin;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
-.image{
-  margin-top: 2em;
+
+.btn-est {
+  top: 50%;
+  right: 0.1vmin;
+  transform: translate(0, -50%);
 }
-.image a img{
-  width: 95vw;
-  height: 120vw;
+
+.btn-sud {
+  bottom: 0.5vmin;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.btn-ouest {
+  top: 50%;
+  left: 0.1vmin;
+  transform: translate(0, -50%);
+}
+
+.aiguille {
+  position: absolute;
+  width: 2px; /* Largeur de l'aiguille */
+  // background-color: red; /* Couleur de l'aiguille (peut être modifiée) */
+  left: 50%;
+  top: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%) rotate(0deg); /* L'aiguille démarre à 0 degré */
+  transition: transform 0.5s ease-in-out; /* Animation de rotation */
+}
+
+.boussole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vmin;
+  height: 50vmin;
+  background: radial-gradient(#02B6EE, #087EDE);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 2vmin #fdfdfd;
+  perspective: 1000px; /* Ajoutez une perspective pour l'effet 3D */
+}
+
+.aiguille {
+  position: absolute;
+  width: 2px; /* Largeur de l'aiguille */
+  background-color: red; /* Couleur de l'aiguille */
+  left: 50%;
+  top: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%) rotate(0deg) translateZ(1px); /* L'aiguille démarre à 0 degré et est légèrement déplacée vers l'avant (effet 3D) */
+  transition: transform 0.5s ease-in-out; /* Animation de rotation */
+}
+.boussole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vmin;
+  height: 50vmin;
+  background: url('../../assets/images/boussole.png') no-repeat center center; /* Utilisez une image pour la texture de fond */
+  background-size: cover;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 2vmin #fdfdfd;
+  perspective: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Ajoutez une ombre portée */
+}
+
+// /* Marquages de direction */
+// .btn-nord::before,
+// .btn-est::before,
+// .btn-sud::before,
+// .btn-ouest::before {
+//   content: '';
+//   position: absolute;
+//   top: 10%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   color: #fff;
+// }
+
+// .btn-nord::before { content: 'N'; }
+// .btn-est::before { content: 'E'; }
+// .btn-sud::before { content: 'S'; }
+// .btn-ouest::before { content: 'O'; }
+
+.btn-nord,
+.btn-est,
+.btn-sud,
+.btn-ouest {
+  position: absolute;
+  color: #fff;
+  border: none;
+  // border-radius: 6px;
+  // padding: 2vmin 3vmin;
+  // transition: background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0); /* Fond semi-transparent */
 }

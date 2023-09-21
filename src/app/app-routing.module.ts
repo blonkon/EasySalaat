@@ -6,28 +6,29 @@ import { HomeSuperAdminComponent } from './PageSuperAdmin/home-super-admin/home-
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ExploreContainerComponent } from './explore-container/explore-container.component';
+
 import { SuperadminPage } from './PageSuperAdmin/superadmin/superadmin.page';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 import { SuperadminPageModule } from './PageSuperAdmin/superadmin/superadmin.module';
 import { SuperadminPageRoutingModule } from './PageSuperAdmin/superadmin/superadmin-routing.module';
+
+import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 
 const routes: Routes = [
   {
     path: ''
    ,
     children: [
-      {
-        path: '',
-        loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
-      },
+
   {
-    path: 'inscription', component: InscriptionComponent
-  }
-  ,
-   
-   {
-     path: 'superadmin', component: SuperadminPage
-   },
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+
+  {
+    path: 'superadmin',
+    loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
+  },
   {
     path: 'accueilsuperadmin',
     loadChildren: () => import('./PageSuperAdmin/accueilsuperadmin/accueilsuperadmin.module').then( m => m.AccueilsuperadminPageModule)
@@ -35,6 +36,15 @@ const routes: Routes = [
   {
     path: 'profilesuperadmin',
     loadChildren: () => import('./PageSuperAdmin/profilesuperadmin/profilesuperadmin.module').then( m => m.ProfilesuperadminPageModule)
+  },
+  {path: 'inscription',component:InscriptionComponent},
+  {
+  path: 'noms',
+  loadChildren: () => import('./page/noms/noms.module').then( m => m.NomsPageModule)
+},
+  {
+    path: 'preche',
+    loadChildren: () => import('./page/preche/preche.module').then( m => m.PrechePageModule)
   },
   {
     path: 'pageutilisateur',
@@ -46,7 +56,7 @@ const routes: Routes = [
   {
     path:'connexion',component:ConnexionComponent
   },
-  {path: 'inscription',component:InscriptionComponent},
+ 
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
@@ -63,10 +73,14 @@ const routes: Routes = [
   //   path: '',
   //   loadChildren: () => import('./PageSuperAdmin/superadmin/superadmin.module').then( m => m.SuperadminPageModule)
   // }
+  {
+    path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full'
+  },
+  {
+    path:'homesupera', component: HomeSuperAdminComponent
+  },
 ]}
-
 ]
-
 
 @NgModule({
   imports: [
@@ -74,6 +88,7 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 
 }

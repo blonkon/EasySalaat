@@ -24,21 +24,25 @@
 
     <ion-item  *ngFor="let preacher of preachers">
 
-      <ion-header class="header">
+      <ion-header class="header" [routerLink]="['/jouerAudio', preacher.audioUrl]">
         <!-- <span>num</span> -->
-        <ion-badge slot="start">{{currentNumber}}</ion-badge>
-        <ion-label>
+        <ion-badge slot="start">{{preacher.num}}</ion-badge>
+        <ion-label >
           <ion-label>
             <h1>{{ preacher.name }}</h1>
-            <p>{{ preacher.description }}</p>
+            <p style="font-weight: bolder;">{{ preacher.description }}</p>
           </ion-label>
         </ion-label>
       </ion-header>
 
 
       <ion-list>
-        <ion-label  (click)="playPause(preacher.audioUrl)">
-          <ion-icon   [name]="playIcon" size="large" color="black" style="cursor: pointer;"></ion-icon>
+        <ion-label>
+          <!-- <ion-icon [name]="preacher.isPlaying ? 'pause' : 'play'" size="large" color="black" style="cursor: pointer;" (click)="playPause(preacher)" ></ion-icon> -->
+          <a href="../../assets/audios/preche1.mp3" download="nom-du-fichier-audio.mp3">
+               <ion-icon name="arrow-down-circle-outline" size="large" color="black" style="cursor: pointer;"></ion-icon>
+          </a>
+
         </ion-label>
       </ion-list>
 

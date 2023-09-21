@@ -30,9 +30,10 @@
     "@capacitor/ios": "^5.3.0",
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/status-bar": "5.0.6",
-    "@ionic-native/core": "^5.36.0",
+    "@ionic-native/http": "^5.36.0",
     "@ionic-native/media": "^5.36.0",
     "@ionic/angular": "^7.0.0",
+<<<<<<< HEAD
     "angular-calendar": "^0.31.0",
     "animate.css": "^4.1.1",
     "ionicons": "^7.1.2",
@@ -41,6 +42,11 @@
     "ngx-angular-material-hijri-adapter": "^1.0.9",
     "ngx-pagination": "^6.0.3",
     "pako": "^2.1.0",
+=======
+    "animate.css": "^4.1.1",
+    "ionicons": "^7.1.2",
+    "ngx-audio-player": "^11.0.4",
+>>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
     "rxjs": "~7.8.0",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.7.27",
