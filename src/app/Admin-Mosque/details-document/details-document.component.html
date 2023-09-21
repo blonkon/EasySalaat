@@ -16,10 +16,10 @@
     <ion-card-title style="font-size: 20px; text-align: center; font-weight: bold; color: #005B2F;">Liste des Audios</ion-card-title>
   </ion-card-header>
 <ion-card-content style="text-align: left; justify-content: center; ">
-  <ion-list>
+  <ion-list >
     <ion-item class="liste"  *ngFor="let element of audios">
-<ion-label style="font-size: 20px; font-weight: bold;"><strong>{{element.nom}}</strong>  </ion-label> 
-<ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   (click)="playPause(audios)" ></ion-icon>
+<ion-label style="font-size: 20px; font-weight: bold;"  [routerLink]="['../document-update',element.audioUrl]" ><strong>{{element.nom}}</strong>  </ion-label> 
+<ion-icon name="trash" style="color: red; width: 25px; height: 20px;"  ></ion-icon>
 <!-- id="present-alert"  -->
 </ion-item>
 </ion-list>

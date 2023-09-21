@@ -1,33 +1,35 @@
-<ion-content>
-  <div id="container" style="display: grid;">
-    <div class="retour">
-      <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
-      <img src="../../../assets/images/bak.png"  [routerLink]="['../document-liste']" style="margin-left: -95px;" alt="">
-    </div>
-  <div class="img">
-    <img src="../../../assets/images/document.png" alt="horaire" style="border-radius: 1%; width: 20vh; height: 100%;">
-  </div>
-  <div style="margin-top: -13vh;">
-    <h2 style="color: #005B2F; text-align: center; margin-top: 147px;">Document</h2>
-  </div>
-  </div>
-  <div class="form-controle">
-    <form action="document-liste" method="post">
-    <div>
-     <label for="">Nom Document</label>
-      <input name="fajr" type="text">  
-    </div>
-    <div>
-      <label for="">Télécharger Fichier</label>
-      <input name="chorouq" type="file" > 
-    </div>
-    <div>
-      <label for="">Description</label>
-      <textarea style="margin: 5px;margin-bottom: 15px;margin-left: 2%;" name="description" id="" cols="30" rows="5"></textarea>
-    </div>
-    
-    <input type="submit" value="Modifier" style="background-color: #005B2F; width: 100%; color: white; font-weight: bold;">
-  </form>
-  </div>
+
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="../details-document" text="Retour"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        {{nom}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
   
+  <ion-content>
+    <div class="img_box">
+      <img src="../../../assets/images/logowhite.png">
+    </div>
+    <div id="container">
+      <h2>{{nom}}</h2>
+      <ion-range min="0" max="100" [value]="progressPercentage" mode="md" color="warning" (click)="barrFile($event)"></ion-range>
+      <p>Temps restant: {{ calculateRemainingTime() }}</p>
+    </div>
+  
+    <div class="flex_box">
+      <ion-button fill="clear" color="light" (click)="recule()">
+        <ion-icon slot="icon-only" name="play-back"></ion-icon>
+      </ion-button>
+      <ion-button shape="round" color="light" (click)="playPause()">
+        <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="light" (click)="avance()">
+        <ion-icon slot="icon-only" name="play-forward"></ion-icon>
+      </ion-button>
+    </div>
   </ion-content>
+  

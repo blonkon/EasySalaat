@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 header {
   display: flex;
@@ -24,15 +23,6 @@ ion-title
 {
   text-align: center;
   color: #ffffff;
-=======
-// ion-back-button{
-//   color: #ffffff;
-// }
-// ion-title
-// {
-//   text-align: center;
-//   color: #ffffff;
->>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
 
 // }
 // ion-header{
@@ -67,9 +57,9 @@ ion-title
 //   width: 95vw;
 //   height: 120vw;
 // }
+}
 
 
-html,
 body {
   width: 100%;
   height: 100%;
@@ -78,10 +68,9 @@ body {
   padding: 0;
 }
 
-<<<<<<< HEAD
 ion-toolbar{
   align-items: center;
-=======
+}
 .boussole {
   position: absolute;
   top: 50%;
@@ -109,7 +98,7 @@ ion-toolbar{
   position: absolute;
   width: 0;
   height: 0;
->>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
+
 }
 
 .aiguille::before {

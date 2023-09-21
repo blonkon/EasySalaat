@@ -9,10 +9,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab3Page {
 
-<<<<<<< HEAD
-  constructor(private navCtrl: NavController ) {}
- 
-=======
   qiblaDirection?:number;
 
   constructor(private navCtrl: NavController,private http: HttpClient ) {
@@ -35,8 +31,6 @@ export class Tab3Page {
   Retour() {
     this.navCtrl.back();
   }
->>>>>>> 1a249f330e37ba9c5d54d0c974d76e14f061d3bf
-
 
 
 

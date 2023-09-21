@@ -13,13 +13,14 @@ import { SuperadminPageModule } from './PageSuperAdmin/superadmin/superadmin.mod
 import { SuperadminPageRoutingModule } from './PageSuperAdmin/superadmin/superadmin-routing.module';
 
 import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
+import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
+import { DocumentUpdateComponent } from './Admin-Mosque/document-update/document-update.component';
 
 const routes: Routes = [
   {
-    path: ''
-   ,
-    children: [
-
+    path: '',
+    component:ConnexionComponent
+  },
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
@@ -50,9 +51,7 @@ const routes: Routes = [
     path: 'pageutilisateur',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }, 
-  // {
-  //   path:'',component:ConnexionComponent
-  // },
+ 
   {
     path:'connexion',component:ConnexionComponent
   },
@@ -77,9 +76,11 @@ const routes: Routes = [
     path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full'
   },
   {
-    path:'homesupera', component: HomeSuperAdminComponent
+    path: 'document-update/:audioUrl', component: DocumentUpdateComponent, pathMatch: 'full'
   },
-]}
+  {
+    path:'homesupera', component: HomeSuperAdminComponent
+  }
 ]
 
 @NgModule({

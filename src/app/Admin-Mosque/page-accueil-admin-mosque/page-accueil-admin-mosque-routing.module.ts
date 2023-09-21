@@ -8,7 +8,6 @@ import { AnnonceComponent } from '../annonce-ajouter/annonce.component';
 import { AnnonceListeComponent } from '../annonce-liste/annonce-liste.component';
 import { AnnonceUpdateComponent } from '../annonce-update/annonce-update.component';
 import { DocumentAjouterComponent } from '../document-ajouter/document-ajouter.component';
-import { DocumentListeComponent } from '../document-liste/document-liste.component';
 import { DocumentUpdateComponent } from '../document-update/document-update.component';
 import { ProfileUpdateComponent } from '../profile-update/profile-update.component';
 import { ProgrammeAjouterComponent } from '../programme-ajouter/programme-ajouter.component';
@@ -58,13 +57,13 @@ const routes: Routes = [
     path: 'details-programme', component: DetailsProgrammeComponent
   },
   {
-    path: 'document-liste', component: DocumentListeComponent
-  },
-  {
     path: 'document-ajouter', component: DocumentAjouterComponent
   },
   {
     path: 'document-update', component: DocumentUpdateComponent
+  },
+  {
+    path: 'document-update/:audioUrl', component: DocumentUpdateComponent, pathMatch: 'full'
   },
   {
     path: 'details-document', component: DetailsDocumentComponent

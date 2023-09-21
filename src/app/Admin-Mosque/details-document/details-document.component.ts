@@ -25,24 +25,24 @@ export class DetailsDocumentComponent  implements OnInit {
   ngOnInit() {
    
   }
-  playPause(audios: any){
+  playPause(audioss: any){
     // if(!audios.isPlaying){
     //   //jouer l'audio du precheur selectionné
     //   audios.audio = new Audio(audios.audioUrl);
     //   audios.audio.play();
     // }
 
-    if (!audios.audio) {
+    if (!audioss.audio) {
       // Créez un nouvel objet Audio s'il n'existe pas
-      audios.audio = new Audio(audios.audioUrl);
+      audioss.audio = new Audio(audioss.audioUrl);
     }
   
-    if (audios.audio.paused) {
+    if (audioss.audio.paused) {
       // L'audio est en pause, jouez-le
-      audios.audio.play();
+      audioss.audio.play();
     } else {
       // L'audio est en cours de lecture, mettez-le en pause
-      audios.audio.pause();
+      audioss.audio.pause();
     }
   }
   public alertButtons = [

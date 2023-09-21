@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-// import { Media } from '@ionic-native/media/ngx';
-
 import { SourateComponent } from './component/sourate/sourate.component';
 import { ListeLectureComponent } from './component/liste-lecture/liste-lecture.component';
 
@@ -62,7 +60,6 @@ import { AnnonceListeComponent } from './Admin-Mosque/annonce-liste/annonce-list
 import { ProgrammeListeComponent } from './Admin-Mosque/programme-liste/programme-liste.component';
 import { ProgrammeAjouterComponent } from './Admin-Mosque/programme-ajouter/programme-ajouter.component';
 import { ProgrammeUpdateComponent } from './Admin-Mosque/programme-update/programme-update.component';
-import { DocumentListeComponent } from './Admin-Mosque/document-liste/document-liste.component';
 import { DocumentAjouterComponent } from './Admin-Mosque/document-ajouter/document-ajouter.component';
 import { DocumentUpdateComponent } from './Admin-Mosque/document-update/document-update.component';
 import { ProfileUpdateComponent } from './Admin-Mosque/profile-update/profile-update.component';
@@ -98,6 +95,7 @@ import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.compone
        ModificationMosqueeComponent,
        DetailMosqueeComponent,
        MosqueeComponent,
+       
        ModifierFrequenceRadioComponent,
        ListeFrequenceRadioComponent,
        DetailadminComponent,
@@ -113,12 +111,9 @@ import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.compone
        ListutilisateurComponent,
        JouerAudioComponent,
        ConnexionComponent,
-    DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ],
+    DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ],
   imports: [BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule, MatFormFieldModule,MatInputModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-
-  
-],
-
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },],
+  bootstrap:[AppComponent],
 })
 export class AppModule {}
