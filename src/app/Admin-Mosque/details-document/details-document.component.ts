@@ -14,14 +14,36 @@ export class DetailsDocumentComponent  implements OnInit {
   rechercher($event: Event) {
     // Ajoutez la logique pour la recherche ici
   }
-  public nombre_details!: number;
+  audios= [
+    {nom:'Lecture Imam', audioUrl:'../../../assets/audios/preche1.mp3', isPlaying: false}
+  ]
+  
   constructor(private alertController: AlertController, private _service : DetailsServiceService) { }
 
+  async initAudio(){}
+
   ngOnInit() {
-    this.nombre_details = this.data.length;
-    this._service.getDetails().forEach((element) => {
-      this.data.push(element);});
-      this.nombre_details= this.data.length;
+   
+  }
+  playPause(audios: any){
+    // if(!audios.isPlaying){
+    //   //jouer l'audio du precheur selectionné
+    //   audios.audio = new Audio(audios.audioUrl);
+    //   audios.audio.play();
+    // }
+
+    if (!audios.audio) {
+      // Créez un nouvel objet Audio s'il n'existe pas
+      audios.audio = new Audio(audios.audioUrl);
+    }
+  
+    if (audios.audio.paused) {
+      // L'audio est en pause, jouez-le
+      audios.audio.play();
+    } else {
+      // L'audio est en cours de lecture, mettez-le en pause
+      audios.audio.pause();
+    }
   }
   public alertButtons = [
     {
@@ -37,7 +59,6 @@ export class DetailsDocumentComponent  implements OnInit {
       role: 'confirm',
       handler: (i: number) => {
         this.data.splice(i, 1);
-        this.nombre_details = this.data.length-1;
         console.log('Alert confirmed');
       },
     },

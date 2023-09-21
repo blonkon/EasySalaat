@@ -5,6 +5,7 @@
     <img src="../../../assets/images/logo.png" alt="logo"  width="100px" height="100px" style="border-radius: 50%;margin-left: 20px;">
    <p style="font-size: 15px; text-align: center; color: #fff;margin: auto;">Mes Audios</p>
   </div>
+  <audio src="../../../assets/audios/preche1.mp3"></audio>
 </div>
 
 <ion-content class=" animate__animated animate__fadeInUp ">
@@ -16,10 +17,10 @@
   </ion-card-header>
 <ion-card-content style="text-align: left; justify-content: center; ">
   <ion-list>
-    <ion-item class="liste"  *ngFor="let element of data">
+    <ion-item class="liste"  *ngFor="let element of audios">
 <ion-label style="font-size: 20px; font-weight: bold;"><strong>{{element.nom}}</strong>  </ion-label> 
-<ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
-        
+<ion-icon name="trash" style="color: red; width: 25px; height: 20px;"   (click)="playPause(audios)" ></ion-icon>
+<!-- id="present-alert"  -->
 </ion-item>
 </ion-list>
 </ion-card-content>

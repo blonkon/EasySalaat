@@ -13,9 +13,9 @@ export class DocumentServiceService {
     this.updateEvent.next();
   }
   public documentList: any=[
-    {nom: 'Audio Prêche'},
-    {nom: 'Video Prêche'},
-    {nom: 'Lecture Corannique'}
+    // {nom: 'Audio Prêche'},
+    // {nom: 'Video Prêche'},
+    // {nom: 'Lecture Corannique'}
   ];
   getDocument(): Observable<any> {
     return this.documentList
