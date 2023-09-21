@@ -1,42 +1,19 @@
-
-<ion-content [fullscreen]="true" >
-  <div class="container" *ngFor="let surahs of surah">
+<ion-content [fullscreen]="true">
+  <div class="container" *ngFor="let surahs of surah; let i = index">
     <div class="contenu">
-
-      <ion-badge slot="start">{{surahs.number}}</ion-badge>
-      <div >
-       <h1>{{surahs.englishName}}</h1>
-        <p>{{surahs.name}}</p>
+      <ion-badge slot="start">{{ surahs.number }}</ion-badge>
+      <div>
+        <h1>{{ surahs.englishName }}</h1>
+        <p>{{ surahs.name }}</p>
       </div>
     </div>
-  
-    <div class="name" >
-      <button (click)="playerAudioUrl(surahs)" (click)="playAudio()">Lire tous les versets</button>
-    </div>
-
-  </div>
-  
- 
-</ion-content>
- 
-<!-- <ion-content [fullscreen]="true" >
-
-  <div class="container" *ngFor="let lecture of lectures" >
-
-  <div class="contenu" [routerLink]="['/lecture-audio', lecture.audioUrl]">
-
-    <ion-badge slot="start">{{lecture.num}}</ion-badge>
-    <div >
-     <h1>{{lecture.name}}</h1>
+    <div class="name">
+      <button (click)="playerAudioUrl(surahs); playAudio()">Lire tous les versets</button>
     </div>
   </div>
 
-  <div class="name">
-    <a href="../../assets/audios/preche1.mp3" download="nom-du-fichier-audio.mp3">
-      <ion-icon name="arrow-down-circle-outline"></ion-icon>
- </a>
+  <!-- Ajoutez une section pour afficher le statut de lecture -->
+  <div *ngIf="isPlaying" class="status">
+    <p>Lecture en cours : Verset {{ indexVerse + 1 }} / {{ surahAudio.length }}</p>
   </div>
-
-</div>
 </ion-content>
-  -->
