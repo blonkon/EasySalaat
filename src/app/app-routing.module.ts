@@ -75,7 +75,7 @@ const routes: Routes = [
     path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full'
   },
   {
-    path: 'lecture-audio/:audioUrl',
+    path: 'lecture-audio',
     loadChildren: () => import('./page/lecture-audio/lecture-audio.module').then( m => m.LectureAudioPageModule)
   }
 

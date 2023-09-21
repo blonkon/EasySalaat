@@ -1,32 +1,83 @@
+
+ion-icon{
+  font-size: 40px;
+  color: #fff;
+}
+.search{
+  margin: 1rem;
+}
 .container{
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    margin: 15px; 
-    border-bottom: 0.5px solid rgb(222, 221, 221);
-    overflow-x : hidden; 
-    overflow-y : hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin: 15px; 
+  border-bottom: 0.5px solid rgb(222, 221, 221);
+  overflow-x : hidden; 
+  overflow-y : hidden; 
+}
+.contenu{
+  display: flex;  
+  align-items: center; 
+  gap: 20px;
+}
+
+
+ion-badge{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+  background: #005B2F;
+  color: #fff;
+}
+h1 , p{
+  font-family: 'Poppins';
+
+}
+a{
+  color: #333;
+  cursor: pointer;
+}
+// .container:hover{
+//   border: 1px solid #005B2F;
+// }
+.flex_box{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.play ion-icon{
+  font-size: 42px;
+  color: #fff;
+  margin: auto;
+}
+.container ion-range {
+  margin: auto;
+}
+.play{
+  width: 60px;
+  height: 60px;
+  background: #005B2F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 712px) and (min-width: 712px) {
+  ion-icon{
+      font-size: 50px;
   }
-  .contenu{
-    display: flex;  
-    align-items: center; 
-    gap: 20px;
-  }
-  
-  
-  ion-badge{
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    padding: 8px;
-    background: #005B2F;
-    color: #fff;
-  }
-  h1 , p{
-    font-family: 'Poppins';
-  
-  }
-   .name ion-icon{
-    color: #005B2F;
-  }
-  
+p{
+  font-size: 25px;
+ }
+ h1{
+  font-size: 30px;
+ }
+ ion-badge{
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+}
+}

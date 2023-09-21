@@ -22,23 +22,24 @@ export class LectureAudioPage implements OnInit {
   progressPercentage = 0;
   //
 
-  constructor(private route: ActivatedRoute, private service  : ListeLectureService) {}
+  constructor(private route: ActivatedRoute, private lecture : ListeLectureService) {}
+
   ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      const paramAudioUrl = params.get('audioUrl');
-      const Nom = params.get('nom') || '';
-      this.nom = Nom;
-      this.titre = params.get('titre') || '';
+    this.audioUrl = this.lecture.surahselect
+    console.log("donnée ",this.audioUrl)
+    // this.route.paramMap.subscribe((params) => {
+    //   const paramAudioUrl = params.get('audioUrl');
+    //   this.nom = params.get('nom') || '';
+    //   this.titre = params.get('titre') || '';
 
-      console.log('Nom:', this.nom);
-      console.log('Titre:', this.titre);
+    //   console.log('Nom:', this.nom);
+    //   console.log('Titre:', this.titre);
 
-      if (paramAudioUrl !== null) {
-        this.audioUrl = paramAudioUrl;
-        this.initializeAudio(this.audioUrl);
-      }
-    });
-    // this.audioUrl = this.service.urlAudio
+    //   if (paramAudioUrl !== null) {
+    //     this.audioUrl = paramAudioUrl;
+    //     this.initializeAudio(this.audioUrl);
+    //   }
+    // });
   }
 
 

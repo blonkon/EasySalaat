@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { JouerAudioComponent } from '../component/jouer-audio/jouer-audio.component';
 
 const routes: Routes = [
   {
@@ -66,7 +67,10 @@ const routes: Routes = [
         loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
       },
       {
-        path: 'lecture-audio/:audioUrl',
+          path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full'
+        },
+      {
+        path: 'lecture-audio',
         loadChildren: () => import('../page/lecture-audio/lecture-audio.module').then( m => m.LectureAudioPageModule)
       },
       {

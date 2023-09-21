@@ -1,9 +1,29 @@
 
 <ion-content [fullscreen]="true" >
+  <div class="container" *ngFor="let surahs of surah">
+    <div class="contenu">
+
+      <ion-badge slot="start">{{surahs.number}}</ion-badge>
+      <div >
+       <h1>{{surahs.englishName}}</h1>
+        <p>{{surahs.name}}</p>
+      </div>
+    </div>
+  
+    <div class="name" >
+      <button (click)="playerAudioUrl(surahs)" (click)="playAudio()">Lire tous les versets</button>
+    </div>
+
+  </div>
+  
+ 
+</ion-content>
+ 
+<!-- <ion-content [fullscreen]="true" >
 
   <div class="container" *ngFor="let lecture of lectures" >
 
-  <div class="contenu" [routerLink]="['/lecture-audio', lecture.audioUrl, lecture.name]">
+  <div class="contenu" [routerLink]="['/lecture-audio', lecture.audioUrl]">
 
     <ion-badge slot="start">{{lecture.num}}</ion-badge>
     <div >
@@ -19,4 +39,4 @@
 
 </div>
 </ion-content>
- 
+  -->

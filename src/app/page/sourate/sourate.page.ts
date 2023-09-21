@@ -23,10 +23,10 @@ export class SouratePage implements OnInit {
       this.detailSourate = newSourate;
       console.log(this.detailSourate);
     })
-    this.sourateService.getSurahTrad().subscribe(res => {
-      this.translate = res.data.surahs.ayahs;
-      console.log(this. translate);
-    });
+    // this.sourateService.getSurahTrad().subscribe(res => {
+    //   this.translate = res.data.surahs.ayahs;
+    //   console.log(this. translate);
+    // });
    
   }
   closeDialog(){

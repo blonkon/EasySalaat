@@ -1,62 +1,78 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { AddListeComponent } from '../add-liste/add-liste.component';
 import { ListeLectureService } from 'src/app/service/liste-lecture.service';
 import { Router } from '@angular/router';
-import { CoranService } from '../../PageSuperAdmin/coran.service';
 
 @Component({
   selector: 'app-liste-lecture',
   templateUrl: './liste-lecture.component.html',
   styleUrls: ['./liste-lecture.component.scss'],
 })
-export class ListeLectureComponent  implements OnInit {
-  enLecture: any = null;
-  playIcon = 'pause';
-  
-  lectures = [
-    {num : 1 ,name: 'Al-Fatiha',  audioUrl: '../../assets/verset/001001.mp3',isPlaying: false  },
-    {num : 2 ,name: 'Al-Baqara', audioUrl: '../../assets/verset/001002.mp3',isPlaying: false  },
-    {num : 3 ,name: 'Aal-i-Imraam', audioUrl: '../../assets/verset/001003.mp3', isPlaying: false  },
-    {num : 4 ,name: 'An-Nisaa', audioUrl: '../../assets/verset/001004.mp3' ,isPlaying: false },
-    {num : 5 ,name: 'Al-Maidaa',  audioUrl: '../../assets/verset/001004.mp3' ,isPlaying: false },
-    
-  ];
+export class ListeLectureComponent implements OnInit {
+ 
+  surah: any[] = [];
+  surahAudio: any[] = [];
+  selectedSurah: any = null;
+  select : any[]=[];
+  isPlaying = false;
+ indexVerse: number = 0;
 
 
+  constructor(private lectService: ListeLectureService,private router: Router) {}
 
-  constructor(private router: Router,private service  : ListeLectureService) {
-  }
   async initAudio() {
-  }
+    }
 
   ngOnInit() {
+    this.lectService.getCoran().subscribe((coran: any) => {
+      this.surah = coran.surahs;
+      console.log(this.surah);
+    });
   }
 
-  
- 
-
-  playPause(lecture: any) {
-  
-    if (!lecture.isPlaying) {
-      this.router.navigate(['/lecture-audio', {
-        audioUrl: lecture.audioUrl,
-        nom: lecture.name,
-        titre: lecture.description
-        
-      }]);
-      
-    }
+  playerAudioUrl(surah: any) {
    
-    lecture.isPlaying = !lecture.isPlaying;
+    this.selectedSurah = this.surah.find((s: any) => s.number == surah.number);
+
+    if (this.selectedSurah) {
+      console.log(this.selectedSurah)
+     this.selectedSurah.ayahs.forEach((res : any) => {
+      this.surahAudio.push(res.audioSecondary[0]);
+     })
+    }
+    console.log(this.surahAudio)
+    
   }
 
-
-  downloadFile() {
-    console.log('Téléchargement du fichier en cours...');
-   }
-
-
-
-
-}
+  playAudio() {
+    if (this.surahAudio.length > 0) {
+      this.isPlaying = true; // Marquez la lecture en cours
+  
+      const playNextVerse = () => {
+        if (this.indexVerse < this.surahAudio.length) {
+          const audioUrl = this.surahAudio[this.indexVerse];
+          const audioPlayer = new Audio(audioUrl);
+          audioPlayer.load();
+  
+          audioPlayer.addEventListener('ended', () => {
+            // Lorsque la lecture du verset actuel est terminée, passez au suivant
+            this.indexVerse++;
+            playNextVerse(); // Jouez le verset suivant
+          });
+  
+          audioPlayer.play();
+        } else {
+          // Tous les versets ont été lus, marquez la lecture comme terminée
+          this.isPlaying = false;
+        }
+      };
+  
+      // Commencez la lecture en appelant la fonction playNextVerse pour le premier verset
+      playNextVerse();
+    } else {
+      console.log("Impossible de lire l'audio");
+    }
+  }
+  
+  
+  }
+  
