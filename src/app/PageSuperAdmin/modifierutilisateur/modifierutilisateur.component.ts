@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Firestore, collection, doc, getDocs, query, setDoc, updateDoc, where } from '@angular/fire/firestore';
 import { ListutilisateurComponent } from '../listutilisateur/listutilisateur.component';
 import { Mosques } from 'src/app/models/Moques';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { Mosques } from 'src/app/models/Moques';
 })
 export class ModifierutilisateurComponent  implements OnInit {
   data: any;
-  userForm: FormGroup;
+  // userForm: FormGroup;
   role: string[] = [
     'utilisateur',
     'admin',
@@ -34,13 +36,13 @@ export class ModifierutilisateurComponent  implements OnInit {
   constructor(
     private formBuilder: FormBuilder, private _service: UtilisateurService,private firestore : Firestore,private router : Router,private listeUtilisateur : ListutilisateurComponent) {
     
-    this.userForm = this.formBuilder.group({
-      id:'',
-      nom: '',
-      img: '',
-      role:'',
+    // this.userForm = this.formBuilder.group({
+    //   id:'',
+    //   nom: '',
+    //   img: '',
+    //   role:'',
      
-    });
+    // });
   }
 
   
@@ -48,7 +50,7 @@ export class ModifierutilisateurComponent  implements OnInit {
     this.mail=this._service.userdetails;
     this.nom =this._service.usernom;
     // console.log(this._service.userdetails)
-    this.userForm.patchValue(this.data);
+    // this.userForm.patchValue(this.data);
 
 
   }
@@ -110,5 +112,6 @@ export class ModifierutilisateurComponent  implements OnInit {
         this.listeUtilisateur.liste();
         this.router.navigate(["/admin/accueilsuperadmin/listutil"])
         }
+                
     }
       //ESSATIONS

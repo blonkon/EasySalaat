@@ -4,14 +4,15 @@
   <ion-icon name="arrow-undo" style="display: block; font-size: 25px; padding: 15px  15px 0  15px; color: #005B2F;" [routerLink]="['../']"></ion-icon>
   <div class="img" style="box-sizing: border-box;">
     <img src="../../assets/images/radiowhite.png" alt="" width="40px" height="40px">
-    <p style="margin-right: 20px; color: #005B2F;"> <strong>Fréquence Radio </strong></p>
+    <p style="margin-right: 20px; color: #fff;"> <strong>Fréquence Radio </strong></p>
   </div>
 </div> 
+<ion-label style=" margin-left: 20px ; margin-top: 10px"><strong>{{nombre_fm}} FM</strong></ion-label>
 <div class="icon_nombre">
-<ion-button style=" margin-left: 15px; " [routerLink]="['../modifierradio']" ><ion-icon name="add-circle-outline"></ion-icon> Ajouter</ion-button> <ion-label><strong>{{nombre_fm}} FM</strong></ion-label>
-
-</div>
+<ion-button [routerLink]="['../modifierradio']" ><ion-icon name="add-circle-outline" style="font-size: 30px;"></ion-icon></ion-button> 
 <ion-searchbar slot="end" ></ion-searchbar>
+</div>
+
 
 <ion-content>
 <div class="listuser animate__animated animate__fadeInUp ">
@@ -28,7 +29,6 @@
           <!-- <ion-icon name="create-outline" style="color: #005B2F " [routerLink]="['../modifierradio']"></ion-icon> -->
           <ion-icon name="trash" style="color: red;"   id="present-alert" (click)="presentAlert(element.id)" ></ion-icon>
           </div>
-          
             <ion-alert
             header="Alert!"
             [buttons]="alertButtons"

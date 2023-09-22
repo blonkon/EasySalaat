@@ -13,7 +13,6 @@ import { RoleGuard2 } from './role2.guards';
 import { AccueilAdminSimpleComponent } from './Admin-Mosque/accueil-admin-simple/accueil-admin-simple.component';
 import { AdmosquePage } from './Admin-Mosque/admosque/admosque.page';
 import { RoleGuard3 } from './role3.guards';
-import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
 import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
 import { RoleGuard4 } from './role4.guards';
 

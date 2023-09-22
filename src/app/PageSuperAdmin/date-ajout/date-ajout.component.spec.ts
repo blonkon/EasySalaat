@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AjoutMosqueeComponent } from './ajout-mosquee.component';
+import { DateAjoutComponent } from './date-ajout.component';
 
-describe('AjoutMosqueeComponent', () => {
-  let component: AjoutMosqueeComponent;
-  let fixture: ComponentFixture<AjoutMosqueeComponent>;
+describe('DateAjoutComponent', () => {
+  let component: DateAjoutComponent;
+  let fixture: ComponentFixture<DateAjoutComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjoutMosqueeComponent ],
+      declarations: [ DateAjoutComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AjoutMosqueeComponent);
+    fixture = TestBed.createComponent(DateAjoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -10,7 +10,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule} from '@angular/material/button';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
-import { AjoutMosqueeComponent } from './PageSuperAdmin/ajout-mosquee/ajout-mosquee.component';
 import { ModificationMosqueeComponent } from './PageSuperAdmin/modification-mosquee/modification-mosquee.component';
 import { AppComponent } from './app.component';
 
@@ -79,11 +78,28 @@ import { Tab3Page } from './tab3/tab3.page';
 import { Tab2Page } from './tab2/tab2.page';
 import { Tab1Page } from './tab1/tab1.page';
 import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.component';
+import { DateAjoutComponent } from './PageSuperAdmin/date-ajout/date-ajout.component';
 @NgModule({
-  declarations: [AppComponent, ListeLectureComponent,
+  declarations: [AppComponent,DateAjoutComponent,CalendrierComponent, LecteurComponent, ModifierutilisateurComponent,
+    AjoutcoranComponent ,DetailcoranComponent ,ModificationcoranComponent, CoranComponent,DetailadminMosqueComponent,
+    ModificationMosqueeComponent, DetailMosqueeComponent, MosqueeComponent,
+    ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,ModifieradminMosqueComponent,
+     ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
+     DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, 
+     ListutilisateurComponent, ConnexionComponent, AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent,
+      DetailsAnnonceComponent,DetailsDocumentComponent,
+     HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
+     DetailsDocVideoComponent, ProgrammeUpdateComponent, DetailsDocRecitationComponent,
+     SourateComponent, ListeLectureComponent,AddListeComponent,DetailSourateComponent, InscriptionComponent,
+     DetailadminMosqueComponent,ModificationMosqueeComponent, DetailMosqueeComponent,
+      MosqueeComponent,ModifierFrequenceRadioComponent,ListeFrequenceRadioComponent,DetailadminComponent,
+      ModifieradminMosqueComponent, ModifieradminComponent,ListeadminComponent, ListeadminMosqueComponent,ModifierutilisateurComponent, 
+      DetailutilisateurComponent,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent,
+       ConnexionComponent, ModifierProfileComponent,
+    DocumentListeComponent,DocumentAjouterComponent, DocumentUpdateComponent,ProfileUpdateComponent, DetailsProgrammeComponent ,ListeLectureComponent,
     AddListeComponent, DetailSourateComponent,
     DetailadminMosqueComponent, ModificationMosqueeComponent,
-    AjoutMosqueeComponent, DetailutilisateurComponent, JouerAudioComponent,CoranComponent,ModificationcoranComponent,CalendrierComponent,LecteurComponent,DetailcoranComponent,
+     DetailutilisateurComponent, JouerAudioComponent,CoranComponent,ModificationcoranComponent,CalendrierComponent,LecteurComponent,DetailcoranComponent,
     AjoutcoranComponent,ModifierProfileComponent,
      AdmosquePage,AccueilAdminSimpleComponent, ProgrammeListeComponent,ProgrammeAjouterComponent, DetailsAnnonceComponent,DetailsDocumentComponent,
     HoraireComponent, HoraireModifierComponent, AnnonceComponent, AnnonceUpdateComponent, AnnonceListeComponent,
@@ -94,7 +110,7 @@ import { JouerAudioComponent } from './component/jouer-audio/jouer-audio.compone
     ,ModifierutilisateurComponent
    ,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
 
-  imports: [BrowserModule,FormsModule, AppRoutingModule,HttpClientModule,MatDialogModule,NgxPaginationModule, ReactiveFormsModule,IonicModule.forRoot(), 
+  imports: [BrowserModule,BrowserModule,FormsModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule, MatFormFieldModule,AppRoutingModule,HttpClientModule,MatDialogModule,NgxPaginationModule, ReactiveFormsModule,IonicModule.forRoot(), 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),

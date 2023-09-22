@@ -18,7 +18,7 @@ import { ModifieradminMosqueComponent } from '../modifieradmin-mosque/modifierad
 import { ListeFrequenceRadioComponent } from '../liste-frequence-radio/liste-frequence-radio.component';
 import { ModifierFrequenceRadioComponent } from '../modifier-frequence-radio/modifier-frequence-radio.component';
 
-import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
+// import { AjoutMosqueeComponent } from '../ajout-mosquee/ajout-mosquee.component';
 import { DetailMosqueeComponent } from '../detail-mosquee/detail-mosquee.component';
 import { ModificationMosqueeComponent } from '../modification-mosquee/modification-mosquee.component';
 import { RoleGuard2 } from 'src/app/role2.guards';
@@ -32,6 +32,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 
 // import { NgxAngularMaterialHijriAdapterService, DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS } from 'ngx-angular-material-hijri-adapter';
 import { LecteurComponent } from '../lecteur/lecteur.component';
+import { DateAjoutComponent } from '../date-ajout/date-ajout.component';
 
 const routes: Routes = [
   {
@@ -41,12 +42,15 @@ const routes: Routes = [
   {
     path: 'listutil', component: ListutilisateurComponent,
   },
-  {
-    path: 'ajoutmosquee',
-    component: AjoutMosqueeComponent
-  },
+  // {
+  //   path: 'ajoutmosquee',
+  //   component: AjoutMosqueeComponent
+  // },
   {
     path: 'calendrier', component: CalendrierComponent
+  },
+  {
+    path: 'updatedate', component: DateAjoutComponent
   },
   {
     path: 'detailmosquee',

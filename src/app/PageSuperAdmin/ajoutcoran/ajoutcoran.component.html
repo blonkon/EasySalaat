@@ -7,6 +7,8 @@
 </div>
 </div>
 <ion-content>
+   <form >
+
     <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
       <div class="blokimg">
         <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
@@ -22,7 +24,7 @@
     <div class="input-item">
       <ion-label class="label">Surah</ion-label>
       <div class="select">
-        <ion-select formControlName="role"  >
+        <ion-select>
           <ion-select-option *ngFor="let valeur of surah" [value]="valeur" >
             {{valeur}}
           </ion-select-option>
@@ -31,12 +33,12 @@
     </div>
     <div  class="input-item">
       <ion-label class="label">Nom Complet d'imame</ion-label>
-      <input class="input" type="text" [(ngModel)]="nom_complet_imame"/>
+      <input class="input" type="text" />
     </div >
 
     <div  class="input-item">
       <ion-label class="label">Nationalité</ion-label>
-      <input class="input" type="text" [(ngModel)]="nationalite" placeholder=""/>
+      <input class="input" type="text" placeholder=""/>
     </div >
   
     <div class="input-item">
@@ -51,6 +53,7 @@
    
     </div>
     </div>
+   </form>
 
 </ion-content>
 

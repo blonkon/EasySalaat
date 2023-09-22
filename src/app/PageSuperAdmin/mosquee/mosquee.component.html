@@ -4,14 +4,10 @@
     <img src="../../assets/images/mosqueeee 1.png" alt="" width="80px" height="60px">
     <p style="margin-right: 20px; color: #fff;"> <strong>Liste mosquées </strong></p>
   </div>
-   <strong  style="font-size: 15px; color: #fff; margin: 0 15px 0 15px;">{{nombre_mosquee}} <ion-icon name="people-outline" style="color: #fff;"></ion-icon></strong>
+   <strong  style="font-size: 15px; color: #fff; margin: 0 15px 0 15px;">{{nombre_mosquee}} <ion-icon name="mosque" style="color: #fff;"></ion-icon></strong>
 </div>
 <ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-button [routerLink]="['../ajoutmosquee']" >
-      <ion-icon style="font-weight: bold; color: #005B2F; font-size: 40px;" name="add"></ion-icon>
-    </ion-button>
-  </ion-buttons>
+
   <ion-searchbar slot="end" (ionChange)="rechercher($event)"></ion-searchbar>
 </ion-toolbar>
 <ion-content>
