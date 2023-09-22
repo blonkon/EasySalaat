@@ -4,8 +4,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MosqueService } from 'src/app/service/liste-mosque.service';
 import { MosqueeService } from '../mosquee.service';
-import { Storage, getDownloadURL, ref, uploadString } from '@angular/fire/storage';
-import { Photo } from '@capacitor/camera';
+// import { Storage, getDownloadURL, ref, uploadString } from '@angular/fire/storage';
+// import { Photo } from '@capacitor/camera';
 
 @Component({
   selector: 'app-modification-mosquee',
@@ -28,30 +28,30 @@ ajouterMosquee() {
 throw new Error('Method not implemented.');
 }
 
-  constructor(private router : Router,private storage : Storage,private firestore : Firestore,private service : MosqueeService) { }
+  constructor(private router : Router,private firestore : Firestore,private service : MosqueeService) { }
 
   ngOnInit() {}
 
-  async uploadImage(cameraFile: Photo) {
-		const path = `uploads/${this.mosqueid}/profile.webp`;
-		const storageRef = ref(this.storage, path);
+  // async uploadImage(cameraFile: Photo) {
+	// 	// const path = `uploads/${this.mosqueid}/profile.webp`;
+	// 	// const storageRef = ref(this.storage, path);
 
-		try {
-      if (cameraFile!==undefined) {
-        // await uploadString(storageRef, cameraFile.base64String, 'base64');
+	// 	// try {
+  //   //   if (cameraFile!==undefined) {
+  //   //     // await uploadString(storageRef, cameraFile.base64String, 'base64');
 
-      }
-			const imageUrl = await getDownloadURL(storageRef);
+  //   //   }
+	// 	// 	const imageUrl = await getDownloadURL(storageRef);
 
-			const userDocRef = doc(this.firestore, `Mosques/${this.mosqueid}`);
-			await setDoc(userDocRef, {
-				imageUrl
-			});
-			return true;
-		} catch (e) {
-			return null;
-		}
-	}
+	// 	// 	const userDocRef = doc(this.firestore, `Mosques/${this.mosqueid}`);
+	// 	// 	await setDoc(userDocRef, {
+	// 	// 		imageUrl
+	// 	// 	});
+	// 	// 	return true;
+	// 	// } catch (e) {
+	// 	// 	return null;
+	// 	// }
+	// }
 
   async onSubmit(form : NgForm){
     const regexNom = /^.{2,}$/;
@@ -63,8 +63,8 @@ throw new Error('Method not implemented.');
         if (regex1.test(this.mosqueName)) {
           this.invalid="";
             this.mosqueid = this.service.mosqueidForUpdate;
-            const path = `images/${this.mosqueid}/profile.webp`;
-		        const storageRef = ref(this.storage, path);
+            // const path = `images/${this.mosqueid}/profile.webp`;
+		        // const storageRef = ref(this.storage, path);
             
             const washingtonRef = doc(this.firestore, "Mosques", this.mosqueid);
             await updateDoc(washingtonRef, {

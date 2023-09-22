@@ -10,26 +10,26 @@
 <ion-content>
 
 
-<!-- <form > -->
+<form (ngSubmit)="onSubmit(a)" #a="ngForm">
   <div id="container">
-    
+    <p style="color: red;">{{invalid}}</p>
    
     <div class="form-controle">
       
       <div>
         <label><strong>Nom du Radio</strong></label>
-        <input  type="text" placeholder="Ex. Liberté" >  
+        <input name="nom" [(ngModel)]="nom"  type="text" placeholder="Ex. Liberté" >  
       </div>      
       <div>
         <label><strong>Fréquence</strong></label>
-        <input type="number" placeholder="Ex. 97.7"> 
+        <input type="number" name="fr" [(ngModel)]="fr" placeholder="Ex. 97.7"> 
       </div>
       <div class="frame">
-        <button class="custom-btn btn-5" routerLink="" ><span>Soumettre</span></button>
+        <button class="custom-btn btn-5" type="submit" ><span>Soumettre</span></button>
         </div>
     </div>
   </div>
-<!-- </form> -->
+</form>
   
 </ion-content>
   

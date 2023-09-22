@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Firestore, collection, getDocs, query } from '@angular/fire/firestore';
+import { Observable, Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,31 +17,43 @@ export class FrequenceRadioService {
     this.updateEvent.next();
   }
   list_radio: any =[
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
-    {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
+    // {name: 'Radio Islamique', frequence: 100.1},
     
   ];
 
-  constructor() { }
+  constructor(private firestore : Firestore) { }
 
-  getradioList(): Observable<any> {
+  async getradioList(): Promise<Observable<any>> {
+    const q = query(collection(this.firestore, "Radios"));
+    const querySnapshot = await getDocs(q);
+     querySnapshot.forEach((doc) => {
+    //   console.log(doc.id, " => ", doc.data());
+      let user : any = {
+        id:doc.id,
+        nom : doc.data()['nom'],
+        frequence:doc.data()['frequence']};
+      this.list_radio.push(user)
+    });
+    return of(this.list_radio);
+    
     return this.list_radio;
   }
 

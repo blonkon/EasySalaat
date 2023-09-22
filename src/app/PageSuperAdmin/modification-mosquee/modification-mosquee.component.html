@@ -8,8 +8,8 @@
 </ion-header>
 <ion-content>
         <form (ngSubmit)="onSubmit(a)" #a="ngForm"> 
-            <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
-              <div class="blokimg">
+             <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
+            <!--  <div class="blokimg">
                 <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
                   <ion-img src="../../assets/images/mosqueeee 1.png" style=" border-radius: 50%; margin-left: 17px;"></ion-img>
                 </ion-thumbnail>
@@ -17,8 +17,8 @@
                   <div class="btn-upload" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;"  >Choisir une image</div>
                   <input type="file" id="imgImam" name="upfile"accept="image/*" (change)="onImageChange($event)" />
                 </div>
-              </div>
-              <div class="blokimg">
+              </div> -->
+              <!-- <div class="blokimg">
                 <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
                   <ion-img src="../../assets/images/User1.png" style=" border-radius: 50%; margin-left: 17px;"></ion-img>
                 </ion-thumbnail>
@@ -26,7 +26,7 @@
                   <div class="btn-upload"  style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;" >Choisir une image </div>
                   <input type="file" name="upfile" accept="image/*" (change)="onImageChange($event)" />
                 </div>
-              </div>
+              </div> -->
             <p style="color: red; text-align: center;">{{invalid}}</p>
             </div>
             <div class="main">
