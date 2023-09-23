@@ -75,17 +75,17 @@ export class CalendrierService {
 
   constructor() { }
 
-  getradioList(): Observable<any> {
+  getdatelist(): Observable<any> {
     return this.list_radio;
   }
 
-  deleteradio(id: number): Observable<any> {
+  deletedate(id: number): Observable<any> {
     // return this._http.delete(`http://localhost:3000/employees/${id}`);
     return this.list_radio.splice(id);
   }
   
   // Méthode pour mettre à jour une mesure existante
-  modifyradio(id: number, data:any): void {
+  modifydate(id: number, data:any): void {
       // return this._http.put(`http://localhost:3000/employees/${id}`, data);
     const index = this.list_radio.findIndex((meas:any) => meas.id === id);
     // Si l'indice est trouvé, mettez à jour la mesure
