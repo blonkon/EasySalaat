@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { LecteurService } from 'src/app/lecteur.service';
+import { CoranService } from '../coran.service';
 
 @Component({
   selector: 'app-lecteur',
@@ -9,20 +11,26 @@ import { LecteurService } from 'src/app/lecteur.service';
 })
 export class LecteurComponent  implements OnInit {
   public data: any[]=[];
-  router: any;
   rechercher($event: Event) {
     // Ajoutez la logique pour la recherche ici
   }
 
 public nombre_lecteur!: number;
-  constructor( private alertController: AlertController, private _service : LecteurService) {
+  constructor( private alertController: AlertController,private router : Router, private coran : CoranService,private _service : LecteurService) {
    }
 
-  ngOnInit() {
+   thisElement(id : string,nom :string){
+    this.coran.id=id;
+    this.coran.nom=nom;
+    this.router.navigate(["admin/accueilsuperadmin/coran"]);
+   }
+
+
+  async ngOnInit() {
     this.nombre_lecteur = this.data.length;
-    this._service.getUtilisateurList().forEach((element) => {
+    (await this._service.getUtilisateurList()).forEach((element) => {
       this.data.push(element);});
-      this.nombre_lecteur = this.data.length;
+      this.nombre_lecteur = this.data[0].length;
 
   }
 

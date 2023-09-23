@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
+import { Observable, Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,32 +15,46 @@ export class LecteurService {
     this.updateEvent.next();
   }
   list_lecteur: any =[
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
-    {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
-    {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
+    // {name: 'Mahi Ouattara', img: "../../assets/images/user.png"},
+    // {name: 'Abdoulaye Koita', img: "../../assets/images/user.png"},
 
 
   ];
 
-  constructor() { }
+  constructor(private firestore : Firestore) { }
 
-  getUtilisateurList(): Observable<any> {
-    return this.list_lecteur;
+  async getUtilisateurList(): Promise<Observable<any>> {
+    this.list_lecteur=[];
+    const q = query(collection(this.firestore, "Lecteurs"));
+    const querySnapshot = await getDocs(q);
+     querySnapshot.forEach((doc) => {
+    //   console.log(doc.id, " => ", doc.data());
+      let user : any = {
+        id:doc.id,
+        nom : doc.data()['nom'],
+        // email : doc.data()['email'],
+        // motdepasse : "",
+        // role : doc.data()['role']
+      };
+      this.list_lecteur.push(user)
+    });
+    return of(this.list_lecteur);
   }
 
   deleteUtilisateur(id: number): Observable<any> {

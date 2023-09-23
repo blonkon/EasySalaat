@@ -41,7 +41,8 @@ export class CoranService {
 
 
   ];
-
+ id:string="";
+ nom:string="";
   constructor() { }
 
   getUtilisateurList(): Observable<any> {

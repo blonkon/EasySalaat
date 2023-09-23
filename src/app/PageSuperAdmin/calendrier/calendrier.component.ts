@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { CalendrierService } from '../calendrier.service';
 import { DateAjoutComponent } from '../date-ajout/date-ajout.component';
 import { MatDialog } from '@angular/material/dialog';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-calendrier',
@@ -29,7 +30,7 @@ export class CalendrierComponent  implements OnInit {
     private refreshData() {
       // Mettez à jour vos données (par exemple, récupérez à nouveau les mesures)
       // Appel de la méthode du service pour récupérer les mesures
-      this.data = this._service.getdatelist();
+      // this.data =  this._service.getdatelist();
     }
   
   public alertButtons = [

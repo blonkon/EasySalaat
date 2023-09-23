@@ -17,11 +17,11 @@
   <ion-card>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let element of data">
+        <ion-item *ngFor="let element of data[0]">
           <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="{{element.img}}" style="border-radius: 50%;"  />
+            <img alt="Silhouette of mountains" src="../../assets/images/user.png" style="border-radius: 50%;"  />
           </ion-thumbnail>
-          <ion-label style="cursor: pointer;" [routerLink]="['../coran']">{{element.name}}</ion-label>
+          <ion-label style="cursor: pointer;" (click)="thisElement(element.id,element.nom)">{{element.nom}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

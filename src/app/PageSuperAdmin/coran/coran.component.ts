@@ -11,6 +11,7 @@ export class CoranComponent  implements OnInit {
 
   public data: any[]=[];
   router: any;
+  nom:string=this._service.nom;
   rechercher($event: Event) {
     // Ajoutez la logique pour la recherche ici
   }
@@ -24,6 +25,8 @@ public nombre_mosquee!: number;
     this._service.getUtilisateurList().forEach((element) => {
       this.data.push(element);});
       this.nombre_mosquee = this.data.length;
+      console.log(this._service.id);
+      console.log(this.nom)
 
   }
 

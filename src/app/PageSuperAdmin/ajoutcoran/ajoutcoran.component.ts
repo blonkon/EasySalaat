@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./ajoutcoran.component.scss'],
 })
 export class AjoutcoranComponent  implements OnInit {
-
+  constructor(private router: Router,private storage : Storage) { }
   
   surah: string[]=[
     'Al-Fatiha',
@@ -26,6 +27,8 @@ export class AjoutcoranComponent  implements OnInit {
   nationalite: any;
   audio: any;
   imamName: any;
+  nomaudio:string="";
+  fichier?:File ;
   rechercher($event: Event) {
   throw new Error('Method not implemented.');
   }
@@ -33,10 +36,28 @@ export class AjoutcoranComponent  implements OnInit {
   throw new Error('Method not implemented.');
   }
 
-    constructor(private router: Router) { }
+  onchange(event: any) {
+    const fichierSelectionne: File = event.target.files[0];
+    this.fichier=event.target.files[0];
+    this.nomaudio=fichierSelectionne.name;
+    console.log('Fichier sélectionné :', fichierSelectionne.name);
+    // Faites quelque chose avec le fichier sélectionné, comme l'envoyer vers un serveur, le traiter, etc.
+    return fichierSelectionne;
+  }
+
 
     ngOnInit() {}
     // tolecteur(){
     //   this.router.navigateByUrl('../../lecteur')
     // }
+    onSubmit(){
+      const selectedFile = this.fichier;
+      if (selectedFile) {
+        const cheminStockage = 'lecteurs/' + selectedFile.name;
+        const storageRef = ref(this.storage, cheminStockage);
+        uploadBytes(storageRef, selectedFile).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+        });
+      }
+    }
   }
