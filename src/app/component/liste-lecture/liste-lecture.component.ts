@@ -28,7 +28,7 @@ export class ListeLectureComponent implements OnInit {
   }
     openAudio(objet: any){
       const ref = this.dialog.open(LectureAudioPage,{
-        width:'500px',height:'60%',
+        width:'500px',height:'55%',
         data: objet
       })
       ref.afterClosed().subscribe(result => {

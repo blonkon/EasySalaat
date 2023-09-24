@@ -22,40 +22,46 @@ ion-header {
   ion-icon{
     font-size: 30px;
   }
+/* styles.scss */
+
 .card-content {
-    background-color: #fff; 
-    border-radius: 0 0 10px 10px; 
-    padding: 20px;
-    text-align: justify; 
-    height: auto !important;
-  }
-  
-  h1 {
-    // font-size: 25px;
-    color: #333; 
-    text-align: center; 
-    margin-bottom: 20px; 
-  }
-  
-  ion-badge {
-    background: #005B2F; 
-    color: #fff; 
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 50%;
-    text-align: center; 
-  }
-  
-  .ayah-text {
-    font-size: 18px;
-    color: #333; 
-    margin-bottom: 12px;
-    line-height: 1.5rem;
-    text-align: justify; 
-  }
-  .container{
-    background-color: #D9D9D9;
-    padding: 10px 10px;
-    border-radius: 10px;
-    margin: 5%;
-  }
+  padding: 20px;
+}
+.card-content h1{
+  text-align: right;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ion-badge {
+  font-size: 16px;
+  margin-right: 10px;
+  background: #005B2F;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.language-container {
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 3px 3px #0000000a, 0 5px 5px #00000017;
+  margin: 10px 0; 
+  padding: 10px; 
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.ayah-text {
+  font-size: 17.5px;
+  text-align: justify;
+  line-height: 1.5;
+}
