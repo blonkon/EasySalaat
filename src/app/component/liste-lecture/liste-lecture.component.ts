@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ListeLectureService } from 'src/app/service/liste-lecture.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { LectureAudioPage } from 'src/app/page/lecture-audio/lecture-audio.page';
 
 @Component({
   selector: 'app-liste-lecture',
@@ -10,14 +12,10 @@ import { Router } from '@angular/router';
 export class ListeLectureComponent implements OnInit {
  
   surah: any[] = [];
-  surahAudio: any[] = [];
-  selectedSurah: any = null;
-  select : any[]=[];
-  isPlaying = false;
- indexVerse: number = 0;
+ 
 
 
-  constructor(private lectService: ListeLectureService,private router: Router) {}
+  constructor(private lectService: ListeLectureService,private dialog : MatDialog) {}
 
   async initAudio() {
     }
@@ -28,51 +26,15 @@ export class ListeLectureComponent implements OnInit {
       console.log(this.surah);
     });
   }
-
-  playerAudioUrl(surah: any) {
-   
-    this.selectedSurah = this.surah.find((s: any) => s.number == surah.number);
-
-    if (this.selectedSurah) {
-      console.log(this.selectedSurah)
-     this.selectedSurah.ayahs.forEach((res : any) => {
-      this.surahAudio.push(res.audioSecondary[0]);
-     })
+    openAudio(objet: any){
+      const ref = this.dialog.open(LectureAudioPage,{
+        width:'500px',height:'60%',
+        data: objet
+      })
+      ref.afterClosed().subscribe(result => {
+        console.log('La boîte de dialogue a été fermée', result);
+      });
     }
-    console.log(this.surahAudio)
-    
-  }
-
-  playAudio() {
-    if (this.surahAudio.length > 0) {
-      this.isPlaying = true; // Marquez la lecture en cours
   
-      const playNextVerse = () => {
-        if (this.indexVerse < this.surahAudio.length) {
-          const audioUrl = this.surahAudio[this.indexVerse];
-          const audioPlayer = new Audio(audioUrl);
-          audioPlayer.load();
-  
-          audioPlayer.addEventListener('ended', () => {
-            // Lorsque la lecture du verset actuel est terminée, passez au suivant
-            this.indexVerse++;
-            playNextVerse(); // Jouez le verset suivant
-          });
-  
-          audioPlayer.play();
-        } else {
-          // Tous les versets ont été lus, marquez la lecture comme terminée
-          this.isPlaying = false;
-        }
-      };
-  
-      // Commencez la lecture en appelant la fonction playNextVerse pour le premier verset
-      playNextVerse();
-    } else {
-      console.log("Impossible de lire l'audio");
-    }
-  }
-  
-  
-  }
+ }
   

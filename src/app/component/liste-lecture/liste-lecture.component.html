@@ -8,12 +8,13 @@
       </div>
     </div>
     <div class="name">
-      <button (click)="playerAudioUrl(surahs); playAudio()">Lire tous les versets</button>
+      <ion-icon name="play" (click)="openAudio(surahs)"></ion-icon>
     </div>
   </div>
 
   <!-- Ajoutez une section pour afficher le statut de lecture -->
-  <div *ngIf="isPlaying" class="status">
+  <!-- <div *ngIf="isPlaying" class="status">
+    
     <p>Lecture en cours : Verset {{ indexVerse + 1 }} / {{ surahAudio.length }}</p>
-  </div>
+  </div> -->
 </ion-content>

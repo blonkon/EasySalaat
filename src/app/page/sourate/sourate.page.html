@@ -2,16 +2,17 @@
   <div class="box">
     <header>      
       <ion-icon (click)="closeDialog()"  name="close-circle"></ion-icon>
-      <h1>{{detailSourate.englishName}}</h1>
+      
+      <h1>{{detailSourate.englishName}} </h1>
     </header>
   </div>
 </ion-header>
 
   <ion-content [fullscreen]="true">
   
-    <h3>Ayahs : {{detailSourate.name}} </h3>
-    <div *ngFor="let ayah of detailSourate.ayahs; let i=index ">
-      <ion-badge slot="start">{{ayah.number}}</ion-badge>
+    <h3>Surah : {{ detailSourate.name }}</h3>
+    <div *ngFor="let ayah of detailSourate.ayahs ">
+      <ion-badge slot="start">{{ ayah.numberInSurah }}</ion-badge>
       <p class="ayah-text">{{ ayah.text }}</p>
       
     </div>

@@ -13,7 +13,7 @@ export class SourateService {
    private sourateSubject = new Subject<any>();
    sourateData$ = this.sourateSubject.asObservable();
    
-  private surahTrans = 'http://api.alquran.cloud/v1/quran/en.asad';
+  
   private apiUrl = 'http://api.alquran.cloud/v1/quran/quran-uthmani';
  
   constructor(private http: HttpClient) {}
@@ -22,9 +22,7 @@ export class SourateService {
     return this.http.get(this.apiUrl);
   }
   
-  getSurahTrad(): Observable<any> {
-    return this.http.get(this.surahTrans);
-  }
+
 
   setSourateUrl(sourate: any) {
     this.sourateUrl = sourate; 

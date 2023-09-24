@@ -1411,10 +1411,10 @@ export class NomsPage implements OnInit {
 
   
   openDetail(nom:any){
-    console.log('Donnée recuperer est :' + nom)
+    console.log('Donnée recuperer est :' , nom)
    const dialogRef =  this.dialog.open(DetailSourateComponent,{
       width:'500px',
-      height:'70%',
+      height:'80%',     
       data: nom
     })
   }

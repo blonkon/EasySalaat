@@ -1,50 +1,34 @@
-<ion-header style="background-color: #fff;">
-  <div class="box">
-    <header>
-
-      <a routerLink="/tabs/tab2">
-
-        <ion-icon name="arrow-undo"></ion-icon>
-      </a>
-      <div class="title">
-        <p>{{nom}}</p>
-        <p>{{titre}}</p>
-      </div>
-     
-    </header>
-  </div> 
- 
+<ion-header class="custom-header">
+  <div class="header-content">
+    <ion-icon (click)="closeDialog()"  name="close-circle"></ion-icon>
+    <div class="title">
+      <h1>{{ dataDetail.englishName }}</h1>
+      <span>{{ dataDetail.name }}</span>
+    </div>
+    
+  </div>
 </ion-header>
+
 <ion-content>
-  
-  <div class="contenu">
-
-  <div class="img_box">
-    <img src="../../../assets/images/القرآن.jpg">
+  <div class="image-container">
+    <img src="../../../assets/images/القرآن.jpg" alt="Quran Image">
   </div>
 
-  <div class="container">
-    <p class="timer">{{timer}} : 00</p>
-    <ion-range class="progress-bar" min="0" max="100" color="warning" [value]="progressPercentage" mode="md"  (click)="barrFile($event)"></ion-range>
-    <p>{{ calculateRemainingTime() }}</p>
-</div>    
+  <ion-range class="progress-bar" min="0" max="100" color="warning" [(ngModel)]="audioProgress"></ion-range>
 
+  <div class="audio-controls">
 
-  <div class="flex_box">
+    <button class="control-button" (click)="reculer()">
+      <ion-icon name="play-back"></ion-icon>
+    </button>
 
-    <div fill="clear" color="light"  class="play">
-      <ion-icon slot="icon-only" name="play-back" (click)="recule()" ></ion-icon>
-    </div>
+    <button class="control-button" (click)="playAudio()">
+      <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+    </button>
 
-    <div shape="round" color="light" class="play">
-      <ion-icon slot="icon-only" [name]="isPlaying ? 'pause' : 'play'"  (click)="playPause()"></ion-icon>
-    </div>
-
-    <div fill="clear" color="light" class="play">
-      <ion-icon slot="icon-only" name="play-forward" (click)="avance()" ></ion-icon>
-    </div>
-
+    <button class="control-button" (click)="avancer()">
+      <ion-icon name="play-forward"></ion-icon>
+    </button>
+    
   </div>
-  </div>
-
 </ion-content>

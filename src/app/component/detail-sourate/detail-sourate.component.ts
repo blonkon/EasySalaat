@@ -14,7 +14,7 @@ export class DetailSourateComponent  implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any){
   
   }
-
+        
   ngOnInit(): void {
     this.detail = this.data;
     console.log(this.detail);

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ListeLectureService } from 'src/app/service/liste-lecture.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-lecture-audio',
@@ -9,121 +9,91 @@ import { ListeLectureService } from 'src/app/service/liste-lecture.service';
 })
 export class LectureAudioPage implements OnInit {
 
-  audioUrl: any;
-  nom: any;
-  titre: any;
-  audio!: HTMLAudioElement;
+  dataDetail: any; 
+  surahAudio: any[] = [];
+  audioPlayer: any;
   isPlaying = false;
+  indexVerse: number = 0;
+  audioProgress = 0;
 
-  //temps
-  duration: number = 0;
-  currentTime: number = 0;
-  timer: any;
-  progressPercentage = 0;
-  //
-
-  constructor(private route: ActivatedRoute, private lecture : ListeLectureService) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router : Router) { }
 
   ngOnInit() {
-    this.audioUrl = this.lecture.surahselect
-    console.log("donnée ",this.audioUrl)
-    // this.route.paramMap.subscribe((params) => {
-    //   const paramAudioUrl = params.get('audioUrl');
-    //   this.nom = params.get('nom') || '';
-    //   this.titre = params.get('titre') || '';
+    this.dataDetail = this.data;
 
-    //   console.log('Nom:', this.nom);
-    //   console.log('Titre:', this.titre);
-
-    //   if (paramAudioUrl !== null) {
-    //     this.audioUrl = paramAudioUrl;
-    //     this.initializeAudio(this.audioUrl);
-    //   }
-    // });
-  }
-
-
-  initializeAudio(audioUrl: string) {
-    if (this.audio) {
-      this.audio.pause(); // Pause the current audio if it exists
-      clearInterval(this.timer);
-    }
-    this.audio = new Audio(audioUrl);
-    this.audio.play(); // jouer audio
-    this.isPlaying = true;
-
-    // Obtenir la durée totale de l'audio
-    this.audio.addEventListener('loadedmetadata', () => {
-      this.duration = this.audio.duration;
-      this.startTimer();
-    });
-  }
-  startTimer() {
-    this.timer = setInterval(() => {
-      this.currentTime = this.audio.currentTime;
-
-      // Mettez à jour la propriété progressPercentage en pourcentage
-      if (this.duration !== 0) {
-        this.progressPercentage = (this.currentTime / this.duration) * 100;
+    if (this.dataDetail) {
+      try {
+        this.dataDetail.ayahs.forEach((res: any) => {
+          this.surahAudio.push(res.audioSecondary[0]);
+        });
+      } catch (error) {
+        console.log("Audio non trouvé")
       }
-    }, 1000); // Mettre à jour chaque seconde
-  }
-  calculateRemainingTime() {
-    if (this.duration === 0 || this.currentTime === 0) {
-      return '0s';
-    }
-
-    const remainingTime = this.duration - this.currentTime;
-    const minutes = Math.floor(remainingTime / 60);
-    const seconds = Math.floor(remainingTime % 60);
-    return `${minutes}m ${seconds}s`;
-  }
-  ngOnDestroy() {
-    if (this.audio) {
-      this.audio.pause();
-      clearInterval(this.timer);
     }
   }
 
-  playPause() {
-    if (this.audio) {
-      if (this.audio.paused) {
-        this.audio.play(); // Play audio if paused
-        this.isPlaying = true;
+  pauseAudio() {
+    if (this.audioPlayer) {
+      this.audioPlayer.pause();
+      this.isPlaying = false;
+    }
+  }
+
+  playAudio() {
+    if (this.surahAudio.length > 0) {
+      if (this.isPlaying) {
+        this.pauseAudio();
       } else {
-        this.audio.pause(); // Pause audio if playing
-        this.isPlaying = false;
+        this.isPlaying = true;
+        this.playNextVerse();
       }
     }
   }
 
-  avance() {
-    if (this.audio) {
-      this.audio.currentTime += 15; // Filer vers l'avant
-    }
-  }
-  recule() {
-    if (this.audio) {
-      this.audio.currentTime -= 15; // Filer vers l'arriere
+  avancer() {
+    if (this.indexVerse < this.surahAudio.length - 1) {
+      this.indexVerse++;
+      this.playNextVerse();
     }
   }
 
-  barrFile(event: MouseEvent) {
-    if (this.audio) {
-      const progressBar = event.currentTarget as HTMLElement;
-      const rect = progressBar.getBoundingClientRect();
-      const offsetX = event.clientX - rect.left;
-      const progressBarWidth = rect.width;
-
-      // Calcul de la nouvelle position en pourcentage en fonction du clic
-      const newProgressPercentage = (offsetX / progressBarWidth) * 100;
-
-      // Calcul de la nouvelle position en secondes en fonction du pourcentage
-      const newPositionInSeconds = (newProgressPercentage / 100) * this.duration;
-
-      // Mettre à jour la position de lecture de l'audio
-      this.audio.currentTime = newPositionInSeconds;
+  reculer() {
+    if (this.indexVerse > 0) {
+      this.indexVerse--;
+      this.playNextVerse();
     }
   }
 
+  playNextVerse() {
+    if (this.indexVerse < this.surahAudio.length) {
+      const audioUrl = this.surahAudio[this.indexVerse];
+      this.audioPlayer = new Audio(audioUrl);
+      this.audioPlayer.load();
+
+      this.audioPlayer.addEventListener('ended', () => {
+        this.indexVerse++;
+        this.playNextVerse();
+      });
+
+      this.audioPlayer.play();
+
+      // Mettez à jour la progression audio pendant la lecture
+      this.audioPlayer.addEventListener('timeupdate', () => {
+        this.updateAudioProgress();
+      });
+    } else {
+      this.audioPlayer.pause();
+      this.isPlaying = false;
+    }
+  }
+
+  updateAudioProgress() {
+    if (this.audioPlayer && this.audioPlayer.duration > 0) {
+      this.audioProgress = (this.audioPlayer.currentTime / this.audioPlayer.duration) * 100;
+    }
+  }
+
+  closeDialog(){
+    this.router.navigate(['/tabs/tab2']);
+  }
 }
