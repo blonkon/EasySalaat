@@ -23,7 +23,7 @@ border: none;
 
 .container{
     display: flex; 
-    align-items: center; 
+    // align-items: center; 
     justify-content: space-between; 
     margin: 15px; 
     border-bottom: 0.5px solid rgb(222, 221, 221);
@@ -46,11 +46,15 @@ ion-badge{
 h1 , p{
     font-family: 'Poppins';
 }
-a{
-    text-decoration: none;
-    color: #333;
+.name{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-
+.name ion-icon {
+    color: #333;
+    font-size: 18px;
+}
 @media screen and (max-width: 712px) and (min-width: 712px) {
     ion-icon{
         font-size: 50px;

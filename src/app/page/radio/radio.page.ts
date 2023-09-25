@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LectureRadioPage } from '../lecture-radio/lecture-radio.page';
 
 @Component({
   selector: 'app-radio',
@@ -14,6 +16,7 @@ export class RadioPage implements OnInit {
       fr : '101.2 MHz',
       desc:'Fréquence',
       lien : 'https://stream-156.zeno.fm/yerp85sughwtv?zs=7FxpPMDdT42TnIODrMz8-w'
+      
     },
     {
       id : 2,
@@ -66,9 +69,20 @@ export class RadioPage implements OnInit {
       lien : 'https://worldradiomap.com/ml/play/islamique-bamako'
     },
   ]
-  constructor() { }
+  constructor(private dialog : MatDialog) { }
 
   ngOnInit() {
   }
 
+  openRadio(objet : any){
+    const ref = this.dialog.open(LectureRadioPage,{
+      width:'500px',height:'55%',
+      data: objet
+    })
+    ref.afterClosed().subscribe(result => {
+      console.log('La boîte de dialogue a été fermée', result);
+    });
+    console.log(objet);
+  }
+  
 }

@@ -27,15 +27,14 @@
 
     <ion-badge slot="start">{{radio.id}}</ion-badge>
     <div>
-      <a href={{radio.lien}}>
       <h1>{{radio.nom}}</h1>
       <p>{{radio.desc}}</p>
-    </a>
     </div>
   </div>
 
   <div class="name">
     <p>{{radio.fr}}</p>
+    <ion-icon name="play" (click)="openRadio(radio)"></ion-icon>
   </div>
 
 </div>

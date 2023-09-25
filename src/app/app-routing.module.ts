@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'lecture-audio',
     loadChildren: () => import('./page/lecture-audio/lecture-audio.module').then( m => m.LectureAudioPageModule)
+  },
+  {
+    path: 'lecture-radio',
+    loadChildren: () => import('./page/lecture-radio/lecture-radio.module').then( m => m.LectureRadioPageModule)
   }
 
 
