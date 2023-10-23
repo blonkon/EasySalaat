@@ -1,0 +1,35 @@
+
+
+<div id="container" style="display: grid; " class="head animate__animated animate__fadeInDown ">
+  <ion-icon name="arrow-undo" style="display: block; font-size: 25px; padding: 15px  15px 0  15px; color: #005B2F;" [routerLink]="['../listradio']"></ion-icon>
+  <div class="img" style="box-sizing: border-box;">
+    <img src="../../assets/images/radiowhite.png" alt="" width="80px" height="80px"> 
+    <p style="color:  #005B2F;"> <strong>Fréquence Radio </strong></p>
+  </div>
+</div> 
+<ion-content>
+
+
+<form (ngSubmit)="onSubmit(a)" #a="ngForm">
+  <div id="container">
+    <p style="color: red;">{{invalid}}</p>
+   
+    <div class="form-controle">
+      
+      <div>
+        <label><strong>Nom du Radio</strong></label>
+        <input name="nom" [(ngModel)]="nom"  type="text" placeholder="Ex. Liberté" >  
+      </div>      
+      <div>
+        <label><strong>Fréquence</strong></label>
+        <input type="number" name="fr" [(ngModel)]="fr" placeholder="Ex. 97.7"> 
+      </div>
+      <div class="frame">
+        <button class="custom-btn btn-5" type="submit" ><span>Soumettre</span></button>
+        </div>
+    </div>
+  </div>
+</form>
+  
+</ion-content>
+  

@@ -1,0 +1,60 @@
+<ion-header class="head">
+
+  <ion-icon name="arrow-undo" style="font-size: 30px; margin: 20px; color: #fff;" [routerLink]="['../coran']"></ion-icon>
+  <div class="header">
+  <div class="img" style="margin-left: -10%;">
+    <img src="../../assets/images/coran.png" alt="" width="50%">
+    <p style="color: #fff; margin-left: -15%;"><strong>Modifier une Lecture</strong></p>
+  </div>
+</div>
+</ion-header>
+<ion-content>
+
+  <form >
+
+    <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
+      <div class="blokimg">
+        <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
+          <ion-img src="../../assets/images/User1.png" style=" border-radius: 50%; margin-left: 17px;"></ion-img>
+        </ion-thumbnail>
+        <div class="parent-div">
+          <div class="btn-upload"  style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;" >Choisir une image </div>
+          <input type="file" name="upfile" accept="image/*" />
+        </div>
+      </div>
+    </div>
+    <div class="main">
+    <div class="input-item">
+      <ion-label class="label">Surah</ion-label>
+      <div class="select">
+        <ion-select>
+          <ion-select-option *ngFor="let valeur of surah" [value]="valeur" >
+            {{valeur}}
+          </ion-select-option>
+        </ion-select> 
+      </div>
+    </div>
+    <div  class="input-item">
+      <ion-label class="label">Nom Complet d'imame</ion-label>
+      <input class="input" type="text" />
+    </div >
+
+    <div  class="input-item">
+      <ion-label class="label">Nationalité</ion-label>
+      <input class="input" type="text" placeholder=""/>
+    </div >
+  
+    <div class="input-item">
+      <ion-label class="label">Audio</ion-label>
+      <div class="parent-div">
+        <div class="btn-upload"  style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;" >Choisir un audio </div>
+        <input type="file" name="upfile" accept="image/*" />
+      </div>
+    </div >
+    <div class="frame">
+    <button class="custom-btn btn-5"><span>Soumettre</span></button>
+   
+    </div>
+    </div>
+   </form>
+</ion-content>

@@ -1,0 +1,63 @@
+.head {
+    display: flex;
+    padding-top: 25px;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 55px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-bottom: 1px solid #005B2F;
+    padding-bottom: 20px;
+    background-color: #005B2F;
+    border-radius: 0 0 200px 0;
+
+
+}
+.left {
+    width: 25%;
+    margin-top: 10px;
+    margin-left: 12px;
+    
+}
+.right {
+    width: 75%;
+    color: #FFFF;
+}
+
+.logo {
+    width: 90px;
+    margin-left: 38%;
+}
+.mosque {
+    display: flex;
+   padding-left: 10px;
+   padding-top: 10px;
+}
+.info {
+   margin-left: 50px;
+   margin-top: 10px;
+}
+.cloche {
+    margin-left: 10px;
+    margin-top: 10px;
+ }
+
+ .liste{
+    background-color: #D9D9D94D;
+    box-sizing: border-box;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 15px;
+    padding-bottom: 2px;
+    // margin-bottom: 10px;
+
+ }
+.nom {
+   width: 68%;
+}
+ .dist {
+   padding-left: 10px;
+   margin-top: -18px;
+   font-size: x-small;
+ }

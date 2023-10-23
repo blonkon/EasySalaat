@@ -1,0 +1,18 @@
+<ion-header style="background-color: #fff;">
+  <div class="box">
+    <header>      
+      <ion-icon (click)="closeDialog()"  name="close-circle"></ion-icon>
+      <h1>{{detailSourate.englishName}}</h1>
+    </header>
+  </div>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+  
+    <h3>Ayahs : {{detailSourate.name}} </h3>
+    <div *ngFor="let ayah of detailSourate.ayahs ">
+      <ion-badge slot="start">{{ayah.number}}</ion-badge>
+      <p class="ayah-text">{{ ayah.text }}</p>
+    </div>
+  
+</ion-content>

@@ -1,0 +1,52 @@
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
+import { AlertController, LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
+@Component({
+  selector: 'app-connexion',
+  templateUrl: './connexion.component.html',
+  styleUrls: ['./connexion.component.scss'],
+})
+export class ConnexionComponent  implements OnInit {
+  email : string ="";
+  password : string="";
+  invalid: string="";
+  
+
+  constructor(private data : DataService, private router : Router, private loadingController: LoadingController,
+		private alertController: AlertController,){
+    
+  }
+  async onSubmit(forms : NgForm){
+          
+          const loading = await this.loadingController.create();
+          await loading.present();
+      
+          const user = await this.data.login(this.email,this.password);
+          await loading.dismiss();
+      
+          if (user) {
+            this.invalid="";
+            if ( this.data.user.role===0) {
+              this.router.navigate(['/tabs/tab1']);
+             }else if (this.data.user===1) {
+              this.router.navigate(['/admosque/page-accueil-admin-mosque']);
+             }else{
+              this.router.navigate(['/admin/accueilsuperadmin']);
+              } 
+        }else {
+            this.invalid='Login failed Please try again!';
+          }
+  }
+
+  ngOnInit() {}
+  navigateToInscription(){
+    this.router.navigateByUrl('/inscription')}
+
+    navigateToAdminmosque(){
+      this.router.navigateByUrl('/admosque')}
+      navigateToSuperAdmin(){
+        this.router.navigateByUrl('/superadmin')}
+}

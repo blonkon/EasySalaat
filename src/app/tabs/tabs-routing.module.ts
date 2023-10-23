@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { JouerAudioComponent } from '../component/jouer-audio/jouer-audio.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,56 @@ const routes: Routes = [
       },{
         path: 'profile',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },{
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+
+      },
+      {
+        path: 'mosque',
+        loadChildren: () => import('../page/liste-mosque/liste-mosque.module').then(m => m.ListeMosquePageModule)
+      },
+      {
+        path: 'mosqueaproximite',
+        loadChildren: () => import('../page/mosque-aproximite/mosque-aproximite.module').then(m => m.MosqueAproximitePageModule)
+
+      },
+      {
+        path: 'calendar',
+        loadChildren: () => import('../page/calendar/calendar.module').then( m => m.CalendarPageModule)
+      },
+      {
+        path: 'noms',
+        loadChildren: () => import('../page/noms/noms.module').then( m => m.NomsPageModule)
+      },
+      {
+        path: 'preche',
+        loadChildren: () => import('../page/preche/preche.module').then( m => m.PrechePageModule)
+      },
+      {
+        path: 'info-page',
+        loadChildren: () => import('../page/info-page/info-page.module').then( m => m.InfoPagePageModule)
+      },
+      {
+        path: 'sourate',
+        loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
+      },
+      {
+        path: 'radio',
+        loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
+      },
+      {
+
+        path: 'info-page',
+        loadChildren: () => import('../page/info-page/info-page.module').then( m => m.InfoPagePageModule)
+    },
+     {
+        path: 'sourate',
+        loadChildren: () => import('../page/sourate/sourate.module').then( m => m.SouratePageModule)
+      },
+      {
+        path: 'radio',
+        loadChildren: () => import('../page/radio/radio.module').then( m => m.RadioPageModule)
       },
       {
         path: '',

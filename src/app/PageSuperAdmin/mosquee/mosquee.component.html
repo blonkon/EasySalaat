@@ -1,0 +1,43 @@
+<div id="container" style="display: grid; " class="head animate__animated animate__fadeInDown ">
+  <ion-icon name="arrow-undo" style="display: block; font-size: 25px; padding: 15px  15px 0  15px; color: #fff;" [routerLink]="['../../accueilsuperadmin']"></ion-icon>
+  <div class="img" style="box-sizing: border-box;">
+    <img src="../../assets/images/mosqueeee 1.png" alt="" width="80px" height="60px">
+    <p style="margin-right: 20px; color: #fff;"> <strong>Liste mosquées </strong></p>
+  </div>
+   <strong  style="font-size: 15px; color: #fff; margin: 0 15px 0 15px;">{{nombre_mosquee}} <ion-icon name="mosque" style="color: #fff;"></ion-icon></strong>
+</div>
+<ion-toolbar>
+
+  <ion-searchbar slot="end" (ionChange)="rechercher($event)"></ion-searchbar>
+</ion-toolbar>
+<ion-content>
+<div class="listuser animate__animated animate__fadeInUp ">
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let element of data[0]">
+          <ion-thumbnail slot="start">
+            <img alt="Silhouette of mountains" src="../../assets/images/mosqueeee 1.png" style="border-radius: 50%;"  />
+          </ion-thumbnail>
+          <ion-label>{{element.nom}}</ion-label>
+          <div class="iconitem">
+            <ion-icon  name="eye" (click)="detailuser(element)"></ion-icon>
+            <ion-icon name="create-outline" style="color: #005B2F;" (click)="modif(element.id)" ></ion-icon>
+          <ion-icon name="trash" style="color: red;"   id="present-alert" (click)="presentAlert()" ></ion-icon>
+          </div>
+
+            <ion-alert
+            header="Alert!"
+            [buttons]="alertButtons"
+            (ionAlertDidDismiss)="setResult($event)"
+            id="myAlert"
+            ></ion-alert>
+        </ion-item>
+
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>

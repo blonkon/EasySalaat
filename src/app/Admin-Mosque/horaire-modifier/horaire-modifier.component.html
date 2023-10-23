@@ -1,0 +1,46 @@
+<ion-content>
+ 
+  <div id="container" style="display: grid;">
+    <div class="retour">
+      <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+      <img src="../../../assets/images/bak.png"  [routerLink]="['../horaire']" style="margin-left: -95px;" alt="">
+    </div>
+    <div class="img">
+      <img src="../../assets/images/horaire.png" alt="horaire" style="border-radius: 50%; width: 15vh; height: 100%;">
+    </div>
+    <div style="margin-top: -8vh;">
+      <h2 style="color: #005B2F; text-align: center; margin-top: 78px;">Horaire</h2>
+    </div>
+  </div>
+
+  <div class="form-controle">
+    <form action="horaire-liste" method="post">
+    <div>
+     <label for="">Fajr</label>
+      <input name="fajr" type="text">  
+    </div>
+    <div>
+      <label for="">Chorouq</label>
+      <input name="chorouq" type="text" > 
+    </div>
+    <div>
+      <label for="">Dohr</label>
+      <input name="dohr" type="text" > 
+    </div>
+    <div>
+    <label for="">Asr</label>
+      <input name="asr" type="text"> 
+    </div>
+    <div>
+    <label for="">Maghreb</label>
+      <input name="maghreb" type="text" > 
+    </div>
+    <div>
+    <label for="">Icha</label>
+      <input name="icha" type="text" > 
+    </div>
+  <input type="submit" value="Modifier" style="background-color: #005B2F;width: 100%; color: white; font-weight: bold;">
+</form>  
+</div>
+
+</ion-content>

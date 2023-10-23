@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Roles } from '../models/Roles.enum';
+import { Users } from '../models/users';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+  constructor(private data : DataService) { }
 
-  constructor() { }
-
+  deconnexion(){
+    this.data.logout();
+  }
   ngOnInit() {
   }
-
-}
+  }

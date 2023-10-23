@@ -1,0 +1,64 @@
+#form{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;  
+}
+div input, button{
+  box-shadow: 0 0 0.5rem black;
+  padding: 10px 20px 10px 20px;
+}
+div input{
+  margin-bottom: 10px;
+}
+#form label{
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-left: 1px;
+}
+#fullwi{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 10px;
+  
+}
+#fullcol{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 10px;
+
+}
+#fullcol input{
+  width: 100%;
+}
+.mydiv{
+  display: block;
+
+}
+.mydiv input{
+  width: 100%;
+}
+#grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+
+}
+#matback{
+  background-color: #fff;
+}
+#titre{
+  text-transform: uppercase;
+  text-align: center;
+  color: #26B08D;
+  background-color: #fff;
+
+}
+.titre{
+  text-transform: uppercase;
+  text-align: center;
+  color: #26B08D;
+  background-color: #fff;
+
+}

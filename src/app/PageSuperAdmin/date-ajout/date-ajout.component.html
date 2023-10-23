@@ -1,0 +1,22 @@
+
+
+
+<div mat-dialog-title class="titre" > Modifier une date</div>
+<div mat-dialog-content id="matback">
+    <!-- <form  [formGroup]="mesureForm"  (ngSubmit)="onSubmit()"> -->
+        <div class="form-row-md-20" id="form">
+          
+          <div class="form-group col-sm">
+            <label >Date</label>
+            <input type="date" matInput class="form-control" id="date" required >
+          </div>   
+        </div>
+        <div class="form-group col-sm" id="grid">
+            
+            <button class="btn btn-secondary" mt-10 mat-raised-button type="button" [mat-dialog-close]="false">Retour</button>
+            <button class="btn btn-primary" mt-10  mat-raised-button style="background-color: #26B08D;" type="submit">Modifier</button>
+        </div>
+      <!-- </form> -->
+</div>
+
+

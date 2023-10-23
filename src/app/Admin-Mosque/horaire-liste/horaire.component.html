@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="retour">
+    <!-- <ion-icon style="margin-left: -95px; width: 30px;"  name="arrow-undo-outline"></ion-icon> -->
+    <img src="../../../assets/images/bak.png"  [routerLink]="['../']" style="margin-top: 20px;" alt="">
+  </div>
+  <div id="container" style="display: grid;">
+   
+    <div class="img">
+      <img src="../../assets/images/horaire.png" alt="horaire" style="border-radius: 50%; width: 15vh; height: 100%;">
+    </div>
+    <div style="margin-top: -8vh;">
+      <h2 style="color: #005B2F;margin-top: 83px; text-align: center;">Horaire</h2>
+    </div>
+  </div>
+  
+  <ion-item  *ngFor="let element of data">
+   
+    <ion-label>{{element.nom}}</ion-label> <ion-label> {{element.time}}</ion-label>
+    <ion-icon name="create-outline"  (click)="presentAlert()"  style="color: #005B2F;" ></ion-icon>
+    
+  </ion-item>
+  <ion-alert
+  trigger="present-alert"
+  header="Modifier l'heure"
+  [buttons]="['alertButtons']"
+  [inputs]="alertInputs"
+></ion-alert>
+</ion-content>
+
+<!-- Modal -->
+
+
+<!-- </ion-content> -->
+

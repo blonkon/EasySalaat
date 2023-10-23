@@ -1,0 +1,42 @@
+
+<div class="img  animate__animated animate__fadeInDown" >
+  <img src="../../assets/images/logo.png" alt="" width="100px">
+  <h2 style="color: #005B2F;">Inscription</h2>
+</div>
+
+<ion-content class="animate__animated animate__fadeInUp">
+
+<form (ngSubmit)="onSubmit(a)" #a="ngForm">
+  <p style="text-align: center; "> <strong style="text-align: center; color: red; font-size: small; padding: 5px;">{{ invalid }}</strong></p>
+<div id="container">
+
+
+  <div class="form-controle">
+    <div>
+      <label>Nom Complet</label>
+      <input  type="text" placeholder="Ex. Lanciné keita " name="nom" [(ngModel)]="nom">  
+    </div>  
+    <div>
+      <label>Email</label>
+      <input  type="email" placeholder="Exemple. votremail@gmail.com" name="email" [(ngModel)]="email">  
+    </div>      
+    <div>
+      <label>Mot de passe</label>
+      <input type="password" placeholder="******************" name="mdp" [(ngModel)]="mdp"> 
+    </div>
+    <div>
+      <label>Répeter Mot de passe</label>
+      <input type="password" placeholder="******************" name="rmdp" [(ngModel)]="rmdp"> 
+    </div>
+    <input type="submit" id="a" style="color: #fff !important;" value=" Se connecter ">
+    <a class="gtext" style="margin-bottom: 20px;">
+      <i>  <img src="../../assets/images/google.png" alt="" width="18px"  style="padding-right: 5px;" >Continuer avec google</i>
+     </a>
+    
+
+    <h5 style="text-align: center;">J'ai déjà un compte, <a routerLink="" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-left: 10px; border-radius: 5px;">Se connecter</a></h5>
+  </div>
+</div>
+</form>
+
+</ion-content>

@@ -1,0 +1,12 @@
+
+
+<div *ngFor="let data of surahData">
+<p>{{data.latitude}}</p>
+<p>{{data.longitude}}</p>
+
+</div> 
+
+<div *ngIf="qiblaDirection !== undefined">
+  <p>La direction de la Qibla est {{ qiblaDirection }} degrés.</p>
+
+</div>

@@ -1,0 +1,57 @@
+<ion-header class="head">
+ 
+  <ion-icon name="arrow-undo" style="font-size: 30px; padding: 10px; color: #fff;" [routerLink]="['../mosquee']"></ion-icon>
+  <div class="img">
+    <img src="../../assets/images/mosqueeee 1.png" alt="" width="100px">
+    <p style="color: #fff; margin-left: 10px;"><strong>Modifier mosque</strong></p>
+  </div>
+</ion-header>
+<ion-content>
+        <form (ngSubmit)="onSubmit(a)" #a="ngForm"> 
+             <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 15px;">
+            <!--  <div class="blokimg">
+                <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
+                  <ion-img src="../../assets/images/mosqueeee 1.png" style=" border-radius: 50%; margin-left: 17px;"></ion-img>
+                </ion-thumbnail>
+                <div class="parent-div">
+                  <div class="btn-upload" style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;"  >Choisir une image</div>
+                  <input type="file" id="imgImam" name="upfile"accept="image/*" (change)="onImageChange($event)" />
+                </div>
+              </div> -->
+              <!-- <div class="blokimg">
+                <ion-thumbnail slot="start" style="border-radius: 50%; width: 80px; height: 80px;">
+                  <ion-img src="../../assets/images/User1.png" style=" border-radius: 50%; margin-left: 17px;"></ion-img>
+                </ion-thumbnail>
+                <div class="parent-div">
+                  <div class="btn-upload"  style="color: #005B2F !important; font-weight: bold; padding: 0 10px; margin-right: 20px; border-radius: 5px;" >Choisir une image </div>
+                  <input type="file" name="upfile" accept="image/*" (change)="onImageChange($event)" />
+                </div>
+              </div> -->
+            <p style="color: red; text-align: center;">{{invalid}}</p>
+            </div>
+            <div class="main">
+            <div class="input-item">
+              <ion-label class="label">Nom de la mosquée</ion-label>
+              <input class="input" type="text" name="mosque" [(ngModel)]="mosqueName" />
+            </div>
+            <div  class="input-item">
+              <ion-label class="label">Nom Imame</ion-label>
+              <input class="input" type="text" name="imam" [(ngModel)]="imamName"/>
+            </div >
+
+            <!-- <div  class="input-item">
+              <ion-label class="label">Nom admin mosque</ion-label>
+              <input class="input" type="text" [(ngModel)]="nom_ad_mosque" placeholder=""/>
+            </div > -->
+          
+            <div class="input-item">
+              <ion-label class="label">Numéro de téléphone</ion-label>
+              <input class="input" type="tel" name="tel" [(ngModel)]="phoneNumber"/>
+            </div >
+            <div class="frame">
+            <button class="custom-btn btn-5" type="submit"><span>Soumettre</span></button>
+           
+            </div>
+            </div>
+  </form> 
+</ion-content>
