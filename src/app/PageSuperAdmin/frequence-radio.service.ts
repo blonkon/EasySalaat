@@ -42,6 +42,7 @@ export class FrequenceRadioService {
   constructor(private firestore : Firestore) { }
 
   async getradioList(): Promise<Observable<any>> {
+    this.list_radio=[];
     const q = query(collection(this.firestore, "Radios"));
     const querySnapshot = await getDocs(q);
      querySnapshot.forEach((doc) => {

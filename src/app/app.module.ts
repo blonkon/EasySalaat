@@ -108,11 +108,15 @@ import { DateLocaleKeys, MOMENT_HIJRI_DATE_FORMATS, NgxAngularMaterialHijriAdapt
     ,ModifierutilisateurComponent
    ,InscriptionComponent, HomeSuperAdminComponent, PageutiletadminComponent, ListutilisateurComponent, ConnexionComponent],
 
-  imports: [BrowserModule,BrowserModule,FormsModule, NgxPaginationModule, MatDatepickerModule,NgxAngularMaterialHijriAdapterModule, MatFormFieldModule,MatInputModule, HttpClientModule ,MatDialogModule,MatButtonModule,  ReactiveFormsModule,IonicModule.forRoot(), AppRoutingModule, NgxPaginationModule, MatDatepickerModule, MatFormFieldModule,AppRoutingModule,HttpClientModule,MatDialogModule,NgxPaginationModule, ReactiveFormsModule,IonicModule.forRoot(), 
+  imports: [BrowserModule,FormsModule,
+    NgxAngularMaterialHijriAdapterModule,
+    MatInputModule ,MatButtonModule, 
+    MatDatepickerModule, MatFormFieldModule,AppRoutingModule,
+    HttpClientModule,MatDialogModule,NgxPaginationModule, ReactiveFormsModule,IonicModule.forRoot(), 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
 		provideFirestore(() => getFirestore()),
-		provideStorage(() => getStorage()),
+		provideStorage(() => getStorage())
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: DateAdapter,

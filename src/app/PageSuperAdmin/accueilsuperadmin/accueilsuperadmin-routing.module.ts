@@ -47,7 +47,7 @@ const routes: Routes = [
   //   component: AjoutMosqueeComponent
   // },
   {
-    path: 'calendrier', component: CalendrierComponent
+    path: 'granddate', component: CalendrierComponent
   },
   {
     path: 'updatedate', component: DateAjoutComponent

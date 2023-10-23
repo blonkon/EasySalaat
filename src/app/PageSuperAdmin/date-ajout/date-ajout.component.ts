@@ -10,47 +10,48 @@ import { CalendrierService } from '../calendrier.service';
   styleUrls: ['./date-ajout.component.scss'],
 })
 export class DateAjoutComponent  implements OnInit {
-mesureForm: FormGroup;
+// mesureForm: FormGroup;
 constructor(private _dialogRef: MatDialogRef<DateAjoutComponent>,
   private formBuilder: FormBuilder, private _dialog: MatDialog, private _service: CalendrierService, private router: Router,@Inject(MAT_DIALOG_DATA) public data: any
 ) {
 
-  this.mesureForm = this.formBuilder.group({
-    id:'',
-    dateFransais: ['', Validators.required],
+  // this.mesureForm = this.formBuilder.group({
+  //   id:'',
+  //   dateFransais: ['', Validators.required],
    
-  });
+  // });
 }
 
   ngOnInit() {
-    this.mesureForm.patchValue(this.data);
-    this.mesureForm = this.formBuilder.group({
-      id:'',
-      dateFransais: ['', Validators.required],
+    // this.mesureForm.patchValue(this.data);
+    // this.mesureForm = this.formBuilder.group({
+    //   id:'',
+    //   dateFransais: ['', Validators.required],
      
-    });
+    // });
   }
 
   onSubmit() {
-    if (this.mesureForm.valid) {
-      const mesure = this.mesureForm.value;
+    console.log("kkk");
+    // if (this.mesureForm.valid) {
+    //   const mesure = this.mesureForm.value;
       
   
-      if (this.data) {
+    //   if (this.data) {
         
       
         
            
-        this._service
-        .modifydate(this.data.id, this.mesureForm.value);
+    //     this._service
+    //     .modifydate(this.data.id, this.mesureForm.value);
         
-        this.mesureForm.reset();
-        // Émettez un événement pour indiquer que les données ont été ajoutées
-        this._service.triggerUpdate();
-        this._dialogRef.close(true);
+    //     this.mesureForm.reset();
+    //     // Émettez un événement pour indiquer que les données ont été ajoutées
+    //     this._service.triggerUpdate();
+    //     this._dialogRef.close(true);
         
       
-      } }
+    //   } }
 
 }
 }

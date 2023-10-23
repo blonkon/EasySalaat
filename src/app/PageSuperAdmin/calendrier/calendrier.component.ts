@@ -64,10 +64,10 @@ export class CalendrierComponent  implements OnInit {
   setResult(ev:any) {
     console.log(`Dismissed with role: ${ev.detail.role}`);
   }
-  openEditForm(data: any, enterAnimationDuration: string, exitAnimationDuration: string) {
+  openEditForm( enterAnimationDuration: string, exitAnimationDuration: string) {
     
     const dialogRef = this._dialog.open(DateAjoutComponent,  {
-      data, enterAnimationDuration,
+       enterAnimationDuration,
         exitAnimationDuration   
     }); 
   }

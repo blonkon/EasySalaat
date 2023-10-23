@@ -2,26 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import {  Storage, ref, uploadBytes } from '@angular/fire/storage';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-ajoutcoran',
   templateUrl: './ajoutcoran.component.html',
   styleUrls: ['./ajoutcoran.component.scss'],
 })
 export class AjoutcoranComponent  implements OnInit {
-  constructor(private router: Router,private storage : Storage) { }
+  
   
   surah: string[]=[
-    'Al-Fatiha',
-    'Al-Baqra',
-    'Al-Maida',
-    'Al-Imourane',
-    'Al-Yusuf',
-    'Al-Iklass',
-    'Al-YUNUS',
-    'Al-IBRAHIM',
-    'Al-MARIAM',
-    'Al-KAFIROUNA',
-    'Al-TAWBA',
+    // 'Al-Fatiha',
+    // 'Al-Baqra',
+    // 'Al-Maida',
+    // 'Al-Imourane',
+    // 'Al-Yusuf',
+    // 'Al-Iklass',
+    // 'Al-YUNUS',
+    // 'Al-IBRAHIM',
+    // 'Al-MARIAM',
+    // 'Al-KAFIROUNA',
+    // 'Al-TAWBA',
   ];
   nom_complet_imame: any;
   nationalite: any;
@@ -29,6 +30,8 @@ export class AjoutcoranComponent  implements OnInit {
   imamName: any;
   nomaudio:string="";
   fichier?:File ;
+  constructor() { 
+  }
   rechercher($event: Event) {
   throw new Error('Method not implemented.');
   }
@@ -51,13 +54,13 @@ export class AjoutcoranComponent  implements OnInit {
     //   this.router.navigateByUrl('../../lecteur')
     // }
     onSubmit(){
-      const selectedFile = this.fichier;
-      if (selectedFile) {
-        const cheminStockage = 'lecteurs/' + selectedFile.name;
-        const storageRef = ref(this.storage, cheminStockage);
-        uploadBytes(storageRef, selectedFile).then((snapshot) => {
-          console.log('Uploaded a blob or file!');
-        });
-      }
+      // const selectedFile = this.fichier;
+      // if (selectedFile) {
+      //   const cheminStockage = 'lecteurs/' + selectedFile.name;
+      //   const storageRef = ref(this.storage, cheminStockage);
+      //   uploadBytes(storageRef, selectedFile).then((snapshot) => {
+      //     console.log('Uploaded a blob or file!');
+      //   });
+      // }
     }
   }
