@@ -1,33 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { AddListeComponent } from '../add-liste/add-liste.component';
 import { ListeLectureService } from 'src/app/service/liste-lecture.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { LectureAudioPage } from 'src/app/page/lecture-audio/lecture-audio.page';
 
 @Component({
   selector: 'app-liste-lecture',
   templateUrl: './liste-lecture.component.html',
   styleUrls: ['./liste-lecture.component.scss'],
 })
-export class ListeLectureComponent  implements OnInit {
+export class ListeLectureComponent implements OnInit {
+ 
+  surah: any[] = [];
+ 
 
 
-  surahData:any[]= [];
-  qiblaDirection: number=1;
-  constructor(private dialog : MatDialog, private listeService:ListeLectureService) { }
+  constructor(private lectService: ListeLectureService,private dialog : MatDialog) {}
+
+  async initAudio() {
+    }
 
   ngOnInit() {
-
-    this.listeService.getQiblaDirection(25.4106386,-54.189238 ).subscribe(response => {
-      this.qiblaDirection = response.data.direction;
-    })
-
-  }
-
-  openDialog(){
-    const dialogRef = this.dialog.open(AddListeComponent, {
-      width: '500px',
-      height: '500px',
+    this.lectService.getCoran().subscribe((coran: any) => {
+      this.surah = coran.surahs;
+      console.log(this.surah);
     });
   }
-
-}
+    openAudio(objet: any){
+      const ref = this.dialog.open(LectureAudioPage,{
+        width:'500px',height:'55%',
+        data: objet
+      })
+      ref.afterClosed().subscribe(result => {
+        console.log('La boîte de dialogue a été fermée', result);
+      });
+    }
+  
+ }
+  

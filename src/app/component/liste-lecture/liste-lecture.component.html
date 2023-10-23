@@ -1,12 +1,20 @@
+<ion-content [fullscreen]="true">
+  <div class="container" *ngFor="let surahs of surah; let i = index">
+    <div class="contenu">
+      <ion-badge slot="start">{{ surahs.number }}</ion-badge>
+      <div>
+        <h1>{{ surahs.englishName }}</h1>
+        <p>{{ surahs.name }}</p>
+      </div>
+    </div>
+    <div class="name">
+      <ion-icon name="play" (click)="openAudio(surahs)"></ion-icon>
+    </div>
+  </div>
 
-
-<div *ngFor="let data of surahData">
-<p>{{data.latitude}}</p>
-<p>{{data.longitude}}</p>
-
-</div> 
-
-<div *ngIf="qiblaDirection !== undefined">
-  <p>La direction de la Qibla est {{ qiblaDirection }} degrés.</p>
-
-</div>
+  <!-- Ajoutez une section pour afficher le statut de lecture -->
+  <!-- <div *ngIf="isPlaying" class="status">
+    
+    <p>Lecture en cours : Verset {{ indexVerse + 1 }} / {{ surahAudio.length }}</p>
+  </div> -->
+</ion-content>

@@ -10,15 +10,27 @@
      
     </header>
   </div>
-<ion-content [fullscreen]="true">
- 
-   <h3>{{detail.transliteration}}</h3>
-   <ion-badge slot="start">{{detail.number}}</ion-badge>
-  <div>
-    
-    <p class="ayah-text" >{{ detail.fr.meaning}}</p>
-    <p class="ayah-text">{{ detail.fr.desc}}</p>
-  </div> 
+  </ion-header>
+  <ion-content [fullscreen]="true">
 
-</ion-content>
-
+    <div class="card-content">
+      <h1>{{detail.name}}</h1>
+      <ion-badge slot="start">{{detail.number}}</ion-badge>
+  
+      <div class="container">
+        <div class="language-container">
+          <h2>Français</h2>
+          <p class="ayah-text">{{ detail.fr.meaning}}</p>
+          <p class="ayah-text">{{ detail.fr.desc}}</p>
+        </div>
+  
+        <div class="language-container">
+          <h2>English</h2>
+          <p class="ayah-text">{{ detail.en.meaning}}</p>
+          <p class="ayah-text">{{ detail.en.desc}}</p>
+        </div>
+      </div>
+    </div>
+  
+  </ion-content>
+  

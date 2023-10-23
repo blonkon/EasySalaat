@@ -14,6 +14,7 @@ export class SourateComponent  implements OnInit {
 
  
   surahData:any[]= [];
+  translate:any[]= [];
   // data:any;
 
 
@@ -26,10 +27,11 @@ export class SourateComponent  implements OnInit {
       this.surahData = data.data.surahs;
       console.log(this.surahData);
     });
+   
   
   }
   openDetail(sourate: any) {
-    // Mettez à jour la propriété sourateUrl du service
+   
     this.sourateService.setSourateUrl(sourate);
    // console.log(sourate);
     this.router.navigate(['/tabs/sourate']);

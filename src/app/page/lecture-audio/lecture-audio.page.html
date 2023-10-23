@@ -1,0 +1,34 @@
+<ion-header class="custom-header">
+  <div class="header-content">
+    <ion-icon (click)="closeDialog()"  name="close-circle"></ion-icon>
+    <div class="title">
+      <h1>{{ dataDetail.englishName }}</h1>
+      <span>{{ dataDetail.name }}</span>
+    </div>
+    
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img src="../../../assets/images/coran.jpg" alt="Quran Image">
+  </div>
+
+  <ion-range class="progress-bar" min="0" max="100" color="warning" [(ngModel)]="audioProgress"></ion-range>
+
+  <div class="audio-controls">
+
+    <button class="control-button" (click)="reculer()">
+      <ion-icon name="play-back"></ion-icon>
+    </button>
+
+    <button class="control-button" (click)="playAudio()">
+      <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+    </button>
+
+    <button class="control-button" (click)="avancer()">
+      <ion-icon name="play-forward"></ion-icon>
+    </button>
+    
+  </div>
+</ion-content>

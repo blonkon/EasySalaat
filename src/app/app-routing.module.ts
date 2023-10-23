@@ -49,6 +49,10 @@ const routes: Routes = [
     canActivate: [RoleGuard1],
     children: [
       {
+        path: 'radio',
+        loadChildren: ()=> import('./page/radio/radio.module').then(m => m.RadioPageModule)
+      },
+      {
         path: 'tab1',
         loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
       },
@@ -112,11 +116,26 @@ const routes: Routes = [
         path: 'jouerAudio/:audioUrl', component: JouerAudioComponent, pathMatch: 'full',
         canActivate: [RoleGuard4]
       },
+      {
+        path: 'lecture-audio',
+        loadChildren: () => import('./page/lecture-audio/lecture-audio.module').then( m => m.LectureAudioPageModule)
+      },
+      {
+        path: 'lecture-radio',
+        loadChildren: () => import('./page/lecture-radio/lecture-radio.module').then( m => m.LectureRadioPageModule)
+      },
    {
 		path: '**',
 		redirectTo: '',
 		pathMatch: 'full'
-	}
+	},
+  // {
+  //   path: 'nomdelapage',
+  //   loadChildren: () => import('./nomdelapage/nomdelapage.module').then( m => m.NomdelapagePageModule)
+  // },
+ 
+  
+
 ]
 @NgModule({
   imports: [

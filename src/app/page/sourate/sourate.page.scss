@@ -22,19 +22,22 @@ h1 {
   font-size: 24px;
   color: #000;
   text-align: center;
+  font-family: 'Poppins';
 }
 
 h3 {
   font-size: 20px;
   color: #000;
   text-align: center;
+  font-family: 'Poppins';
+  margin-top: 10px;
 }
 
-.ayah-container {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
+// .ayah-container {
+//   display: flex;
+//   align-items: center;
+//   margin: 20px 0;
+// }
 
 ion-badge {
   font-size: 18px;
@@ -51,6 +54,7 @@ ion-badge {
   text-align: right;
   color: #000;
   flex-grow: 1;
+  font-family: 'Poppins';
 }
 ion-icon{
   color: #fff;
@@ -58,7 +62,15 @@ ion-icon{
 }
 h1{
   color: #fff;
+  font-family: 'Poppins';
 }
-div{
-  padding: 25px;
+
+.ayah-card {
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 1px 1px #0000000a, 0 3px 3px #00000017;
+  margin: 10px 0; 
+  padding: 10px; 
 }
+
+

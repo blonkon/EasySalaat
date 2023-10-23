@@ -23,7 +23,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Tout-Misséricordieux",
-          "desc": "Cl\\u00E9ment envers ses cr\\u00E9atures. La cl\\u00E9mence d'une m\\u00E8re envers son enfant est une partie infime de Son immense cl\\u00E9mence envers Ses cr\\u00E9atures. Son ch\\u00E2timent est le plus dur et s\\u00E9v\\u00E8re de tous les ch\\u00E2timents mais Sa cl\\u00E9mence a pr\\u00E9c\\u00E9d\\u00E9 Sa col\\u00E8re ; et ce nom fait partie des noms que l\\u2019on n\\u2019attribue \\u00E0 nul autre qu'Allah. "
+          "desc": "Celui qui veut le bien et la miséricorde pour toutes ses créatures"
         }
       },
       {
@@ -37,7 +37,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Tr\u00E8s-Mis\u00E9ricordieux",
-          "desc": "Mis\\u00E9ricordieux pour ce qu'Il a cr\\u00E9\\u00E9. Il fait pleuvoir le ciel au-dessus des peuples m\\u00EAme les plus p\\u00E9cheurs par mis\\u00E9ricorde envers les b\\u00E9b\\u00E9s, les vieux et les animaux, alors qu'Il (a pu) peut (et pourra) les ch\\u00E2tier par soif. Le terme Ar-Rahm\\u0101n englobe la signification du terme Ar-Rah\\u012Bm sans retirer sa signification initiale"
+          "desc": "Celui qui agit avec une extrême gentillesse"
         }
       },
       {
@@ -51,7 +51,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Souverain",
-          "desc": "Est Celui \\u00E0 qui ce monde appartient en r\\u00E9alit\\u00E9 et en totalit\\u00E9 et Celui dont la domination est absolue et exempte de toute imperfection alors que la domination chez les cr\\u00E9atures est cr\\u00E9\\u00E9e par Al-Malik "
+          "desc": "Est Celui à qui ce monde appartient en réalité et en totalité et Celui dont la domination est absolue et exempte de toute imperfection alors que la domination chez les créatures est cr\\u00E9\\u00E9e par Al-Malik "
         }
       },
       {
@@ -65,7 +65,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Pur",
-          "desc": "Le Sanctifi\\u00E9"
+          "desc": "Celui qui est pur de toute imperfection et dégagé des enfants et des adversaires"
         }
       },
       {
@@ -79,7 +79,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"La Paix",
-          "desc": "Celui qui procure la paix, le calme et la s\\u00E9r\\u00E9nit\\u00E9. En citant ce nom, on d\\u00E9clare la paix pour soi-m\\u00EAme et pour ceux qui nous entourent."
+          "desc": "Celui qui procure la paix, le calme et la sérenité. En citant ce nom, on déclare la paix pour soi-même et pour ceux qui nous entourent."
         }
       },
       {
@@ -93,8 +93,8 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"La Sauvegarde",
-          "desc": "Ce nom est myst\\u00E9rieux m\\u00EAme pour les Musulmans car \\\" Al-Mu'min \\\" vient du nom \\\" Al-imane \\\" qui veut dire croire, d'o\\u00F9 vient le nom \\\" Al-Mu'minoune \\\" qui veut dire les croyants, c'est l'appellation du Coran pour les gens qui croient en 6 choses : l'unicit\\u00E9 de Dieu, l'existence des anges, des livres saints (Torah, \\u00C9vangile et Psaumes (Zabor) non modifi\\u00E9s et le Coran), les proph\\u00E8tes, le jour dernier (le jour du jugement) et le destin son mal et son bien. La signification exacte de ce nom est tr\\u00E8s difficile \\u00E0 cerner dans son sens premier mais peut se comprendre d'un point de vue plus profond et mystique"
-        }
+          "desc": "Ce nom est mystérieux même pour les musulmans car \\\"Al-Mu'min\\\" vient du nom \\\"Al-iman\\\" qui signifie croire, d'où vient le nom \\\"Al-Mu'minoune\\\" qui signifie croyants, c'est le nom du Coran pour les personnes qui croient en 6 choses : l'unicité de Dieu, l'existence des anges, les livres saints (Torah, Evangile et les Psaumes (Zabor) non modifiés et le Coran), les prophètes, le dernier jour (le jour du jugement) et le destin son mal et son bien. La signification exacte de ce nom est très difficile à cerner dans son sens originel mais peut être compris d'un point de vue plus profond et plus mystique."
+      },
       },
       {
         "name":"\u0627\u0644\u0652\u0645\u064f\u0647\u064e\u064a\u0652\u0645\u0650\u0646\u064f",
@@ -107,8 +107,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Pr\u00E9servateur",
-          "desc": "Celui qui domine Sa cr\\u00E9ation et par Son omnig\\u00E9rance sous tous les aspects, aucun \\u00E9tat ni aucun aspect dans ce monde ou dans l'autre n'\\u00E9chappe \\u00E0 Sa volont\\u00E9"
-        }
+          "desc": "Quiconque domine Sa création et par Sa toute-puissance sous tous ses aspects, aucun état ou aspect de ce monde ou de l'autre n'échappe à Sa volonté."        }
       },
       {
         "name":"\u0627\u0644\u0652\u0639\u064e\u0632\u0650\u064a\u0632\u064f",
@@ -121,7 +120,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Tout Puissant",
-          "desc": "Le Glorieux par Sa supr\\u00E9matie et par Sa grandeur, El-Aziz veut dire dans un sens celui qui est cher et pr\\u00E9cieux aux yeux de Ses cr\\u00E9atures. Il n'est le serviteur d'aucune cr\\u00E9ature, et aucune cr\\u00E9ature ne lui dicte ce qu'Il doit faire. "
+          "desc": "Le Glorieux par Sa suprématie et par Sa grandeur, El-Aziz veut dire dans un sens celui qui est cher et précieux aux yeux de Ses créatures. Il n'est le serviteur d'aucune créature, et aucune créature ne lui dicte ce qu'Il doit faire. "
         }
       },
       {
@@ -135,7 +134,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"L'Imposant",
-          "desc": "Le grandiose, l'ultime puissant par Sa grandeur et Sa force illimit\\u00E9e. Lorsqu'Il d\\u00E9truit les oppresseurs (injustes et p\\u00E9cheurs) Il applique Sa sentence avec Justice."
+          "desc": "Le grandiose, l'ultime puissant par Sa grandeur et Sa force illimitée. Lorsqu'Il détruit les oppresseurs (injustes et pêcheurs) Il applique Sa sentence avec Justice."
         }
       },
       {
@@ -149,8 +148,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Supr\u00EAme, Le Majestueux",
-          "desc": "Celui qui est sup\\u00E9rieur \\u00E0 Ses cr\\u00E9atures, nulle cr\\u00E9ature n'a le droit de pr\\u00E9tendre \\u00E0 la grandeur."
-        }
+          "desc": "Celui qui est supérieur à ses créatures, aucune créature n'a le droit de prétendre à la grandeur."        }
       },
       {
         "name":"\u0627\u0644\u0652\u062e\u064e\u0627\u0644\u0650\u0642\u064f",
@@ -163,7 +161,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Cr\u00E9ateur",
-          "desc": "Le Cr\\u00E9ateur de toutes existences, vivantes ou bien mortes, mobiles ou fig\\u00E9es."
+          "desc": "Le Créateur de toutes existences, vivantes ou bien mortes, mobiles ou figures."
         }
       },
       {
@@ -177,8 +175,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Producteur",
-          "desc": "Celui qui l\\u00e8ve Sa cr\\u00e9ation au-dessus de tous d\\u00e9fauts ou imperfections."
-        }
+          "desc": "Celui qui élève sa création au-dessus de toutes fautes ou imperfections."        }
       },
       {
         "name":"\u0627\u0644\u0652\u0645\u064f\u0635\u064e\u0648\u0650\u0651\u0631\u064f",
@@ -1395,7 +1392,7 @@ export class NomsPage implements OnInit {
         },
         "fr":{
           "meaning":"Le Patient",
-          "desc": "Est Celui qui retarde la punition des p\\u00E9cheurs par l\\u2019ajustement des comptes de chacun jusqu\\u2019\\u00E0 un jour bien d\\u00E9termin\\u00E9 et leur accorde leur aise et du temps jusqu\\u2019\\u00E0 un moment dont ils ignorent tous la date."
+          "desc": "Est-ce Celui qui retarde le châtiment des pécheurs en ajustant les comptes de chacun jusqu'à un jour déterminé et leur donne leur aisance et leur temps jusqu'à un moment dont ils ne connaissent pas tous la date"
         }
       }
     ]
@@ -1414,12 +1411,12 @@ export class NomsPage implements OnInit {
 
   
   openDetail(nom:any){
-    console.log('Donnée recuperer est :' + nom)
+    console.log('Donnée recuperer est :' , nom)
    const dialogRef =  this.dialog.open(DetailSourateComponent,{
-      width:'250px',
+      width:'500px',
+      height:'80%',     
       data: nom
     })
   }
 
 }
-

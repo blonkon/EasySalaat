@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from '../service/data.service';
-import { Users } from '../models/users';
-import { Roles } from '../models/Roles.enum';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tab1',
@@ -11,8 +7,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
   
 })
 export class Tab1Page {
-  constructor() { }
-  
+
   priere = [
     {
       id : 1,
@@ -45,5 +40,6 @@ export class Tab1Page {
       heure : '19:48'
     },
   ]
+    constructor() {}
 
 }

@@ -13,8 +13,8 @@ export class Tab2Page {
   SearchText: any;
   show:boolean = true;
 
-  sourate= SourateComponent;
-  liste= ListeLectureComponent;
+  sourate = SourateComponent;
+  liste = ListeLectureComponent;
 
 
   constructor() {}
